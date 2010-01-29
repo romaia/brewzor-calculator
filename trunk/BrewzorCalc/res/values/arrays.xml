@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<resources>
+
+	<string-array name="unitTypesList">
+		<item>@string/unit_volume</item>
+		<item>@string/unit_mass_weight</item>
+		<item>@string/unit_gravity</item>
+		<item>@string/unit_temperature</item>
+		<item>@string/unit_distance_length</item>
+	</string-array>
+
+	<string-array name="unitTypesIdList">
+		<item>VOLUME</item>
+		<item>MASS</item>
+		<item>GRAVITY</item>
+		<item>TEMPERATURE</item>
+		<item>DISTANCE</item>
+	</string-array>
+
+	<string-array name="gravityUnitsList">
+		<item>@string/sg</item>
+		<item>@string/gu</item>
+		<item>@string/plato</item>
+	</string-array>
+	
+	<string-array name="gravityUnitsIdList">
+		<item>SG</item>
+		<item>GU</item>
+		<item>PLATO</item>
+	</string-array>
+	
+	<string-array name="massUnitsList">
+		<item>@string/gram</item>
+		<item>@string/kilogram</item>
+		<item>@string/ounce</item>
+		<item>@string/pound</item>
+	</string-array>
+
+	<string-array name="massUnitsIdList">
+		<item>GRAM</item>
+		<item>KILOGRAM</item>
+		<item>OUNCE</item>
+		<item>POUND</item>
+	</string-array>
+
+	<string-array name="temperatureUnitsList">
+		<item>@string/fahrenheit</item>
+		<item>@string/celsius</item>
+	</string-array>
+	
+	<string-array name="temperatureUnitsIdList">
+		<item>FAHRENHEIT</item>
+		<item>CELSIUS</item>
+	</string-array>
+	
+	<string-array name="volumeUnitsList">
+		<item>@string/milliliter</item>
+		<item>@string/liter</item>
+		<item>@string/teaspoon</item>
+		<item>@string/tablespoon</item>
+		<item>@string/cubic_inch</item>
+		<item>@string/fluid_ounce</item>
+		<item>@string/cup</item>
+		<item>@string/bottle_12_oz</item>
+		<item>@string/us_pint</item>
+		<item>@string/imperial_pint</item>
+		<item>@string/bottle_22_oz</item>
+		<item>@string/bottle_750_ml</item>
+		<item>@string/quart</item>
+		<item>@string/gallon</item>
+		<item>@string/barrel</item>
+	</string-array>
+	
+	<string-array name="volumeUnitsIdList">
+		<item>MILLILITER</item>
+		<item>LITER</item>
+		<item>TEASPOON</item>
+		<item>TABLESPOON</item>
+		<item>CUBIC_INCH</item>
+		<item>FLUID_OUNCE</item>
+		<item>CUP</item>
+		<item>BOTTLE_12_OZ</item>
+		<item>US_PINT</item>
+		<item>IMPERIAL_PINT</item>
+		<item>BOTTLE_22_OZ</item>
+		<item>BOTTLE_750_ML</item>
+		<item>QUART</item>
+		<item>GALLON</item>
+		<item>BARREL</item>
+	</string-array>
+	
+	<string-array name="distanceUnitsList">
+		<item>@string/centimeter</item>
+		<item>@string/inch</item>
+	</string-array>
+
+	<string-array name="distanceUnitsIdList">
+		<item>CENTIMETER</item>		
+		<item>INCH</item>
+	</string-array>
+
+	<string-array name="calculatorList">
+		<item>@string/strike_temperature</item>
+		<item>@string/gravity_correction</item>
+		<item>@string/boil_off</item>
+		<item>@string/cylinder_volume</item>
+		<item>@string/cylinder_height</item>
+		<item>@string/carbonation</item>
+		<item>@string/hydrometer_correction</item>
+		<item>@string/unit_conversion</item>
+	</string-array>
+
+</resources>
