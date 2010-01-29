@@ -1,0 +1,345 @@
+<html>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+	<head>
+		<title>Brewzor Brewing Calculator Help</title>
+	</head>
+	<body>
+
+		<h1>Brewzor Brewing Calculator Help</h1>
+
+		<p>
+			For more information, visit our website:
+			<a href="http://brewzor.com">http://brewzor.com</a>
+		</p>
+
+		<h2>Table of Contents:</h2>
+
+		<ul>
+			<li>
+				<a href="#calculators">
+					<b>Calculators</b>
+				</a>
+				<ul>
+					<li>
+						<a href="#gravitycorrection">Gravity Correction Calculator</a>
+					</li>
+					<li>
+						<a href="#cylindervolumeheight">Cylinder Volume / Cylinder Height Calculator</a>
+					</li>
+					<li>
+						<a href="#striketemperature">Strike Temperature Calculator</a>
+					</li>
+					<li>
+						<a href="#boiloff">Boil Off Calculator</a>
+					</li>
+					<li>
+						<a href="#carbonation">Carbonation Calculator</a>
+					</li>
+					<li>
+						<a href="#hydrometercorrection">Hydrometer Correction Calculator</a>
+					</li>
+					<li>
+						<a href="#unitconverter">Unit Converter</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#settings"><b>Settings / Preferences</b></a>
+				<ul>
+					<li>
+						<a href="#prefsgeneral">General Settings</a>
+					</li>
+					<li>
+						<a href="#prefsbatch">Batch Settings</a>
+					</li>
+					<li>
+						<a href="#prefskettle">Kettle Settings</a>
+					</li>
+				</ul>
+			</li>
+
+		</ul>
+		<a name="calculators"></a>
+		<h2>Calculators Included in Brewzor Brewing Calculator:</h2>
+
+		<a name="gravitycorrection"></a>
+		<h3>Gravity Correction:</h3>
+
+		<p>What do you do when you miss your pre-boil gravity? Not correcting
+			gravity before adding your hops can affect the hop utilization and
+			perceived bitterness of your beer. If your gravity is too low, the
+			calculator will tell you how much dried malt extract (DME) or liquid
+			malt extract (LME) to add to your kettle to raise the gravity to your
+			pre-boil level. If the gravity is too high, the calculator will tell
+			you how much water to add to dilute your wort to the desired pre-boil
+			level.</p>
+
+		<p>To use the gravity calculator, enter the current gravity, desired
+			gravity and wort volume values into the fields provided. Dilution or
+			concentration instructions are automatically calculated and will
+			appear below the entry fields.</p>
+
+		<a name="cylindervolumeheight"></a>
+		<h3>Cylinder Volume / Cylinder Height Calculators:</h3>
+
+		<p>Accurately measuring volume during a brew session can be difficult.
+			Since most kettles have a flat bottom and are round (a cylinder), you
+			can use a calibrated stick (like a yard stick or a marked wooden
+			dowel) to measure the liquid height and the diameter of my kettle,
+			making it easy to calculate the volume in the kettle.</p>
+
+		<p>
+			The formula used for volume is:
+			<b>
+				Volume = Pi * (Diameter / 2)
+				<sup>2</sup>
+				* Height
+			</b>
+		</p>
+
+		<p>
+			The formula used for height is:
+			<b>
+				Height = Volume / Pi * (Diameter / 2)
+				<sup>2</sup>
+			</b>
+		</p>
+
+		<p>Use the Cylinder Volume Calculator if you know the wort height and
+			would like to know the wort volume. Enter the measured height, kettle
+			diameter and your false bottom height. If you do not have a false
+			bottom, enter a zero. The calculated volume will display below the
+			entry fields once all data has been entered.</p>
+
+		<p>Use the Cylinder Height Calculator if you know the wort volume and
+			would like to know the wort height. Enter the desired volume, kettle
+			diameter and your false bottom height. If you do not have a false
+			bottom, enter a zero. The calculated height will display below the
+			entry fields once all data has been entered.</p>
+
+		<p>
+			<b>Additional Settings</b>
+			:
+		</p>
+		<ul>
+			<li>The values for kettle diameter and false bottom height can be
+				defined via the Settings screen.</li>
+			<li>
+				If
+				<b>both</b>
+				Correct volume for heat expansion and there is a value for Cooling
+				Loss is defined, the volume/height will be altered based on this
+				value.
+			</li>
+		</ul>
+
+		<a name="striketemperature"></a>
+		<h3>Strike Temperature:</h3>
+
+		<p>Used to determine the temperature of your initial mash strike water
+			for a given amount of grain and a given amount of strike water. The
+			sparge water temperature will appear below the entry fields once all
+			data has been entered.</p>
+
+		<p>
+			<b>Additional Settings</b>
+			:
+		</p>
+		<ul>
+			<li>The setting Water to Grain Ratio will automatically calculate the
+				sparge water volume. This is usually between 1-2 quarts / pound or
+				its equivalent of you choose other units. When this value is greater
+				than zero, the Sparge Water entry field in the calculator is
+				disabled since the volume is calculated automatically.</li>
+		</ul>
+
+		<a name="boiloff"></a>
+		<h3>Boil Off:</h3>
+
+		<p>Helps determine evaporation and cooling loss for a boil. Enter the
+			starting volume, evaporation rate, boil time in minutes and the
+			cooling loss percentage.</p>
+
+		<p>
+			<b>Additional Settings</b>
+			:
+		</p>
+		<ul>
+			<li>Boil minutes is usually 60 - 90 minutes.</li>
+			<li>Evaporation Rate is usually 3% for mash temperatures and 4% for
+				boiling.</li>
+			<li>Cooling Loss the percent loss per hour for your kettle. This is
+				usually in the range of 5-15%. If you are in doubt, start with a
+				value of 10%.</li>
+		</ul>
+
+		<a name="carbonation"></a>
+		<h3>Carbonation:</h3>
+
+		<p>Calculates the required priming sugar (bottle conditioning) or PSI
+			(kegging) required to carbonate a given volume of beer to a number of
+			volumes of CO2.</p>
+
+		<b>
+			WARNING!!! WARNING!!! WARNING!!! WARNING!!!
+			<br />
+			<br />
+
+			This calculator is meant as a guide only. Using the incorrect amount
+			of priming sugar can cause bottles to explode and is extremely
+			dangerous. If the amount recommended by the calculator seems wrong,
+			it probably is. You should take all necessary steps to ensure you
+			don't over-carbonate your beer as that can result in extreme bodily
+			harm, death and definitely bad beer.
+			<br />
+			<br />
+
+			WARNING!!! WARNING!!! WARNING!!! WARNING!!!
+		</b>
+
+		<a name="hydrometercorrection"></a>
+		<h3>Hydrometer Correction:</h3>
+
+		<p>Don't feel like cooling your sample down to 60F to take a gravity
+			measurement? This calculator determines the corrected gravity for a
+			sample based on the temperature. This calculator works for
+			hydrometers that are calibrated to 60F. Enter the reading from your
+			hydrometer and the temperature of your sample. The result will be
+			displayed below the entry fields once the data has been entered.</p>
+
+		<a name="unitconverters"></a>
+		<h3>Unit Converters:</h3>
+
+		<p>Converters for gravity, mass, volume and temperature are included.
+			They aren't meant to include every measurement and are mostly
+			included for convenience.</p>
+
+		<p>
+			Formula used to convert Specific Gravity to Plato:
+			<b>
+				P = (668.72 * SG) - 463.37 - (205.347 * SG
+				<sup>2</sup>
+				)
+			</b>
+		</p>
+		<p>
+			Formula used to convert Plato to Specific Gravity:
+			<b>
+				SG = ((0.082636 + (3.8480 * P) + (0.014563 * P
+				<sup>2</sup>
+				))) / 1000) + 1
+			</b>
+		</p>
+		<p>
+			Formula used to convert Specific Gravity to Gravity Units:
+			<b>GU = (SG - 1) * 1000</b>
+		</p>
+
+		<hr />
+
+		<a name="settings"></a>
+		<h2>Settings:</h2>
+
+		<a name="prefsgeneral"></a>
+		<h3>General Settings</h3>
+
+		<p><b>Temperature: </b>This is the unit used globally for temperature.  Possibilities include Fahrenheit (F) and Celsius (C).</p>
+
+		<p><b>Gravity: </b>This is the unit used globally for gravity. Possibilities include
+			Specific Gravity (SG), Gravity Units or Points (GU), and Plato (P)
+		</p>
+
+		<p><b>DME / LME Weight: </b>The unit of measurement used for extract weight.</p>
+		
+		<a name="prefsbatch"></a>
+
+		<h3>Batch Settings</h3>
+
+		<p><b>Batch Volume Units: </b>This is the unit used for batch volume. Possibilities include
+			Quart, Gallon, and Liter.</p>
+		
+		<p><b>Final Batch Volume: </b>This is the unit used for final volume, or the volume that goes into the fermenter. Possibilities include
+			Quart, Gallon, and Liter.</p>
+
+		<p><b>Grain Weight Units: </b>This is the unit used for grain weight. Possibilities include
+			Gram, Kilogram, Ounces, and Pounds.</p>
+
+		<p><b>Water to Grain Ratio: </b>This number represents the ratio of water to grain based on the batch units above.  Normally, this is equivalent to .25-.31 gallons / pound OR 1-1.25 quarts / pound.</p>
+
+		<p>This describes the thickness of your mash. If this value is set,
+			the Strike Water calculator will use this value to calculate the
+			amount of strike water you need based on your entered value for grain
+			weight. The value is generally in the range of 1 - 2 quarts per
+			pound. For example if your ratio is 1.25 quarts per pound, you would
+			enter "1.25" into the entry field. Assuming a grain weight of 10
+			pounds, a total of 12.5 quarts would be used. When this value is
+			greater than zero, the entry field is disabled.</p>
+
+		<p><b>Boil Minutes: </b>The duration of the boil in minutes.  Normally, this is 60 - 90 minutes.</p>
+
+		<a name="prefskettle"></a>
+		<h3>Kettle Settings</h3>
+
+		<p><b>Kettle Diameter / Height Units: </b>This is the unit used for distance / length. Possibilities include
+			Inches and Centimeters.</p>
+
+		<p><b>Kettle Diameter: </b>The diameter of the kettle.  This is used in the cylinder volume / height calculators.</p>
+
+		<p><b>False Bottom Height: </b>If you have a false bottom and are measuring wort height, the value
+			of wort below the false bottom needs to be accounted for. Enter the
+			height of your false bottom in Distance Units. If you don't have a
+			false bottom, just enter a zero.</p>
+
+
+		<p><b>Evaporation Rate: </b>The amount of loss over a 60 minute period expressed as a percent
+			of the kettle volume. This value is generally between 5% and 15%. If
+			you do not know the evaporation rate for your kettle, start with 10%.
+		</p>
+
+		<p>To determine the evaporation rate for your kettle:</p>
+		<ul>
+			<li>Once at a boil, measure the starting volume as accurately as
+				possible</li>
+			<li>
+				Maintain a
+				<b>consistent</b>
+				boil for 60 minutes
+			</li>
+			<li>While still boiling, measure the ending volume as accurately as
+				possible</li>
+			<li>Boil Loss % = (Ending Volume / 100) * Starting Volume</li>
+			<li>Do this over the course of several brews and adjust as necessary.
+				The key to generating accurate results is maintaining a consistent
+				boil each time.</li>
+		</ul>
+		<p><b>Correct for Heat Expansion: </b>When checked, the volumes presented will be adjusted for heat
+			expansion or cooling loss when appropriate. The calculator will also
+			display the expansion / loss volume on the screen when it is being
+			used.</p>
+
+		<p><b>Cooling Loss Percentage: </b>When at mash temperatures, wort will expand about 3%. When boiling,
+			the expansion is about 4%.</p>
+
+
+	</body>
+</html>
