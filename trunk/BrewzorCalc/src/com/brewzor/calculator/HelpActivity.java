@@ -33,14 +33,16 @@ public class HelpActivity extends FileResourceReader {
 	private WebView displayText;
 	private Button doneButton;
 	
+	static private String ABOUT_FILE = "file:///android_asset/help.html";
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.help_output);
+        setContentView(R.layout.web_output);
 
         displayText = (WebView) findViewById(R.id.displayText);
-        displayText.loadUrl("file:///android_asset/help.html");
+        displayText.loadUrl(ABOUT_FILE);
 
 		doneButton = (Button) findViewById(R.id.done);        
         doneButton.setOnClickListener(new OnClickListener() {
