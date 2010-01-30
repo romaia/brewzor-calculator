@@ -28,7 +28,6 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -124,7 +123,6 @@ public class HydrometerCorrectionCalculatorActivity extends Activity {
 		//correctedGravity.setValue(((1.313454 - (0.132674 * temperature.getValue()) + (0.002057793 * java.lang.Math.pow(temperature.getValue(), 2)) - (0.000002627634 * java.lang.Math.pow(temperature.getValue(), 3))) / 1000.0) + startGravity.getValue());
 	
 		correctedGravity.setValue(startGravity.getValue() * ( (1.00130346 - 0.000134722124 * measuredTemp + 0.00000204052596 * java.lang.Math.pow(measuredTemp, 2) - 0.00000000232820948 * java.lang.Math.pow(measuredTemp, 3)) / (1.00130346 - 0.000134722124 * calibrateTemp + 0.00000204052596 * java.lang.Math.pow(calibrateTemp, 2) - 0.00000000232820948 * java.lang.Math.pow(calibrateTemp, 3))));
-		Log.v("HYDRO", "corr=" + correctedGravity.getValue());
 
 		if (startGravity.getValue() <= 1.0) {
 			calculatedCorrectedSG.setText(getString(R.string.sg_default));
