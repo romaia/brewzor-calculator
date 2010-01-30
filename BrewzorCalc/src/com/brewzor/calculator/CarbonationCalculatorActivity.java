@@ -180,7 +180,7 @@ public class CarbonationCalculatorActivity extends Activity {
 		calculatedCO2Pressure.setText(getString(R.string.double_format, psi));
 
 		// http://www.myhomebrew.com/bp0.html
-		flatBeerCarbonation = 3.0378 - 5.0062e-2 * tempF + 2.6555e-4 * tempF * tempF;
+		flatBeerCarbonation = 3.0378 - 5.0062e-2 * tempF + 2.6555e-4 * java.lang.Math.pow(tempF, 2);
 						
 		//http://www.myhomebrew.com/bp0.html
 		//PrimingRate(GetSelectValue(f.pi)) * v * gco2
