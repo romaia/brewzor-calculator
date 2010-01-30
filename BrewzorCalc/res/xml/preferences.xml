@@ -38,6 +38,12 @@
 						android:entries="@array/gravityUnitsList" 
 						android:entryValues="@array/gravityUnitsIdList" />
 
+		<EditTextPreference android:title="@string/hydrometer_calibration_temperature_pref"
+							android:summary="@string/hydrometer_calibration_temperature_pref_summary"
+							android:defaultValue="@string/hydrometer_calibration_temperature_pref_default" 
+							android:inputType="number"
+							android:key="global.hydrometer_calibration_temperature" />
+	
 		<ListPreference android:title="@string/extract_mass_units_pref"
 						android:summary="@string/extract_mass_units_pref_summary"
 						android:key="global.extract_mass_unit" 

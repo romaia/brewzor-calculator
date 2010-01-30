@@ -38,6 +38,10 @@
 	<string name="gravity_units_pref_summary">SG, Plato, GU</string>
 	<string name="gravity_units_pref_default">SG</string>
 
+	<string name="hydrometer_calibration_temperature_pref">Hydrometer Calibration Temperature</string>
+	<string name="hydrometer_calibration_temperature_pref_summary">Usually 60°F or 68°F</string>
+	<string name="hydrometer_calibration_temperature_pref_default">60</string>
+
 	<string name="extract_mass_units_pref">DME / LME Weight</string>
 	<string name="extract_mass_units_pref_summary">Grams, Kilograms, Ounces, Pounds</string>
 	<string name="extract_mass_units_pref_default">OUNCE</string>
@@ -157,6 +161,8 @@
 	<string name="temperature">Temperature</string>
 	<string name="hydrometer_correction_temperature_default">60</string>
 	<string name="corrected_sg">Corrected SG</string>
+	<string name="calibration_text_format">Calibration Temperature: %01.0f%s</string>
+	<string name="calibration_temperature_pref_summary_format">%s%s (Usually 60°F or 68°F)</string>
 	
 	<!-- Starter Wort -->
 	

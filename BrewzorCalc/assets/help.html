@@ -214,9 +214,25 @@ that are calibrated to 60F. Enter the reading from your hydrometer and
 the temperature of your sample. The result will be displayed below the
 entry fields once the data has been entered.</p>
 
-<p>The formula used to determine temperature correction for a 60&deg;F hydrometer was based on information found <a href="http://hbd.org/brewery/library/HydromCorr0992.html">here</a>.</p>
+<p>The formula used to determine temperature correction for hydrometer was based on information found <a href="http://www.homebrewtalk.com/f13/temp-correction-formula-hydrometer-10684/index2.html">here</a> and </a><a href="http://hbd.org/brewery/library/HydromCorr0992.html">here</a>.</p>
 
-<p><b>Correction = 1.313454 - (0.132674 * T) + (2.057793e-3 * T<sup>2</sup>) - (2.627634e-6 * T<sup>3</sup>)</b></p>
+<p><b>Correction(60&deg;F calibration) = 1.313454 - (0.132674 * T) + (2.057793e-3 * T<sup>2</sup>) - (2.627634e-6 * T<sup>3</sup>)</b></p>
+
+<p>
+
+The correction formula used that accounts for different calibration temperatures:</p>
+<p>
+
+<b>SG<sub>measured</sub></b> = measured SG of the sample <br />
+<b>SG<sub>corrected</sub></b> = corrected SG of the sample <br />
+<b>T<sub>sample</sub></b> = Temperature in &deg;F of the sample<br />
+<b>T<sub>calibration</sub></b> = Calibration temperature of your hydrometer - usually 60&deg;F or 68&deg;F<br />
+<br />
+<b></b>SG<sub>corrected</sub> = SG<sub>measured</sub> * ( (1.00130346 -
+0.000134722124 * T<sub>measured</sub> + 0.00000204052596 * T<sub>measured</sub><sup>2</sup>
+- 0.00000000232820948 * T<sub>measured</sub><sup>3</sup>) / (1.00130346
+- 0.000134722124 * T<sub>calibration</sub> + 0.00000204052596 * T<sub>calibration</sub><sup>2</sup>
+- 0.00000000232820948 * T<sub>calibration</sub><sup>3</sup>)) </b></p>
 
 <a name="unitconverters"></a>
 <h3>Unit Converters:</h3>
@@ -327,4 +343,5 @@ will expand about 3%. When boiling, the expansion is about 4%.</p>
 
 </body>
 </html>
+
 

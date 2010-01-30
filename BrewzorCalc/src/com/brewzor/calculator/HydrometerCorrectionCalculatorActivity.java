@@ -28,6 +28,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,8 +43,10 @@ public class HydrometerCorrectionCalculatorActivity extends Activity {
 	private EditText temperatureEntry;
 	private TextView calculatedCorrectedSG;
 	private TextView temperatureUnitType;
+	private TextView calibrationText;
 	
 	private Temperature temperature;
+	private Temperature calibrationTemperature;
 	private Gravity startGravity;
 	private Gravity correctedGravity;
 	
@@ -66,10 +69,13 @@ public class HydrometerCorrectionCalculatorActivity extends Activity {
         
         calculatedCorrectedSG = (TextView) findViewById(R.id.calculatedCorrectedSG);
 
+        calibrationText = (TextView) findViewById(R.id.calibrationText);
+        
 		SGEntry.setText(getString(R.string.sg_default));
 		temperatureEntry.setText(getString(R.string.hydrometer_correction_temperature_default));
 
 		temperature = new Temperature(0.0, Temperature.Unit.FAHRENHEIT, getBaseContext(), prefs);
+		calibrationTemperature = new Temperature(0.0, Temperature.Unit.FAHRENHEIT, getBaseContext(), prefs);
 		startGravity = new Gravity(1.000, Gravity.Unit.SG, getBaseContext(), prefs);
 		startGravity.setFormat(getString(R.string.sg_format));
 		correctedGravity = new Gravity(1.000, Gravity.Unit.SG, getBaseContext(), prefs);
@@ -104,17 +110,22 @@ public class HydrometerCorrectionCalculatorActivity extends Activity {
 	};
 
 	private void calculate() {
-		// http://hbd.org/brewery/library/HydromCorr0992.html
-		// Correction(@59F) = 1.313454 - 0.132674*T + 2.057793e-3*T**2 - 2.627634e-6*T**3
-	    // where T is in degrees F.
 
 		startGravity.setValue(SGEntry, 1.000);
 		temperature.setValue(temperatureEntry, 0.0);
 		
-		temperature.convert(Temperature.Unit.FAHRENHEIT);
+		double measuredTemp = temperature.compare(Temperature.Unit.FAHRENHEIT);
+		double calibrateTemp = calibrationTemperature.compare(Temperature.Unit.FAHRENHEIT);
+
 		
-		correctedGravity.setValue(((1.313454 - (0.132674 * temperature.getValue()) + (0.002057793 * java.lang.Math.pow(temperature.getValue(), 2)) - (0.000002627634 * java.lang.Math.pow(temperature.getValue(), 3))) / 1000.0) + startGravity.getValue());
-		
+		// http://hbd.org/brewery/library/HydromCorr0992.html
+		// Correction(@59F) = 1.313454 - 0.132674*T + 2.057793e-3*T**2 - 2.627634e-6*T**3
+		// where T is in degrees F.
+		//correctedGravity.setValue(((1.313454 - (0.132674 * temperature.getValue()) + (0.002057793 * java.lang.Math.pow(temperature.getValue(), 2)) - (0.000002627634 * java.lang.Math.pow(temperature.getValue(), 3))) / 1000.0) + startGravity.getValue());
+	
+		correctedGravity.setValue(startGravity.getValue() * ( (1.00130346 - 0.000134722124 * measuredTemp + 0.00000204052596 * java.lang.Math.pow(measuredTemp, 2) - 0.00000000232820948 * java.lang.Math.pow(measuredTemp, 3)) / (1.00130346 - 0.000134722124 * calibrateTemp + 0.00000204052596 * java.lang.Math.pow(calibrateTemp, 2) - 0.00000000232820948 * java.lang.Math.pow(calibrateTemp, 3))));
+		Log.v("HYDRO", "corr=" + correctedGravity.getValue());
+
 		if (startGravity.getValue() <= 1.0) {
 			calculatedCorrectedSG.setText(getString(R.string.sg_default));
 		} else {
@@ -127,6 +138,11 @@ public class HydrometerCorrectionCalculatorActivity extends Activity {
         temperature.setType(temperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.FAHRENHEIT));
     	temperatureUnitType.setText(temperature.getLabelAbbr());
    
+        calibrationTemperature.setType(temperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.FAHRENHEIT));
+        calibrationTemperature.setValue(prefs.getString(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE, "60"), 60.0);
+
+        calibrationText.setText(getString(R.string.calibration_text_format, calibrationTemperature.getValue(), calibrationTemperature.getLabelAbbr()));
+        
 	}
 	
 }
