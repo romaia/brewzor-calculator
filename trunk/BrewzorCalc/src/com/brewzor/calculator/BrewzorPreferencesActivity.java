@@ -68,7 +68,10 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		
 		pref = findPreference(Preferences.GLOBAL_EXTRACT_MASS_UNIT);
 		pref.setOnPreferenceChangeListener(mPrefListener);
-		
+
+		pref = findPreference(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE);
+		pref.setOnPreferenceChangeListener(mPrefListener);
+
 		pref = findPreference(Preferences.BATCH_VOLUME_UNIT);
 		pref.setOnPreferenceChangeListener(mPrefListener);
 		
@@ -115,6 +118,12 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		mass.setType(mass.typeFromPref(Preferences.GLOBAL_EXTRACT_MASS_UNIT, Mass.Unit.OUNCE));
 		pref.setSummary(mass.getLabelPlural());
 		
+		pref = findPreference(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE);
+		mass.setType(mass.typeFromPref(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE, Mass.Unit.OUNCE));
+		pref.setSummary(mass.getLabelPlural());
+		
+		pref = findPreference(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE);
+		pref.setSummary(getString(R.string.calibration_temperature_pref_summary_format, sPref.getString(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE, "60"), temperature.getLabelAbbr()));
 
 		
 		

@@ -50,6 +50,9 @@
 
 		</TableLayout>
 	
+			<TextView style="@style/hydrometerCorrectionDescriptionStyle"
+			android:id="@+id/calibrationText" />
+	
 	</LinearLayout>
 	
 	<LinearLayout android:orientation="vertical"
