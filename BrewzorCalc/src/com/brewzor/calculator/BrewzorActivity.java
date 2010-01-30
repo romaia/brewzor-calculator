@@ -71,7 +71,8 @@ public class BrewzorActivity extends ListActivity {
 	        editor.putString(Preferences.GLOBAL_TEMPERATURE_UNIT, "FAHRENHEIT");
 	        editor.putString(Preferences.GLOBAL_GRAVITY_UNIT, "SG");
 	        editor.putString(Preferences.GLOBAL_EXTRACT_MASS_UNIT, "OUNCE");
-
+	        editor.putString(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE, "60");
+	        
 	        editor.putString(Preferences.BATCH_VOLUME_UNIT, "GALLON");
 	        editor.putString(Preferences.BATCH_FINAL_VOLUME, "6");
 	        editor.putString(Preferences.BATCH_GRAIN_MASS_UNIT, "POUND");
