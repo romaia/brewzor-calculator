@@ -28,6 +28,7 @@ public class Preferences {
 	public static final String GLOBAL_TEMPERATURE_UNIT = "global.temperature_unit";
 	public static final String GLOBAL_GRAVITY_UNIT = "global.gravity_unit";
 	public static final String GLOBAL_EXTRACT_MASS_UNIT = "global.extract_mass_unit";
+	public static final String GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE = "global.hydrometer_calibration_temperature";
 
 	public static final String BATCH_VOLUME_UNIT = "batch.volume_unit";
 	public static final String BATCH_FINAL_VOLUME = "batch.final_volume";
