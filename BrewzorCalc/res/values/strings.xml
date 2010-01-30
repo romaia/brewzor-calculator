@@ -102,7 +102,7 @@
 	
 	<!-- Cylinder Volume -->
 	
-	<string name="cylinder_volume">Cylinder Volume</string>
+	<string name="cylinder_volume">Kettle Volume from Height</string>
 	<string name="kettle_diameter">Diameter</string>
 	<string name="measured_height">Height</string>
 	<string name="false_bottom_height">False Bottom</string>
@@ -116,7 +116,7 @@
 
 	<!-- Cylinder Height -->
 	
-	<string name="cylinder_height">Cylinder Height</string>
+	<string name="cylinder_height">Kettle Height from Volume</string>
 	<string name="desired_volume">Volume</string>
 	<string name="calculated_cylinder_height_default">@string/double_default</string>
 
