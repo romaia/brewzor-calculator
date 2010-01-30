@@ -33,7 +33,9 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -61,13 +63,24 @@ public class CylinderVolumeCalculatorActivity extends Activity {
 	private Distance height;
 	private Distance falseBottomHeight;
 	private Volume volume;
-	
+	private Button heatCorrectionButton;
+
+	private boolean heat;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculator_cylinder_volume);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
+        heatCorrectionButton = (Button) findViewById(R.id.correctForExpansion);        
+        heatCorrectionButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				toggleButton();
+			}
+        });
 
         calculatedVolume = (TextView) findViewById(R.id.calculatedVolume); 
         calculatedVolumeUnitType = (TextView) findViewById(R.id.calculatedVolumeUnitType);
@@ -90,8 +103,23 @@ public class CylinderVolumeCalculatorActivity extends Activity {
     	height = new Distance(0.0, Distance.Unit.INCH, getBaseContext(), prefs);
     	falseBottomHeight = new Distance(0.0, Distance.Unit.INCH, getBaseContext(), prefs);
     	volume = new Volume(0.0, Volume.Unit.GALLON, getBaseContext(), prefs);
+	
 	}
 
+	private void toggleButton() {
+		heat = (heat) ? false : true;
+		setButtonText();
+		calculate();
+	}		
+
+	private void setButtonText() {
+		if (heat) {
+			heatCorrectionButton.setText(getString(R.string.correct_for_expansion_format, expansionValue));
+		} else {
+			heatCorrectionButton.setText(getString(R.string.correct_for_loss_format, expansionValue));
+		}
+	}
+	
 	@Override
 	public void onResume() {
 		super.onResume();
@@ -120,20 +148,12 @@ public class CylinderVolumeCalculatorActivity extends Activity {
 	};
 	
 	private void calculate() {
+		
 		diameter.setValue(diameterEntry, 0.0);
 		height.setValue(heightEntry, 0.0);
 		falseBottomHeight.setValue(falseBottomHeightEntry, 0.0);
 
 		volume.setValue(java.lang.Math.PI * java.lang.Math.pow((diameter.getValue() / 2), 2) * (height.getValue() + falseBottomHeight.getValue()));
-
-		if (correctForExpansionPref) {
-			correctForExpansion.setVisibility(View.VISIBLE);
-        	correctForExpansion.setText(getString(R.string.correct_for_expansion_format, expansionValue));
-			volume.setValue(volume.getValue() * (100 - expansionValue) / 100);
-		} else {
-			correctForExpansion.setText("");
-			correctForExpansion.setVisibility(View.GONE);
-		}
 
 		switch (distanceType) {
 			case INCH:
@@ -142,6 +162,20 @@ public class CylinderVolumeCalculatorActivity extends Activity {
 			case CENTIMETER:
 				volume.setType(Volume.Unit.MILLILITER);
 				break;		
+		}
+
+		if (correctForExpansionPref) {
+			
+			correctForExpansion.setVisibility(View.VISIBLE);
+			if (heat) {
+				volume.setValue(volume.getValue() * (1.0 + (expansionValue / 100.0)));
+			} else {
+				volume.setValue(volume.getValue() * (1.0 - (expansionValue / 100.0)));
+			}
+
+		} else {
+			correctForExpansion.setText("");
+			correctForExpansion.setVisibility(View.GONE);
 		}
 
 		volume.convert(volumeType);
@@ -154,12 +188,17 @@ public class CylinderVolumeCalculatorActivity extends Activity {
 		expansionValue = NumberFormat.parseDouble(prefs.getString(Preferences.KETTLE_COOLING_LOSS, "4.00"), 4.0);
         correctForExpansionPref = prefs.getBoolean(Preferences.KETTLE_CORRECT_FOR_EXPANSION, false);
 
+        if (correctForExpansionPref) {
+        	heatCorrectionButton.setVisibility(View.VISIBLE);
+        } else {
+        	heatCorrectionButton.setVisibility(View.GONE);
+        }
+
 		volumeType = volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON);
         volume.setType(volumeType);
     	calculatedVolumeUnitType.setText(volume.getLabelPlural());
 		
 		distanceType = diameter.typeFromPref(Preferences.KETTLE_DISTANCE_UNIT, Distance.Unit.INCH);
-		
 		height.setType(distanceType);
         heightUnitType.setText(height.getLabelAbbr());
 		
@@ -170,6 +209,8 @@ public class CylinderVolumeCalculatorActivity extends Activity {
         falseBottomHeightEntry.setText(prefs.getString(Preferences.KETTLE_FALSE_BOTTOM_HEIGHT, "0.00"));		
         falseBottomHeight.setType(distanceType);
         falseBottomHeightUnitType.setText(falseBottomHeight.getLabelAbbr());
+     
+        setButtonText();
         
 	}
 	

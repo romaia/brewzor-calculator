@@ -80,7 +80,7 @@
 	<string name="false_bottom_height_pref_summary">Used for volume calculations</string>
 	<string name="false_bottom_height_pref_default">0</string>
 
-	<string name="evaporation_rate_pref">Evaporation Rate</string>
+	<string name="evaporation_rate_pref">Evaporation Rate % per Hour</string>
 	<string name="evaporation_rate_pref_summary">Usually between 5 and 15%</string>
 	<string name="evaporation_rate_pref_default">10</string>
 
@@ -114,7 +114,8 @@
 	<string name="calculated_cylinder_volume_default">@string/double_default</string>
 	<string name="kettle_diameter_summary">The diameter of your brew kettle</string>
 	<string name="false_bottom_height_summary">Use 0 (zero) if you don\'t have a false bottom, otherwise use the height.</string>
-	<string name="correct_for_expansion_format">Heat Expansion %01.0f%%</string>
+	<string name="correct_for_expansion_format">Add %01.0f%% as heat expansion</string>
+	<string name="correct_for_loss_format">Subtract %01.0f%% as cooling loss</string>
 
 	<!-- Cylinder Height -->
 	
