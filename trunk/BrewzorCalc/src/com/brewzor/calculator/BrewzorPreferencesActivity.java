@@ -123,7 +123,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		pref.setSummary(mass.getLabelPlural());
 		
 		pref = findPreference(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE);
-		pref.setSummary(getString(R.string.calibration_temperature_pref_summary_format, sPref.getString(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE, "60"), temperature.getLabelAbbr()));
+		pref.setSummary(getString(R.string.hydrometer_calibration_temperature_pref_summary_format, sPref.getString(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE, "60"), temperature.getLabelAbbr()));
 
 		
 		
@@ -139,7 +139,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		pref.setSummary(mass.getLabelPlural());
 
 		pref = findPreference(Preferences.BATCH_WATER_TO_GRAIN_RATIO);
-		pref.setSummary(sPref.getString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, ".31") + " " + volume.getLabel() + " / " + mass.getLabelPlural());
+		pref.setSummary(getString(R.string.water_to_grain_ratio_pref_summary_format, sPref.getString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, ".31"), volume.getLabelPlural(), mass.getLabel()));
 		
 		pref = findPreference(Preferences.BATCH_BOIL_MINUTES);
 		pref.setSummary(sPref.getString(Preferences.BATCH_BOIL_MINUTES, "60"));

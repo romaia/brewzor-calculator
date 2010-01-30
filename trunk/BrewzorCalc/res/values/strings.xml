@@ -41,6 +41,7 @@
 	<string name="hydrometer_calibration_temperature_pref">Hydrometer Calibration Temperature</string>
 	<string name="hydrometer_calibration_temperature_pref_summary">Usually 60°F or 68°F</string>
 	<string name="hydrometer_calibration_temperature_pref_default">60</string>
+	<string name="hydrometer_calibration_temperature_pref_summary_format">%s%s (Usually 60°F or 68°F)</string>
 
 	<string name="extract_mass_units_pref">DME / LME Weight</string>
 	<string name="extract_mass_units_pref_summary">Grams, Kilograms, Ounces, Pounds</string>
@@ -61,6 +62,7 @@
 	<string name="water_to_grain_ratio_pref">Water To Grain Ratio</string>
 	<string name="water_to_grain_ratio_pref_summary">Volume Units of Water / Mass Units of Grain.  Usually equivalent to 1-1.25 quarts / pound.</string>
 	<string name="water_to_grain_ratio_pref_default">0</string>
+	<string name="water_to_grain_ratio_pref_summary_format">%s %s per %s (Usually equivalent to 1-1.25 quarts per pound)</string>
 
 	<string name="boil_minutes_pref">Boil Minutes</string>
 	<string name="boil_minutes_pref_summary">Usually 60-90 minutes</string>
@@ -162,7 +164,6 @@
 	<string name="hydrometer_correction_temperature_default">60</string>
 	<string name="corrected_sg">Corrected SG</string>
 	<string name="calibration_text_format">Calibration Temperature: %01.0f%s</string>
-	<string name="calibration_temperature_pref_summary_format">%s%s (Usually 60°F or 68°F)</string>
 	
 	<!-- Starter Wort -->
 	
