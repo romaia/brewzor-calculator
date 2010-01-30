@@ -67,8 +67,12 @@
 
 		</TableLayout>
 
-		<TextView android:id="@+id/correctForExpansion" style="@style/converterLargeTextStyle" android:text="" />
-
+	 <Button
+        android:id="@+id/correctForExpansion"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:gravity="center" />
+        
 	</LinearLayout>
 	<LinearLayout android:orientation="vertical" android:id="@+id/tester"
 		android:layout_width="fill_parent" android:layout_height="fill_parent"

@@ -33,7 +33,9 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -61,13 +63,24 @@ public class CylinderHeightCalculatorActivity extends Activity {
 	private Distance height;
 	private Distance falseBottomHeight;
 	private Volume volume;
-
+	private Button heatCorrectionButton;
+		
+	private boolean heat;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculator_cylinder_height);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+  
+        heatCorrectionButton = (Button) findViewById(R.id.correctForExpansion);        
+        heatCorrectionButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				toggleButton();
+			}
+        });
         
         calculatedHeight = (TextView) findViewById(R.id.calculatedCylinderHeight); 
         calculatedHeightUnitType = (TextView) findViewById(R.id.calculatedCylinderHeightUnitType);
@@ -87,12 +100,26 @@ public class CylinderHeightCalculatorActivity extends Activity {
         correctForExpansion = (TextView) findViewById(R.id.correctForExpansion);
 
         diameter = new Distance(0.0, Distance.Unit.INCH, getBaseContext(), prefs);
-        height= new Distance(0.0, Distance.Unit.INCH, getBaseContext(), prefs);
+        height = new Distance(0.0, Distance.Unit.INCH, getBaseContext(), prefs);
         falseBottomHeight = new Distance(0.0, Distance.Unit.INCH, getBaseContext(), prefs);
         volume = new Volume(0.0, Volume.Unit.GALLON, getBaseContext(), prefs);
-                
+
 	}
 
+	private void toggleButton() {
+		heat = (heat) ? false : true;
+		setButtonText();
+		calculate();
+	}		
+
+	private void setButtonText() {
+		if (heat) {
+			heatCorrectionButton.setText(getString(R.string.correct_for_expansion_format, expansionValue));
+		} else {
+			heatCorrectionButton.setText(getString(R.string.correct_for_loss_format, expansionValue));
+		}
+	}
+	
 	@Override
 	public void onResume() {
 		super.onResume();
@@ -129,9 +156,14 @@ public class CylinderHeightCalculatorActivity extends Activity {
 		//volume / (pi * (diameter / 2)^2) - fb = height 
 
 		if (correctForExpansionPref) {
+		
 			correctForExpansion.setVisibility(View.VISIBLE);
-        	correctForExpansion.setText(getString(R.string.correct_for_expansion_format, (expansionValue - 1) * 100.0));
-			volume.setValue(volume.getValue() * expansionValue);
+			if (heat) {
+				volume.setValue(volume.getValue() * (1.0 + (expansionValue / 100.0)));
+			} else {
+				volume.setValue(volume.getValue() * (1.0 - (expansionValue / 100.0)));
+			}
+
 		} else {
 			correctForExpansion.setText("");
 			correctForExpansion.setVisibility(View.GONE);
@@ -153,9 +185,15 @@ public class CylinderHeightCalculatorActivity extends Activity {
 	
 	private void getPrefs() {
     
-        expansionValue = 1.0 + (NumberFormat.parseDouble(prefs.getString(Preferences.KETTLE_COOLING_LOSS, "4.00"), 4.0) / 100.0);
+        expansionValue = NumberFormat.parseDouble(prefs.getString(Preferences.KETTLE_COOLING_LOSS, "4.00"), 4.0);
         correctForExpansionPref = prefs.getBoolean(Preferences.KETTLE_CORRECT_FOR_EXPANSION, false);
 		
+        if (correctForExpansionPref) {
+        	heatCorrectionButton.setVisibility(View.VISIBLE);
+        } else {
+        	heatCorrectionButton.setVisibility(View.GONE);
+        }
+        
 		volumeType = volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON);
         volume.setType(volumeType);
     	volumeUnitType.setText(volume.getLabelAbbr());
@@ -172,6 +210,8 @@ public class CylinderHeightCalculatorActivity extends Activity {
         falseBottomHeight.setType(distanceType);
     	falseBottomHeightUnitType.setText(falseBottomHeight.getLabelAbbr());
 
+		setButtonText();
+    	
 	}
 
 }
