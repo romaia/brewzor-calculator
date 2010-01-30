@@ -210,6 +210,15 @@
 		<item>Amer. Barleywine: 2-2.5</item>
 		<item>Classic Rauchbier: 2-2.5</item>
 	</string-array>
+
+	<string-array name="stylesShortList">
+		<item>American Ales: 2.2–3.0</item>
+		<item>British Ales: 1.5–2.2</item>
+		<item>German Weizens: 2.8–5.1</item>
+		<item>Belgian Ales: 2.0–4.5</item>
+		<item>European Lagers: 2.4–2.6</item>
+		<item>American Lagers: 2.5–2.8</item>
+	</string-array>
  -->
 
 </resources>
