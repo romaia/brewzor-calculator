@@ -130,4 +130,86 @@
 		<item>@string/unit_conversion</item>
 	</string-array>
 
+
+	<!--  List taken from Brewing Classic Styles by Zainasheff and Palmer -->
+	<!--  Some items have been omitted -->
+	<!-- 
+	<string-array name="styleList">
+		<item>Lite Amer. Lager: 2.5-3</item>
+		<item>Std. Amer. Lager: 2.5-3</item>
+		<item>Prem. Amer. Lager: 2.5-3</item>
+		<item>Munich Helles: 2-2.5</item>
+		<item>Dort. Export: 2-2.5</item>
+		<item>German Pils: 2-2.5</item>
+		<item>Bohemian Pils: 2-2.5</item>
+		<item>Amer. Pils: 2-2.5</item>
+		<item>Vienna Lager: 2-2.5</item>
+		<item>O-fest/Marzen: 2-2.5</item>
+		<item>Dark Amer. Lager: 2.5-3</item>
+		<item>Munich Dunkel: 2-2.5</item>
+		<item>Schwarzbier: 2-2.5</item>
+		<item>Maibock/Helles: 2.5</item>
+		<item>Trad. Bock: 2.5</item>
+		<item>Doppelbock: 2.5</item>
+		<item>Eisbock: 2.5</item>
+		<item>Cream Ale: 2.5</item>
+		<item>Blonde Ale: 2.5</item>
+		<item>Kolsch: 2.5</item>
+		<item>Amer. Wheat/Rye: 2.5</item>
+		<item>N. German Alt: 2-2.5</item>
+		<item>Cal. Common: 2.5-3</item>
+		<item>Dusseldorf Alt: 1.5-2.5</item>
+		<item>Std/Ord Bitter: 1-1.5</item>
+		<item>Spec/Best Bitter: 1.5-2</item>
+		<item>Ex. Spec/Str Bitter: 1.5-2</item>
+		<item>Scottish 60/-: 1.5-2</item>
+		<item>Scottish 70/-: 1.5-2</item>
+		<item>Scottish 80/-: 1.5-2</item>
+		<item>Irish Red Ale: 2-2.5</item>
+		<item>Str. Scotch Ale: 2-2.5</item>
+		<item>Amer. Pale Ale: 2-2.5</item>
+		<item>Amer. Amber Ale: 2-2.5</item>
+		<item>Amer. Brown Ale: 2-2.5</item>
+		<item>Mild: 1-1.5</item>
+		<item>S. Eng. Brown: 1-1.5</item>
+		<item>N. Eng. Brown: 1-1.5</item>
+		<item>Brown Porter: 1.5-2</item>
+		<item>Robust Porter: 2-2.5</item>
+		<item>Baltic Porter: 2-2.5</item>
+		<item>Dry Stout: 1-1.5</item>
+		<item>Sweet Stout: 1.5-2</item>
+		<item>Oatmeal Stout: 2-2.5</item>
+		<item>For. Extra Stout: 2-2.5</item>
+		<item>American Stout: 2.5-3</item>
+		<item>Russ. Imp. Stout: 2-2.5</item>
+		<item>English IPA: 2-2.5</item>
+		<item>American IPA: 2-2.5</item>
+		<item>Imperial IPA: 2-2.5</item>
+		<item>Weizen/Weissbier: 2.5-3</item>
+		<item>Dunkelweizen: 2.5-3</item>
+		<item>Weizenbock: 2.5-3</item>
+		<item>Roggenbier: 2.5-3</item>
+		<item>Witbier: 2-2.5</item>
+		<item>Belgian Pale Ale: 2.5</item>
+		<item>Saison: 3-3.5</item>
+		<item>Biere de Garde: 2.5-3</item>
+		<item>Berliner Weisse: 3.5-4</item>
+		<item>Fland. Red Ale: 2-2.5</item>
+		<item>Fland. Brown Ale: 2-2.5</item>
+		<item>Oud Bruin: 2-2.5</item>
+		<item>Straight Lambic: 1-1.5</item>
+		<item>Gueuze: 4</item>
+		<item>Fruit Lambic: 4</item>
+		<item>Bel. Blond Ale: 3-4</item>
+		<item>Bel. Dubbel: 3-4</item>
+		<item>Bel. Tripel: 3-4</item>
+		<item>Bel. Golden Strong: 4</item>
+		<item>Bel. Dark Strong: 2.5-3</item>
+		<item>Old Ale: 2</item>
+		<item>Eng. Barleywine: 1.5-2</item>
+		<item>Amer. Barleywine: 2-2.5</item>
+		<item>Classic Rauchbier: 2-2.5</item>
+	</string-array>
+ -->
+
 </resources>
