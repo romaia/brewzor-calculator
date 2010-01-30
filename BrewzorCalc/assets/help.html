@@ -77,6 +77,17 @@ gravity and wort volume values into the fields provided. Dilution or
 concentration instructions are automatically calculated and will appear
 below the entry fields.</p>
 
+<p>The formulas used to calculate the gravity corrections were based on information found <a href="http://www.brewboard.com/index.php?showtopic=31009">here</a>.</p>
+
+<p>
+<b>Extract PG for LME = 44</b><br />
+<b>Extract PG for DME = 36</b><br />
+<br />
+<b>Amount of DME = (GU<sub>target</sub> - GU<sub>mash</sub>) / 36</b><br />
+<b>Amount of LME = (GU<sub>target</sub> - GU<sub>mash</sub>) / 44</b><br />
+<b>Water for dilution = (GU<sub>mash</sub> / GU<sub>target</sub>) - Volume<sub>pre-dilution</sub></b><br />
+</p>
+
 <a name="cylindervolumeheight"></a>
 <h3>Cylinder Volume / Cylinder Height Calculators:</h3>
 
@@ -121,6 +132,16 @@ water for a given amount of grain and a given amount of strike water.
 The sparge water temperature will appear below the entry fields once all
 data has been entered.</p>
 
+<p>The formulas used to determine strike temperature were based on information found <a href="http://www.homebrewtalk.com/wiki/index.php/Infusion_mashing">here</a> and <a href="http://brewingtechniques.com/library/backissues/issue5.4/palmer_sb.html">here</a>.</p>
+<p>
+
+<b>T<sub>strike</sub></b> = strike water temperature in &deg;F<br />
+<b>T<sub>target</sub></b> = target mash temperature in &deg;F<br />
+<b>T<sub>grain</sub></b> = dry grain temperature in &deg;F<br />
+<b>R</b> = Water to grain ration in quarts per pound (usually around 1 - 1.25)<br />
+<br />
+<b>T<sub>strike</sub> = (0.2 ÷ R) X (T<sub>target</sub> - T<sub>grain</sub>) + T<sub>target</sub></b></p>
+
 <p><b>Additional Settings</b> :</p>
 <ul>
 	<li>The setting Water to Grain Ratio will automatically calculate
@@ -154,7 +175,7 @@ cooling loss percentage.</p>
 PSI (kegging) required to carbonate a given volume of beer to a number
 of volumes of CO2.</p>
 
-<b> WARNING!!! WARNING!!! WARNING!!! WARNING!!! <br />
+<p><b> WARNING!!! WARNING!!! WARNING!!! WARNING!!! <br />
 <br />
 
 This calculator is meant as a guide only. Using the incorrect amount of
@@ -166,6 +187,22 @@ definitely bad beer. <br />
 <br />
 
 WARNING!!! WARNING!!! WARNING!!! WARNING!!! </b>
+</p>
+<p>The formula for setting the regulator to the correct pressure in
+pounds per square inch for the desired level of carbonation was taken
+from the BYO article found
+<a href="http://www.byo.com/stories/techniques/article/indices/39-kegging/165-balancing-your-draft-system-advanced-brewing">here</a>.
+</p>
+<p>
+
+<b>P</b> = Pressure in PSI (pounds/inch<sup>2</sup>)<br />
+<b>T</b> = Temperature of beer in &deg;F<br />
+<b>V</b> = Volume of CO<sub>2</sub><br />
+<br />
+<b>P = -16.6999 - (0.0101059 * T) + (0.00116512 * T<sup>2</sup>) + (0.173354 * T * V) + (4.24267 * V) - (0.0684226 * V<sup>2</sup>)</b>
+</p>
+
+<p>The formula for determining the residual CO<sub>2</sub> and calculating priming sugar were based on the pages found <a href="http://www.byo.com/stories/techniques/article/indices/21-carbonation/1276-priming-with-sugar">here</a>, <a href="http://www.byo.com/stories/techniques/article/indices/21-carbonation/1137-master-the-action-carbonation">here</a>, and <a href="http://www.myhomebrew.com/bp0.html">here</a>.</p>
 
 <a name="hydrometercorrection"></a>
 <h3>Hydrometer Correction:</h3>
@@ -177,6 +214,10 @@ that are calibrated to 60F. Enter the reading from your hydrometer and
 the temperature of your sample. The result will be displayed below the
 entry fields once the data has been entered.</p>
 
+<p>The formula used to determine temperature correction for a 60&deg;F hydrometer was based on information found <a href="http://hbd.org/brewery/library/HydromCorr0992.html">here</a>.</p>
+
+<p><b>Correction = 1.313454 - (0.132674 * T) + (2.057793e-3 * T<sup>2</sup>) - (2.627634e-6 * T<sup>3</sup>)</b></p>
+
 <a name="unitconverters"></a>
 <h3>Unit Converters:</h3>
 
@@ -184,13 +225,16 @@ entry fields once the data has been entered.</p>
 included. They aren't meant to include every measurement and are mostly
 included for convenience.</p>
 
-<p>Formula used to convert Specific Gravity to Plato: <b> P =
-(668.72 * SG) - 463.37 - (205.347 * SG <sup>2</sup> ) </b></p>
-<p>Formula used to convert Plato to Specific Gravity: <b> SG =
-((0.082636 + (3.8480 * P) + (0.014563 * P <sup>2</sup> ))) / 1000) + 1 </b>
-</p>
-<p>Formula used to convert Specific Gravity to Gravity Units: <b>GU
-= (SG - 1) * 1000</b></p>
+<p>The formulas used to convert between SG and Plato are based on information found <a href="http://www.realbeer.com/spencer/attenuation.html">here</a>.</p>
+
+<p>Formula used to convert Specific Gravity to Plato: <br />
+<b> P = (668.72 * SG) - 463.37 - (205.347 * SG <sup>2</sup> ) </b></p>
+
+<p>Formula used to convert Plato to Specific Gravity: <br />
+<b> SG = ((0.082636 + (3.8480 * P) + (0.014563 * P <sup>2</sup> ))) / 1000) + 1 </b></p>
+
+<p>Formula used to convert Specific Gravity to Gravity Units: <br />
+<b>GU = (SG - 1) * 1000</b></p>
 
 <hr />
 
@@ -283,3 +327,4 @@ will expand about 3%. When boiling, the expansion is about 4%.</p>
 
 </body>
 </html>
+
