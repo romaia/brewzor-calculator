@@ -41,6 +41,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Environment;
 import android.os.StatFs;
 
+// based on code from http://androidblogger.blogspot.com/2009/12/how-to-improve-your-application-crash.html
 public class ErrorReporter implements Thread.UncaughtExceptionHandler {
 
 	static private final String EOL = "\n";
