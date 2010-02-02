@@ -123,14 +123,14 @@
 							android:inputType="number|numberDecimal"
 							android:key="kettle.false_bottom_height" />
 <!-- 
-		<EditTextPreference android:title="@string/equipment_loss_pref"
+	 -->			<EditTextPreference android:title="@string/equipment_loss_pref"
 							android:summary="@string/equipment_loss_pref_summary"
 							android:defaultValue="@string/equipment_loss_pref_default" 
 							android:persistent="true"
 							android:numeric="decimal"
 							android:inputType="number|numberDecimal"
 							android:key="kettle.equipment_loss" />
-	 -->	
+
 		<EditTextPreference android:title="@string/evaporation_rate_pref"
 							android:summary="@string/evaporation_rate_pref_summary"
 							android:defaultValue="@string/evaporation_rate_pref_default" 

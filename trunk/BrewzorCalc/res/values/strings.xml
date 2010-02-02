@@ -126,8 +126,9 @@
 	<string name="calculated_cylinder_volume_default">@string/double_default</string>
 	<string name="kettle_diameter_summary">The diameter of your brew kettle</string>
 	<string name="false_bottom_height_summary">Use 0 (zero) if you don\'t have a false bottom, otherwise use the height.</string>
-	<string name="correct_for_expansion_format">Add %01.0f%% as heat expansion</string>
-	<string name="correct_for_loss_format">Subtract %01.0f%% as cooling loss</string>
+	<string name="correct_for_expansion_format">%01.0f%% heat expansion</string>
+	<string name="correct_for_loss_format">%01.0f%% cooling loss</string>
+	<string name="no_expansion">No expansion</string>
 
 	<!-- Cylinder Height -->
 	
