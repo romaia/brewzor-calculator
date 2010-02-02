@@ -40,7 +40,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class CylinderVolumeCalculatorActivity extends Activity {
-
+	
 	private EditText diameterEntry;
 	private TextView diameterUnitType;
 	private EditText heightEntry;
@@ -64,9 +64,15 @@ public class CylinderVolumeCalculatorActivity extends Activity {
 	private Distance falseBottomHeight;
 	private Volume volume;
 	private Button heatCorrectionButton;
+	
+	private enum Expansion {
+		NONE, 
+		HEAT,
+		COOL
+	}
 
-	private boolean heat;
-
+	private Expansion expansion;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,25 +104,43 @@ public class CylinderVolumeCalculatorActivity extends Activity {
         falseBottomHeightUnitType = (TextView) findViewById(R.id.falseBottomHeightUnitType);
 
         correctForExpansion = (TextView) findViewById(R.id.correctForExpansion);
-
+        
     	diameter = new Distance(0.0, Distance.Unit.INCH, getBaseContext(), prefs);
     	height = new Distance(0.0, Distance.Unit.INCH, getBaseContext(), prefs);
     	falseBottomHeight = new Distance(0.0, Distance.Unit.INCH, getBaseContext(), prefs);
     	volume = new Volume(0.0, Volume.Unit.GALLON, getBaseContext(), prefs);
 	
+    	expansion = Expansion.NONE;
+    	
 	}
 
 	private void toggleButton() {
-		heat = (heat) ? false : true;
+		switch (expansion) {
+			case HEAT:
+				expansion = Expansion.COOL;
+				break;
+			case COOL:
+				expansion = Expansion.NONE;
+				break;
+			case NONE:
+			default:
+				expansion = Expansion.HEAT;					
+		}
 		setButtonText();
 		calculate();
 	}		
 
 	private void setButtonText() {
-		if (heat) {
-			heatCorrectionButton.setText(getString(R.string.correct_for_expansion_format, expansionValue));
-		} else {
-			heatCorrectionButton.setText(getString(R.string.correct_for_loss_format, expansionValue));
+		switch (expansion) {
+			case HEAT:
+				heatCorrectionButton.setText(getString(R.string.correct_for_expansion_format, expansionValue));
+				break;
+			case COOL:
+				heatCorrectionButton.setText(getString(R.string.correct_for_loss_format, expansionValue));
+				break;
+			case NONE:
+			default:
+				heatCorrectionButton.setText(getString(R.string.no_expansion));
 		}
 	}
 	
@@ -167,10 +191,15 @@ public class CylinderVolumeCalculatorActivity extends Activity {
 		if (correctForExpansionPref) {
 			
 			correctForExpansion.setVisibility(View.VISIBLE);
-			if (heat) {
-				volume.setValue(volume.getValue() * (1.0 + (expansionValue / 100.0)));
-			} else {
-				volume.setValue(volume.getValue() * (1.0 - (expansionValue / 100.0)));
+			switch (expansion) {
+				case HEAT:
+					volume.setValue(volume.getValue() * (1.0 + (expansionValue / 100.0)));
+					break;
+				case COOL:
+					volume.setValue(volume.getValue() * (1.0 - (expansionValue / 100.0)));
+					break;
+				case NONE:
+				default:
 			}
 
 		} else {
