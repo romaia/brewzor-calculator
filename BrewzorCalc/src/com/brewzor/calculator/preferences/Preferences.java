@@ -19,6 +19,9 @@
 */
 package com.brewzor.calculator.preferences;
 
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+
 public class Preferences {
 		
 	public static final String GLOBAL_INIT = "global.init";
@@ -35,12 +38,48 @@ public class Preferences {
 	public static final String BATCH_GRAIN_MASS_UNIT = "batch.grain_mass_unit";
 	public static final String BATCH_WATER_TO_GRAIN_RATIO = "batch.water_to_grain_ratio";
 	public static final String BATCH_BOIL_MINUTES = "batch.boil_minutes";
-		
+	public static final String BATCH_GRAIN_ABSORPTION_RATIO = "batch.grain_absorption_ratio";
+	public static final String BATCH_GRAIN_VOLUME_RATIO = "batch.grain_volume_ratio";
+	
 	public static final String KETTLE_DISTANCE_UNIT = "kettle.distance_unit";
 	public static final String KETTLE_DIAMETER = "kettle.diameter";
 	public static final String KETTLE_FALSE_BOTTOM_HEIGHT = "kettle.false_bottom_height";
 	public static final String KETTLE_EVAPORATION_RATE = "kettle.evaporation_rate";
 	public static final String KETTLE_COOLING_LOSS = "kettle.cooling_loss";
 	public static final String KETTLE_CORRECT_FOR_EXPANSION = "kettle.correct_for_expansion";
+	public static final String KETTLE_EQUIPMENT_LOSS = "kettle.equipment_loss";
+	
+	public static final void init(SharedPreferences prefs) {
+        Editor editor = prefs.edit();
 
+        if (prefs.getBoolean(Preferences.GLOBAL_INIT, false) == false) {
+
+	        editor.putBoolean(Preferences.GLOBAL_INIT, true);
+	        
+	        editor.putString(Preferences.GLOBAL_TEMPERATURE_UNIT, "FAHRENHEIT");
+	        editor.putString(Preferences.GLOBAL_GRAVITY_UNIT, "SG");
+	        editor.putString(Preferences.GLOBAL_EXTRACT_MASS_UNIT, "OUNCE");
+	        editor.putString(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE, "60");
+	        
+	        editor.putString(Preferences.BATCH_VOLUME_UNIT, "GALLON");
+	        editor.putString(Preferences.BATCH_FINAL_VOLUME, "6");
+	        editor.putString(Preferences.BATCH_GRAIN_MASS_UNIT, "POUND");
+	        editor.putString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, ".31");
+	        editor.putString(Preferences.BATCH_BOIL_MINUTES, "60");
+	        editor.putString(Preferences.BATCH_GRAIN_ABSORPTION_RATIO, ".13");
+	        editor.putString(Preferences.BATCH_GRAIN_VOLUME_RATIO, ".08");
+	    		
+	        editor.putString(Preferences.KETTLE_DISTANCE_UNIT, "INCH");
+	        editor.putString(Preferences.KETTLE_DIAMETER, "0");
+	        editor.putString(Preferences.KETTLE_FALSE_BOTTOM_HEIGHT, "0");
+	        editor.putString(Preferences.KETTLE_EVAPORATION_RATE, "10");
+	        editor.putString(Preferences.KETTLE_COOLING_LOSS, "4");
+
+	        editor.putBoolean(Preferences.KETTLE_CORRECT_FOR_EXPANSION, false);
+	        	        
+	        editor.commit();	
+        }
+
+	}
+	
 }

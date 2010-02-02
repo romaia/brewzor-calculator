@@ -102,6 +102,9 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		pref = findPreference(Preferences.KETTLE_EVAPORATION_RATE);
 		pref.setOnPreferenceChangeListener(mPrefListener);
 				
+		pref = findPreference(Preferences.KETTLE_EQUIPMENT_LOSS);
+		pref.setOnPreferenceChangeListener(mPrefListener);
+				
 	}
 
 	private void updateList() {
@@ -162,6 +165,9 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 
 		pref = findPreference(Preferences.KETTLE_COOLING_LOSS);
 		pref.setSummary(sPref.getString(Preferences.KETTLE_COOLING_LOSS, "4") + "%");
+
+		pref = findPreference(Preferences.KETTLE_EQUIPMENT_LOSS);
+		pref.setSummary(getString(R.string.equipment_loss_pref_summary_format, sPref.getString(Preferences.KETTLE_EQUIPMENT_LOSS, "0"), volume.getLabelPlural()));
 
 
 	}

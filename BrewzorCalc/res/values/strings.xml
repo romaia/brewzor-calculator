@@ -23,12 +23,15 @@
 
 	<!-- Strings -->
 
-    <string name="app_name">Brewzor</string>
+    <string name="app_name">Brewzor Calculator</string>
+    <string name="app_name_long">Brewzor Brewing Calculator</string>
 
 	<!-- Preferences -->	
 	
 	<string name="set_preferences">Set Preferences</string>
 	<string name="preference_screen_title">Brewzor Preferences</string>
+
+	<string name="general_settings">General Settings</string>
 
 	<string name="temperature_units_pref">Temperature</string>
 	<string name="temperature_units_pref_summary">Celsius, Fahrenheit</string>
@@ -46,6 +49,8 @@
 	<string name="extract_mass_units_pref">DME / LME Weight</string>
 	<string name="extract_mass_units_pref_summary">Grams, Kilograms, Ounces, Pounds</string>
 	<string name="extract_mass_units_pref_default">OUNCE</string>
+	
+	<string name="batch_settings">Batch Settings</string>
 	
 	<string name="batch_volume_units_pref">Batch Volume Units</string>
 	<string name="batch_volume_units_pref_summary">Quarts, Gallons, Liters</string>
@@ -68,6 +73,8 @@
 	<string name="boil_minutes_pref_summary">Usually 60-90 minutes</string>
 	<string name="boil_minutes_pref_default">60</string>
 
+	<string name="equipment_settings">Equipment Settings</string>
+
 	<string name="diameter_height_units_pref">Kettle Diameter / Height Units</string>
 	<string name="diameter_height_units_pref_summary">Centimeters, Inches</string>
 	<string name="diameter_height_units_pref_default">INCH</string>
@@ -79,6 +86,11 @@
 	<string name="false_bottom_height_pref">False Bottom Height</string>
 	<string name="false_bottom_height_pref_summary">Used for volume calculations</string>
 	<string name="false_bottom_height_pref_default">0</string>
+
+	<string name="equipment_loss_pref">Total Equipment Loss</string>
+	<string name="equipment_loss_pref_summary">Add up mash tun deadspace, trub loss, etc.</string>
+	<string name="equipment_loss_pref_summary_format">%s %s (Calculated by adding up mash tun deadspace, trub loss, etc.)</string>
+	<string name="equipment_loss_pref_default">0</string>
 
 	<string name="evaporation_rate_pref">Evaporation Rate % per Hour</string>
 	<string name="evaporation_rate_pref_summary">Usually between 5 and 15%</string>
@@ -132,7 +144,20 @@
 	<string name="target_mash_temperature">Mash Temperature</string>
 	<string name="calculated_strike_water_temperature_default">@string/double_default</string>
 	<string name="calculated_strike_water_temperature_format">%02.1f%s</string>
-	
+
+	<!-- Batch Sparge -->
+
+	<string name="batch_sparge">Batch Sparge</string>
+	<string name="batch_sparge_grain_weight">Grain Weight</string>
+	<string name="batch_sparge_strike_volume">Strike Volume</string>
+	<string name="batch_sparge_boil_volume">Boil Volume</string>
+	<string name="batch_sparge_water_to_grain_ratio">Water to Grain Ratio</string>
+	<string name="batch_sparge_grain_absorption_volume">Grain Absorption</string>
+	<string name="batch_sparge_first_sparge_volume">Mash Out Volume</string>
+	<string name="batch_sparge_second_sparge_volume">Sparge Volume</string>
+	<string name="batch_sparge_total_mash_volume">Total Mash Volume</string>
+	<string name="batch_sparge_water_to_grain_ratio_format">%s/%s</string>
+
 	<!-- Boil Off -->
 	
 	<string name="boil_off">Boil Off</string>

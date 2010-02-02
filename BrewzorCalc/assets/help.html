@@ -46,6 +46,7 @@ body {
 		Cylinder Height Calculator</a></li>
 		<li><a href="#striketemperature">Strike Temperature
 		Calculator</a></li>
+		<li><a href="#batchsparge">Batch Sparge Calculator</a></li>
 		<li><a href="#boiloff">Boil Off Calculator</a></li>
 		<li><a href="#carbonation">Carbonation Calculator</a></li>
 		<li><a href="#hydrometercorrection">Hydrometer Correction
@@ -155,6 +156,38 @@ data has been entered.</p>
 	than zero, the Sparge Water entry field in the calculator is disabled
 	since the volume is calculated automatically.</li>
 </ul>
+
+<a name="batchsparge"></a>
+<h3>Batch Sparge:</h3>
+
+<p>Batch sparging is a great way to save time at the expense of a
+little efficiency. It has been determined that the best extraction
+efficiency is obtained by having equal run-off volumes. That said, the
+resulting thinner mash would change the mash chemistry. It is
+recommended that you mash at a "normal" water to grain ratio (1-1.25
+quarts / pound of grain) and then add sparge water to the mash tun to
+bring it up to the suggested water to grain ratio accounting for water
+loss due to grain absorption</p>
+
+<p>The formulas are based on information found <a href="http://www.franklinbrew.org/brewinfo/nbsparge.html">here</a>.</p>
+
+<p>The formulas used to calculate batch sparge volumes are (volume units can be anything as long as they are the
+same throughout):</p>
+
+<p><b>WaterToGrainRatio = .31 gallons/pound (or whatever you've set in preferences)</b></p>
+<p><b>GrainAbsorptionRatio = .13 (or whatever you've set in preferences)</b></p> 
+<p><b>StrikeWaterVolume = WaterToGrainRatio * GrainWeight</b></p>
+<p><b>GrainAbsorptionVolume = GrainAbsorptionRatio * GrainWeight</b></p>
+<p><b>FirstSpargeVolume = (BoilVolume / 2) - (StrikeWaterVolume - GrainAbsorptionVolume)</b></p>
+<p><b>SecondSpargeVolume = BoilVolume / 2</b></p>
+
+<p><b>Preferences:</b></p>
+
+<p><b>Water To Grain Ratio:</b> Defines the thickness of your mash. Usually in the
+range of 1 - 1.25 quarts per pound (.25 - .31 gallons / pound). </p>
+
+<p><b>Grain Absorption Ratio</b> The amount of water lost due to absorption by the
+grain. Generally about 1 pint per pound of grain (.13 gallons / pound).</p>
 
 <a name="boiloff"></a>
 <h3>Boil Off:</h3>
