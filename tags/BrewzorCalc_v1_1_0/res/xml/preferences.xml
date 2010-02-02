@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+				  android:title="@string/preference_screen_title">
+	
+ 	<PreferenceCategory android:title="@string/general_settings">
+	
+		<ListPreference android:title="@string/temperature_units_pref"
+						android:summary="@string/temperature_units_pref_summary"
+						android:key="global.temperature_unit" 
+						android:defaultValue="@string/temperature_units_pref_default"
+						android:entries="@array/temperatureUnitsList" 
+						android:entryValues="@array/temperatureUnitsIdList" />
+
+		<ListPreference android:title="@string/gravity_units_pref"
+						android:summary="@string/gravity_units_pref_summary"
+						android:key="global.gravity_unit" 
+						android:defaultValue="@string/gravity_units_pref_default"
+						android:entries="@array/gravityUnitsList" 
+						android:entryValues="@array/gravityUnitsIdList" />
+
+		<ListPreference android:title="@string/extract_mass_units_pref"
+						android:summary="@string/extract_mass_units_pref_summary"
+						android:key="global.extract_mass_unit" 
+						android:defaultValue="@string/extract_mass_units_pref_default"
+						android:entries="@array/massUnitsList" 
+						android:entryValues="@array/massUnitsIdList" />
+
+		<CheckBoxPreference android:title="@string/correct_for_expansion_pref" android:persistent="true"
+			android:defaultValue="@string/correct_for_expansion_pref_default" android:summary="@string/correct_for_expansion_pref_summary"
+			android:key="kettle.correct_for_expansion" />
+							
+		<EditTextPreference android:title="@string/cooling_loss_percentage_pref"
+							android:summary="@string/cooling_loss_percentage_pref_summary"
+							android:defaultValue="@string/cooling_loss_percentage_pref_default" 
+							android:numeric="integer"
+							android:inputType="number"
+							android:key="kettle.cooling_loss" 
+							android:dependency="kettle.correct_for_expansion"/>	
+ 
+	
+	</PreferenceCategory>
+
+ 	<PreferenceCategory android:title="@string/batch_settings">
+ 	
+		<ListPreference android:title="@string/batch_volume_units_pref"
+						android:summary="@string/batch_volume_units_pref_summary"
+						android:key="batch.volume_unit" 
+						android:defaultValue="@string/batch_volume_units_pref_default"
+						android:entries="@array/volumeUnitsList" 
+						android:entryValues="@array/volumeUnitsIdList" />
+
+		<EditTextPreference android:title="@string/final_volume_pref"
+							android:summary="@string/final_volume_pref_summary"
+							android:defaultValue="@string/final_volume_pref_default" 
+							android:inputType="number"
+							android:key="batch.final_volume" />
+	
+		<ListPreference android:title="@string/grain_mass_units_pref"
+						android:summary="@string/grain_mass_units_pref_summary"
+						android:defaultValue="@string/grain_mass_units_pref_default"
+						android:key="batch.grain_mass_unit" 
+						android:entries="@array/massUnitsList" 
+						android:entryValues="@array/massUnitsIdList" />
+	
+		<EditTextPreference android:title="@string/water_to_grain_ratio_pref"
+							android:summary="@string/water_to_grain_ratio_pref_summary"
+							android:defaultValue="@string/water_to_grain_ratio_pref_default" 
+							android:numeric="decimal"
+							android:inputType="number|numberDecimal"
+							android:key="batch.water_to_grain_ratio" />
+
+		<EditTextPreference android:title="@string/boil_minutes_pref"
+							android:summary="@string/boil_minutes_pref_summary"
+							android:defaultValue="@string/boil_minutes_pref_default" 
+							android:numeric="integer"
+							android:inputType="number"
+							android:key="batch.boil_minutes" />
+
+	</PreferenceCategory>
+		 	
+ 	<PreferenceCategory android:title="@string/equipment_settings">
+
+		<ListPreference android:title="@string/diameter_height_units_pref"
+						android:summary="@string/diameter_height_units_pref_summary"
+						android:key="kettle.distance_unit" 
+						android:defaultValue="@string/diameter_height_units_pref_default"
+						android:entries="@array/distanceUnitsList" 
+						android:entryValues="@array/distanceUnitsIdList" />
+
+		<EditTextPreference android:title="@string/kettle_diameter_pref"
+							android:summary="@string/kettle_diameter_pref_summary"
+							android:defaultValue="@string/kettle_diameter_pref_default" 
+							android:persistent="true"
+							android:numeric="decimal"
+							android:inputType="number|numberDecimal"
+							android:key="kettle.diameter" />
+		
+		<EditTextPreference android:title="@string/false_bottom_height_pref"
+							android:summary="@string/false_bottom_height_pref_summary"
+							android:defaultValue="@string/false_bottom_height_pref_default" 
+							android:persistent="true"
+							android:numeric="decimal"
+							android:inputType="number|numberDecimal"
+							android:key="kettle.false_bottom_height" />
+<!-- 
+	 -->			<EditTextPreference android:title="@string/equipment_loss_pref"
+							android:summary="@string/equipment_loss_pref_summary"
+							android:defaultValue="@string/equipment_loss_pref_default" 
+							android:persistent="true"
+							android:numeric="decimal"
+							android:inputType="number|numberDecimal"
+							android:key="kettle.equipment_loss" />
+
+		<EditTextPreference android:title="@string/evaporation_rate_pref"
+							android:summary="@string/evaporation_rate_pref_summary"
+							android:defaultValue="@string/evaporation_rate_pref_default" 
+							android:numeric="integer"
+							android:inputType="number"
+							android:key="kettle.evaporation_rate" />
+	
+		<EditTextPreference android:title="@string/hydrometer_calibration_temperature_pref"
+							android:summary="@string/hydrometer_calibration_temperature_pref_summary"
+							android:defaultValue="@string/hydrometer_calibration_temperature_pref_default" 
+							android:inputType="number"
+							android:key="global.hydrometer_calibration_temperature" />
+	
+	 </PreferenceCategory>
+ 	
+</PreferenceScreen>
