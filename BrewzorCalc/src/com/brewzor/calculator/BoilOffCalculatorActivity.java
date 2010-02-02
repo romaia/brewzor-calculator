@@ -28,7 +28,6 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -150,9 +149,7 @@ public class BoilOffCalculatorActivity extends Activity {
 			// given the end volume and calculating the starting volume 
 			coolingLossVolume.setValue((volume.getValue() / ((100 - coolingLossPercent) / 100)) - volume.getValue());
 			finalVolume.setValue(((volume.getValue() + coolingLossVolume.getValue()) / (1 - ((boilTime / 60) * (evaporationRate / 100)))));
-	
 			boilOffVolume.setValue(finalVolume.getValue() - volume.getValue() - coolingLossVolume.getValue());
-//			finalVolume.setValue(volume.getValue() + boilOffVolume.getValue() + coolingLossVolume.getValue());
 
 			calculatedVolumeBoiledOff.setText(boilOffVolume.toString());
 			calculatedCoolingLossVolume.setText(coolingLossVolume.toString());
