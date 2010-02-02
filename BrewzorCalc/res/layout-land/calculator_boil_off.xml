@@ -35,8 +35,11 @@
 
 			<TableRow>
 
-				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/starting_volume" />
+<Button
+        android:id="@+id/startEndToggle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:gravity="center" />
 
 				<EditText android:id="@+id/startingVolumeEntry" style="@style/doubleUnitEntryStyle" />
 
@@ -108,7 +111,8 @@
 			<TableRow>
 
 				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/final_volume" />
+					android:id="@+id/resultDescription"
+					android:text="@string/ending_volume" />
 
 				<TextView android:id="@+id/calculatedFinalVolume" style="@style/converterNumberTextStyle"
 					android:text="0.00" />

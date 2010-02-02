@@ -28,18 +28,21 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class BoilOffCalculatorActivity extends Activity {
 
-	private EditText startingVolumeEntry;
-	private TextView startingVolumeUnitType;
+	private EditText volumeEntry;
+	private TextView volumeUnitType;
 	private EditText evaporationRateEntry;
 	private EditText boilTimeEntry;
 	private EditText coolingLossPercentageEntry;
@@ -49,10 +52,13 @@ public class BoilOffCalculatorActivity extends Activity {
 	private TextView calculatedCoolingLossVolumeUnitType;
 	private TextView calculatedFinalVolume;
 	private TextView calculatedFinalVolumeUnitType;
+	private TextView resultDescription;
+	private Button startEndToggleButton;
+	private boolean startEndStatus = true;
 	
 	private Volume.Unit volumeType;
 	
-	private Volume startingVolume;
+	private Volume volume;
 	private double evaporationRate = 0;
 	private double boilTime = 0;
 	private double coolingLossPercent = 0;
@@ -69,10 +75,18 @@ public class BoilOffCalculatorActivity extends Activity {
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         
-        startingVolumeEntry = (EditText) findViewById(R.id.startingVolumeEntry);
-        startingVolumeEntry.setOnKeyListener(mKeyListener);
-        startingVolumeUnitType = (TextView) findViewById(R.id.startingVolumeUnitType);
+        volumeEntry = (EditText) findViewById(R.id.startingVolumeEntry);
+        volumeEntry.setOnKeyListener(mKeyListener);
+        volumeUnitType = (TextView) findViewById(R.id.startingVolumeUnitType);
         
+        startEndToggleButton = (Button) findViewById(R.id.startEndToggle);
+        startEndToggleButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				toggleButton();
+			}
+        });
+
         evaporationRateEntry = (EditText) findViewById(R.id.evaporationRateEntry);
         evaporationRateEntry.setOnKeyListener(mKeyListener);
         
@@ -91,31 +105,66 @@ public class BoilOffCalculatorActivity extends Activity {
         calculatedFinalVolume = (TextView) findViewById(R.id.calculatedFinalVolume);
         calculatedFinalVolumeUnitType = (TextView) findViewById(R.id.calculatedFinalVolumeUnitType);
 
-        startingVolume = new Volume(0.0, Volume.Unit.GALLON, getBaseContext(), prefs);
+        resultDescription = (TextView) findViewById(R.id.resultDescription); 
+        
+        volume = new Volume(0.0, Volume.Unit.GALLON, getBaseContext(), prefs);
         boilOffVolume = new Volume(0.0, Volume.Unit.GALLON, getBaseContext(), prefs);
         coolingLossVolume = new Volume(0.0, Volume.Unit.GALLON, getBaseContext(), prefs);
         finalVolume = new Volume(0.0, Volume.Unit.GALLON, getBaseContext(), prefs);
+	
 	}
 
+	private void toggleButton() {
+		startEndStatus = (startEndStatus) ? false : true;		
+		setButtonText();
+		calculate();
+
+	}
+	
+	private void setButtonText() {
+		if (startEndStatus) {
+			resultDescription.setText(getString(R.string.ending_volume));
+			startEndToggleButton.setText(getString(R.string.starting_volume));
+		} else {
+			resultDescription.setText(getString(R.string.starting_volume));
+			startEndToggleButton.setText(getString(R.string.ending_volume));
+		}
+	}
+	
 	private void calculate() {	
-		startingVolume.setValue(startingVolumeEntry, 0.0);
 		evaporationRate = NumberFormat.parseDouble(evaporationRateEntry.getText().toString(), 10);
 		boilTime = NumberFormat.parseDouble(boilTimeEntry.getText().toString(), 60);
 		coolingLossPercent = NumberFormat.parseDouble(coolingLossPercentageEntry.getText().toString(), 4);
 
-		boilOffVolume.setValue(startingVolume.getValue() * (boilTime / 60) * (evaporationRate / 100));
-		coolingLossVolume.setValue((startingVolume.getValue() - boilOffVolume.getValue()) * (coolingLossPercent / 100));
-		finalVolume.setValue(startingVolume.getValue() - boilOffVolume.getValue() - coolingLossVolume.getValue());
+		volume.setValue(volumeEntry, 0.0);
+		if (startEndStatus) {
+			// given the start volume and calculating the ending volume 
+			boilOffVolume.setValue(volume.getValue() * (boilTime / 60) * (evaporationRate / 100));
+			coolingLossVolume.setValue((volume.getValue() - boilOffVolume.getValue()) * (coolingLossPercent / 100));
+			finalVolume.setValue(volume.getValue() - boilOffVolume.getValue() - coolingLossVolume.getValue());
 
-		calculatedVolumeBoiledOff.setText(boilOffVolume.toString());
-		calculatedCoolingLossVolume.setText(coolingLossVolume.toString());
-		calculatedFinalVolume.setText(finalVolume.toString());
+			calculatedVolumeBoiledOff.setText(boilOffVolume.toString());
+			calculatedCoolingLossVolume.setText(coolingLossVolume.toString());
+			calculatedFinalVolume.setText(finalVolume.toString());
+		} else {
+			// given the end volume and calculating the starting volume 
+			coolingLossVolume.setValue((volume.getValue() / ((100 - coolingLossPercent) / 100)) - volume.getValue());
+			finalVolume.setValue(((volume.getValue() + coolingLossVolume.getValue()) / (1 - ((boilTime / 60) * (evaporationRate / 100)))));
+	
+			boilOffVolume.setValue(finalVolume.getValue() - volume.getValue() - coolingLossVolume.getValue());
+//			finalVolume.setValue(volume.getValue() + boilOffVolume.getValue() + coolingLossVolume.getValue());
+
+			calculatedVolumeBoiledOff.setText(boilOffVolume.toString());
+			calculatedCoolingLossVolume.setText(coolingLossVolume.toString());
+			calculatedFinalVolume.setText(finalVolume.toString());
+		}
 	}
 		
 	@Override
 	public void onResume() {
 		super.onResume();
 		getPrefs();
+        setButtonText();
 		calculate();
 	}
 	
@@ -142,10 +191,10 @@ public class BoilOffCalculatorActivity extends Activity {
 	
 	private void getPrefs() {
 		
-		volumeType = startingVolume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON);
+		volumeType = volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON);
 		
-        startingVolume.setType(volumeType);
-    	startingVolumeUnitType.setText(startingVolume.getLabelAbbr());
+        volume.setType(volumeType);
+    	volumeUnitType.setText(volume.getLabelAbbr());
 
     	boilOffVolume.setType(volumeType);
     	calculatedVolumeBoiledOffUnitType.setText(boilOffVolume.getLabelAbbr());
