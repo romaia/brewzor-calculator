@@ -122,6 +122,7 @@
 	<string-array name="calculatorList">
 		<item>@string/strike_temperature</item>
 		<item>@string/gravity_correction</item>
+		<item>@string/batch_sparge</item>
 		<item>@string/boil_off</item>
 		<item>@string/cylinder_volume</item>
 		<item>@string/cylinder_height</item>

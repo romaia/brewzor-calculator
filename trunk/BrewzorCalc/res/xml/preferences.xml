@@ -22,7 +22,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
 				  android:title="@string/preference_screen_title">
 	
- 	<PreferenceCategory android:title="General Settings">
+ 	<PreferenceCategory android:title="@string/general_settings">
 	
 		<ListPreference android:title="@string/temperature_units_pref"
 						android:summary="@string/temperature_units_pref_summary"
@@ -38,22 +38,29 @@
 						android:entries="@array/gravityUnitsList" 
 						android:entryValues="@array/gravityUnitsIdList" />
 
-		<EditTextPreference android:title="@string/hydrometer_calibration_temperature_pref"
-							android:summary="@string/hydrometer_calibration_temperature_pref_summary"
-							android:defaultValue="@string/hydrometer_calibration_temperature_pref_default" 
-							android:inputType="number"
-							android:key="global.hydrometer_calibration_temperature" />
-	
 		<ListPreference android:title="@string/extract_mass_units_pref"
 						android:summary="@string/extract_mass_units_pref_summary"
 						android:key="global.extract_mass_unit" 
 						android:defaultValue="@string/extract_mass_units_pref_default"
 						android:entries="@array/massUnitsList" 
 						android:entryValues="@array/massUnitsIdList" />
+
+		<CheckBoxPreference android:title="@string/correct_for_expansion_pref" android:persistent="true"
+			android:defaultValue="@string/correct_for_expansion_pref_default" android:summary="@string/correct_for_expansion_pref_summary"
+			android:key="kettle.correct_for_expansion" />
+							
+		<EditTextPreference android:title="@string/cooling_loss_percentage_pref"
+							android:summary="@string/cooling_loss_percentage_pref_summary"
+							android:defaultValue="@string/cooling_loss_percentage_pref_default" 
+							android:numeric="integer"
+							android:inputType="number"
+							android:key="kettle.cooling_loss" 
+							android:dependency="kettle.correct_for_expansion"/>	
+ 
 	
 	</PreferenceCategory>
 
- 	<PreferenceCategory android:title="Batch Settings">
+ 	<PreferenceCategory android:title="@string/batch_settings">
  	
 		<ListPreference android:title="@string/batch_volume_units_pref"
 						android:summary="@string/batch_volume_units_pref_summary"
@@ -91,7 +98,7 @@
 
 	</PreferenceCategory>
 		 	
- 	<PreferenceCategory android:title="Kettle Settings">
+ 	<PreferenceCategory android:title="@string/equipment_settings">
 
 		<ListPreference android:title="@string/diameter_height_units_pref"
 						android:summary="@string/diameter_height_units_pref_summary"
@@ -115,7 +122,15 @@
 							android:numeric="decimal"
 							android:inputType="number|numberDecimal"
 							android:key="kettle.false_bottom_height" />
-
+<!-- 
+		<EditTextPreference android:title="@string/equipment_loss_pref"
+							android:summary="@string/equipment_loss_pref_summary"
+							android:defaultValue="@string/equipment_loss_pref_default" 
+							android:persistent="true"
+							android:numeric="decimal"
+							android:inputType="number|numberDecimal"
+							android:key="kettle.equipment_loss" />
+	 -->	
 		<EditTextPreference android:title="@string/evaporation_rate_pref"
 							android:summary="@string/evaporation_rate_pref_summary"
 							android:defaultValue="@string/evaporation_rate_pref_default" 
@@ -123,48 +138,12 @@
 							android:inputType="number"
 							android:key="kettle.evaporation_rate" />
 	
-		<CheckBoxPreference android:title="@string/correct_for_expansion_pref" android:persistent="true"
-			android:defaultValue="@string/correct_for_expansion_pref_default" android:summary="@string/correct_for_expansion_pref_summary"
-			android:key="kettle.correct_for_expansion" />
-							
-		<EditTextPreference android:title="@string/cooling_loss_percentage_pref"
-							android:summary="@string/cooling_loss_percentage_pref_summary"
-							android:defaultValue="@string/cooling_loss_percentage_pref_default" 
-							android:numeric="integer"
+		<EditTextPreference android:title="@string/hydrometer_calibration_temperature_pref"
+							android:summary="@string/hydrometer_calibration_temperature_pref_summary"
+							android:defaultValue="@string/hydrometer_calibration_temperature_pref_default" 
 							android:inputType="number"
-							android:key="kettle.cooling_loss" 
-							android:dependency="kettle.correct_for_expansion"/>	
- 
+							android:key="global.hydrometer_calibration_temperature" />
+	
 	 </PreferenceCategory>
  	
 </PreferenceScreen>
-<!-- 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-	<PreferenceCategory android:title="First Category">
-		<CheckBoxPreference android:title="Checkbox Preference"
-			android:defaultValue="false" android:summary="This preference can be true or false"
-			android:key="checkboxPref" />
-		<ListPreference android:title="List Preference"
-			android:summary="This preference allows to select an item in a array"
-			android:key="listPref" android:defaultValue="digiGreen"
-			android:entries="@array/listArray" android:entryValues="@array/listValues" />
-	</PreferenceCategory>
-	<PreferenceCategory android:title="Second Category">
-		<EditTextPreference android:name="EditText Preference"
-			android:summary="This allows you to enter a string"
-			android:defaultValue="Nothing" android:title="Edit This Text"
-			android:key="editTextPref" />
-		<RingtonePreference android:name="Ringtone Preference"
-			android:summary="Select a ringtone" android:title="Ringtones"
-			android:key="ringtonePref" />
-		<PreferenceScreen android:key="SecondPrefScreen"
-			android:title="Second PreferenceScreen" android:summary="This is a second PreferenceScreen">
-			<EditTextPreference android:name="An other EditText Preference"
-				android:summary="This is a preference in the second PreferenceScreen"
-				android:title="Edit text" android:key="SecondEditTextPref" />
-		</PreferenceScreen>
-		<Preferencea android:title="Custom Preference"
-			android:summary="This works almost like a button" android:key="customPref" />
-	</PreferenceCategory>
-</PreferenceScreen>
- -->

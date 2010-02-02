@@ -25,7 +25,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.DialogInterface.OnClickListener;
-import android.content.SharedPreferences.Editor;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -62,34 +61,9 @@ public class BrewzorActivity extends ListActivity {
     	Eula.show(this, getBaseContext());
 		
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        Editor editor = prefs.edit();
 
-        if (prefs.getBoolean(Preferences.GLOBAL_INIT, false) == false) {
-
-	        editor.putBoolean(Preferences.GLOBAL_INIT, true);
-	        
-	        editor.putString(Preferences.GLOBAL_TEMPERATURE_UNIT, "FAHRENHEIT");
-	        editor.putString(Preferences.GLOBAL_GRAVITY_UNIT, "SG");
-	        editor.putString(Preferences.GLOBAL_EXTRACT_MASS_UNIT, "OUNCE");
-	        editor.putString(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE, "60");
-	        
-	        editor.putString(Preferences.BATCH_VOLUME_UNIT, "GALLON");
-	        editor.putString(Preferences.BATCH_FINAL_VOLUME, "6");
-	        editor.putString(Preferences.BATCH_GRAIN_MASS_UNIT, "POUND");
-	        editor.putString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, ".31");
-	        editor.putString(Preferences.BATCH_BOIL_MINUTES, "60");
-	    		
-	        editor.putString(Preferences.KETTLE_DISTANCE_UNIT, "INCH");
-	        editor.putString(Preferences.KETTLE_DIAMETER, "0");
-	        editor.putString(Preferences.KETTLE_FALSE_BOTTOM_HEIGHT, "0");
-	        editor.putString(Preferences.KETTLE_EVAPORATION_RATE, "10");
-	        editor.putString(Preferences.KETTLE_COOLING_LOSS, "4");
-
-	        editor.putBoolean(Preferences.KETTLE_CORRECT_FOR_EXPANSION, false);
-	        	        
-	        editor.commit();	
-        }
-        
+		Preferences.init(prefs);
+		
         final ErrorReporter reporter = ErrorReporter.getInstance();
         reporter.Init(this);
         if (reporter.bIsThereAnyErrorFile()) {
@@ -137,12 +111,13 @@ public class BrewzorActivity extends ListActivity {
 		switch (calculatorId) {
 			case 0: i = new Intent(this, StrikeTemperatureCalculatorActivity.class); break;
 			case 1: i = new Intent(this, GravityCorrectionCalculatorActivity.class); break;
-			case 2: i = new Intent(this, BoilOffCalculatorActivity.class); break;
-			case 3: i = new Intent(this, CylinderVolumeCalculatorActivity.class); break;
-			case 4: i = new Intent(this, CylinderHeightCalculatorActivity.class); break;
-			case 5: i = new Intent(this, CarbonationCalculatorActivity.class); break;
-			case 6: i = new Intent(this, HydrometerCorrectionCalculatorActivity.class); break;
-			case 7: i = new Intent(this, UnitConverterActivity.class); break;
+			case 2: i = new Intent(this, BatchSpargeCalculatorActivity.class); break;
+			case 3: i = new Intent(this, BoilOffCalculatorActivity.class); break;
+			case 4: i = new Intent(this, CylinderVolumeCalculatorActivity.class); break;
+			case 5: i = new Intent(this, CylinderHeightCalculatorActivity.class); break;
+			case 6: i = new Intent(this, CarbonationCalculatorActivity.class); break;
+			case 7: i = new Intent(this, HydrometerCorrectionCalculatorActivity.class); break;
+			case 8: i = new Intent(this, UnitConverterActivity.class); break;
 			default: i = new Intent(this, BrewzorPreferencesActivity.class);
 		}
 		startActivity(i);
