@@ -163,11 +163,11 @@
 	
 	<string name="boil_off">Boil Off</string>
 	<string name="starting_volume">Starting Volume</string>
+	<string name="ending_volume">Ending Volume</string>
 	<string name="evaporation_rate">Evaporation Rate</string>
 	<string name="boil_time">Boil Minutes</string>
 	<string name="volume_boiled_off">Boiled Off Volume</string>
 	<string name="cooling_loss_percentage">Cooling Loss</string>
-	<string name="final_volume">Final Volume</string>
 	<string name="cooling_loss_volume">Cooling Loss Volume</string>
 	<string name="evaporation_rate_default">10</string>
 	<string name="cooling_loss_percent_default">4</string>
