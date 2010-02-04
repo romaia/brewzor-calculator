@@ -20,7 +20,7 @@
 
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" 
-	package="com.brewzor.calculator" android:versionCode="3" android:versionName="1.1.0">
+	package="com.brewzor.calculator" android:versionCode="4" android:versionName="1.2.0">
 	
 	<uses-sdk android:minSdkVersion="3" />
 
