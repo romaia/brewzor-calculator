@@ -99,7 +99,7 @@ public class DecoctionCalculatorActivity  extends Activity {
 				*
 				(GrainWeight.compare(Mass.Unit.POUND) * (0.3125 + (TotalWaterInMash.compare(Volume.Unit.QUART) / GrainWeight.compare(Mass.Unit.POUND))))
 				/
-				(212.0 - CurrentMashTemperature.compare(Temperature.Unit.FAHRENHEIT))
+				(InfusionWaterTemperature.compare(Temperature.Unit.FAHRENHEIT) - CurrentMashTemperature.compare(Temperature.Unit.FAHRENHEIT))
 			);
         DecoctionVolume.setType(Volume.Unit.QUART);
         DecoctionVolume.convert(volumeType);
@@ -113,7 +113,7 @@ public class DecoctionCalculatorActivity  extends Activity {
 	}
 	
 	private void getPrefs() {
-        temperatureType = InfusionWaterTemperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.FAHRENHEIT);
+        temperatureType = TargetMashTemperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.FAHRENHEIT);
         massType = GrainWeight.typeFromPref(Preferences.BATCH_GRAIN_MASS_UNIT, Mass.Unit.POUND);
         volumeType = DecoctionVolume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON);
         
