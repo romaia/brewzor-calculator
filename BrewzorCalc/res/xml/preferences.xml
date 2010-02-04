@@ -23,9 +23,17 @@
 				  android:title="@string/preference_screen_title">
 	
  	<PreferenceCategory android:title="@string/general_settings">
+
+		<ListPreference android:title="@string/global_unit_change_pref"
+						android:summary="@string/global_unit_change_pref_summary" 
+						android:persistent="true"
+						android:entries="@array/measurementSystemsList"
+						android:entryValues="@array/measurementSystemsIdList"
+						android:key="global.unit_change"/>
 	
 		<ListPreference android:title="@string/temperature_units_pref"
 						android:summary="@string/temperature_units_pref_summary"
+						android:persistent="true"
 						android:key="global.temperature_unit" 
 						android:defaultValue="@string/temperature_units_pref_default"
 						android:entries="@array/temperatureUnitsList" 
@@ -33,13 +41,23 @@
 
 		<ListPreference android:title="@string/gravity_units_pref"
 						android:summary="@string/gravity_units_pref_summary"
+						android:persistent="true"
 						android:key="global.gravity_unit" 
 						android:defaultValue="@string/gravity_units_pref_default"
 						android:entries="@array/gravityUnitsList" 
 						android:entryValues="@array/gravityUnitsIdList" />
 
+		<ListPreference android:title="@string/pressure_units_pref"
+						android:summary="@string/pressure_units_pref_summary"
+						android:persistent="true"
+						android:key="global.pressure_unit" 
+						android:defaultValue="@string/pressure_units_pref_default"
+						android:entries="@array/pressureUnitsList" 
+						android:entryValues="@array/pressureUnitsIdList" />
+						
 		<ListPreference android:title="@string/extract_mass_units_pref"
 						android:summary="@string/extract_mass_units_pref_summary"
+						android:persistent="true"
 						android:key="global.extract_mass_unit" 
 						android:defaultValue="@string/extract_mass_units_pref_default"
 						android:entries="@array/massUnitsList" 
@@ -51,6 +69,7 @@
 							
 		<EditTextPreference android:title="@string/cooling_loss_percentage_pref"
 							android:summary="@string/cooling_loss_percentage_pref_summary"
+						android:persistent="true"
 							android:defaultValue="@string/cooling_loss_percentage_pref_default" 
 							android:numeric="integer"
 							android:inputType="number"
@@ -64,6 +83,7 @@
  	
 		<ListPreference android:title="@string/batch_volume_units_pref"
 						android:summary="@string/batch_volume_units_pref_summary"
+						android:persistent="true"
 						android:key="batch.volume_unit" 
 						android:defaultValue="@string/batch_volume_units_pref_default"
 						android:entries="@array/volumeUnitsList" 
@@ -71,12 +91,14 @@
 
 		<EditTextPreference android:title="@string/final_volume_pref"
 							android:summary="@string/final_volume_pref_summary"
+						android:persistent="true"
 							android:defaultValue="@string/final_volume_pref_default" 
-							android:inputType="number"
+							android:inputType="number|numberDecimal"
 							android:key="batch.final_volume" />
 	
 		<ListPreference android:title="@string/grain_mass_units_pref"
 						android:summary="@string/grain_mass_units_pref_summary"
+						android:persistent="true"
 						android:defaultValue="@string/grain_mass_units_pref_default"
 						android:key="batch.grain_mass_unit" 
 						android:entries="@array/massUnitsList" 
@@ -84,6 +106,7 @@
 	
 		<EditTextPreference android:title="@string/water_to_grain_ratio_pref"
 							android:summary="@string/water_to_grain_ratio_pref_summary"
+						android:persistent="true"
 							android:defaultValue="@string/water_to_grain_ratio_pref_default" 
 							android:numeric="decimal"
 							android:inputType="number|numberDecimal"
@@ -91,10 +114,19 @@
 
 		<EditTextPreference android:title="@string/boil_minutes_pref"
 							android:summary="@string/boil_minutes_pref_summary"
+						android:persistent="true"
 							android:defaultValue="@string/boil_minutes_pref_default" 
 							android:numeric="integer"
 							android:inputType="number"
 							android:key="batch.boil_minutes" />
+
+		<EditTextPreference android:title="@string/mash_infusion_water_temperature_pref"
+							android:summary="@string/mash_infusion_water_temperature_pref_summary"
+						android:persistent="true"
+							android:defaultValue="@string/mash_infusion_water_temperature_pref_default" 
+							android:numeric="decimal"
+							android:inputType="number|numberDecimal"
+							android:key="batch.infusion_water_temperature" />
 
 	</PreferenceCategory>
 		 	
@@ -102,6 +134,7 @@
 
 		<ListPreference android:title="@string/diameter_height_units_pref"
 						android:summary="@string/diameter_height_units_pref_summary"
+						android:persistent="true"
 						android:key="kettle.distance_unit" 
 						android:defaultValue="@string/diameter_height_units_pref_default"
 						android:entries="@array/distanceUnitsList" 
@@ -134,12 +167,14 @@
 		<EditTextPreference android:title="@string/evaporation_rate_pref"
 							android:summary="@string/evaporation_rate_pref_summary"
 							android:defaultValue="@string/evaporation_rate_pref_default" 
+						android:persistent="true"
 							android:numeric="integer"
 							android:inputType="number"
 							android:key="kettle.evaporation_rate" />
 	
 		<EditTextPreference android:title="@string/hydrometer_calibration_temperature_pref"
 							android:summary="@string/hydrometer_calibration_temperature_pref_summary"
+						android:persistent="true"
 							android:defaultValue="@string/hydrometer_calibration_temperature_pref_default" 
 							android:inputType="number"
 							android:key="global.hydrometer_calibration_temperature" />

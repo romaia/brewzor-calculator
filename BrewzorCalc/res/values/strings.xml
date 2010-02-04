@@ -33,6 +33,9 @@
 
 	<string name="general_settings">General Settings</string>
 
+	<string name="global_unit_change_pref">Global Unit Change</string>
+	<string name="global_unit_change_pref_summary">Use this to change all units to US or Metric at once</string>
+
 	<string name="temperature_units_pref">Temperature</string>
 	<string name="temperature_units_pref_summary">Celsius, Fahrenheit</string>
 	<string name="temperature_units_pref_default">FAHRENHEIT</string>
@@ -41,10 +44,14 @@
 	<string name="gravity_units_pref_summary">SG, Plato, GU</string>
 	<string name="gravity_units_pref_default">SG</string>
 
+	<string name="pressure_units_pref">Pressure</string>
+	<string name="pressure_units_pref_summary">PSI, kPa, Bar, Atmosphere</string>
+	<string name="pressure_units_pref_default">PSI</string>
+
 	<string name="hydrometer_calibration_temperature_pref">Hydrometer Calibration Temperature</string>
-	<string name="hydrometer_calibration_temperature_pref_summary">Usually 60°F or 68°F</string>
+	<string name="hydrometer_calibration_temperature_pref_summary">Usually 60 or 68°F / 15 or 20°C</string>
 	<string name="hydrometer_calibration_temperature_pref_default">60</string>
-	<string name="hydrometer_calibration_temperature_pref_summary_format">%s%s (Usually 60°F or 68°F)</string>
+	<string name="hydrometer_calibration_temperature_pref_summary_format">%s%s (Usually 60 or 68°F / 15 or 20°C)</string>
 
 	<string name="extract_mass_units_pref">DME / LME Weight</string>
 	<string name="extract_mass_units_pref_summary">Grams, Kilograms, Ounces, Pounds</string>
@@ -69,9 +76,23 @@
 	<string name="water_to_grain_ratio_pref_default">0</string>
 	<string name="water_to_grain_ratio_pref_summary_format">%s %s per %s (Usually equivalent to 1-1.25 quarts per pound)</string>
 
+	<string name="grain_absorption_ratio_pref">Grain Absorption Ratio</string>
+	<string name="grain_absorption_ratio_pref_summary">Volume Units of Water / Mass Units of Grain.  Usually equivalent to 1-1.25 quarts / pound.</string>
+	<string name="grain_absorption_ratio_pref_default">0</string>
+	<string name="grain_absorption_ratio_pref_summary_format">%s %s per %s (Usually equivalent to 1-1.25 quarts per pound)</string>
+
+	<string name="grain_volume_ratio_pref">Water To Grain Ratio</string>
+	<string name="grain_volume_ratio_pref_summary">Volume Units of Water / Mass Units of Grain.  Usually equivalent to 1-1.25 quarts / pound.</string>
+	<string name="grain_volume_ratio_pref_default">0</string>
+	<string name="grain_volume_ratio_pref_summary_format">%s %s per %s (Usually equivalent to 1-1.25 quarts per pound)</string>
+
 	<string name="boil_minutes_pref">Boil Minutes</string>
 	<string name="boil_minutes_pref_summary">Usually 60-90 minutes</string>
 	<string name="boil_minutes_pref_default">60</string>
+
+	<string name="mash_infusion_water_temperature_pref">Mash Infusion Water Temperature</string>
+	<string name="mash_infusion_water_temperature_pref_summary">Usually between 170°F and 212°F</string>
+	<string name="mash_infusion_water_temperature_pref_default">212</string>
 
 	<string name="equipment_settings">Equipment Settings</string>
 
@@ -146,6 +167,20 @@
 	<string name="calculated_strike_water_temperature_default">@string/double_default</string>
 	<string name="calculated_strike_water_temperature_format">%02.1f%s</string>
 
+	<!-- Mash Infusion -->
+
+	<string name="mash_infusion">Mash Infusion</string>
+	<string name="mash_infusion_current_mash_temperature">Current Temperature</string>
+	<string name="mash_infusion_grain_weight">Grain Weight</string>
+	<string name="mash_infusion_water_in_mash_volume">Water in Mash</string>
+	<string name="mash_infusion_target_mash_temperature">Target Temperature</string>
+	<string name="mash_infusion_infusion_temperature">Infusion Temperature</string>
+	<string name="mash_infusion_calculated_infusion_temperature_default">0.00</string>
+
+	<!-- Decoction -->
+
+	<string name="decoction">Decoction</string>
+
 	<!-- Batch Sparge -->
 
 	<string name="batch_sparge">Batch Sparge</string>
@@ -207,7 +242,10 @@
 	<string name="unit_gravity">Gravity</string>
 	<string name="unit_temperature">Temperature</string>
 	<string name="unit_volume">Volume</string>
+	<string name="unit_pressure">Pressure</string>
 	<string name="no_list_items">No Item Found</string>
+	<string name="measurement_system_us">US</string>
+	<string name="measurement_system_metric">Metric</string>
 
 	<!-- Gravity Conversion -->
 	
@@ -333,6 +371,23 @@
 	<string name="centimeter">Centimeter</string>
 	<string name="centimeter_abbr">cm</string>
 	<string name="centimeter_plural">Centimeters</string>
+	
+	<!-- Pressure Conversion -->
+	<string name="psi">Pounds per Square Inch</string>
+	<string name="psi_abbr">psi</string>
+	<string name="psi_plural">Pounds per Square Inch</string>
+
+	<string name="kpa">Kilopascal</string>	
+	<string name="kpa_abbr">kPa</string>	
+	<string name="kpa_plural">Kilopascals</string>	
+
+	<string name="bar">Bar</string>
+	<string name="bar_abbr">bar</string>
+	<string name="bar_plural">Bars</string>
+
+	<string name="atmosphere">Atmosphere</string>
+	<string name="atmosphere_abbr">atm</string>
+	<string name="atmosphere_plural">Atmospheres</string>
 
 	<!-- GUI parameters -->
 

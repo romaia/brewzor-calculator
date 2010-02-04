@@ -73,7 +73,7 @@
 				android:text="0.00" />
 
 			<TextView style="@style/converterLargeTextStyle"
-				android:text="psi" />
+				android:id="@+id/calculatedCO2PressureUnitType" />
 
 		</TableRow>
 

@@ -45,6 +45,12 @@
 		<activity android:name=".StrikeTemperatureCalculatorActivity" 
 			android:windowSoftInputMode="adjustPan"></activity>
 		
+		<activity android:name=".MashInfusionCalculatorActivity" 
+			android:windowSoftInputMode="adjustPan"></activity>
+		
+		<activity android:name=".DecoctionCalculatorActivity" 
+			android:windowSoftInputMode="adjustPan"></activity>
+		
 		<activity android:name=".BatchSpargeCalculatorActivity" 
 			android:windowSoftInputMode="adjustPan"></activity>
 		

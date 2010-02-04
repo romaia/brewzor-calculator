@@ -111,13 +111,15 @@ public class BrewzorActivity extends ListActivity {
 		switch (calculatorId) {
 			case 0: i = new Intent(this, StrikeTemperatureCalculatorActivity.class); break;
 			case 1: i = new Intent(this, GravityCorrectionCalculatorActivity.class); break;
-			case 2: i = new Intent(this, BatchSpargeCalculatorActivity.class); break;
-			case 3: i = new Intent(this, BoilOffCalculatorActivity.class); break;
-			case 4: i = new Intent(this, CylinderVolumeCalculatorActivity.class); break;
-			case 5: i = new Intent(this, CylinderHeightCalculatorActivity.class); break;
-			case 6: i = new Intent(this, CarbonationCalculatorActivity.class); break;
-			case 7: i = new Intent(this, HydrometerCorrectionCalculatorActivity.class); break;
-			case 8: i = new Intent(this, UnitConverterActivity.class); break;
+			case 2: i = new Intent(this, MashInfusionCalculatorActivity.class); break;
+			case 3: i = new Intent(this, DecoctionCalculatorActivity.class); break;
+			case 4: i = new Intent(this, BatchSpargeCalculatorActivity.class); break;
+			case 5: i = new Intent(this, BoilOffCalculatorActivity.class); break;
+			case 6: i = new Intent(this, CylinderVolumeCalculatorActivity.class); break;
+			case 7: i = new Intent(this, CylinderHeightCalculatorActivity.class); break;
+			case 8: i = new Intent(this, CarbonationCalculatorActivity.class); break;
+			case 9: i = new Intent(this, HydrometerCorrectionCalculatorActivity.class); break;
+			case 10: i = new Intent(this, UnitConverterActivity.class); break;
 			default: i = new Intent(this, BrewzorPreferencesActivity.class);
 		}
 		startActivity(i);
