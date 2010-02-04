@@ -82,14 +82,14 @@ public class Preferences {
 	        editor.putString(Preferences.BATCH_GRAIN_VOLUME_RATIO, ".08");
 	        editor.putString(Preferences.KETTLE_EQUIPMENT_LOSS, "0");
         }
-/*
+
         if (prefs.getBoolean(Preferences.VERSION_1_2_0, false)) {
         	editor.putBoolean(Preferences.VERSION_1_2_0, true);
 	        editor.putString(Preferences.GLOBAL_UNIT_CHANGE, "US");        	
 	        editor.putString(Preferences.BATCH_INFUSION_WATER_TEMPERATURE, "212");        	
 	        editor.putString(Preferences.GLOBAL_PRESSURE_UNIT, "PSI");        	
        	}
-*/      
+
         editor.commit();	
 
 	}
