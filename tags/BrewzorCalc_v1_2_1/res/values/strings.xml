@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<resources>
+
+	<!-- Strings -->
+
+    <string name="app_name">Brewzor</string>
+    <string name="app_name_long">Brewzor Brewing Calculator</string>
+
+	<!-- Preferences -->	
+	
+	<string name="set_preferences">Set Preferences</string>
+	<string name="preference_screen_title">Brewzor Preferences</string>
+
+	<string name="general_settings">General Settings</string>
+
+	<string name="global_unit_change_pref">Global Unit Change</string>
+	<string name="global_unit_change_pref_summary">Use this to change all units to US or Metric at once</string>
+
+	<string name="temperature_units_pref">Temperature</string>
+	<string name="temperature_units_pref_summary">Celsius, Fahrenheit</string>
+	<string name="temperature_units_pref_default">FAHRENHEIT</string>
+
+	<string name="gravity_units_pref">Gravity</string>
+	<string name="gravity_units_pref_summary">SG, Plato, GU</string>
+	<string name="gravity_units_pref_default">SG</string>
+
+	<string name="pressure_units_pref">Pressure</string>
+	<string name="pressure_units_pref_summary">PSI, kPa, Bar, Atmosphere</string>
+	<string name="pressure_units_pref_default">PSI</string>
+
+	<string name="hydrometer_calibration_temperature_pref">Hydrometer Calibration Temperature</string>
+	<string name="hydrometer_calibration_temperature_pref_summary">Usually 60 or 68°F / 15 or 20°C</string>
+	<string name="hydrometer_calibration_temperature_pref_default">60</string>
+	<string name="hydrometer_calibration_temperature_pref_summary_format">%s%s (Usually 60 or 68°F / 15 or 20°C)</string>
+
+	<string name="extract_mass_units_pref">DME / LME Weight</string>
+	<string name="extract_mass_units_pref_summary">Grams, Kilograms, Ounces, Pounds</string>
+	<string name="extract_mass_units_pref_default">OUNCE</string>
+	
+	<string name="batch_settings">Batch Settings</string>
+	
+	<string name="batch_volume_units_pref">Batch Volume Units</string>
+	<string name="batch_volume_units_pref_summary">Quarts, Gallons, Liters</string>
+	<string name="batch_volume_units_pref_default">GALLON</string>
+
+	<string name="final_volume_pref">Final Batch Volume</string>
+	<string name="final_volume_pref_summary">Quarts, Gallons, Liters</string>
+	<string name="final_volume_pref_default">0</string>
+
+	<string name="grain_mass_units_pref">Grain Weight Units</string>
+	<string name="grain_mass_units_pref_summary">Grams, Kilograms, Ounces, Pounds</string>
+	<string name="grain_mass_units_pref_default">0</string>
+
+	<string name="water_to_grain_ratio_pref">Water To Grain Ratio</string>
+	<string name="water_to_grain_ratio_pref_summary">Volume Units of Water / Mass Units of Grain.  Usually equivalent to 1-1.25 quarts / pound.</string>
+	<string name="water_to_grain_ratio_pref_default">0</string>
+	<string name="water_to_grain_ratio_pref_summary_format">%s %s per %s (Usually equivalent to 1-1.25 quarts per pound)</string>
+
+	<string name="grain_absorption_ratio_pref">Grain Absorption Ratio</string>
+	<string name="grain_absorption_ratio_pref_summary">Volume Units of Water / Mass Units of Grain.  Usually equivalent to 1-1.25 quarts / pound.</string>
+	<string name="grain_absorption_ratio_pref_default">0</string>
+	<string name="grain_absorption_ratio_pref_summary_format">%s %s per %s (Usually equivalent to 1-1.25 quarts per pound)</string>
+
+	<string name="grain_volume_ratio_pref">Water To Grain Ratio</string>
+	<string name="grain_volume_ratio_pref_summary">Volume Units of Water / Mass Units of Grain.  Usually equivalent to 1-1.25 quarts / pound.</string>
+	<string name="grain_volume_ratio_pref_default">0</string>
+	<string name="grain_volume_ratio_pref_summary_format">%s %s per %s (Usually equivalent to 1-1.25 quarts per pound)</string>
+
+	<string name="boil_minutes_pref">Boil Minutes</string>
+	<string name="boil_minutes_pref_summary">Usually 60-90 minutes</string>
+	<string name="boil_minutes_pref_default">60</string>
+
+	<string name="mash_infusion_water_temperature_pref">Mash Infusion Water Temperature</string>
+	<string name="mash_infusion_water_temperature_pref_summary">Usually between 170°F and 212°F</string>
+	<string name="mash_infusion_water_temperature_pref_default">212</string>
+
+	<string name="equipment_settings">Equipment Settings</string>
+
+	<string name="diameter_height_units_pref">Kettle Diameter / Height Units</string>
+	<string name="diameter_height_units_pref_summary">Centimeters, Inches</string>
+	<string name="diameter_height_units_pref_default">INCH</string>
+
+	<string name="kettle_diameter_pref">Kettle Diameter</string>
+	<string name="kettle_diameter_pref_summary">Used for volume calculations</string>
+	<string name="kettle_diameter_pref_default">0</string>
+
+	<string name="false_bottom_height_pref">False Bottom Height</string>
+	<string name="false_bottom_height_pref_summary">Used for volume calculations</string>
+	<string name="false_bottom_height_pref_default">0</string>
+
+	<string name="equipment_loss_pref">Total Equipment Loss</string>
+	<string name="equipment_loss_pref_summary">Add up mash tun deadspace, trub loss, etc.</string>
+	<string name="equipment_loss_pref_summary_format">%s %s (Calculated by adding up mash tun deadspace, trub loss, etc.)</string>
+	<string name="equipment_loss_pref_default">0</string>
+
+	<string name="evaporation_rate_pref">Evaporation Rate % per Hour</string>
+	<string name="evaporation_rate_pref_summary">Usually between 5 and 15%</string>
+	<string name="evaporation_rate_pref_default">10</string>
+
+	<string name="correct_for_expansion_pref">Correct for heat expansion</string>
+	<string name="correct_for_expansion_pref_summary">Use cooling loss value to compensate calculated volumes for heat expansion</string>
+	<string name="correct_for_expansion_pref_default">true</string>
+
+	<string name="cooling_loss_percentage_pref">Cooling Loss Percentage</string>
+	<string name="cooling_loss_percentage_pref_summary">Usually 4% for boiling and 3% for mash temperatures</string>
+	<string name="cooling_loss_percentage_pref_default">4</string>
+	
+	<!-- Gravity Correction -->
+	
+	<string name="gravity_correction">Gravity Correction</string>
+	<string name="current_gravity">Current</string>
+	<string name="desired_gravity">Desired</string>
+	<string name="wort_volume">Wort Volume</string>
+	<string name="add_water_format">Add %02.2f %s of water.</string>
+	<string name="add_extract_format">"Add %02.2f %s DME\nOR\nAdd %02.2f %s LME"</string>
+	<string name="add_nothing_format">You're all good.</string>
+	
+	<!-- Cylinder Volume -->
+	
+	<string name="cylinder_volume">Kettle Volume from Height</string>
+	<string name="kettle_diameter">Diameter</string>
+	<string name="measured_height">Height</string>
+	<string name="false_bottom_height">False Bottom</string>
+	<string name="diameter_default">@string/double_default</string>
+	<string name="height_default">@string/double_default</string>
+	<string name="false_bottom_height_default">@string/double_default</string>
+	<string name="calculated_cylinder_volume_default">@string/double_default</string>
+	<string name="kettle_diameter_summary">The diameter of your brew kettle</string>
+	<string name="false_bottom_height_summary">Use 0 (zero) if you don\'t have a false bottom, otherwise use the height.</string>
+	<string name="correct_for_expansion_format">%01.0f%% heat expansion</string>
+	<string name="correct_for_loss_format">%01.0f%% cooling loss</string>
+	<string name="no_expansion">No expansion</string>
+
+	<!-- Cylinder Height -->
+	
+	<string name="cylinder_height">Kettle Height from Volume</string>
+	<string name="desired_volume">Volume</string>
+	<string name="calculated_cylinder_height_default">@string/double_default</string>
+
+	<!-- Strike Temperature -->
+
+	<string name="strike_temperature">Strike Temperature</string>
+	<string name="grain_weight">Grain Weight</string>
+	<string name="grain_temperature">Grain Temperature</string>
+	<string name="strike_water_volume">Strike Water</string>
+	<string name="target_mash_temperature">Mash Temperature</string>
+	<string name="calculated_strike_water_temperature_default">@string/double_default</string>
+	<string name="calculated_strike_water_temperature_format">%02.1f%s</string>
+
+	<!-- Mash Infusion -->
+
+	<string name="mash_infusion">Mash Infusion</string>
+	<string name="mash_infusion_current_mash_temperature">Current Temperature</string>
+	<string name="mash_infusion_grain_weight">Grain Weight</string>
+	<string name="mash_infusion_water_in_mash_volume">Water in Mash</string>
+	<string name="mash_infusion_target_mash_temperature">Target Temperature</string>
+	<string name="mash_infusion_infusion_temperature">Infusion Temperature</string>
+	<string name="mash_infusion_calculated_infusion_temperature_default">0.00</string>
+
+	<!-- Decoction -->
+
+	<string name="decoction_volume">Decoction Volume</string>
+
+	<!-- Batch Sparge -->
+
+	<string name="batch_sparge">Batch Sparge</string>
+	<string name="batch_sparge_grain_weight">Grain Weight</string>
+	<string name="batch_sparge_strike_volume">Strike Volume</string>
+	<string name="batch_sparge_boil_volume">Boil Volume</string>
+	<string name="batch_sparge_water_to_grain_ratio">Water to Grain Ratio</string>
+	<string name="batch_sparge_grain_absorption_volume">Grain Absorption</string>
+	<string name="batch_sparge_first_sparge_volume">Mash Out Volume</string>
+	<string name="batch_sparge_second_sparge_volume">Sparge Volume</string>
+	<string name="batch_sparge_total_mash_volume">Total Mash Volume</string>
+	<string name="batch_sparge_water_to_grain_ratio_format">%s/%s</string>
+
+	<!-- Boil Off -->
+	
+	<string name="boil_off">Boil Off</string>
+	<string name="starting_volume">Starting Volume</string>
+	<string name="ending_volume">Ending Volume</string>
+	<string name="evaporation_rate">Evaporation Rate</string>
+	<string name="boil_time">Boil Minutes</string>
+	<string name="volume_boiled_off">Boiled Off Volume</string>
+	<string name="cooling_loss_percentage">Cooling Loss</string>
+	<string name="cooling_loss_volume">Cooling Loss Volume</string>
+	<string name="evaporation_rate_default">10</string>
+	<string name="cooling_loss_percent_default">4</string>
+	<string name="boil_time_default">60</string>
+	
+	<!-- Carbonation -->
+	
+	<string name="carbonation">Carbonation</string>
+	<string name="volumes_co2_desired">Volumes CO2</string>
+	<string name="beer_temperature">Beer Temperature</string>
+	<string name="beer_volume">Beer Volume</string>
+	<string name="co2_pressure">CO2 Pressure</string>
+	<string name="corn_sugar">Corn Sugar</string>
+	<string name="table_sugar">Table Sugar</string>
+	<string name="dme">DME (75% AA)</string>
+
+	<!-- Hydrometer Correction -->
+
+	<string name="hydrometer_correction">Hydrometer Correction</string>
+	<string name="temperature">Temperature</string>
+	<string name="hydrometer_correction_temperature_default">60</string>
+	<string name="corrected_sg">Corrected SG</string>
+	<string name="calibration_text_format">Calibration Temperature: %01.0f%s</string>
+	
+	<!-- Starter Wort -->
+	
+	<string name="starter_wort">Starter Wort</string>
+	<string name="volume_desired">Volume Desired</string>
+
+	<!-- Unit Conversion -->
+	
+	<string name="unit_conversion">Unit Conversions</string>
+	<string name="unit_converter_format">%02.4f</string>
+	<string name="unit_type_prompt">Unit Conversions</string>
+	<string name="unit_distance_length">Distance / Length</string>
+	<string name="unit_mass_weight">Mass / Weight</string>
+	<string name="unit_gravity">Gravity</string>
+	<string name="unit_temperature">Temperature</string>
+	<string name="unit_volume">Volume</string>
+	<string name="unit_pressure">Pressure</string>
+	<string name="no_list_items">No Item Found</string>
+	<string name="measurement_system_us">US</string>
+	<string name="measurement_system_metric">Metric</string>
+
+	<!-- Gravity Conversion -->
+	
+	<string name="gravity_conversions">Gravity Conversions</string>
+	<string name="unit_entry_hint">Enter gravity</string>
+
+	<string name="plato">Plato</string>
+	<string name="plato_abbr">°P</string>
+	<string name="plato_plural">Plato</string>
+
+	<string name="sg">SG</string>
+	<string name="sg_plural">SG</string>
+	<string name="sg_abbr">SG</string>
+	<string name="sg_default">1.000</string>
+
+	<string name="gu">GU</string>
+	<string name="gu_plural">GU</string>
+	<string name="gu_abbr">GU</string>
+	<string name="gu_default">0</string>
+	
+	<!-- Temperature Conversion -->
+	
+	<string name="temperature_conversions">Temperature Conversions</string>
+	
+	<string name="fahrenheit">Fahrenheit</string>
+	<string name="fahrenheit_abbr">°F</string>
+	<string name="fahrenheit_plural">Fahrenheit</string>
+	
+	<string name="celsius">Celsius</string>
+	<string name="celsius_abbr">°C</string>
+	<string name="celsius_plural">Celsius</string>
+	
+	<!-- Mass Conversion -->
+
+	<string name="mass_conversions">Mass Conversions</string>
+	
+	<string name="gram">Gram</string>
+	<string name="gram_abbr">g</string>
+	<string name="gram_plural">Grams</string>
+
+	<string name="kilogram">Kilogram</string>
+	<string name="kilogram_abbr">kg</string>
+	<string name="kilogram_plural">Kilograms</string>
+
+	<string name="ounce">Ounce</string>
+	<string name="ounce_abbr">oz</string>
+	<string name="ounce_plural">Ounces</string>
+
+	<string name="pound">Pound</string>	
+	<string name="pound_abbr">lb</string>
+	<string name="pound_plural">Pounds</string>	
+	
+	<!-- Volume Conversion -->
+	
+	<string name="volume_conversions">Volume Conversions</string>
+
+	<string name="milliliter">Milliliter</string>
+	<string name="milliliter_abbr">mL</string>
+	<string name="milliliter_plural">Milliliters</string>
+
+	<string name="liter">Liter</string>
+	<string name="liter_abbr">L</string>
+	<string name="liter_plural">Liters</string>
+	
+	<string name="teaspoon">Teaspoon</string>
+	<string name="teaspoon_abbr">t</string>
+	<string name="teaspoon_plural">Tablespoons</string>
+	
+	<string name="tablespoon">Tablespoon</string>
+	<string name="tablespoon_abbr">T</string>
+	<string name="tablespoon_plural">Tablespoons</string>
+	
+	<string name="fluid_ounce">Fluid Ounce</string>
+	<string name="fluid_ounce_abbr">fl oz</string>
+	<string name="fluid_ounce_plural">Fluid Ounces</string>
+
+	<string name="cubic_inch">Cubic Inch</string>
+	<string name="cubic_inch_abbr">cu in</string>
+	<string name="cubic_inch_plural">Cubic Inches</string>
+
+	<string name="cup">Cup</string>
+	<string name="cup_abbr">c</string>
+	<string name="cup_plural">Cups</string>
+
+	<string name="bottle_12_oz">Bottle (12 fl oz)</string>
+	<string name="bottle_12_oz_abbr">Bottle (12 fl oz)</string>
+	<string name="bottle_12_oz_plural">Bottles (12 fl oz)</string>
+
+	<string name="us_pint">Pint</string>
+	<string name="us_pint_abbr">pt</string>
+	<string name="us_pint_plural">Pints</string>
+
+	<string name="imperial_pint">Imperial Pint</string>
+	<string name="imperial_pint_abbr">ipt</string>
+	<string name="imperial_pint_plural">Imperial Pints</string>
+
+	<string name="bottle_22_oz">Bottle (22 fl oz)</string>
+	<string name="bottle_22_oz_abbr">Bottle (22 fl oz)</string>
+	<string name="bottle_22_oz_plural">Bottles (22 fl oz)</string>
+
+	<string name="bottle_750_ml">Bottle (750 mL)</string>
+	<string name="bottle_750_ml_abbr">Bottle (750 mL)</string>
+	<string name="bottle_750_ml_plural">Bottles (750 mL)</string>
+
+	<string name="quart">Quart</string>
+	<string name="quart_abbr">qt</string>
+	<string name="quart_plural">Quarts</string>
+	
+	<string name="gallon">Gallon</string>
+	<string name="gallon_abbr">gal</string>
+	<string name="gallon_plural">Gallons</string>
+	
+	<string name="barrel">Barrel</string>
+	<string name="barrel_abbr">bbl</string>
+	<string name="barrel_plural">Barrels</string>
+
+	<!-- Distance Conversion -->
+
+	<string name="inch">Inch</string>
+	<string name="inch_abbr">in</string>
+	<string name="inch_plural">Inches</string>
+
+	<string name="centimeter">Centimeter</string>
+	<string name="centimeter_abbr">cm</string>
+	<string name="centimeter_plural">Centimeters</string>
+	
+	<!-- Pressure Conversion -->
+	<string name="psi">Pounds per Square Inch</string>
+	<string name="psi_abbr">psi</string>
+	<string name="psi_plural">Pounds per Square Inch</string>
+
+	<string name="kpa">Kilopascal</string>	
+	<string name="kpa_abbr">kPa</string>	
+	<string name="kpa_plural">Kilopascals</string>	
+
+	<string name="bar">Bar</string>
+	<string name="bar_abbr">bar</string>
+	<string name="bar_plural">Bars</string>
+
+	<string name="atmosphere">Atmosphere</string>
+	<string name="atmosphere_abbr">atm</string>
+	<string name="atmosphere_plural">Atmospheres</string>
+
+	<!-- GUI parameters -->
+
+	<!-- Generic Messages -->
+
+	<string name="crash_report_mail_subject">Brewzor Crash Report</string>
+	<string name="crash_report_mail_body">Crash Details: \n</string>
+	<string name="crash_report_dialog_title">Send Error Log?</string>
+	<string name="crash_report_dialog_text">A previous crash was detected. Would you like to send the developer the error log to fix this issue in the future?</string>
+	<string name="crash_report_dialog_ok">Yes!</string>
+	<string name="crash_report_dialog_cancel">No</string>
+
+	<string name="eula_title">EULA</string>
+	<string name="eula_accept">Accept</string>
+	<string name="eula_refuse">No Thanks</string>
+
+	<!-- Format Strings -->
+
+	<string name="integer_default">0</string>
+	<string name="integer_format">%01.0f</string>
+	<string name="double_default">0.00</string>
+	<string name="double_format">%02.2f</string>
+	<string name="sg_format">%02.3f</string>
+	
+	<!-- Colors -->
+	
+	<color name="blue">#990000FF</color>
+	
+	<!-- Dimensions -->
+	
+	<dimen name="largeText">20sp</dimen>
+
+</resources>

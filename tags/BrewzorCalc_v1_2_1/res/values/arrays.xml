@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<resources>
+
+	<string-array name="calculatorList">
+		<item>@string/strike_temperature</item>
+		<item>@string/gravity_correction</item>
+		<item>@string/mash_infusion</item>
+		<item>@string/decoction_volume</item>
+		<item>@string/batch_sparge</item>
+		<item>@string/boil_off</item>
+		<item>@string/cylinder_volume</item>
+		<item>@string/cylinder_height</item>
+		<item>@string/carbonation</item>
+		<item>@string/hydrometer_correction</item>
+		<item>@string/unit_conversion</item>
+	</string-array>
+
+	<string-array name="unitTypesList">
+		<item>@string/unit_volume</item>
+		<item>@string/unit_mass_weight</item>
+		<item>@string/unit_gravity</item>
+		<item>@string/unit_temperature</item>
+		<item>@string/unit_distance_length</item>
+		<item>@string/unit_pressure</item>
+	</string-array>
+
+	<string-array name="unitTypesIdList">
+		<item>VOLUME</item>
+		<item>MASS</item>
+		<item>GRAVITY</item>
+		<item>TEMPERATURE</item>
+		<item>DISTANCE</item>
+		<item>PRESSURE</item>
+	</string-array>
+
+	<string-array name="gravityUnitsList">
+		<item>@string/sg</item>
+		<item>@string/gu</item>
+		<item>@string/plato</item>
+	</string-array>
+	
+	<string-array name="gravityUnitsIdList">
+		<item>SG</item>
+		<item>GU</item>
+		<item>PLATO</item>
+	</string-array>
+	
+	<string-array name="massUnitsList">
+		<item>@string/gram</item>
+		<item>@string/kilogram</item>
+		<item>@string/ounce</item>
+		<item>@string/pound</item>
+	</string-array>
+
+	<string-array name="massUnitsIdList">
+		<item>GRAM</item>
+		<item>KILOGRAM</item>
+		<item>OUNCE</item>
+		<item>POUND</item>
+	</string-array>
+
+	<string-array name="temperatureUnitsList">
+		<item>@string/fahrenheit</item>
+		<item>@string/celsius</item>
+	</string-array>
+	
+	<string-array name="temperatureUnitsIdList">
+		<item>FAHRENHEIT</item>
+		<item>CELSIUS</item>
+	</string-array>
+	
+	<string-array name="volumeUnitsList">
+		<item>@string/milliliter</item>
+		<item>@string/liter</item>
+		<item>@string/teaspoon</item>
+		<item>@string/tablespoon</item>
+		<item>@string/cubic_inch</item>
+		<item>@string/fluid_ounce</item>
+		<item>@string/cup</item>
+		<item>@string/bottle_12_oz</item>
+		<item>@string/us_pint</item>
+		<item>@string/imperial_pint</item>
+		<item>@string/bottle_22_oz</item>
+		<item>@string/bottle_750_ml</item>
+		<item>@string/quart</item>
+		<item>@string/gallon</item>
+		<item>@string/barrel</item>
+	</string-array>
+	
+	<string-array name="volumeUnitsIdList">
+		<item>MILLILITER</item>
+		<item>LITER</item>
+		<item>TEASPOON</item>
+		<item>TABLESPOON</item>
+		<item>CUBIC_INCH</item>
+		<item>FLUID_OUNCE</item>
+		<item>CUP</item>
+		<item>BOTTLE_12_OZ</item>
+		<item>US_PINT</item>
+		<item>IMPERIAL_PINT</item>
+		<item>BOTTLE_22_OZ</item>
+		<item>BOTTLE_750_ML</item>
+		<item>QUART</item>
+		<item>GALLON</item>
+		<item>BARREL</item>
+	</string-array>
+	
+	<string-array name="distanceUnitsList">
+		<item>@string/centimeter</item>
+		<item>@string/inch</item>
+	</string-array>
+
+	<string-array name="distanceUnitsIdList">
+		<item>CENTIMETER</item>		
+		<item>INCH</item>
+	</string-array>
+
+	<string-array name="pressureUnitsList">
+		<item>@string/psi</item>
+		<item>@string/kpa</item>
+		<item>@string/bar</item>
+		<item>@string/atmosphere</item>
+	</string-array>
+	
+	<string-array name="pressureUnitsIdList">
+		<item>PSI</item>
+		<item>KPA</item>
+		<item>BAR</item>
+		<item>ATMOSPHERE</item>
+	</string-array>
+
+	<string-array name="measurementSystemsList">
+		<item>US</item>
+		<item>Metric</item>
+	</string-array>
+
+	<string-array name="measurementSystemsIdList">
+		<item>US</item>
+		<item>METRIC</item>
+	</string-array>
+
+	<!--  List taken from Brewing Classic Styles by Zainasheff and Palmer -->
+	<!--  Some items have been omitted -->
+	<!-- 
+	<string-array name="styleList">
+		<item>Lite Amer. Lager: 2.5-3</item>
+		<item>Std. Amer. Lager: 2.5-3</item>
+		<item>Prem. Amer. Lager: 2.5-3</item>
+		<item>Munich Helles: 2-2.5</item>
+		<item>Dort. Export: 2-2.5</item>
+		<item>German Pils: 2-2.5</item>
+		<item>Bohemian Pils: 2-2.5</item>
+		<item>Amer. Pils: 2-2.5</item>
+		<item>Vienna Lager: 2-2.5</item>
+		<item>O-fest/Marzen: 2-2.5</item>
+		<item>Dark Amer. Lager: 2.5-3</item>
+		<item>Munich Dunkel: 2-2.5</item>
+		<item>Schwarzbier: 2-2.5</item>
+		<item>Maibock/Helles: 2.5</item>
+		<item>Trad. Bock: 2.5</item>
+		<item>Doppelbock: 2.5</item>
+		<item>Eisbock: 2.5</item>
+		<item>Cream Ale: 2.5</item>
+		<item>Blonde Ale: 2.5</item>
+		<item>Kolsch: 2.5</item>
+		<item>Amer. Wheat/Rye: 2.5</item>
+		<item>N. German Alt: 2-2.5</item>
+		<item>Cal. Common: 2.5-3</item>
+		<item>Dusseldorf Alt: 1.5-2.5</item>
+		<item>Std/Ord Bitter: 1-1.5</item>
+		<item>Spec/Best Bitter: 1.5-2</item>
+		<item>Ex. Spec/Str Bitter: 1.5-2</item>
+		<item>Scottish 60/-: 1.5-2</item>
+		<item>Scottish 70/-: 1.5-2</item>
+		<item>Scottish 80/-: 1.5-2</item>
+		<item>Irish Red Ale: 2-2.5</item>
+		<item>Str. Scotch Ale: 2-2.5</item>
+		<item>Amer. Pale Ale: 2-2.5</item>
+		<item>Amer. Amber Ale: 2-2.5</item>
+		<item>Amer. Brown Ale: 2-2.5</item>
+		<item>Mild: 1-1.5</item>
+		<item>S. Eng. Brown: 1-1.5</item>
+		<item>N. Eng. Brown: 1-1.5</item>
+		<item>Brown Porter: 1.5-2</item>
+		<item>Robust Porter: 2-2.5</item>
+		<item>Baltic Porter: 2-2.5</item>
+		<item>Dry Stout: 1-1.5</item>
+		<item>Sweet Stout: 1.5-2</item>
+		<item>Oatmeal Stout: 2-2.5</item>
+		<item>For. Extra Stout: 2-2.5</item>
+		<item>American Stout: 2.5-3</item>
+		<item>Russ. Imp. Stout: 2-2.5</item>
+		<item>English IPA: 2-2.5</item>
+		<item>American IPA: 2-2.5</item>
+		<item>Imperial IPA: 2-2.5</item>
+		<item>Weizen/Weissbier: 2.5-3</item>
+		<item>Dunkelweizen: 2.5-3</item>
+		<item>Weizenbock: 2.5-3</item>
+		<item>Roggenbier: 2.5-3</item>
+		<item>Witbier: 2-2.5</item>
+		<item>Belgian Pale Ale: 2.5</item>
+		<item>Saison: 3-3.5</item>
+		<item>Biere de Garde: 2.5-3</item>
+		<item>Berliner Weisse: 3.5-4</item>
+		<item>Fland. Red Ale: 2-2.5</item>
+		<item>Fland. Brown Ale: 2-2.5</item>
+		<item>Oud Bruin: 2-2.5</item>
+		<item>Straight Lambic: 1-1.5</item>
+		<item>Gueuze: 4</item>
+		<item>Fruit Lambic: 4</item>
+		<item>Bel. Blond Ale: 3-4</item>
+		<item>Bel. Dubbel: 3-4</item>
+		<item>Bel. Tripel: 3-4</item>
+		<item>Bel. Golden Strong: 4</item>
+		<item>Bel. Dark Strong: 2.5-3</item>
+		<item>Old Ale: 2</item>
+		<item>Eng. Barleywine: 1.5-2</item>
+		<item>Amer. Barleywine: 2-2.5</item>
+		<item>Classic Rauchbier: 2-2.5</item>
+	</string-array>
+
+	<string-array name="stylesShortList">
+		<item>American Ales: 2.2–3.0</item>
+		<item>British Ales: 1.5–2.2</item>
+		<item>German Weizens: 2.8–5.1</item>
+		<item>Belgian Ales: 2.0–4.5</item>
+		<item>European Lagers: 2.4–2.6</item>
+		<item>American Lagers: 2.5–2.8</item>
+	</string-array>
+ -->
+
+</resources>
