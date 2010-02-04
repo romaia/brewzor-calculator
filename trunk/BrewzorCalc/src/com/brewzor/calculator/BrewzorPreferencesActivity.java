@@ -242,7 +242,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 				mass.setType(mass.typeFromPref(Preferences.BATCH_GRAIN_MASS_UNIT, Mass.Unit.KILOGRAM));
 				volume.convert(Volume.Unit.GALLON);
 				mass.convert(Mass.Unit.POUND);
-				volume.setValue(volume.getValue() * mass.getValue());
+				volume.setValue(volume.getValue() / mass.getValue());
 				editor.putString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, volume.toString());
 				
 				temperature.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_INFUSION_WATER_TEMPERATURE, "0"), 0));
@@ -298,7 +298,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 				mass.setType(mass.typeFromPref(Preferences.BATCH_GRAIN_MASS_UNIT, Mass.Unit.POUND));
 				volume.convert(Volume.Unit.LITER);
 				mass.convert(Mass.Unit.KILOGRAM);
-				volume.setValue(volume.getValue() * mass.getValue());
+				volume.setValue(volume.getValue() / mass.getValue());
 				editor.putString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, volume.toString());
 				
 				temperature.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_INFUSION_WATER_TEMPERATURE, "0"), 0));
