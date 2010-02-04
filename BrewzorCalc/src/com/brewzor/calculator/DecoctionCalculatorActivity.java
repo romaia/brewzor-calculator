@@ -10,7 +10,6 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -88,11 +87,11 @@ public class DecoctionCalculatorActivity  extends Activity {
     	TotalWaterInMash.setValue(waterInMashVolumeEntry, 0);
     	GrainWeight.setValue(grainWeightEntry, 0);
 	
-    	Log.v("mash", String.format("currentTemp=%01.4f", CurrentMashTemperature.getValue()));
-    	Log.v("mash", String.format("targetTemp=%01.4f", TargetMashTemperature.getValue()));
-    	Log.v("mash", String.format("waterInMash=%01.4f", TotalWaterInMash.getValue()));
-    	Log.v("mash", String.format("grainWeight=%01.4f", GrainWeight.getValue()));
-    	Log.v("mash", String.format("infusionTemp=%01.4f", InfusionWaterTemperature.getValue()));
+    	//Log.v("mash", String.format("currentTemp=%01.4f", CurrentMashTemperature.getValue()));
+    	//Log.v("mash", String.format("targetTemp=%01.4f", TargetMashTemperature.getValue()));
+    	//Log.v("mash", String.format("waterInMash=%01.4f", TotalWaterInMash.getValue()));
+    	//Log.v("mash", String.format("grainWeight=%01.4f", GrainWeight.getValue()));
+    	//Log.v("mash", String.format("infusionTemp=%01.4f", InfusionWaterTemperature.getValue()));
     	    	
     	// (Tend - Tstart) * (Grain * (0.3125 + (WaterQuarts / Grain))) / (212-Tstart)
 		DecoctionVolume.setValue(
