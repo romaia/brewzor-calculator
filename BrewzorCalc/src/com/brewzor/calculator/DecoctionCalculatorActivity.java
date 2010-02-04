@@ -104,8 +104,11 @@ public class DecoctionCalculatorActivity  extends Activity {
         DecoctionVolume.setType(Volume.Unit.QUART);
         DecoctionVolume.convert(volumeType);
         
-		calculatedInfusionVolume.setText(DecoctionVolume.toString());
-		calculatedInfusionVolumeUnitType.setText(DecoctionVolume.getLabelPlural());
+    	if (DecoctionVolume.getValue() <= 0 || CurrentMashTemperature.getValue() <= 0 || TargetMashTemperature.getValue() <= 0 || TotalWaterInMash.getValue() <= 0 || GrainWeight.getValue() <= 0) {
+    		calculatedInfusionVolume.setText(getString(R.string.double_default));
+    	} else { 
+    		calculatedInfusionVolume.setText(DecoctionVolume.toString());
+    	}
 
 	}
 	
@@ -127,7 +130,7 @@ public class DecoctionCalculatorActivity  extends Activity {
     	waterInMashVolumeUnitType.setText(TotalWaterInMash.getLabelAbbr());
     	grainWeightUnitType.setText(GrainWeight.getLabelAbbr());
 
-    	calculatedInfusionVolumeUnitType.setText(DecoctionVolume.getLabelAbbr());
+    	calculatedInfusionVolumeUnitType.setText(DecoctionVolume.getLabelPlural());
 	
 	}
 	
