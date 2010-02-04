@@ -130,6 +130,7 @@ public class DecoctionCalculatorActivity  extends Activity {
     	waterInMashVolumeUnitType.setText(TotalWaterInMash.getLabelAbbr());
     	grainWeightUnitType.setText(GrainWeight.getLabelAbbr());
 
+    	DecoctionVolume.setType(volumeType);
     	calculatedInfusionVolumeUnitType.setText(DecoctionVolume.getLabelPlural());
 	
 	}
