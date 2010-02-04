@@ -136,13 +136,23 @@ public class BatchSpargeCalculatorActivity extends Activity {
 	private void getPrefs() {
 
 	    WaterToGrainRatio = NumberFormat.parseDouble(prefs.getString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, "0"), 0);
-		GrainAbsorptionRatio = 0.13;
-		GrainVolumeRatio = 0.08;
-
+		
 		volumeType = BoilVolume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON);
 		massType = GrainWeight.typeFromPref(Preferences.BATCH_GRAIN_MASS_UNIT, Mass.Unit.POUND);
 		temperatureType = StrikeWaterTemperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.FAHRENHEIT);
-	    
+
+		// http://www.franklinbrew.org/brewinfo/nbsparge.html
+	    Volume grainVolume = new Volume(0, Volume.Unit.GALLON, getBaseContext(), prefs);
+	    Mass grainMass = new Mass(0, Mass.Unit.POUND, getBaseContext(), prefs);
+
+	    grainVolume.setValue(0.13); // 0.13 gal / lb
+	    grainMass.setValue(1);	    
+	    GrainAbsorptionRatio = grainVolume.compare(volumeType) / grainMass.compare(massType);
+
+	    grainVolume.setValue(0.08); // 0.08 gal / lb
+	    grainMass.setValue(1);	    
+	    GrainVolumeRatio = grainVolume.compare(volumeType) / grainMass.compare(massType); 
+
 		GrainWeight.setType(massType);
 		StrikeWaterVolume.setType(volumeType);
 		BoilVolume.setType(volumeType);
