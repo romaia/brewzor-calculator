@@ -38,19 +38,17 @@ body {
 <h2>Table of Contents:</h2>
 
 <ul>
-	<li><a href="#calculators"> <b>Calculators</b> </a>
+	<li><a href="#calculators"><b>Calculators</b></a>
 	<ul>
-		<li><a href="#gravitycorrection">Gravity Correction
-		Calculator</a></li>
-		<li><a href="#cylindervolumeheight">Cylinder Volume /
-		Cylinder Height Calculator</a></li>
-		<li><a href="#striketemperature">Strike Temperature
-		Calculator</a></li>
+		<li><a href="#gravitycorrection">Gravity Correction Calculator</a></li>
+		<li><a href="#cylindervolumeheight">Cylinder Volume / Cylinder Height Calculator</a></li>
+		<li><a href="#striketemperature">Strike Temperature Calculator</a></li>
+		<li><a href="#mashinfusion">Mash Infusion Calculator</a></li>
+		<li><a href="#decoctionvolume">Decoction Volume Calculator</a></li>
 		<li><a href="#batchsparge">Batch Sparge Calculator</a></li>
 		<li><a href="#boiloff">Boil Off Calculator</a></li>
 		<li><a href="#carbonation">Carbonation Calculator</a></li>
-		<li><a href="#hydrometercorrection">Hydrometer Correction
-		Calculator</a></li>
+		<li><a href="#hydrometercorrection">Hydrometer Correction Calculator</a></li>
 		<li><a href="#unitconverter">Unit Converter</a></li>
 	</ul>
 	</li>
@@ -158,6 +156,65 @@ data has been entered.</p>
 	since the volume is calculated automatically.</li>
 </ul>
 
+<a name="mashinfusion"></a>
+<h3>Mash Infusion:</h3>
+
+<p>Calculates the amount of water needed to raise the temperature of the mash a given number of degrees.  This currently does not account for heat loss to the mash tun.  This means, you might need to adjust the result based on your system.</p>
+
+<p>Formulas used were based on information found <a href="http://brewingtechniques.com/library/backissues/issue5.4/palmer_sb.html">here</a>.</p>
+
+<p>
+
+<b>TargetMashTemperature = Target temperature of the mash</b><br />
+<b>InitialMashTemperature = Initial temperature of the mash</b><br />
+<b>GrainWeight = Weight of the grain</b><br />
+<b>WaterInMash = Total volume of water in the mash before the infusion</b><br />
+<b>InfusionVolume = Volume of the water to add to the mash to achieve the target mash temperature</b><br />
+<b>InfusionWaterTemperature = Temperature of the infusion water. Defaults to boiling (212&deg;F/100&deg;C)</b><br />
+</p>
+<p>
+
+<b><sub>Infusion</sub> = (TargetMashTemperature - InitialMashTemperature) X (0.2 * GrainWeight + WaterInMash) ÷ (InfusionWaterTemperature - TargetMashTemperature)</b>
+</p>
+
+<p><b>Additional Settings: </b></p>
+
+<p>
+<ul>
+  <li>Mash Infusion Water Temperature can be anything warmer than the current mash temperature.  Defaults to boiling.</li>
+</ul>
+
+</p>
+
+<a name="decoctionvolume"></a>
+<h3>Decoction Volume:</h3>
+
+<p>Calculates the decoction volume needed to raise the temperature of the mash a given number of degrees.  This currently does not account for heat loss to the mash tun.  This means, you might need to adjust the result based on your system.</p>
+
+<p>Formulas used were based on information found <a href="http://www.feathercraft.net/decoction/">here</a>.</p>
+
+<p>
+<b>TargetMashTemperature = Target temperature of the mash</b><br />
+<b>InitialMashTemperature = Initial temperature of the mash</b><br />
+<b>GrainWeight = Weight of the grain in pounds</b><br />
+<b>WaterInMash = Total volume of water in the mash before the infusion in quarts</b><br />
+<b>InfusionVolume = Volume of the water to add to the mash to achieve the target mash temperature</b><br />
+<b>InfusionWaterTemperature = Temperature of the infusion water. Defaults to boiling (212&deg;F/100&deg;C)</b><br />
+<b>DecoctionVolume = The volume you need to take from the mash to perform the decoction in quarts</b><br />
+</p>
+
+<p><b>DecoctionVolume = (TargetMashTemperature - InitialMashTemperature) * (GrainWeight * (0.3125 + (WaterInMash / GrainWeight))) / (InfusionWaterTemperature - InitialMashTemperature)</b></p>
+
+
+<p><b>Additional Settings: </b></p>
+
+<p>
+<ul>
+  <li>Mash Infusion Water Temperature can be anything warmer than the current mash temperature.  Defaults to boiling.</li>
+</ul>
+
+</p>
+
 <a name="batchsparge"></a>
 <h3>Batch Sparge:</h3>
 
@@ -175,12 +232,14 @@ loss due to grain absorption</p>
 <p>The formulas used to calculate batch sparge volumes are (volume units can be anything as long as they are the
 same throughout):</p>
 
-<p><b>WaterToGrainRatio = .31 gallons/pound (or whatever you've set in preferences)</b></p>
-<p><b>GrainAbsorptionRatio = .13 (or whatever you've set in preferences)</b></p> 
-<p><b>StrikeWaterVolume = WaterToGrainRatio * GrainWeight</b></p>
-<p><b>GrainAbsorptionVolume = GrainAbsorptionRatio * GrainWeight</b></p>
-<p><b>FirstSpargeVolume = (BoilVolume / 2) - (StrikeWaterVolume - GrainAbsorptionVolume)</b></p>
-<p><b>SecondSpargeVolume = BoilVolume / 2</b></p>
+<p>
+<b>WaterToGrainRatio = .31 gallons/pound (or whatever you've set in preferences)</b><br />
+<b>GrainAbsorptionRatio = .13 (or whatever you've set in preferences)</b><br /> 
+<b>StrikeWaterVolume = WaterToGrainRatio * GrainWeight</b><br />
+<b>GrainAbsorptionVolume = GrainAbsorptionRatio * GrainWeight</b><br />
+<b>FirstSpargeVolume = (BoilVolume / 2) - (StrikeWaterVolume - GrainAbsorptionVolume)</b><br />
+<b>SecondSpargeVolume = BoilVolume / 2</b>
+</p>
 
 <p><b>Preferences:</b></p>
 
@@ -211,7 +270,7 @@ cooling loss percentage.</p>
 <h3>Carbonation:</h3>
 
 <p>Calculates the required priming sugar (bottle conditioning) or
-PSI (kegging) required to carbonate a given volume of beer to a number
+pressure (kegging) required to carbonate a given volume of beer to a number
 of volumes of CO2.</p>
 
 <p><b> WARNING!!! WARNING!!! WARNING!!! WARNING!!! <br />
@@ -307,12 +366,16 @@ included for convenience.</p>
 <a name="prefsgeneral"></a>
 <h3>General Settings</h3>
 
+<p><b>Global Unit Change: </b>Makes it easy to toggle all preferences between US or metric units.</p>
+
 <p><b>Temperature: </b>This is the unit used globally for
 temperature. Possibilities include Fahrenheit (F) and Celsius (C).</p>
 
 <p><b>Gravity: </b>This is the unit used globally for gravity.
 Possibilities include Specific Gravity (SG), Gravity Units or Points
 (GU), and Plato (P)</p>
+
+<p><b>Pressure: </b>The unit of measurement used for pressure.  Possibilities include pounds per square inch (psi), kilopascals (kPa), bars (bar), and atmospheres (atm).</p>
 
 <p><b>DME / LME Weight: </b>The unit of measurement used for extract
 weight.</p>
@@ -355,6 +418,8 @@ entry field is disabled.</p>
 <p><b>Boil Minutes: </b>The duration of the boil in minutes.
 Normally, this is 60 - 90 minutes.</p>
 
+<p><b>Mash Infusion Water Temperature: </b>The temperature of the water or decoction that gets added to the mash.  Defaults to boiling.</p>
+
 <a name="prefsequipment"></a>
 <h3>Equipment Settings</h3>
 
@@ -368,6 +433,8 @@ in the cylinder volume / height calculators.</p>
 measuring wort height, the value of wort below the false bottom needs to
 be accounted for. Enter the height of your false bottom in Distance
 Units. If you don't have a false bottom, just enter a zero.</p>
+
+<p><b>Total Equipment Loss: </b>Total of the losses in your system (mash tun deadspace, trub, etc.).</p>
 
 <p><b>Evaporation Rate: </b>The amount of loss over a 60 minute
 period expressed as a percent of the kettle volume. This value is
@@ -387,7 +454,7 @@ for your kettle, start with 10%.</p>
 	consistent boil each time.</li>
 </ul>
 
-<p><b>Hydrometer Calibration: </b>  THe temperature to which your hydrometer is calibrated.  Usually 60F or 68F.</p>
+<p><b>Hydrometer Calibration: </b>  The temperature to which your hydrometer is calibrated.  Usually 60 or 68&deg;F (15 - 20 &deg;C).</p>
 
 </body>
 </html>
