@@ -102,7 +102,7 @@ public class MashInfusionCalculatorActivity extends Activity {
     	TargetMashTemperature.setValue(targetMashTemperatureEntry, 0);
     	TotalWaterInMash.setValue(waterInMashVolumeEntry, 0);
     	GrainWeight.setValue(grainWeightEntry, 0);
-	
+    	
     	//Log.v("mash", String.format("currentTemp=%01.4f", CurrentMashTemperature.getValue()));
     	//Log.v("mash", String.format("targetTemp=%01.4f", TargetMashTemperature.getValue()));
     	//Log.v("mash", String.format("waterInMash=%01.4f", TotalWaterInMash.getValue()));
@@ -143,6 +143,7 @@ public class MashInfusionCalculatorActivity extends Activity {
     	waterInMashVolumeUnitType.setText(TotalWaterInMash.getLabelAbbr());
     	grainWeightUnitType.setText(GrainWeight.getLabelAbbr());
 
+        InfusionWaterVolume.setType(volumeType);
     	calculatedInfusionVolumeUnitType.setText(InfusionWaterVolume.getLabelPlural());
 	}
 	
