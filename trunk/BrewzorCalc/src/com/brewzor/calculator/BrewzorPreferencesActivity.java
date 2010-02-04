@@ -24,8 +24,10 @@ import com.brewzor.calculator.preferences.Preferences;
 import com.brewzor.converters.Distance;
 import com.brewzor.converters.Gravity;
 import com.brewzor.converters.Mass;
+import com.brewzor.converters.Pressure;
 import com.brewzor.converters.Temperature;
 import com.brewzor.converters.Volume;
+import com.brewzor.utils.NumberFormat;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -33,6 +35,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.widget.Toast;
 
 public class BrewzorPreferencesActivity extends PreferenceActivity {
 
@@ -45,6 +48,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 	private Mass mass;
 	private Temperature temperature;
 	private Distance distance;
+	private Pressure pressure;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +63,11 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		mass = new Mass(0, Mass.Unit.GRAM, getBaseContext(), sPref);
 		temperature = new Temperature(0, Temperature.Unit.FAHRENHEIT, getBaseContext(), sPref);
 		distance = new Distance(0, Distance.Unit.INCH, getBaseContext(), sPref);
-
+		pressure = new Pressure(0, Pressure.Unit.PSI, getBaseContext(), sPref);
+		
+		pref = findPreference(Preferences.GLOBAL_UNIT_CHANGE);
+		pref.setOnPreferenceChangeListener(mUnitChangeListener);
+		
 		pref = findPreference(Preferences.GLOBAL_TEMPERATURE_UNIT);
 		pref.setOnPreferenceChangeListener(mPrefListener);
 		
@@ -72,6 +80,11 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		pref = findPreference(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE);
 		pref.setOnPreferenceChangeListener(mPrefListener);
 
+		pref = findPreference(Preferences.GLOBAL_PRESSURE_UNIT);
+		pref.setOnPreferenceChangeListener(mPrefListener);
+
+
+		
 		pref = findPreference(Preferences.BATCH_VOLUME_UNIT);
 		pref.setOnPreferenceChangeListener(mPrefListener);
 		
@@ -86,7 +99,19 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 				
 		pref = findPreference(Preferences.BATCH_BOIL_MINUTES);
 		pref.setOnPreferenceChangeListener(mPrefListener);
-				
+
+/*	 	// not yet implemented
+		pref = findPreference(Preferences.BATCH_GRAIN_ABSORPTION_RATIO);
+		pref.setOnPreferenceChangeListener(mPrefListener);
+
+		pref = findPreference(Preferences.BATCH_GRAIN_VOLUME_RATIO);
+		pref.setOnPreferenceChangeListener(mPrefListener);
+*/
+		pref = findPreference(Preferences.BATCH_INFUSION_WATER_TEMPERATURE);
+		pref.setOnPreferenceChangeListener(mPrefListener);
+
+		
+		
 		pref = findPreference(Preferences.KETTLE_DISTANCE_UNIT);
 		pref.setOnPreferenceChangeListener(mPrefListener);
 				
@@ -114,6 +139,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		pref.setSummary(temperature.getLabelPlural());
 		
 		pref = findPreference(Preferences.GLOBAL_GRAVITY_UNIT);
+		
 		gravity.setType(gravity.typeFromPref(Preferences.GLOBAL_GRAVITY_UNIT, Gravity.Unit.SG));
 		pref.setSummary(gravity.getLabelPlural());
 
@@ -128,6 +154,9 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		pref = findPreference(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE);
 		pref.setSummary(getString(R.string.hydrometer_calibration_temperature_pref_summary_format, sPref.getString(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE, "60"), temperature.getLabelAbbr()));
 
+		pref = findPreference(Preferences.GLOBAL_PRESSURE_UNIT);
+		pressure.setType(pressure.typeFromPref(Preferences.GLOBAL_PRESSURE_UNIT, Pressure.Unit.PSI));
+		pref.setSummary(pressure.getLabelPlural());
 		
 		
 		pref = findPreference(Preferences.BATCH_VOLUME_UNIT);
@@ -147,8 +176,16 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		pref = findPreference(Preferences.BATCH_BOIL_MINUTES);
 		pref.setSummary(sPref.getString(Preferences.BATCH_BOIL_MINUTES, "60"));
 	
+		/*
+		pref = findPreference(Preferences.BATCH_GRAIN_ABSORPTION_RATIO);
+		pref.setSummary(sPref.getString(Preferences.BATCH_GRAIN_ABSORPTION_RATIO, ".13"));
+	
+		pref = findPreference(Preferences.BATCH_GRAIN_VOLUME_RATIO);
+		pref.setSummary(sPref.getString(Preferences.BATCH_GRAIN_VOLUME_RATIO, ".08"));
+	*/
 		
-		
+		pref = findPreference(Preferences.BATCH_INFUSION_WATER_TEMPERATURE);
+		pref.setSummary(sPref.getString(Preferences.BATCH_INFUSION_WATER_TEMPERATURE, "212") + " " + temperature.getLabelAbbr());
 		
 		pref = findPreference(Preferences.KETTLE_DISTANCE_UNIT);
 		distance.setType(distance.typeFromPref(Preferences.KETTLE_DISTANCE_UNIT, Distance.Unit.INCH));
@@ -165,10 +202,10 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 
 		pref = findPreference(Preferences.KETTLE_COOLING_LOSS);
 		pref.setSummary(sPref.getString(Preferences.KETTLE_COOLING_LOSS, "4") + "%");
-
+		pref.getLayoutResource();
+		
 		pref = findPreference(Preferences.KETTLE_EQUIPMENT_LOSS);
 		pref.setSummary(getString(R.string.equipment_loss_pref_summary_format, sPref.getString(Preferences.KETTLE_EQUIPMENT_LOSS, "0"), volume.getLabelPlural()));
-
 
 	}
 	
@@ -184,7 +221,136 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 			editor.putString(preference.getKey(), newValue.toString());
 			editor.commit();
 			updateList();
-			return false;
+			return true;
+		}
+	};
+
+	private OnPreferenceChangeListener mUnitChangeListener = new OnPreferenceChangeListener() { 		
+		@Override
+		public boolean onPreferenceChange(Preference preference, java.lang.Object newValue) {
+
+			if ("US".equals(newValue.toString()) && "METRIC".equals(sPref.getString(Preferences.GLOBAL_UNIT_CHANGE, "US"))) {
+
+				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_FINAL_VOLUME, "0"), 0));
+				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.LITER));
+				volume.convert(Volume.Unit.GALLON);
+				editor.putString(Preferences.BATCH_FINAL_VOLUME, volume.toString());
+				
+				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, "1"), 1));
+				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.LITER));
+				mass.setValue(1);
+				mass.setType(mass.typeFromPref(Preferences.BATCH_GRAIN_MASS_UNIT, Mass.Unit.KILOGRAM));
+				volume.convert(Volume.Unit.GALLON);
+				mass.convert(Mass.Unit.POUND);
+				volume.setValue(volume.getValue() * mass.getValue());
+				editor.putString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, volume.toString());
+				
+				temperature.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_INFUSION_WATER_TEMPERATURE, "0"), 0));
+				temperature.setType(temperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.CELSIUS));
+				temperature.convert(Temperature.Unit.FAHRENHEIT);
+				editor.putString(Preferences.BATCH_INFUSION_WATER_TEMPERATURE, temperature.toString());
+				
+				distance.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.KETTLE_DIAMETER, "0"), 0));
+				distance.setType(distance.typeFromPref(Preferences.KETTLE_DISTANCE_UNIT, Distance.Unit.CENTIMETER));
+				distance.convert(Distance.Unit.INCH);
+				editor.putString(Preferences.KETTLE_DIAMETER, distance.toString());
+				
+				distance.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.KETTLE_FALSE_BOTTOM_HEIGHT, "0"), 0));
+				distance.setType(distance.typeFromPref(Preferences.KETTLE_DISTANCE_UNIT, Distance.Unit.CENTIMETER));
+				distance.convert(Distance.Unit.INCH);
+				editor.putString(Preferences.KETTLE_FALSE_BOTTOM_HEIGHT, distance.toString());
+				
+				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_FINAL_VOLUME, "0"), 0));
+				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.LITER));
+				volume.convert(Volume.Unit.GALLON);
+				editor.putString(Preferences.BATCH_FINAL_VOLUME, volume.toString());
+				
+				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.KETTLE_EQUIPMENT_LOSS, "0"), 0));
+				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.LITER));
+				volume.convert(Volume.Unit.GALLON);
+				editor.putString(Preferences.KETTLE_EQUIPMENT_LOSS, volume.toString());
+				
+				temperature.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE, "60"), 60));
+				temperature.setType(temperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.CELSIUS));
+				temperature.convert(Temperature.Unit.FAHRENHEIT);
+				editor.putString(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE, temperature.toString());
+
+				editor.putString(Preferences.GLOBAL_TEMPERATURE_UNIT, "FAHRENHEIT");
+				editor.putString(Preferences.GLOBAL_GRAVITY_UNIT, "SG");
+				editor.putString(Preferences.GLOBAL_EXTRACT_MASS_UNIT, "OUNCE");
+				editor.putString(Preferences.GLOBAL_PRESSURE_UNIT, "PSI");
+				editor.putString(Preferences.BATCH_VOLUME_UNIT, "GALLON");
+				editor.putString(Preferences.BATCH_GRAIN_MASS_UNIT, "POUND");
+				editor.putString(Preferences.KETTLE_DISTANCE_UNIT, "INCH");
+				
+				
+			
+			} else if ("METRIC".equals(newValue.toString()) && "US".equals(sPref.getString(Preferences.GLOBAL_UNIT_CHANGE, "METRIC"))) {
+
+				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_FINAL_VOLUME, "0"), 0));
+				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON));
+				volume.convert(Volume.Unit.LITER);
+				editor.putString(Preferences.BATCH_FINAL_VOLUME, volume.toString());
+				
+				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, "1"), 1));
+				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON));
+				mass.setValue(1);
+				mass.setType(mass.typeFromPref(Preferences.BATCH_GRAIN_MASS_UNIT, Mass.Unit.POUND));
+				volume.convert(Volume.Unit.LITER);
+				mass.convert(Mass.Unit.KILOGRAM);
+				volume.setValue(volume.getValue() * mass.getValue());
+				editor.putString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, volume.toString());
+				
+				temperature.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_INFUSION_WATER_TEMPERATURE, "0"), 0));
+				temperature.setType(temperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.FAHRENHEIT));
+				temperature.convert(Temperature.Unit.CELSIUS);
+				editor.putString(Preferences.BATCH_INFUSION_WATER_TEMPERATURE, temperature.toString());
+				
+				distance.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.KETTLE_DIAMETER, "0"), 0));
+				distance.setType(distance.typeFromPref(Preferences.KETTLE_DISTANCE_UNIT, Distance.Unit.INCH));
+				distance.convert(Distance.Unit.CENTIMETER);
+				editor.putString(Preferences.KETTLE_DIAMETER, distance.toString());
+				
+				distance.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.KETTLE_FALSE_BOTTOM_HEIGHT, "0"), 0));
+				distance.setType(distance.typeFromPref(Preferences.KETTLE_DISTANCE_UNIT, Distance.Unit.INCH));
+				distance.convert(Distance.Unit.CENTIMETER);
+				editor.putString(Preferences.KETTLE_FALSE_BOTTOM_HEIGHT, distance.toString());
+				
+				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_FINAL_VOLUME, "0"), 0));
+				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON));
+				volume.convert(Volume.Unit.LITER);
+				editor.putString(Preferences.BATCH_FINAL_VOLUME, volume.toString());
+				
+				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.KETTLE_EQUIPMENT_LOSS, "0"), 0));
+				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON));
+				volume.convert(Volume.Unit.LITER);
+				editor.putString(Preferences.KETTLE_EQUIPMENT_LOSS, volume.toString());
+				
+				temperature.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE, "60"), 60));
+				temperature.setType(temperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.FAHRENHEIT));
+				temperature.convert(Temperature.Unit.CELSIUS);
+				editor.putString(Preferences.GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE, temperature.toString());
+
+				editor.putString(Preferences.GLOBAL_TEMPERATURE_UNIT, "CELSIUS");
+				editor.putString(Preferences.GLOBAL_GRAVITY_UNIT, "SG");
+				editor.putString(Preferences.GLOBAL_PRESSURE_UNIT, "KPA");
+				editor.putString(Preferences.BATCH_VOLUME_UNIT, "LITER");
+				editor.putString(Preferences.BATCH_GRAIN_MASS_UNIT, "KILOGRAM");
+				editor.putString(Preferences.KETTLE_DISTANCE_UNIT, "CENTIMETER");
+				editor.putString(Preferences.GLOBAL_EXTRACT_MASS_UNIT, "GRAM");
+
+			}
+			editor.putString(preference.getKey(), newValue.toString());
+			
+			//TODO: don't know how to update the values stored in the listprefs and editprefs.  
+			//      the values get saved, but if you click on the preference without reloading the activity
+			//      the original text is in there.  ideally we'd skip the toast and finish() and just update the 
+			//      preferences.
+			Toast.makeText(getApplicationContext(), "Updating Measurement Units...", Toast.LENGTH_SHORT).show();
+			editor.commit();
+			finish();
+			//updateList();
+			return true;
 		}
 	};
 

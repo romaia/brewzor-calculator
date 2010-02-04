@@ -21,12 +21,27 @@
 -->
 <resources>
 
+	<string-array name="calculatorList">
+		<item>@string/strike_temperature</item>
+		<item>@string/gravity_correction</item>
+		<item>@string/mash_infusion</item>
+		<item>@string/decoction</item>
+		<item>@string/batch_sparge</item>
+		<item>@string/boil_off</item>
+		<item>@string/cylinder_volume</item>
+		<item>@string/cylinder_height</item>
+		<item>@string/carbonation</item>
+		<item>@string/hydrometer_correction</item>
+		<item>@string/unit_conversion</item>
+	</string-array>
+
 	<string-array name="unitTypesList">
 		<item>@string/unit_volume</item>
 		<item>@string/unit_mass_weight</item>
 		<item>@string/unit_gravity</item>
 		<item>@string/unit_temperature</item>
 		<item>@string/unit_distance_length</item>
+		<item>@string/unit_pressure</item>
 	</string-array>
 
 	<string-array name="unitTypesIdList">
@@ -35,6 +50,7 @@
 		<item>GRAVITY</item>
 		<item>TEMPERATURE</item>
 		<item>DISTANCE</item>
+		<item>PRESSURE</item>
 	</string-array>
 
 	<string-array name="gravityUnitsList">
@@ -119,18 +135,29 @@
 		<item>INCH</item>
 	</string-array>
 
-	<string-array name="calculatorList">
-		<item>@string/strike_temperature</item>
-		<item>@string/gravity_correction</item>
-		<item>@string/batch_sparge</item>
-		<item>@string/boil_off</item>
-		<item>@string/cylinder_volume</item>
-		<item>@string/cylinder_height</item>
-		<item>@string/carbonation</item>
-		<item>@string/hydrometer_correction</item>
-		<item>@string/unit_conversion</item>
+	<string-array name="pressureUnitsList">
+		<item>@string/psi</item>
+		<item>@string/kpa</item>
+		<item>@string/bar</item>
+		<item>@string/atmosphere</item>
+	</string-array>
+	
+	<string-array name="pressureUnitsIdList">
+		<item>PSI</item>
+		<item>KPA</item>
+		<item>BAR</item>
+		<item>ATMOSPHERE</item>
 	</string-array>
 
+	<string-array name="measurementSystemsList">
+		<item>US</item>
+		<item>Metric</item>
+	</string-array>
+
+	<string-array name="measurementSystemsIdList">
+		<item>US</item>
+		<item>METRIC</item>
+	</string-array>
 
 	<!--  List taken from Brewing Classic Styles by Zainasheff and Palmer -->
 	<!--  Some items have been omitted -->

@@ -26,10 +26,12 @@ public class Preferences {
 		
 	public static final String GLOBAL_INIT = "global.init";
 	public static final String GLOBAL_EULA_ACCEPT = "global.eula_accept";
+	public static final String GLOBAL_UNIT_CHANGE = "global.unit_change";
 	public static final String GLOBAL_TEMPERATURE_UNIT = "global.temperature_unit";
 	public static final String GLOBAL_GRAVITY_UNIT = "global.gravity_unit";
 	public static final String GLOBAL_EXTRACT_MASS_UNIT = "global.extract_mass_unit";
 	public static final String GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE = "global.hydrometer_calibration_temperature";
+	public static final String GLOBAL_PRESSURE_UNIT = "global.pressure_unit";
 
 	public static final String BATCH_VOLUME_UNIT = "batch.volume_unit";
 	public static final String BATCH_FINAL_VOLUME = "batch.final_volume";
@@ -38,7 +40,8 @@ public class Preferences {
 	public static final String BATCH_BOIL_MINUTES = "batch.boil_minutes";
 	public static final String BATCH_GRAIN_ABSORPTION_RATIO = "batch.grain_absorption_ratio";
 	public static final String BATCH_GRAIN_VOLUME_RATIO = "batch.grain_volume_ratio";
-
+	public static final String BATCH_INFUSION_WATER_TEMPERATURE = "batch.infusion_water_temperature";
+	
 	public static final String KETTLE_DISTANCE_UNIT = "kettle.distance_unit";
 	public static final String KETTLE_DIAMETER = "kettle.diameter";
 	public static final String KETTLE_FALSE_BOTTOM_HEIGHT = "kettle.false_bottom_height";
@@ -48,12 +51,11 @@ public class Preferences {
 	public static final String KETTLE_EQUIPMENT_LOSS = "kettle.equipment_loss";
 
 	public static final String VERSION_1_1_0 = "version.1.1.0";
-
-	
+	public static final String VERSION_1_2_0 = "version.1.2.0";
 	
 	public static final void init(SharedPreferences prefs) {
         Editor editor = prefs.edit();
-
+        
         if (prefs.getBoolean(Preferences.GLOBAL_INIT, false) == false) {
 	        editor.putBoolean(Preferences.GLOBAL_INIT, true);
 	        editor.putString(Preferences.GLOBAL_TEMPERATURE_UNIT, "FAHRENHEIT");
@@ -80,7 +82,14 @@ public class Preferences {
 	        editor.putString(Preferences.BATCH_GRAIN_VOLUME_RATIO, ".08");
 	        editor.putString(Preferences.KETTLE_EQUIPMENT_LOSS, "0");
         }
-
+/*
+        if (prefs.getBoolean(Preferences.VERSION_1_2_0, false)) {
+        	editor.putBoolean(Preferences.VERSION_1_2_0, true);
+	        editor.putString(Preferences.GLOBAL_UNIT_CHANGE, "US");        	
+	        editor.putString(Preferences.BATCH_INFUSION_WATER_TEMPERATURE, "212");        	
+	        editor.putString(Preferences.GLOBAL_PRESSURE_UNIT, "PSI");        	
+       	}
+*/      
         editor.commit();	
 
 	}

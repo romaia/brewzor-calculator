@@ -22,6 +22,7 @@ package com.brewzor.calculator;
 import com.brewzor.converters.Distance;
 import com.brewzor.converters.Gravity;
 import com.brewzor.converters.Mass;
+import com.brewzor.converters.Pressure;
 import com.brewzor.converters.Temperature;
 import com.brewzor.converters.Volume;
 
@@ -59,6 +60,7 @@ public class UnitConverterActivity extends ListActivity {
 	private Gravity gravity;
 	private Temperature temperature;
 	private Distance distance;
+	private Pressure pressure;
 	
 	private ArrayList<UnitListItem> convertedList = null;
     private UnitListItemAdapter unitListAdapter;
@@ -80,12 +82,14 @@ public class UnitConverterActivity extends ListActivity {
         gravity = new Gravity(0, Gravity.Unit.SG, getBaseContext(), prefs);
         temperature = new Temperature(0, Temperature.Unit.FAHRENHEIT, getBaseContext(), prefs);
         distance = new Distance(0, Distance.Unit.CENTIMETER, getBaseContext(), prefs);
-
+        pressure = new Pressure(0.0, Pressure.Unit.PSI, getBaseContext(), prefs);
+        
         volume.setFormat(getString(R.string.unit_converter_format));
         mass.setFormat(getString(R.string.unit_converter_format));
         gravity.setFormat(getString(R.string.unit_converter_format));
         temperature.setFormat(getString(R.string.unit_converter_format));
         distance.setFormat(getString(R.string.unit_converter_format));
+        pressure.setFormat(getString(R.string.unit_converter_format));
         
         unitEntry = (EditText) findViewById(R.id.unit_entry);
         unitEntry.setOnKeyListener(mOnKeyListener);
@@ -219,6 +223,18 @@ public class UnitConverterActivity extends ListActivity {
 	    		convertedList.add(new UnitListItem(volume.toString(), volume.getLabelAbbr() + " (" + volume.getLabel() + ")"));
 	    	}
 
+    	} else if (unitCategorySelected.equals(getString(R.string.unit_pressure))) {
+
+    		pressure.setValue(unitEntry, 0.0);
+    		if (unitType.getSelectedItemPosition() >= 0){
+    			pressure.setType(getResources().getStringArray(R.array.pressureUnitsIdList)[unitType.getSelectedItemPosition()].toUpperCase());
+    		}
+
+	    	for (Pressure.Unit unit : Pressure.Unit.values()) {
+	    		pressure.convert(unit);
+	    		convertedList.add(new UnitListItem(pressure.toString(), pressure.getLabelAbbr() + " (" + pressure.getLabel() + ")"));
+	    	}
+
     	}
 
         if(convertedList != null && convertedList.size() > 0){
@@ -258,6 +274,11 @@ public class UnitConverterActivity extends ListActivity {
     		for (Volume.Unit unit : Volume.Unit.values()) {
     			volume.setType(unit);
     			spinnerAdapter.add(volume.getLabel());
+    		}
+    	} else if (unitCategorySelected.equals(getString(R.string.unit_pressure))) {
+    		for (Pressure.Unit unit : Pressure.Unit.values()) {
+    			pressure.setType(unit);
+    			spinnerAdapter.add(pressure.getLabel());
     		}
     	}
 

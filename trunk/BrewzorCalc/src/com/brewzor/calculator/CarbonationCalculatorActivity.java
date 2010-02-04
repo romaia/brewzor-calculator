@@ -22,6 +22,7 @@ package com.brewzor.calculator;
 import com.brewzor.calculator.R;
 import com.brewzor.calculator.preferences.Preferences;
 import com.brewzor.converters.Mass;
+import com.brewzor.converters.Pressure;
 import com.brewzor.converters.Temperature;
 import com.brewzor.converters.Volume;
 import com.brewzor.utils.NumberFormat;
@@ -30,6 +31,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,6 +43,7 @@ import android.widget.TextView;
 public class CarbonationCalculatorActivity extends Activity {
 
 	private EditText volumesCO2DesiredEntry;
+	private TextView calculatedCO2PressureUnitType;
 	private EditText beerTemperatureEntry;
 	private TextView beerTemperatureUnitType;
 	private EditText beerVolumeEntry;
@@ -56,11 +59,12 @@ public class CarbonationCalculatorActivity extends Activity {
 	private Volume.Unit volumeType;
 	private Mass.Unit massType;
 	private Temperature.Unit temperatureType;
+	private Pressure.Unit pressureType;
 	
 	private double volumesCO2;
 	private Volume beerVolume;
 	private Temperature temperature;
-	private double psi;
+	private Pressure pressure;
 	private Mass cornSugar;
 	private Mass dme;
 	private Mass tableSugar;
@@ -88,6 +92,7 @@ public class CarbonationCalculatorActivity extends Activity {
         beerVolumeUnitType = (TextView) findViewById(R.id.beerVolumeUnitType);        
 
         calculatedCO2Pressure = (TextView) findViewById(R.id.calculatedCO2Pressure);
+        calculatedCO2PressureUnitType = (TextView) findViewById(R.id.calculatedCO2PressureUnitType);
         
         calculatedTableSugar = (TextView) findViewById(R.id.calculatedTableSugar);
         calculatedTableSugarUnitType = (TextView) findViewById(R.id.calculatedTableSugarUnitType);
@@ -103,11 +108,17 @@ public class CarbonationCalculatorActivity extends Activity {
     	cornSugar = new Mass(0.0, Mass.Unit.GRAM, getBaseContext(), prefs);
     	dme = new Mass(0.0, Mass.Unit.GRAM, getBaseContext(), prefs);
     	tableSugar = new Mass(0.0, Mass.Unit.GRAM, getBaseContext(), prefs);
-	
+    	pressure = new Pressure(0.0, Pressure.Unit.PSI, getBaseContext(), prefs);
+    	
 	}
 
 	private void getPrefs() {
 
+		pressureType = pressure.typeFromPref(Preferences.GLOBAL_PRESSURE_UNIT, Pressure.Unit.PSI);
+		pressure.setType(pressureType);
+		Log.v("carb", pressure.getLabel());
+		calculatedCO2PressureUnitType.setText(pressure.getLabelAbbr());
+		
 		temperatureType = temperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.FAHRENHEIT);		
         temperature.setType(temperatureType);
         beerTemperatureUnitType.setText(temperature.getLabelAbbr());
@@ -174,10 +185,10 @@ public class CarbonationCalculatorActivity extends Activity {
 		double tempF = temperature.compare(Temperature.Unit.FAHRENHEIT);
 		double volumeLiters = beerVolume.compare(Volume.Unit.LITER);
 
-		psi = -16.6999 - (0.0101059 * tempF) + (0.00116512 * java.lang.Math.pow(tempF, 2)) + (0.173354 * tempF * volumesCO2) + (4.24267 * volumesCO2) - (0.0684226 * java.lang.Math.pow(volumesCO2, 2));;
-		if (psi < 0) psi = 0;
-		
-		calculatedCO2Pressure.setText(getString(R.string.double_format, psi));
+		pressure.setValue(-16.6999 - (0.0101059 * tempF) + (0.00116512 * java.lang.Math.pow(tempF, 2)) + (0.173354 * tempF * volumesCO2) + (4.24267 * volumesCO2) - (0.0684226 * java.lang.Math.pow(volumesCO2, 2)));
+		if (pressure.getValue() < 0) pressure.setValue(0);
+		pressure.setType(Pressure.Unit.PSI);
+		calculatedCO2Pressure.setText(getString(R.string.double_format, pressure.compare(pressureType)));
 
 		// http://www.myhomebrew.com/bp0.html
 		flatBeerCarbonation = 3.0378 - 5.0062e-2 * tempF + 2.6555e-4 * java.lang.Math.pow(tempF, 2);
