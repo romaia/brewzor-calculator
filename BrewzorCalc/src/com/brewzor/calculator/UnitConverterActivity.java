@@ -170,9 +170,13 @@ public class UnitConverterActivity extends ListActivity {
 	        	distance.setType(getResources().getStringArray(R.array.distanceUnitsIdList)[unitType.getSelectedItemPosition()].toUpperCase());    		
 	    	}
 	    	
+	    	Distance converted = new Distance(0, Distance.Unit.CENTIMETER, getBaseContext(), prefs);
+	    	converted.setFormat(getString(R.string.unit_converter_format));
 	    	for (Distance.Unit unit : Distance.Unit.values()) {
-	    		distance.convert(unit);
-	    		convertedList.add(new UnitListItem(distance.toString(), distance.getLabelAbbr() + " (" + distance.getLabel() + ")"));
+		    	converted.setValue(distance.getValue());
+		    	converted.setType(distance.getType());
+	    		converted.convert(unit);
+	    		convertedList.add(new UnitListItem(converted.toString(), converted.getLabelAbbr() + " (" + converted.getLabel() + ")"));
 	    	}
 	    	
     	} else if (unitCategorySelected.equals(getString(R.string.unit_mass_weight))) {
@@ -182,9 +186,13 @@ public class UnitConverterActivity extends ListActivity {
 	        	mass.setType(getResources().getStringArray(R.array.massUnitsIdList)[unitType.getSelectedItemPosition()].toUpperCase());    		
 	    	}
 	    	
+	    	Mass converted = new Mass(0, Mass.Unit.GRAM, getBaseContext(), prefs);
+	    	converted.setFormat(getString(R.string.unit_converter_format));
 	    	for (Mass.Unit unit : Mass.Unit.values()) {
-	    		mass.convert(unit);
-	    		convertedList.add(new UnitListItem(mass.toString(), mass.getLabelAbbr() + " (" + mass.getLabel() + ")"));
+		    	converted.setValue(mass.getValue());
+		    	converted.setType(mass.getType());
+	    		converted.convert(unit);
+	    		convertedList.add(new UnitListItem(converted.toString(), converted.getLabelAbbr() + " (" + converted.getLabel() + ")"));
 	    	}
     	
     	} else if (unitCategorySelected.equals(getString(R.string.unit_gravity))){
@@ -193,10 +201,14 @@ public class UnitConverterActivity extends ListActivity {
 	    	if (unitType.getSelectedItemPosition() >= 0){
 	        	gravity.setType(getResources().getStringArray(R.array.gravityUnitsIdList)[unitType.getSelectedItemPosition()].toUpperCase());    		
 	    	}
-	    	
+
+	    	Gravity converted = new Gravity(0, Gravity.Unit.SG, getBaseContext(), prefs);
+	    	converted.setFormat(getString(R.string.unit_converter_format));
 	    	for (Gravity.Unit unit : Gravity.Unit.values()) {
-	    		gravity.convert(unit);
-	    		convertedList.add(new UnitListItem(gravity.toString(), gravity.getLabelAbbr() + " (" + gravity.getLabel() + ")"));
+		    	converted.setValue(gravity.getValue());
+		    	converted.setType(gravity.getType());
+	    		converted.convert(unit);
+	    		convertedList.add(new UnitListItem(converted.toString(), converted.getLabelAbbr() + " (" + converted.getLabel() + ")"));
 	    	}
     	
     	} else if (unitCategorySelected.equals(getString(R.string.unit_temperature))) {
@@ -205,10 +217,14 @@ public class UnitConverterActivity extends ListActivity {
 	    	if (unitType.getSelectedItemPosition() >= 0){
 	        	temperature.setType(getResources().getStringArray(R.array.temperatureUnitsIdList)[unitType.getSelectedItemPosition()].toUpperCase());    		
 	    	}
-	    	
+	 
+	    	Temperature converted = new Temperature(0, Temperature.Unit.FAHRENHEIT, getBaseContext(), prefs);
+	    	converted.setFormat(getString(R.string.unit_converter_format));
 	    	for (Temperature.Unit unit : Temperature.Unit.values()) {
-	    		temperature.convert(unit);
-	    		convertedList.add(new UnitListItem(temperature.toString(), temperature.getLabelAbbr() + " (" + temperature.getLabel() + ")"));
+		    	converted.setValue(temperature.getValue());
+		    	converted.setType(temperature.getType());
+	    		converted.convert(unit);
+	    		convertedList.add(new UnitListItem(converted.toString(), converted.getLabelAbbr() + " (" + converted.getLabel() + ")"));
 	    	}
     	
     	} else if (unitCategorySelected.equals(getString(R.string.unit_volume))) {
@@ -217,10 +233,14 @@ public class UnitConverterActivity extends ListActivity {
 	    	if (unitType.getSelectedItemPosition() >= 0){
 	        	volume.setType(getResources().getStringArray(R.array.volumeUnitsIdList)[unitType.getSelectedItemPosition()].toUpperCase());    		
 	    	}
-	    	
+
+	    	Volume converted = new Volume(0, Volume.Unit.MILLILITER, getBaseContext(), prefs);
+	    	converted.setFormat(getString(R.string.unit_converter_format));
 	    	for (Volume.Unit unit : Volume.Unit.values()) {
-	    		volume.convert(unit);
-	    		convertedList.add(new UnitListItem(volume.toString(), volume.getLabelAbbr() + " (" + volume.getLabel() + ")"));
+		    	converted.setValue(volume.getValue());
+		    	converted.setType(volume.getType());
+	    		converted.convert(unit);
+	    		convertedList.add(new UnitListItem(converted.toString(), converted.getLabelAbbr() + " (" + converted.getLabel() + ")"));
 	    	}
 
     	} else if (unitCategorySelected.equals(getString(R.string.unit_pressure))) {
@@ -230,9 +250,13 @@ public class UnitConverterActivity extends ListActivity {
     			pressure.setType(getResources().getStringArray(R.array.pressureUnitsIdList)[unitType.getSelectedItemPosition()].toUpperCase());
     		}
 
+    		Pressure converted = new Pressure(0, Pressure.Unit.PSI, getBaseContext(), prefs);
+	    	converted.setFormat(getString(R.string.unit_converter_format));
 	    	for (Pressure.Unit unit : Pressure.Unit.values()) {
-	    		pressure.convert(unit);
-	    		convertedList.add(new UnitListItem(pressure.toString(), pressure.getLabelAbbr() + " (" + pressure.getLabel() + ")"));
+		    	converted.setValue(pressure.getValue());
+		    	converted.setType(pressure.getType());
+	    		converted.convert(unit);
+	    		convertedList.add(new UnitListItem(converted.toString(), converted.getLabelAbbr() + " (" + converted.getLabel() + ")"));
 	    	}
 
     	}

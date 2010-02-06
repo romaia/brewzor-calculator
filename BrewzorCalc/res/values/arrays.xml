@@ -31,6 +31,7 @@
 		<item>@string/cylinder_volume</item>
 		<item>@string/cylinder_height</item>
 		<item>@string/carbonation</item>
+		<item>@string/refractometer</item>
 		<item>@string/hydrometer_correction</item>
 		<item>@string/unit_conversion</item>
 	</string-array>
@@ -57,12 +58,14 @@
 		<item>@string/sg</item>
 		<item>@string/gu</item>
 		<item>@string/plato</item>
+		<item>@string/brix</item>
 	</string-array>
 	
 	<string-array name="gravityUnitsIdList">
 		<item>SG</item>
 		<item>GU</item>
 		<item>PLATO</item>
+		<item>BRIX</item>
 	</string-array>
 	
 	<string-array name="massUnitsList">

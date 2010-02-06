@@ -26,6 +26,10 @@
     <string name="app_name">Brewzor</string>
     <string name="app_name_long">Brewzor Brewing Calculator</string>
 
+	<!-- Timer -->
+
+	<string name="timer_notification_text">Notification text!</string>
+
 	<!-- Preferences -->	
 	
 	<string name="set_preferences">Set Preferences</string>
@@ -219,6 +223,11 @@
 	<string name="table_sugar">Table Sugar</string>
 	<string name="dme">DME (75% AA)</string>
 
+	<!-- Refractometer -->
+
+	<string name="refractometer">Refractometer</string>
+	<string name="refractometer_"></string>
+
 	<!-- Hydrometer Correction -->
 
 	<string name="hydrometer_correction">Hydrometer Correction</string>
@@ -256,15 +265,20 @@
 	<string name="plato_abbr">°P</string>
 	<string name="plato_plural">Plato</string>
 
-	<string name="sg">SG</string>
+	<string name="sg">Specific Gravity</string>
 	<string name="sg_plural">SG</string>
 	<string name="sg_abbr">SG</string>
 	<string name="sg_default">1.000</string>
 
-	<string name="gu">GU</string>
+	<string name="gu">Gravity Units / Points</string>
 	<string name="gu_plural">GU</string>
 	<string name="gu_abbr">GU</string>
 	<string name="gu_default">0</string>
+	
+	<string name="brix">Brix</string>
+	<string name="brix_plural">Brix</string>
+	<string name="brix_abbr">°Bx</string>
+	<string name="brix_default">0</string>
 	
 	<!-- Temperature Conversion -->
 	
