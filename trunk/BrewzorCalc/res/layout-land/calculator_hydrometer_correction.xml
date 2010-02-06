@@ -33,7 +33,7 @@
 
 			<EditText android:id="@+id/SGEntry" style="@style/sgUnitEntryStyle" />
 
-			<TextView android:text="@string/sg" style="@style/converterLargeTextStyle" />
+			<TextView android:text="@string/sg_abbr" style="@style/converterLargeTextStyle" />
 
 			<EditText android:id="@+id/temperatureEntry" style="@style/doubleUnitEntryStyle" />
 
