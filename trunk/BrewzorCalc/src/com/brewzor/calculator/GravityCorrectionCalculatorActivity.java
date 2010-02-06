@@ -173,10 +173,10 @@ public class GravityCorrectionCalculatorActivity extends Activity {
 		gravityType = currentGravity.typeFromPref(Preferences.GLOBAL_GRAVITY_UNIT, Gravity.Unit.SG);
 
         currentGravity.setType(gravityType);
-    	currentGravityUnitType.setText(currentGravity.getLabel());
+    	currentGravityUnitType.setText(currentGravity.getLabelAbbr());
 
     	desiredGravity.setType(gravityType);
-    	desiredGravityUnitType.setText(desiredGravity.getLabel());
+    	desiredGravityUnitType.setText(desiredGravity.getLabelAbbr());
                 
         volumeType = currentVolume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON);
         

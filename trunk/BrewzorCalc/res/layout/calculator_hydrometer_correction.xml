@@ -34,17 +34,17 @@
 
 			<TableRow>
 
-				<TextView android:text="@string/sg" style="@style/converterLargeTextStyle" />
-
 				<EditText android:id="@+id/SGEntry" style="@style/sgUnitEntryStyle" />
+
+				<TextView android:text="@string/sg_abbr" style="@style/converterLargeTextStyle" />
 
 			</TableRow>
 
 			<TableRow>
 
-				<TextView android:id="@+id/temperatureUnitType" style="@style/converterLargeTextStyle" />
-
 				<EditText android:id="@+id/temperatureEntry" style="@style/doubleUnitEntryStyle" />
+
+				<TextView android:id="@+id/temperatureUnitType" style="@style/converterLargeTextStyle" />
 
 			</TableRow>
 
