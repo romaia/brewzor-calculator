@@ -29,7 +29,8 @@ public final class Gravity extends Unit<com.brewzor.converters.Gravity.Unit> {
 	static public enum Unit {
 		SG, 
 		GU,
-		PLATO
+		PLATO, 
+		BRIX
 	}
 
 	public Gravity(double value, Unit type, Context context, SharedPreferences prefs) {
@@ -42,6 +43,7 @@ public final class Gravity extends Unit<com.brewzor.converters.Gravity.Unit> {
 			case SG:	return context.getString(R.string.sg);
 			case PLATO:	return context.getString(R.string.plato);
 			case GU:	return context.getString(R.string.gu);
+			case BRIX:	return context.getString(R.string.brix);
 			default:	return UNKNOWN;
 		}
 	}
@@ -49,9 +51,10 @@ public final class Gravity extends Unit<com.brewzor.converters.Gravity.Unit> {
 	@Override
 	public final String getLabelPlural() {
 		switch (getType()) {
-			case SG:	return context.getString(R.string.sg);
-			case PLATO:	return context.getString(R.string.plato);
-			case GU:	return context.getString(R.string.gu);
+			case SG:	return context.getString(R.string.sg_plural);
+			case PLATO:	return context.getString(R.string.plato_plural);
+			case GU:	return context.getString(R.string.gu_plural);
+			case BRIX:	return context.getString(R.string.brix_plural);
 			default:	return UNKNOWN;
 		}
 	}
@@ -62,6 +65,7 @@ public final class Gravity extends Unit<com.brewzor.converters.Gravity.Unit> {
 			case SG:	return context.getString(R.string.sg_abbr);
 			case PLATO:	return context.getString(R.string.plato_abbr);
 			case GU:	return context.getString(R.string.gu_abbr);
+			case BRIX:	return context.getString(R.string.brix_abbr);
 			default:	return UNKNOWN;
 		}
 	}
@@ -72,6 +76,7 @@ public final class Gravity extends Unit<com.brewzor.converters.Gravity.Unit> {
 			case SG:	return SGToUnits(getValue(), toType);
 			case PLATO:	return PlatoToUnits(getValue(), toType);
 			case GU:	return GUToUnits(getValue(), toType);
+			case BRIX:	return BrixToUnits(getValue(), toType);
 			default:	return getValue();
 		}
 	}
@@ -100,21 +105,28 @@ public final class Gravity extends Unit<com.brewzor.converters.Gravity.Unit> {
 		return defaultUnit;
 	}
 	
+	static public final double BrixToUnits(double value, Gravity.Unit toType) {
+		switch (toType) {
+			default:	return PlatoToUnits(value, toType);
+		}
+	}
+	
 	static public final double SGToUnits(double value, Gravity.Unit toType) {
 		switch (toType) {
 			case SG:	return value;
-			case PLATO:	return (668.72 * value) - 463.37 - (205.347 * java.lang.Math.pow(value, 2));
+			case PLATO:	return (1111.14 * value) - (630.272 * java.lang.Math.pow(value, 2)) + (135.997 * java.lang.Math.pow(value, 3)) - 616.868;
 			case GU:	return (value - 1.0) * 1000.0;
+			case BRIX:	return SGToUnits(value, Gravity.Unit.PLATO);
 			default:	return value;
 		}
 	}
 	
 	static public final double PlatoToUnits(double value, Gravity.Unit toType) {
 		switch (toType) {
-			case SG:	return ((0.082636 + (3.8480 * value) + (0.014563 * java.lang.Math.pow(value, 2))) / 1000.0) + 1.0;
+			case SG:	return (668.0 - java.lang.Math.sqrt(java.lang.Math.pow(668.0, 2) - (820.0 * (463.0 + value)))) / 410.0;	
 			case PLATO:	return value;
-			case GU:	return 0.082636 + (3.8480 * value) + (0.014563 * java.lang.Math.pow(value, 2));
-//			case GU:	SGToUnits(PlatoToUnits(value, Gravity.SG), Gravity.GU);
+			case GU:	return (PlatoToUnits(value, Gravity.Unit.SG) - 1.0) * 1000.0;
+			case BRIX:	return value;
 			default:	return value;
 		}
 	}
@@ -122,8 +134,9 @@ public final class Gravity extends Unit<com.brewzor.converters.Gravity.Unit> {
 	static public final double GUToUnits(double value, Gravity.Unit toType) {
 		switch (toType) {
 			case SG:	return 1.0 + (value / 1000.0);
-			case PLATO:	return SGToUnits(GUToUnits(value, Gravity.Unit.SG), Gravity.Unit.PLATO);
+			case PLATO:	return (0.258587 * value) - (0.00022281 * java.lang.Math.pow(value, 2)) + (0.000000135997 * java.lang.Math.pow(value, 3))- 0.003;
 			case GU:	return value;
+			case BRIX:	return GUToUnits(value, Gravity.Unit.PLATO);
 			default:	return value;
 		}
 	}
