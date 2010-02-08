@@ -29,19 +29,17 @@
 	              android:text="@string/unit_conversion"
 	              style="@style/calculatorNameStyle" />
 
+		<Spinner 	android:id="@+id/unit_type_spinner"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:entries="@array/unitTypesList"
+					android:entryValues="@array/unitTypesIdList"
+					android:drawSelectorOnTop="true" />
 						
 	<LinearLayout android:orientation="horizontal"
 				  android:layout_width="fill_parent"
 				  android:layout_height="wrap_content"
 				  android:gravity="center_vertical">
-		
-				<Spinner 	android:id="@+id/unit_type_spinner"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:layout_weight="1"
-					android:entries="@array/unitTypesList"
-					android:entryValues="@array/unitTypesIdList"
-					android:drawSelectorOnTop="true" />
 						
 
 		<EditText android:id="@+id/unit_entry" 
@@ -51,7 +49,6 @@
 					
 		<Spinner 	android:id="@+id/unit_spinner"
 					android:layout_width="fill_parent"
-					android:layout_weight="1"
 					android:layout_height="wrap_content"
 					android:drawSelectorOnTop="true" 
 					android:entries="@array/unitTypesList"/>

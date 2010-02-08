@@ -84,7 +84,7 @@
 
 
 			<TextView android:id="@+id/calculatedVolume"
-				android:text="@string/calculated_cylinder_volume_default" style="@style/cylinderResultStyle" />
+				android:text="@string/calculated_cylinder_volume_default" style="@style/cylinderEntryStyle" />
 
 			<TextView android:id="@+id/calculatedVolumeUnitType"
 				android:text="gallons" style="@style/cylinderEntryStyle" />
