@@ -23,12 +23,12 @@
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:gravity="center_horizontal">
 
-	<TextView android:id="@+id/calculatorName" android:text="@string/gravity_correction"
+	<TextView android:id="@+id/calculatorName" android:text="@string/strike_temperature"
 		style="@style/calculatorNameStyle" />
 
 	<LinearLayout android:orientation="horizontal"
 		android:layout_width="fill_parent" android:layout_height="fill_parent"
-		android:gravity="center_horizontal">
+		android:gravity="top">
 
 		<TableLayout android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
@@ -36,43 +36,54 @@
 			<TableRow>
 
 				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/current_gravity" />
+					android:text="@string/grain_weight" />
 
-				<EditText android:id="@+id/currentGravityEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText android:id="@+id/grainWeightEntry" style="@style/doubleUnitEntryStyle" />
 
-				<TextView android:id="@+id/currentGravityUnitType" style="@style/converterSmallTextStyle" />
-
-			</TableRow>
-
-			<TableRow>
-
-				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/desired_gravity" />
-
-				<EditText android:id="@+id/desiredGravityEntry" style="@style/doubleUnitEntryStyle" />
-
-				<TextView android:id="@+id/desiredGravityUnitType" style="@style/converterSmallTextStyle" />
+				<TextView android:id="@+id/grainWeightUnitType" style="@style/converterSmallTextStyle" />
 
 			</TableRow>
 
 			<TableRow>
 
 				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/wort_volume" />
+					android:text="@string/grain_temperature" />
 
-				<EditText android:id="@+id/currentVolumeEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText android:id="@+id/grainTemperatureEntry" style="@style/doubleUnitEntryStyle" />
 
-				<TextView android:id="@+id/currentVolumeUnitType" style="@style/converterSmallTextStyle" />
+				<TextView android:id="@+id/grainTemperatureUnitType" style="@style/converterSmallTextStyle" />
+
+			</TableRow>
+
+			<TableRow>
+
+				<TextView style="@style/converterSmallTextStyle"
+					android:text="@string/target_mash_temperature" />
+
+				<EditText android:id="@+id/targetMashTemperatureEntry"
+					style="@style/doubleUnitEntryStyle" />
+
+				<TextView android:id="@+id/targetMashTemperatureUnitType"
+					style="@style/converterSmallTextStyle" />
+
+			</TableRow>
+
+			<TableRow>
+
+				<TextView style="@style/converterSmallTextStyle"
+					android:text="@string/strike_water_volume" />
+
+				<EditText android:id="@+id/strikeWaterVolumeEntry" style="@style/doubleUnitEntryStyle" />
+
+				<TextView android:id="@+id/strikeWaterVolumeUnitType"
+					style="@style/converterSmallTextStyle" />
 
 			</TableRow>
 
 		</TableLayout>
 
-		<TextView android:id="@+id/gravityCorrectionDescription"
-			android:gravity="center_horizontal|top"
-			style="@style/gravityCorrectionDescriptionSmallStyle" />
-
+		<TextView android:id="@+id/calculatedStrikeWaterTemperature"
+			android:text="@string/calculated_strike_water_temperature_default"
+			style="@style/srikeWaterDescriptionSmallStyle" />
 	</LinearLayout>
-
 </LinearLayout>
-	

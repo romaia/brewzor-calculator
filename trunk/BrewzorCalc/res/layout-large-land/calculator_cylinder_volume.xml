@@ -23,7 +23,7 @@
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:gravity="center_horizontal">
 
-	<TextView android:id="@+id/calculatorName" android:text="@string/cylinder_height"
+	<TextView android:id="@+id/calculatorName" android:text="@string/cylinder_volume"
 		style="@style/calculatorNameStyle" />
 
 	<LinearLayout android:orientation="horizontal"
@@ -39,11 +39,11 @@
 				<TableRow>
 
 					<TextView style="@style/converterSmallTextStyle"
-						android:text="@string/desired_volume" />
+						android:text="@string/measured_height" />
 
-					<EditText android:id="@+id/volumeEntry" style="@style/doubleUnitEntryStyle" />
+					<EditText android:id="@+id/heightEntry" style="@style/doubleUnitEntryStyle" />
 
-					<TextView android:id="@+id/volumeUnitType" style="@style/converterSmallTextStyle" />
+					<TextView android:id="@+id/heightUnitType" style="@style/converterSmallTextStyle" />
 
 				</TableRow>
 
@@ -72,21 +72,17 @@
 
 			</TableLayout>
 
-	 <Button
-        android:id="@+id/correctForExpansion"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-		android:gravity="center" />
-        
+			<TextView android:id="@+id/correctForExpansion" style="@style/converterSmallTextStyle"
+				android:text="" />
 		</LinearLayout>
 		<LinearLayout android:orientation="vertical"
 			android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:gravity="center">
 
 
-			<TextView android:id="@+id/calculatedCylinderHeight"
-				android:text="@string/calculated_cylinder_height_default" style="@style/cylinderEntryStyle" />
+			<TextView android:id="@+id/calculatedVolume"
+				android:text="@string/calculated_cylinder_volume_default" style="@style/cylinderResultStyle" />
 
-			<TextView android:id="@+id/calculatedCylinderHeightUnitType"
+			<TextView android:id="@+id/calculatedVolumeUnitType"
 				android:text="gallons" style="@style/cylinderEntryStyle" />
 
 		</LinearLayout>

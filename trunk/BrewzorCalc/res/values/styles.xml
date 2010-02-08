@@ -128,6 +128,10 @@
 		<item name="android:gravity">center</item>
 	</style>
 	
+	<style name="gravityCorrectionDescriptionSmallStyle" parent="@style/gravityCorrectionDescriptionStyle">
+		<item name="android:textSize">20dp</item>
+	</style>
+	
 	<style name="srikeWaterDescriptionStyle" parent="@style/viewStyle">
 		<item name="android:textSize">75sp</item>
 		<item name="android:gravity">center</item>
@@ -136,7 +140,7 @@
 	</style>
 	
 	<style name="srikeWaterDescriptionSmallStyle" parent="@style/srikeWaterDescriptionStyle">
-		<item name="android:textSize">50sp</item>
+		<item name="android:textSize">40dp</item>
 	</style>
 	
 	<style name="calculatorEntryTableStyle">

@@ -86,7 +86,7 @@
 
 
 		<TextView android:id="@+id/calculatedInfusionVolume"
-			android:text="@string/mash_infusion_calculated_infusion_temperature_default" style="@style/cylinderResultStyle" />
+			android:text="@string/mash_infusion_calculated_infusion_temperature_default" style="@style/cylinderEntryStyle" />
 
 		<TextView android:id="@+id/calculatedInfusionVolumeUnitType"
 			android:text="gallons" style="@style/cylinderEntryStyle" />

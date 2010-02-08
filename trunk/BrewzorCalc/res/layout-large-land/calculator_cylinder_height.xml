@@ -72,19 +72,15 @@
 
 			</TableLayout>
 
-	 <Button
-        android:id="@+id/correctForExpansion"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-		android:gravity="center" />
-        
+			<TextView android:id="@+id/correctForExpansion" style="@style/converterSmallTextStyle"
+				android:text="" />
 		</LinearLayout>
 		<LinearLayout android:orientation="vertical"
 			android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:gravity="center">
 
 
 			<TextView android:id="@+id/calculatedCylinderHeight"
-				android:text="@string/calculated_cylinder_height_default" style="@style/cylinderEntryStyle" />
+				android:text="@string/calculated_cylinder_height_default" style="@style/cylinderResultStyle" />
 
 			<TextView android:id="@+id/calculatedCylinderHeightUnitType"
 				android:text="gallons" style="@style/cylinderEntryStyle" />
