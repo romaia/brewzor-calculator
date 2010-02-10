@@ -48,6 +48,8 @@ body {
 		<li><a href="#batchsparge">Batch Sparge Calculator</a></li>
 		<li><a href="#boiloff">Boil Off Calculator</a></li>
 		<li><a href="#carbonation">Carbonation Calculator</a></li>
+		<li><a href="#alcoholattenuation">Alcohol / Attenuation Calculator</a></li>
+		<li><a href="#refractometer">Refractometer Calculator</a></li>
 		<li><a href="#hydrometercorrection">Hydrometer Correction Calculator</a></li>
 		<li><a href="#unitconverter">Unit Converter</a></li>
 	</ul>
@@ -266,6 +268,43 @@ cooling loss percentage.</p>
 	value of 10%.</li>
 </ul>
 
+<a name="alcoholattenuation"></a>
+<h3>Alcohol / Attenuation:</h3>
+
+<p>This calculator is used to determine the amount of alcohol by
+weight and by volume in addition to the real and apparent attenuation.</p>
+
+<p>The formulas used were based on information found <a href="http://www.pointbrewsupply.com/pdf/BeerAlcoholCalories.pdf">here</a>.</p>
+
+<p><b>Real Extract = 0.1808 * 튡(initial) + 0.8192 * 튡(final)</b></p>
+<p><b>Apparent Attenuation = 1 - [튡(final) / 튡(initial)] </b></p>
+<p><b>Real Attenuation = 1 - [RealExtract / 튡(initial)] </b></p>
+<p><b>ABV% = (OG - FG) / 0.75 </b></p>
+<p><b>ABW% = (0.79 * ABV%) / FinalGravity</b></p>
+
+<a name="refractometer"></a>
+<h3>Refractometer:</h3>
+
+<p><b>Note About Brix: I wasn't able to find a definitive
+definition of Brix. It seemed to boil down to one of two things. Either
+it is a refinement of the Balling system that uses a slightly different
+modulus than Plato and thus produces very similar results. Or, Brix is a
+"corrected" version of Plato used with refractometers. Generally there
+is a correction factor that is applied to the refractometer reading (in
+Brix) that will then give you a reading in Plato. I chose to do a
+combination of both. The Brix Gravity Unit applies the correction factor
+throughout the application when necessary. This means you can measure
+your mash gravity in Brix and it other results will be automatically
+adjusted.</b></p>
+
+<p>The Refractometer Calculator is broken into for sub-calculators:</p>
+
+<p><b>Unfermented Wort:</b> This is used to determine the Specific Gravity of wort when measured by a refractometer.  The correction factor is used to account for non-sucrose elements in the wort.</p>
+<p><b>Fermenting Wort:</b> This calculator is used to determine the Corrected Specific Gravity of wort that has begun fermentation.</p>
+<p><b>Finished Beer:</b> This calculator can find the Original Gravity of a beer after a refractometer reading and a hydrometer reading.</p>
+<p><b>Calibrate:</b>This calculator helps you determine the proper correction factor.  Take a reading with your refractometer and hydrometer and enter the values into the calculator.  If you would like to set the global conversion factor to your new value, just click the "Save Correction Factor to Preferences" button.</p>
+
+This is used to determine the Specific Gravity of wort when measured by a refractometer.  The correction factor is used to account for non-sucrose elements in the wort.
 <a name="carbonation"></a>
 <h3>Carbonation:</h3>
 
