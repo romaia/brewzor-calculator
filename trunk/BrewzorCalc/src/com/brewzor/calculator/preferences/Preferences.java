@@ -33,7 +33,8 @@ public class Preferences {
 	public static final String GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE = "global.hydrometer_calibration_temperature";
 	public static final String GLOBAL_PRESSURE_UNIT = "global.pressure_unit";
 	public static final String GLOBAL_REFRACTOMETER_CORRECTION_FACTOR = "global.refractometer_correction_factor";
-
+	public static final String GLOBAL_BEG_FOR_REVIEW = "global.beg_for_review";
+	
 	public static final String BATCH_VOLUME_UNIT = "batch.volume_unit";
 	public static final String BATCH_FINAL_VOLUME = "batch.final_volume";
 	public static final String BATCH_GRAIN_MASS_UNIT = "batch.grain_mass_unit";
