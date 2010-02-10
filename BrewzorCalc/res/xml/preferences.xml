@@ -55,6 +55,14 @@
 						android:entries="@array/pressureUnitsList" 
 						android:entryValues="@array/pressureUnitsIdList" />
 						
+		<EditTextPreference android:title="@string/refractometer_correction_factor_pref"
+							android:summary="@string/refractometer_correction_factor_pref_summary"
+							android:persistent="true"
+							android:defaultValue="@string/refractometer_correction_factor_pref_default" 
+							android:numeric="decimal"
+							android:inputType="number|numberDecimal"
+							android:key="global.refractometer_correction_factor" />	
+ 
 		<ListPreference android:title="@string/extract_mass_units_pref"
 						android:summary="@string/extract_mass_units_pref_summary"
 						android:persistent="true"

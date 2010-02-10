@@ -31,8 +31,9 @@
 		<item>@string/cylinder_volume</item>
 		<item>@string/cylinder_height</item>
 		<item>@string/carbonation</item>
-		<item>@string/refractometer</item>
 		<item>@string/hydrometer_correction</item>
+		<item>@string/alcohol_attenuation</item>
+		<item>@string/refractometer</item>
 		<item>@string/unit_conversion</item>
 	</string-array>
 
@@ -160,6 +161,20 @@
 	<string-array name="measurementSystemsIdList">
 		<item>US</item>
 		<item>METRIC</item>
+	</string-array>
+
+	<string-array name="refractometerModeList">
+		<item>@string/refractometer_unfermented_wort</item>
+		<item>@string/refractometer_fermenting_wort</item>
+		<item>@string/refractometer_finished_beer</item>
+		<item>@string/refractometer_calibrate</item>
+	</string-array>
+	
+	<string-array name="refractometerModeIdList">
+		<item>UNFERMENTED</item>
+		<item>FERMENTING</item>
+		<item>FINISHED</item>
+		<item>CALIBRATE</item>
 	</string-array>
 
 	<!--  List taken from Brewing Classic Styles by Zainasheff and Palmer -->

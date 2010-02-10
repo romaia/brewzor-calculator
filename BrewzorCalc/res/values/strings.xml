@@ -48,6 +48,16 @@
 	<string name="gravity_units_pref_summary">SG, Plato, GU</string>
 	<string name="gravity_units_pref_default">SG</string>
 
+	<string name="use_refractometer_correction_pref">Use Refractometer Correction Factor</string>
+	<string name="use_refractometer_correction_pref_default">false</string>
+	<string name="use_refractometer_correction_pref_summaryoff">Refractometer correction factor will not be applied</string>
+	<string name="use_refractometer_correction_pref_summaryon">Refractometer correction factor will be applied</string>
+
+	<string name="refractometer_correction_factor_pref">Refractometer Correction Factor</string>
+	<string name="refractometer_correction_factor_pref_summary">Accounts for non-sugar related components of the wort</string>
+	<string name="refractometer_correction_factor_pref_default">1.04</string>
+	<string name="refractometer_correction_factor_pref_format">%s (Accounts for non-sugar related components of the wort)</string>
+	
 	<string name="pressure_units_pref">Pressure</string>
 	<string name="pressure_units_pref_summary">PSI, kPa, Bar, Atmosphere</string>
 	<string name="pressure_units_pref_default">PSI</string>
@@ -223,10 +233,38 @@
 	<string name="table_sugar">Table Sugar</string>
 	<string name="dme">DME (75% AA)</string>
 
+	<!-- Alcohol / Attenuation -->
+
+	<string name="alcohol_attenuation">Alcohol / Attenuation</string>
+	<string name="alcohol_attenuation_units">Gravity Unit</string>
+	<string name="alcohol_attenuation_current_gravity">Current Gravity</string>
+	<string name="alcohol_attenuation_original_gravity">Original Gravity</string>
+	<string name="alcohol_attenuation_abv">Alcohol by Volume</string>
+	<string name="alcohol_attenuation_abw">Alcohol by Weight</string>
+	<string name="alcohol_attenuation_apparent_attenuation">Apparent Attenuation</string>
+	<string name="alcohol_attenuation_real_attenuation">Real Attenuation</string>
+	<string name="alcohol_attenuation_result_format">%01.2f %%</string>
+	<string name="alcohol_attenuation_calories">Calories per 12 fl oz</string>
+
 	<!-- Refractometer -->
 
 	<string name="refractometer">Refractometer</string>
-	<string name="refractometer_"></string>
+	<string name="refractometer_unfermented_wort">Unfermented Wort</string>
+	<string name="refractometer_fermenting_wort">Fermenting Wort</string>
+	<string name="refractometer_finished_beer">Finished Beer</string>
+	<string name="refractometer_calibrate">Calibrate</string>
+	<string name="refractometer_hydrometer_reading">Hydrometer Reading</string>
+	<string name="refractometer_refractometer_reading">Refractometer Reading</string>
+	<string name="refractometer_original_gravity">Original Gravity</string>
+	<string name="refractometer_corrected_gravity">Corrected Gravity</string>
+	<string name="refractometer_percent_abv">Percent ABV</string>
+	<string name="refractometer_percent_abw">Percent ABW</string>
+	<string name="refractometer_apparent_attenuation">Apparent Attenuation</string>
+	<string name="refractometer_real_attenuation">Real Attenuation</string>
+	<string name="refractometer_correction_factor">Correction Factor</string>
+	<string name="refractometer_correction_factor_format">%01.4f</string>
+	<string name="refractometer_percent_sign">%</string>
+	<string name="refractometer_save_to_prefences">Save Correction Factor to Preferences</string>
 
 	<!-- Hydrometer Correction -->
 

@@ -32,6 +32,7 @@ public class Preferences {
 	public static final String GLOBAL_EXTRACT_MASS_UNIT = "global.extract_mass_unit";
 	public static final String GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE = "global.hydrometer_calibration_temperature";
 	public static final String GLOBAL_PRESSURE_UNIT = "global.pressure_unit";
+	public static final String GLOBAL_REFRACTOMETER_CORRECTION_FACTOR = "global.refractometer_correction_factor";
 
 	public static final String BATCH_VOLUME_UNIT = "batch.volume_unit";
 	public static final String BATCH_FINAL_VOLUME = "batch.final_volume";
@@ -52,6 +53,7 @@ public class Preferences {
 
 	public static final String VERSION_1_1_0 = "version.1.1.0";
 	public static final String VERSION_1_2_0 = "version.1.2.0";
+	public static final String VERSION_1_3_0 = "version.1.3.0";
 	
 	public static final void init(SharedPreferences prefs) {
         Editor editor = prefs.edit();
@@ -89,6 +91,11 @@ public class Preferences {
 	        editor.putString(Preferences.BATCH_INFUSION_WATER_TEMPERATURE, "212");        	
 	        editor.putString(Preferences.GLOBAL_PRESSURE_UNIT, "PSI");        	
        	}
+
+        if (prefs.getBoolean(Preferences.VERSION_1_3_0, false)) {
+        	editor.putBoolean(Preferences.VERSION_1_3_0, true);
+	        editor.putString(Preferences.GLOBAL_REFRACTOMETER_CORRECTION_FACTOR, "1.04");
+        }
 
         editor.commit();	
 
