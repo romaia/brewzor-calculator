@@ -101,10 +101,10 @@
 					  android:layout_height="wrap_content"
 					  android:gravity="center_horizontal">
 
-				<TextView style="@style/hydrometerCorrectionResultStyle"
+				<TextView style="@style/converterLargeTextStyle"
 					android:id="@+id/calculatedValue"/>
 
-				<TextView style="@style/hydrometerCorrectionDescriptionStyle"
+				<TextView style="@style/converterSmallTextStyle"
 					android:id="@+id/calculatedValueDescription"/>
 
 <Button
