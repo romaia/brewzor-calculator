@@ -18,6 +18,22 @@
     You should have received a copy of the GNU General Public License
     along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
 
+	TRANSLATIONS
+
+	To those nice enough to provide translations:
+	
+	In general, things in all caps like "FAHRENHEIT" or references to 
+	other strings like "@string/double_default" should not be translated.
+	Only translate the words between the tags <string name=""></string>. 
+	There are also format strings like "%s%s (Usually 60 or 68°F)" and in 
+	that case, you would only translate the English words "Usually" and 
+	"or".  If a word doesn't translate into your language, just leave it 
+	as is.  Sometimes it can be hard to determine the context in which a 
+	string is used.  If you have any questions, feel free to send an email 
+	asking for clarification to market@brewzor.com.
+	
+	Thanks for helping make this a better application for everyone!
+
 -->
 <resources>
 
@@ -45,7 +61,7 @@
 	<string name="temperature_units_pref_default">FAHRENHEIT</string>
 
 	<string name="gravity_units_pref">Gravity</string>
-	<string name="gravity_units_pref_summary">SG, Plato, GU</string>
+	<string name="gravity_units_pref_summary">SG, Plato, GU, Brix</string>
 	<string name="gravity_units_pref_default">SG</string>
 
 	<string name="use_refractometer_correction_pref">Use Refractometer Correction Factor</string>
@@ -54,7 +70,6 @@
 	<string name="use_refractometer_correction_pref_summaryon">Refractometer correction factor will be applied</string>
 
 	<string name="refractometer_correction_factor_pref">Refractometer Correction Factor</string>
-	<string name="refractometer_correction_factor_pref_summary">Accounts for non-sugar related components of the wort</string>
 	<string name="refractometer_correction_factor_pref_default">1.04</string>
 	<string name="refractometer_correction_factor_pref_format">%s (Accounts for non-sugar related components of the wort)</string>
 	
@@ -63,7 +78,6 @@
 	<string name="pressure_units_pref_default">PSI</string>
 
 	<string name="hydrometer_calibration_temperature_pref">Hydrometer Calibration Temperature</string>
-	<string name="hydrometer_calibration_temperature_pref_summary">Usually 60 or 68°F / 15 or 20°C</string>
 	<string name="hydrometer_calibration_temperature_pref_default">60</string>
 	<string name="hydrometer_calibration_temperature_pref_summary_format">%s%s (Usually 60 or 68°F / 15 or 20°C)</string>
 
@@ -74,11 +88,11 @@
 	<string name="batch_settings">Batch Settings</string>
 	
 	<string name="batch_volume_units_pref">Batch Volume Units</string>
-	<string name="batch_volume_units_pref_summary">Quarts, Gallons, Liters</string>
+	<string name="batch_volume_units_pref_summary">Quarts, Gallons, Liters, etc.</string>
 	<string name="batch_volume_units_pref_default">GALLON</string>
 
 	<string name="final_volume_pref">Final Batch Volume</string>
-	<string name="final_volume_pref_summary">Quarts, Gallons, Liters</string>
+	<string name="final_volume_pref_summary">Quarts, Gallons, Liters, etc.</string>
 	<string name="final_volume_pref_default">0</string>
 
 	<string name="grain_mass_units_pref">Grain Weight Units</string>
@@ -86,17 +100,14 @@
 	<string name="grain_mass_units_pref_default">0</string>
 
 	<string name="water_to_grain_ratio_pref">Water To Grain Ratio</string>
-	<string name="water_to_grain_ratio_pref_summary">Volume Units of Water / Mass Units of Grain.  Usually equivalent to 1-1.25 quarts / pound.</string>
 	<string name="water_to_grain_ratio_pref_default">0</string>
 	<string name="water_to_grain_ratio_pref_summary_format">%s %s per %s (Usually equivalent to 1-1.25 quarts per pound)</string>
 
 	<string name="grain_absorption_ratio_pref">Grain Absorption Ratio</string>
-	<string name="grain_absorption_ratio_pref_summary">Volume Units of Water / Mass Units of Grain.  Usually equivalent to 1-1.25 quarts / pound.</string>
 	<string name="grain_absorption_ratio_pref_default">0</string>
 	<string name="grain_absorption_ratio_pref_summary_format">%s %s per %s (Usually equivalent to 1-1.25 quarts per pound)</string>
 
 	<string name="grain_volume_ratio_pref">Water To Grain Ratio</string>
-	<string name="grain_volume_ratio_pref_summary">Volume Units of Water / Mass Units of Grain.  Usually equivalent to 1-1.25 quarts / pound.</string>
 	<string name="grain_volume_ratio_pref_default">0</string>
 	<string name="grain_volume_ratio_pref_summary_format">%s %s per %s (Usually equivalent to 1-1.25 quarts per pound)</string>
 
@@ -123,7 +134,6 @@
 	<string name="false_bottom_height_pref_default">0</string>
 
 	<string name="equipment_loss_pref">Total Equipment Loss</string>
-	<string name="equipment_loss_pref_summary">Add up mash tun deadspace, trub loss, etc.</string>
 	<string name="equipment_loss_pref_summary_format">%s %s (Calculated by adding up mash tun deadspace, trub loss, etc.)</string>
 	<string name="equipment_loss_pref_default">0</string>
 
@@ -146,7 +156,7 @@
 	<string name="desired_gravity">Desired</string>
 	<string name="wort_volume">Wort Volume</string>
 	<string name="add_water_format">Add %02.2f %s of water.</string>
-	<string name="add_extract_format">"Add %02.2f %s DME\nOR\nAdd %02.2f %s LME"</string>
+	<string name="add_extract_format">"Add %02.2f %s DME\n OR \nAdd %02.2f %s LME"</string>
 	<string name="add_nothing_format">You're all good.</string>
 	
 	<!-- Cylinder Volume -->
@@ -449,12 +459,15 @@
 	<string name="crash_report_mail_body">Crash Details: \n</string>
 	<string name="crash_report_dialog_title">Send Error Log?</string>
 	<string name="crash_report_dialog_text">A previous crash was detected. Would you like to send the developer the error log to fix this issue in the future?</string>
-	<string name="crash_report_dialog_ok">Yes!</string>
+	<string name="crash_report_dialog_ok">Yes, I'll help!</string>
 	<string name="crash_report_dialog_cancel">No</string>
 
 	<string name="eula_title">EULA</string>
 	<string name="eula_accept">Accept</string>
 	<string name="eula_refuse">No Thanks</string>
+
+	<string name="beg_for_review_title">Please consider writing a review</string>
+	<string name="beg_for_review_ok">Let's Make Beer!</string>
 
 	<!-- Format Strings -->
 
