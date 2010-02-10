@@ -19,12 +19,14 @@
 */
 package com.brewzor.calculator;
 
+import com.brewzor.calculator.preferences.Preferences;
 import com.brewzor.converters.Distance;
 import com.brewzor.converters.Gravity;
 import com.brewzor.converters.Mass;
 import com.brewzor.converters.Pressure;
 import com.brewzor.converters.Temperature;
 import com.brewzor.converters.Volume;
+import com.brewzor.utils.NumberFormat;
 
 import java.util.ArrayList;
 import android.app.ListActivity;
@@ -135,6 +137,12 @@ public class UnitConverterActivity extends ListActivity {
 
     };
 
+	@Override
+	public void onResume() {
+		super.onResume();
+		getPrefs();
+	}
+	
 	/* Creates the menu items */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -157,6 +165,9 @@ public class UnitConverterActivity extends ListActivity {
 		}
 	};
 
+	private void getPrefs() {
+        Gravity.setBrixCorrectionFactor(NumberFormat.parseDouble(prefs.getString(Preferences.GLOBAL_REFRACTOMETER_CORRECTION_FACTOR, "1"), 1.0));
+	}
     
     private void getConversions(){
 
@@ -201,13 +212,14 @@ public class UnitConverterActivity extends ListActivity {
 	    	if (unitType.getSelectedItemPosition() >= 0){
 	        	gravity.setType(getResources().getStringArray(R.array.gravityUnitsIdList)[unitType.getSelectedItemPosition()].toUpperCase());    		
 	    	}
-
+	    	
 	    	Gravity converted = new Gravity(0, Gravity.Unit.SG, getBaseContext(), prefs);
 	    	converted.setFormat(getString(R.string.unit_converter_format));
 	    	for (Gravity.Unit unit : Gravity.Unit.values()) {
 		    	converted.setValue(gravity.getValue());
 		    	converted.setType(gravity.getType());
 	    		converted.convert(unit);
+		    	//Log.v("unit", "conv: " + gravity.getType().toString() + " -> " + converted.getType().toString());
 	    		convertedList.add(new UnitListItem(converted.toString(), converted.getLabelAbbr() + " (" + converted.getLabel() + ")"));
 	    	}
     	

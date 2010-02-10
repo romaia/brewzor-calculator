@@ -74,6 +74,9 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		pref = findPreference(Preferences.GLOBAL_GRAVITY_UNIT);
 		pref.setOnPreferenceChangeListener(mPrefListener);
 		
+		pref = findPreference(Preferences.GLOBAL_REFRACTOMETER_CORRECTION_FACTOR);
+		pref.setOnPreferenceChangeListener(mPrefListener);
+		
 		pref = findPreference(Preferences.GLOBAL_EXTRACT_MASS_UNIT);
 		pref.setOnPreferenceChangeListener(mPrefListener);
 
@@ -143,6 +146,9 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		gravity.setType(gravity.typeFromPref(Preferences.GLOBAL_GRAVITY_UNIT, Gravity.Unit.SG));
 		pref.setSummary(gravity.getLabelPlural());
 
+		pref = findPreference(Preferences.GLOBAL_REFRACTOMETER_CORRECTION_FACTOR);
+		pref.setSummary(getString(R.string.refractometer_correction_factor_pref_format, sPref.getString(Preferences.GLOBAL_REFRACTOMETER_CORRECTION_FACTOR, "1.04"), volume.getLabelPlural()));
+
 		pref = findPreference(Preferences.GLOBAL_EXTRACT_MASS_UNIT);
 		mass.setType(mass.typeFromPref(Preferences.GLOBAL_EXTRACT_MASS_UNIT, Mass.Unit.OUNCE));
 		pref.setSummary(mass.getLabelPlural());
@@ -202,7 +208,6 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 
 		pref = findPreference(Preferences.KETTLE_COOLING_LOSS);
 		pref.setSummary(sPref.getString(Preferences.KETTLE_COOLING_LOSS, "4") + "%");
-		pref.getLayoutResource();
 		
 		pref = findPreference(Preferences.KETTLE_EQUIPMENT_LOSS);
 		pref.setSummary(getString(R.string.equipment_loss_pref_summary_format, sPref.getString(Preferences.KETTLE_EQUIPMENT_LOSS, "0"), volume.getLabelPlural()));

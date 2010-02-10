@@ -119,7 +119,9 @@ public class BrewzorActivity extends ListActivity {
 			case 7: i = new Intent(this, CylinderHeightCalculatorActivity.class); break;
 			case 8: i = new Intent(this, CarbonationCalculatorActivity.class); break;
 			case 9: i = new Intent(this, HydrometerCorrectionCalculatorActivity.class); break;
-			case 10: i = new Intent(this, UnitConverterActivity.class); break;
+			case 10: i = new Intent(this, AlcoholAttenuationCalculatorActivity.class); break;
+			case 11: i = new Intent(this, RefractometerCalculatorActivity.class); break;
+			case 12: i = new Intent(this, UnitConverterActivity.class); break;
 			default: i = new Intent(this, BrewzorPreferencesActivity.class);
 		}
 		startActivity(i);

@@ -65,6 +65,12 @@
 		<activity android:name=".CarbonationCalculatorActivity" 
 			android:windowSoftInputMode="adjustPan"></activity>
 		
+		<activity android:name=".AlcoholAttenuationCalculatorActivity" 
+			android:windowSoftInputMode="adjustPan"></activity>
+		
+		<activity android:name=".RefractometerCalculatorActivity" 
+			android:windowSoftInputMode="adjustPan"></activity>
+		
 		<activity android:name=".HydrometerCorrectionCalculatorActivity" 
 			android:windowSoftInputMode="adjustPan"></activity>
 		

@@ -30,4 +30,81 @@
 	              android:layout_width="fill_parent"
 	              android:layout_height="wrap_content"
 				  style="@style/calculatorNameStyle" />
+
+		<Spinner 	android:id="@+id/modeSpinner"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:entries="@array/refractometerModeList"
+					android:entryValues="@array/refractometerModeIdList"
+					android:drawSelectorOnTop="true" />
+				  
+		<TableLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+
+			<TableRow>
+	
+				<TextView style="@style/converterSmallTextStyle"
+					android:text="@string/refractometer_refractometer_reading" />
+	
+				<EditText android:id="@+id/currentEntry" style="@style/doubleUnitEntryStyle" />
+	
+				<TextView android:text="@string/brix_abbr" style="@style/converterSmallTextStyle" />
+	
+			</TableRow>
+
+			<TableRow android:id="@+id/originalReadingEntryRow">
+	
+				<TextView 	style="@style/converterSmallTextStyle"
+							android:text="@string/refractometer_original_gravity" />
+	
+				<EditText android:id="@+id/originalEntry" style="@style/doubleUnitEntryStyle" />
+	
+				<TextView android:text="@string/sg_abbr" style="@style/converterSmallTextStyle" />
+	
+			</TableRow>
+
+			<TableRow android:id="@+id/hydrometerReadingEntryRow">
+	
+				<TextView 	style="@style/converterSmallTextStyle"
+							android:text="@string/refractometer_hydrometer_reading" />
+	
+				<EditText android:id="@+id/hydrometerEntry" style="@style/doubleUnitEntryStyle" />
+	
+				<TextView android:text="@string/sg_abbr" style="@style/converterSmallTextStyle" />
+	
+			</TableRow>
+
+			<TableRow android:id="@+id/conversionFactorRow" >
+	
+				<TextView style="@style/converterSmallTextStyle"
+					android:text="@string/refractometer_correction_factor"/>
+	
+				<TextView android:id="@+id/correctionFactorValue" style="@style/doubleUnitEntryStyle" />
+	
+				<TextView android:id="@+id/correctionFactorLabel" style="@style/converterSmallTextStyle" />
+	
+			</TableRow>
+
+		</TableLayout>			  
+
+		<LinearLayout android:orientation="vertical"
+					  android:layout_width="fill_parent" 
+					  android:layout_height="fill_parent"
+					  android:gravity="center">
+
+				<TextView style="@style/hydrometerCorrectionResultStyle"
+					android:id="@+id/calculatedValue"/>
+
+				<TextView style="@style/hydrometerCorrectionDescriptionStyle"
+					android:id="@+id/calculatedValueDescription"/>
+
+<Button
+        android:id="@+id/saveToPrefs"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/refractometer_save_to_prefences"
+		android:gravity="center" />
+
+		</LinearLayout>			
+
 </LinearLayout>
