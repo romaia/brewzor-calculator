@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:gravity="center_horizontal">
+
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+
+		<TextView android:id="@+id/calculatorName" android:text="@string/hydrometer_correction"
+			style="@style/calculatorNameStyle" />
+
+		<TableLayout android:layout_width="wrap_content" android:layout_height="fill_parent">
+
+			<TableRow>
+
+				<EditText android:id="@+id/SGEntry" style="@style/sgUnitEntryStyle" />
+
+				<TextView android:text="@string/sg_abbr" style="@style/converterLargeTextStyle" />
+
+			</TableRow>
+
+			<TableRow>
+
+				<EditText android:id="@+id/temperatureEntry" style="@style/doubleUnitEntryStyle" />
+
+				<TextView android:id="@+id/temperatureUnitType" style="@style/converterLargeTextStyle" />
+
+			</TableRow>
+
+		</TableLayout>
+	
+			<TextView style="@style/hydrometerCorrectionDescriptionStyle"
+			android:id="@+id/calibrationText" />
+	
+	</LinearLayout>
+	
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="1" android:gravity="center">
+
+		<TextView style="@style/hydrometerCorrectionDescriptionStyle"
+			android:text="@string/corrected_sg" />
+
+		<TextView android:id="@+id/calculatedCorrectedSG" style="@style/hydrometerCorrectionResultStyle"
+			android:text="@string/sg_default" />
+
+	</LinearLayout>
+
+</LinearLayout>

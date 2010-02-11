@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ 	          android:orientation="vertical"
+			  android:layout_width="fill_parent" 
+			  android:layout_height="fill_parent"
+			  android:gravity="center_horizontal">
+	
+	    <TextView android:id="@+id/calculatorName"
+	              android:text="@string/refractometer"
+	              android:layout_width="fill_parent"
+	              android:layout_height="wrap_content"
+				  style="@style/calculatorNameStyle" />
+
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:gravity="top">
+
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="wrap_content" android:layout_height="fill_parent"
+		android:gravity="top">
+
+		<Spinner 	android:id="@+id/modeSpinner"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:entries="@array/refractometerModeList"
+					android:entryValues="@array/refractometerModeIdList"
+					android:drawSelectorOnTop="true" />
+				  
+
+		<TableLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+
+			<TableRow>
+	
+				<TextView style="@style/converterSmallTextStyle"
+					android:text="@string/refractometer_refractometer_reading" />
+	
+				<EditText android:id="@+id/currentEntry" style="@style/doubleUnitEntryStyle" />
+	
+				<TextView android:text="@string/brix_abbr" style="@style/converterSmallTextStyle" />
+	
+			</TableRow>
+
+			<TableRow android:id="@+id/originalReadingEntryRow">
+	
+				<TextView 	style="@style/converterSmallTextStyle"
+							android:text="@string/refractometer_original_gravity" />
+	
+				<EditText android:id="@+id/originalEntry" style="@style/doubleUnitEntryStyle" />
+	
+				<TextView android:text="@string/sg_abbr" style="@style/converterSmallTextStyle" />
+	
+			</TableRow>
+
+			<TableRow android:id="@+id/hydrometerReadingEntryRow">
+	
+				<TextView 	style="@style/converterSmallTextStyle"
+							android:text="@string/refractometer_hydrometer_reading" />
+	
+				<EditText android:id="@+id/hydrometerEntry" style="@style/doubleUnitEntryStyle" />
+	
+				<TextView android:text="@string/sg_abbr" style="@style/converterSmallTextStyle" />
+	
+			</TableRow>
+
+			<TableRow android:id="@+id/conversionFactorRow" >
+	
+				<TextView style="@style/converterSmallTextStyle"
+					android:text="@string/refractometer_correction_factor"/>
+	
+				<TextView android:id="@+id/correctionFactorValue" style="@style/doubleUnitEntryStyle" />
+	
+				<TextView android:id="@+id/correctionFactorLabel" style="@style/converterSmallTextStyle" />
+	
+			</TableRow>
+
+		</TableLayout>			  
+</LinearLayout>
+		<LinearLayout android:orientation="vertical"
+					  android:layout_width="fill_parent" 
+					  android:layout_height="wrap_content"
+					  android:gravity="center_horizontal">
+
+				<TextView style="@style/converterLargeTextStyle"
+					android:id="@+id/calculatedValue"/>
+
+				<TextView style="@style/converterSmallTextStyle"
+					android:id="@+id/calculatedValueDescription"/>
+
+<Button
+        android:id="@+id/saveToPrefs"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/refractometer_save_to_prefences"
+		android:gravity="center" />
+
+		</LinearLayout>			
+
+		</LinearLayout>			
+
+</LinearLayout>

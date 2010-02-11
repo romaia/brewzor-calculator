@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:gravity="center_horizontal">
+	
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+
+		<TextView android:id="@+id/calculatorName" android:text="@string/mash_infusion"
+			style="@style/calculatorNameStyle" />
+
+		<TableLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+
+			<TableRow>
+
+				<TextView style="@style/converterLargeTextStyle"
+					android:text="@string/mash_infusion_current_mash_temperature" />
+
+				<EditText android:id="@+id/currentMashTemperatureEntry" style="@style/doubleUnitEntryStyle" />
+
+				<TextView android:id="@+id/currentMashTemperatureUnitType" style="@style/converterLargeTextStyle" />
+
+			</TableRow>
+
+			<TableRow>
+
+				<TextView style="@style/converterLargeTextStyle"
+					android:text="@string/mash_infusion_grain_weight" />
+
+				<EditText android:id="@+id/grainWeightEntry" style="@style/doubleUnitEntryStyle" />
+
+				<TextView android:id="@+id/grainWeightUnitType" style="@style/converterLargeTextStyle" />
+
+			</TableRow>
+
+			<TableRow>
+
+				<TextView style="@style/converterLargeTextStyle"
+					android:text="@string/mash_infusion_water_in_mash_volume" />
+
+				<EditText android:id="@+id/waterInMashVolumeEntry" style="@style/doubleUnitEntryStyle" />
+
+				<TextView android:id="@+id/waterInMashVolumeUnitType" style="@style/converterLargeTextStyle" />
+
+			</TableRow>
+
+			<TableRow>
+
+				<TextView style="@style/converterLargeTextStyle"
+					android:text="@string/mash_infusion_target_mash_temperature" />
+
+				<EditText android:id="@+id/targetMashTemperatureEntry" style="@style/doubleUnitEntryStyle" />
+
+				<TextView android:id="@+id/targetMashTemperatureUnitType" style="@style/converterLargeTextStyle" />
+
+			</TableRow>
+
+		</TableLayout>
+
+	</LinearLayout>
+	<LinearLayout android:orientation="vertical" android:id="@+id/tester"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="1" android:gravity="center">
+
+
+		<TextView android:id="@+id/calculatedInfusionVolume"
+			android:text="@string/mash_infusion_calculated_infusion_temperature_default" style="@style/cylinderEntryStyle" />
+
+		<TextView android:id="@+id/calculatedInfusionVolumeUnitType"
+			android:text="gallons" style="@style/cylinderEntryStyle" />
+
+
+	</LinearLayout>
+	
+</LinearLayout>

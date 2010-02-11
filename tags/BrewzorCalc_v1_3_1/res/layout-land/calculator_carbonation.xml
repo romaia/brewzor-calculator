@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:gravity="center_horizontal">
+
+	<TextView android:id="@+id/calculatorName" android:text="@string/carbonation"
+		style="@style/calculatorNameStyle" />
+
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:gravity="center_horizontal">
+
+		<TableLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+
+			<TableRow>
+
+				<TextView style="@style/converterSmallTextStyle"
+					android:text="@string/volumes_co2_desired" />
+
+				<EditText android:id="@+id/volumesCO2DesiredEntry" style="@style/doubleUnitEntryStyle" />
+
+				<TextView android:id="@+id/volumesCODesiredUnitType" style="@style/converterSmallTextStyle" />
+
+			</TableRow>
+
+			<TableRow>
+
+				<TextView style="@style/converterSmallTextStyle"
+					android:text="@string/beer_temperature" />
+
+				<EditText android:id="@+id/beerTemperatureEntry" style="@style/doubleUnitEntryStyle" />
+
+				<TextView android:id="@+id/beerTemperatureUnitType" style="@style/converterSmallTextStyle" />
+
+			</TableRow>
+
+			<TableRow>
+				<TextView style="@style/converterSmallTextStyle"
+					android:text="@string/beer_volume" />
+
+				<EditText android:id="@+id/beerVolumeEntry" style="@style/doubleUnitEntryStyle" />
+
+				<TextView android:id="@+id/beerVolumeUnitType" style="@style/converterSmallTextStyle" />
+
+			</TableRow>
+		</TableLayout>
+		<TableLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+
+			<TableRow>
+
+				<TextView android:id="@+id/co2_text" style="@style/converterSmallTextStyle"
+					android:text="@string/co2_pressure" />
+
+				<TextView android:id="@+id/calculatedCO2Pressure" style="@style/converterNumberTextStyle"
+					android:text="0.00" />
+
+				<TextView style="@style/converterSmallTextStyle"
+					android:id="@+id/calculatedCO2PressureUnitType" />
+
+			</TableRow>
+
+			<TableRow>
+
+				<TextView style="@style/converterSmallTextStyle"
+					android:text="@string/table_sugar" />
+
+				<TextView android:id="@+id/calculatedTableSugar" style="@style/converterNumberTextStyle"
+					android:text="0.00" />
+
+				<TextView android:id="@+id/calculatedTableSugarUnitType"
+					style="@style/converterSmallTextStyle" />
+
+			</TableRow>
+
+			<TableRow>
+
+				<TextView style="@style/converterSmallTextStyle"
+					android:text="@string/corn_sugar" />
+
+				<TextView android:id="@+id/calculatedCornSugar" style="@style/converterNumberTextStyle"
+					android:text="0.00" />
+
+				<TextView android:id="@+id/calculatedCornSugarUnitType"
+					style="@style/converterSmallTextStyle" />
+
+			</TableRow>
+
+			<TableRow>
+
+				<TextView style="@style/converterSmallTextStyle"
+					android:text="@string/dme" />
+
+				<TextView android:id="@+id/calculatedDME" style="@style/converterNumberTextStyle"
+					android:text="0.00" />
+
+				<TextView android:id="@+id/calculatedDMEUnitType" style="@style/converterSmallTextStyle" />
+
+			</TableRow>
+
+		</TableLayout>
+
+	</LinearLayout>
+
+</LinearLayout>

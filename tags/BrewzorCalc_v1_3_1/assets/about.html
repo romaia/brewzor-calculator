@@ -1,0 +1,174 @@
+<html>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<head>
+<title>About Brewzor Brewing Calculator</title>
+<style type="text/css">
+body {
+    font-size:10pt;
+}  
+</style>
+</head>
+<body>
+
+<h2>About Brewzor Brewing Calculator</h2>
+
+<h3>What is this?</h3>
+
+<p>The goal of this application is to provide a set of tools a
+person could actually use during their brew day. It has been released
+under the <a href="http://www.gnu.org/licenses/gpl.html">GPL v3</a> open
+source license. For more information, visit our website at <a
+	href="http://brewzor.com">http://brewzor.com</a></p>
+
+<h3>Calculators Included in Brewzor:</h3>
+
+<p><b>Gravity Correction:</b> What do you do when you miss your
+pre-boil gravity? Not correcting gravity before adding your hops can
+affect the hop utilization and perceived bitterness of your beer. If
+your gravity is too low, the calculator will tell you how much extract
+to add to your kettle to bring the gravity up to your pre-boil level. If
+the gravity is too high, the calculator will tell you how much water to
+add to dilute your wort to the desired pre-boil gravity.</p>
+
+<p><b>Cylinder Volume / Cylinder Height:</b> Accurately measuring
+volume can be difficult. Since my kettle has a flat bottom and is round
+(a cylinder), I can use a calibrated stick (like a yard stick or a
+marked wooden dowel) to measure the liquid height and the diameter of my
+kettle, making it easy to calculate the volume.</p>
+
+<p><b>Strike Temperature:</b> Used to determine the temperature of
+your initial mash strike water for a given amount of grain and a given
+amount of strike water.</p>
+
+<p><b>Mash Infusion:</b> Computes the amount of water needed to raise mash the temperature.</p>
+
+<p><b>Decoction Volume:</b> Computes the decoction volume needed to raise the mash temperature.</p>
+
+<p><b>Batch Sparge:</b> Computes the amount of water to add to the
+mash for batch sparging. Adjusts volume for grain absorption.</p>
+
+<p><b>Boil Off:</b> Helps determine evaporation and cooling loss for
+a boil.</p>
+
+<p><b>Carbonation:</b>Calculates the required priming sugar (bottle
+conditioning) or PSI (kegging) required to carbonate a given volume of
+beer to a number of volumes of CO2.</p>
+
+<p><b>Alcohol / Attenuation:</b>Calculates the ABV%, ABW%, Apparent Attenuation, and Real Attenuation</p>
+
+<p><b>Refractometer:</b>Several calculations for determing gravity when using a refractometer.</p>
+
+<p><b>Hydrometer Correction:</b> Don't feel like cooling your sample
+down to 60F to take a gravity measurement? This calculator determines
+the corrected gravity for a sample based on the temperature.</p>
+
+<p><b>Unit Converters:</b> Converters for gravity, mass, volume,
+distance and temperature are included.</p>
+
+<h3>I found a bug - what do I do?</h3>
+
+<p>Bug reports should be emailed to <a
+	href="mailto:bugs@brewzor.com">bugs@brewzor.com</a>. If the bug
+resulted in the application crashing, a crash report is optionally sent
+the next time the application is started.</p>
+
+<h3>I have an idea for a new feature!</h3>
+
+<p>Requests for additional functionality should be emailed to <a
+	href="mailto:features@brewzor.com">features@brewzor.com</a>.</p>
+
+
+<h3>Why is this free?</h3>
+
+<p>I really enjoy homebrewing as a hobby and would love the
+opportunity to give back to the community. I think something like this
+will only help people make better beer. That's never a bad thing.</p>
+
+<hr />
+
+<h2>Release History:</h2>
+
+
+<h3>Version 1.3.1 - February 10, 2010</h3>
+<ul>
+	<li>Fixed bug in Alcohol / Attenuation calculator that was related to Brix units not compensating for alcohol in the sample</li>
+	<li>Added Mash Infusion Volume Unit</li>
+	<li>Updated Strike Calculator, Batch Sparge, Mash Infusion and Decoction calculator to use Mash Infusion Units</li>
+	<li>Changing Mash Volume Units or Grain Mass Units in Preferences now automatically updates the Water to Grain ratio</li>
+</ul>
+
+<h3>Version 1.3.0 - February 10, 2010</h3>
+<ul>
+	<li>Added Brix Gravity Unit</li>
+	<li>Added Brix Correction Factor Preference</li>
+	<li>Added Refractometer Calculator</li>
+	<li>Added Alcohol / Attenuation Calculator</li>
+	<li>Upgraded target SDK version to 1.6</li>
+	<li>Added support for small/QVGA and large screens</li>
+</ul>
+
+<h3>Version 1.2.0 - February 4, 2010</h3>
+<ul>
+	<li>Added Mash Infusion Calculator</li>
+	<li>Added Decoction Volume Calculator</li>
+	<li>Added Pressure Units PSI, KPa, Bar, and Atmosphere</li>
+	<li>Added Global Unit Change to preferences that converts all units between US and Metric at once</li>
+	<li>Fixed batch sparge calculator bug that caused water to grain ratios to be miscalculated when metric units were used.</li>
+</ul>
+
+<h3>Version 1.1.0 - February 1, 2010</h3>
+<ul>
+	<li>Added Batch Sparge Calculator</li>
+	<li>Added a "no expansion" option to the button on the Kettle Volume / Height Calculators</li>
+	<li>Added toggle button for starting/ending boil volume </li>
+	<li>Added toggle button on boil off for calculating either starting or ending volume</li>
+</ul>
+
+<h3>Version 1.0.1 - January 30, 2010</h3>
+<ul>
+	<li>Updated License to GPL v3 (See
+	http://www.gnu.org/licenses/gpl.html)</li>
+	<li>Added preference for hydrometer calibration temperature</li>
+	<li>Added toggle button to kettle volume and kettle height calculator for heat/cool expansion/loss</li>
+	<li>Hydrometer correction now uses the calibration temperature preference to support non 60&deg;F hydrometers</li>
+	<li>Added Volume Units: Bottle - 12oz, Bottle - 22oz, and Bottle -
+	750mL</li>
+</ul>
+
+<h3>Version 1.0.0 - Initial Release - January 29, 2010</h3>
+<p><b>Calculators Included:</b>
+<ul>
+	<li>Strike Temperature</li>
+	<li>Gravity Correction</li>
+	<li>Boil Off</li>
+	<li>Cylinder Volume / Height</li>
+	<li>Carbonation</li>
+	<li>Hydrometer Correction</li>
+	<li>Unit Converters - Volume, Mass, Gravity, Temperature, and
+	Distance</li>
+</ul>
+</p>
+
+<p></p>
+
+</body>
+</html>
