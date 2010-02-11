@@ -180,7 +180,7 @@ public class StrikeTemperatureCalculatorActivity extends Activity {
 
     	strikeWaterTemperature.setType(temperatureType);
         
-        volumeType = strikeWaterVolume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON);
+        volumeType = strikeWaterVolume.typeFromPref(Preferences.BATCH_MASH_VOLUME_UNIT, Volume.Unit.GALLON);
 
         strikeWaterVolume.setType(volumeType);
     	strikeWaterVolumeUnitType.setText(strikeWaterVolume.getLabelAbbr());

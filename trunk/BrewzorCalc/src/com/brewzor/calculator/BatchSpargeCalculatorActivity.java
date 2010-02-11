@@ -42,6 +42,7 @@ public class BatchSpargeCalculatorActivity extends Activity {
 	private TextView calculatedTotalMashVolumeUnitType;
 	
 	private Volume.Unit volumeType;
+	private Volume.Unit mashVolumeType;
 	private Mass.Unit massType;
 	private Temperature.Unit temperatureType;
 
@@ -108,19 +109,27 @@ public class BatchSpargeCalculatorActivity extends Activity {
 		
 		GrainWeight.setValue(grainWeightEntry, 0.0);
 		BoilVolume.setValue(boilVolumeEntry, 0.0);
+		BoilVolume.setType(volumeType);
+		BoilVolume.convert(mashVolumeType);
 		StrikeWaterVolume.setValue(strikeVolumeEntry, 0.0);
-
+		StrikeWaterVolume.setType(mashVolumeType);
+		
 		// amount of water absorbed by the grain after the initial strike
 		GrainAbsorptionVolume.setValue(GrainAbsorptionRatio * GrainWeight.getValue());
+		GrainAbsorptionVolume.setType(mashVolumeType);
 		//Log.v("batch", String.format("GrainAbsorbtionVolume=%01.4f", GrainAbsorptionVolume.getValue()));
 		
-		FirstSpargeVolume.setValue((BoilVolume.getValue() / 2) - (StrikeWaterVolume.getValue() - GrainAbsorptionVolume.getValue()));
+		FirstSpargeVolume.setValue((BoilVolume.compare(mashVolumeType) / 2) - (StrikeWaterVolume.getValue() - GrainAbsorptionVolume.getValue()));
+		FirstSpargeVolume.setType(mashVolumeType);
 		//Log.v("batch", String.format("FirstSpargeVolume=%01.4f", FirstSpargeVolume.getValue()));
 		
-		SecondSpargeVolume.setValue(BoilVolume.getValue() / 2);
+		SecondSpargeVolume.setValue(BoilVolume.compare(mashVolumeType) / 2);
+		SecondSpargeVolume.setType(mashVolumeType);
 		//Log.v("batch", String.format("SecondSpargeVolume=%01.4f", SecondSpargeVolume.getValue()));
 		
 		TotalMashVolume.setValue((WaterToGrainRatio * GrainWeight.getValue()) + (GrainVolumeRatio * GrainWeight.getValue()));
+		TotalMashVolume.setType(mashVolumeType);
+		TotalMashVolume.convert(volumeType);
 		//Log.v("batch", String.format("TotalMashVolume=%01.4f", TotalMashVolume.getValue()));
 		
 		//Log.v("batch", String.format("1st+2nd sparge=%01.4f", SecondSpargeVolume.getValue() + FirstSpargeVolume.getValue() + (StrikeWaterVolume.getValue() - GrainAbsorptionVolume.getValue())));
@@ -137,7 +146,8 @@ public class BatchSpargeCalculatorActivity extends Activity {
 
 	    WaterToGrainRatio = NumberFormat.parseDouble(prefs.getString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, "0"), 0);
 		
-		volumeType = BoilVolume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON);
+	    mashVolumeType = StrikeWaterVolume.typeFromPref(Preferences.BATCH_MASH_VOLUME_UNIT, Volume.Unit.GALLON);
+	    volumeType = BoilVolume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON);
 		massType = GrainWeight.typeFromPref(Preferences.BATCH_GRAIN_MASS_UNIT, Mass.Unit.POUND);
 		temperatureType = StrikeWaterTemperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.FAHRENHEIT);
 
@@ -147,19 +157,19 @@ public class BatchSpargeCalculatorActivity extends Activity {
 
 	    grainVolume.setValue(0.13); // 0.13 gal / lb
 	    grainMass.setValue(1);	    
-	    GrainAbsorptionRatio = grainVolume.compare(volumeType) / grainMass.compare(massType);
+	    GrainAbsorptionRatio = grainVolume.compare(mashVolumeType) / grainMass.compare(massType);
 
 	    grainVolume.setValue(0.08); // 0.08 gal / lb
 	    grainMass.setValue(1);	    
-	    GrainVolumeRatio = grainVolume.compare(volumeType) / grainMass.compare(massType); 
+	    GrainVolumeRatio = grainVolume.compare(mashVolumeType) / grainMass.compare(massType); 
 
 		GrainWeight.setType(massType);
-		StrikeWaterVolume.setType(volumeType);
+		StrikeWaterVolume.setType(mashVolumeType);
 		BoilVolume.setType(volumeType);
 		StrikeWaterTemperature.setType(temperatureType);
-		GrainAbsorptionVolume.setType(volumeType);
-		FirstSpargeVolume.setType(volumeType);
-		SecondSpargeVolume.setType(volumeType);
+		GrainAbsorptionVolume.setType(mashVolumeType);
+		FirstSpargeVolume.setType(mashVolumeType);
+		SecondSpargeVolume.setType(mashVolumeType);
 		TotalMashVolume.setType(volumeType);
 		
 		grainWeightUnitType.setText(GrainWeight.getLabelAbbr());

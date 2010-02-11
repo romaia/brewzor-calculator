@@ -91,6 +91,10 @@
 	<string name="batch_volume_units_pref_summary">Quarts, Gallons, Liters, etc.</string>
 	<string name="batch_volume_units_pref_default">GALLON</string>
 
+	<string name="batch_mash_volume_units_pref">Mash Infusion Volume Units</string>
+	<string name="batch_mash_volume_units_pref_summary">Quarts, Gallons, Liters, etc.</string>
+	<string name="batch_mash_volume_units_pref_default">GALLON</string>
+
 	<string name="final_volume_pref">Final Batch Volume</string>
 	<string name="final_volume_pref_summary">Quarts, Gallons, Liters, etc.</string>
 	<string name="final_volume_pref_default">0</string>

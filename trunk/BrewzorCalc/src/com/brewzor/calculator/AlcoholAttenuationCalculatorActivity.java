@@ -129,6 +129,15 @@ public class AlcoholAttenuationCalculatorActivity extends Activity {
 		currentGravity.setValue(currentEntry, 0);
 		currentGravity.setType(gravityUnit);
 
+		if (gravityUnit == Gravity.Unit.BRIX) {
+			double est_cg_plato = 1.001843 - 0.002318474*originalGravity.getValue() - 0.000007775*java.lang.Math.pow(originalGravity.getValue(), 2) - 0.000000034*java.lang.Math.pow(originalGravity.getValue(), 3) 
+            + 0.00574*currentGravity.getValue() + 0.00003344*java.lang.Math.pow(currentGravity.getValue(), 2) + 0.000000086*java.lang.Math.pow(originalGravity.getValue(), 3);
+			
+			currentGravity.setFormat(getString(R.string.sg_format));
+			currentGravity.setValue(est_cg_plato);
+			currentGravity.setType(Gravity.Unit.SG);
+		}
+		
 		originalGravity.convert(Gravity.Unit.PLATO);
 		currentGravity.convert(Gravity.Unit.PLATO);
 		
