@@ -115,7 +115,7 @@ public class DecoctionCalculatorActivity  extends Activity {
 	private void getPrefs() {
         temperatureType = TargetMashTemperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.FAHRENHEIT);
         massType = GrainWeight.typeFromPref(Preferences.BATCH_GRAIN_MASS_UNIT, Mass.Unit.POUND);
-        volumeType = DecoctionVolume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON);
+        volumeType = DecoctionVolume.typeFromPref(Preferences.BATCH_MASH_VOLUME_UNIT, Volume.Unit.GALLON);
         
     	InfusionWaterTemperature.setType(temperatureType);
     	InfusionWaterTemperature.setValue(NumberFormat.parseDouble(prefs.getString(Preferences.BATCH_INFUSION_WATER_TEMPERATURE, "212"), 212));

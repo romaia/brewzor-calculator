@@ -91,11 +91,14 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		pref = findPreference(Preferences.BATCH_VOLUME_UNIT);
 		pref.setOnPreferenceChangeListener(mPrefListener);
 		
+		pref = findPreference(Preferences.BATCH_MASH_VOLUME_UNIT);
+		pref.setOnPreferenceChangeListener(mMashVolumeUnitPrefListener);
+		
 		pref = findPreference(Preferences.BATCH_FINAL_VOLUME);
 		pref.setOnPreferenceChangeListener(mPrefListener);
 		
 		pref = findPreference(Preferences.BATCH_GRAIN_MASS_UNIT);
-		pref.setOnPreferenceChangeListener(mPrefListener);
+		pref.setOnPreferenceChangeListener(mGrainMassUnitPrefListener);
 		
 		pref = findPreference(Preferences.BATCH_WATER_TO_GRAIN_RATIO);
 		pref.setOnPreferenceChangeListener(mPrefListener);
@@ -172,11 +175,16 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		pref = findPreference(Preferences.BATCH_FINAL_VOLUME);
 		pref.setSummary(sPref.getString(Preferences.BATCH_FINAL_VOLUME, "6.00") + " " + volume.getLabelPlural());
 
+		pref = findPreference(Preferences.BATCH_MASH_VOLUME_UNIT);
+		volume.setType(volume.typeFromPref(Preferences.BATCH_MASH_VOLUME_UNIT, Volume.Unit.GALLON));
+		pref.setSummary(volume.getLabelPlural());
+		
 		pref = findPreference(Preferences.BATCH_GRAIN_MASS_UNIT);
 		mass.setType(mass.typeFromPref(Preferences.BATCH_GRAIN_MASS_UNIT, Mass.Unit.POUND));
 		pref.setSummary(mass.getLabelPlural());
 
 		pref = findPreference(Preferences.BATCH_WATER_TO_GRAIN_RATIO);
+		volume.setType(volume.typeFromPref(Preferences.BATCH_MASH_VOLUME_UNIT, Volume.Unit.GALLON));
 		pref.setSummary(getString(R.string.water_to_grain_ratio_pref_summary_format, sPref.getString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, ".31"), volume.getLabelPlural(), mass.getLabel()));
 		
 		pref = findPreference(Preferences.BATCH_BOIL_MINUTES);
@@ -210,6 +218,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		pref.setSummary(sPref.getString(Preferences.KETTLE_COOLING_LOSS, "4") + "%");
 		
 		pref = findPreference(Preferences.KETTLE_EQUIPMENT_LOSS);
+		volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON));
 		pref.setSummary(getString(R.string.equipment_loss_pref_summary_format, sPref.getString(Preferences.KETTLE_EQUIPMENT_LOSS, "0"), volume.getLabelPlural()));
 
 	}
@@ -219,6 +228,49 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		super.onResume();
 		updateList();
 	}
+
+	private OnPreferenceChangeListener mMashVolumeUnitPrefListener = new OnPreferenceChangeListener() { 		
+		@Override
+		public boolean onPreferenceChange(Preference preference, java.lang.Object newValue) {
+
+			volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, "1"), 1));
+			volume.setType(volume.typeFromPref(Preferences.BATCH_MASH_VOLUME_UNIT, Volume.Unit.GALLON));
+
+			editor.putString(preference.getKey(), newValue.toString());
+			editor.commit();
+
+			volume.convert(volume.typeFromPref(Preferences.BATCH_MASH_VOLUME_UNIT, Volume.Unit.GALLON));
+			editor.putString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, volume.toString());
+			
+			editor.commit();
+			
+			updateList();
+			return true;
+		}
+	};
+
+	private OnPreferenceChangeListener mGrainMassUnitPrefListener = new OnPreferenceChangeListener() { 		
+		@Override
+		public boolean onPreferenceChange(Preference preference, java.lang.Object newValue) {
+
+			volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, "1"), 1));
+			volume.setType(volume.typeFromPref(Preferences.BATCH_MASH_VOLUME_UNIT, Volume.Unit.GALLON));
+			mass.setValue(1);
+			mass.setType(mass.typeFromPref(Preferences.BATCH_GRAIN_MASS_UNIT, Mass.Unit.POUND));
+			
+			editor.putString(preference.getKey(), newValue.toString());
+			editor.commit();
+			
+			volume.convert(volume.typeFromPref(Preferences.BATCH_MASH_VOLUME_UNIT, Volume.Unit.GALLON));
+			mass.convert(mass.typeFromPref(Preferences.BATCH_GRAIN_MASS_UNIT, Mass.Unit.POUND));
+			volume.setValue(volume.getValue() / mass.getValue());
+			editor.putString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, volume.toString());
+
+			editor.commit();
+			updateList();
+			return true;
+		}
+	};
 
 	private OnPreferenceChangeListener mPrefListener = new OnPreferenceChangeListener() { 		
 		@Override
@@ -242,7 +294,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 				editor.putString(Preferences.BATCH_FINAL_VOLUME, volume.toString());
 				
 				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, "1"), 1));
-				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.LITER));
+				volume.setType(volume.typeFromPref(Preferences.BATCH_MASH_VOLUME_UNIT, Volume.Unit.LITER));
 				mass.setValue(1);
 				mass.setType(mass.typeFromPref(Preferences.BATCH_GRAIN_MASS_UNIT, Mass.Unit.KILOGRAM));
 				volume.convert(Volume.Unit.GALLON);
@@ -265,11 +317,6 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 				distance.convert(Distance.Unit.INCH);
 				editor.putString(Preferences.KETTLE_FALSE_BOTTOM_HEIGHT, distance.toString());
 				
-				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_FINAL_VOLUME, "0"), 0));
-				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.LITER));
-				volume.convert(Volume.Unit.GALLON);
-				editor.putString(Preferences.BATCH_FINAL_VOLUME, volume.toString());
-				
 				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.KETTLE_EQUIPMENT_LOSS, "0"), 0));
 				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.LITER));
 				volume.convert(Volume.Unit.GALLON);
@@ -285,10 +332,9 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 				editor.putString(Preferences.GLOBAL_EXTRACT_MASS_UNIT, "OUNCE");
 				editor.putString(Preferences.GLOBAL_PRESSURE_UNIT, "PSI");
 				editor.putString(Preferences.BATCH_VOLUME_UNIT, "GALLON");
+				editor.putString(Preferences.BATCH_MASH_VOLUME_UNIT, "GALLON");
 				editor.putString(Preferences.BATCH_GRAIN_MASS_UNIT, "POUND");
 				editor.putString(Preferences.KETTLE_DISTANCE_UNIT, "INCH");
-				
-				
 			
 			} else if ("METRIC".equals(newValue.toString()) && "US".equals(sPref.getString(Preferences.GLOBAL_UNIT_CHANGE, "METRIC"))) {
 
@@ -298,7 +344,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 				editor.putString(Preferences.BATCH_FINAL_VOLUME, volume.toString());
 				
 				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, "1"), 1));
-				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON));
+				volume.setType(volume.typeFromPref(Preferences.BATCH_MASH_VOLUME_UNIT, Volume.Unit.GALLON));
 				mass.setValue(1);
 				mass.setType(mass.typeFromPref(Preferences.BATCH_GRAIN_MASS_UNIT, Mass.Unit.POUND));
 				volume.convert(Volume.Unit.LITER);
@@ -321,11 +367,6 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 				distance.convert(Distance.Unit.CENTIMETER);
 				editor.putString(Preferences.KETTLE_FALSE_BOTTOM_HEIGHT, distance.toString());
 				
-				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.BATCH_FINAL_VOLUME, "0"), 0));
-				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON));
-				volume.convert(Volume.Unit.LITER);
-				editor.putString(Preferences.BATCH_FINAL_VOLUME, volume.toString());
-				
 				volume.setValue(NumberFormat.parseDouble(sPref.getString(Preferences.KETTLE_EQUIPMENT_LOSS, "0"), 0));
 				volume.setType(volume.typeFromPref(Preferences.BATCH_VOLUME_UNIT, Volume.Unit.GALLON));
 				volume.convert(Volume.Unit.LITER);
@@ -340,6 +381,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 				editor.putString(Preferences.GLOBAL_GRAVITY_UNIT, "SG");
 				editor.putString(Preferences.GLOBAL_PRESSURE_UNIT, "KPA");
 				editor.putString(Preferences.BATCH_VOLUME_UNIT, "LITER");
+				editor.putString(Preferences.BATCH_MASH_VOLUME_UNIT, "LITER");
 				editor.putString(Preferences.BATCH_GRAIN_MASS_UNIT, "KILOGRAM");
 				editor.putString(Preferences.KETTLE_DISTANCE_UNIT, "CENTIMETER");
 				editor.putString(Preferences.GLOBAL_EXTRACT_MASS_UNIT, "GRAM");

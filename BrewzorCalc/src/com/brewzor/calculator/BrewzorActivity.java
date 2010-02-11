@@ -60,7 +60,7 @@ public class BrewzorActivity extends ListActivity {
 		
     	Eula.show(this, getBaseContext());
 		
-    	BegForMarketReview.show(this, getBaseContext());
+    	//BegForMarketReview.show(this, getBaseContext());
     	
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 

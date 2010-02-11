@@ -103,6 +103,14 @@
 							android:inputType="number|numberDecimal"
 							android:key="batch.final_volume" />
 	
+		<ListPreference android:title="@string/batch_mash_volume_units_pref"
+						android:summary="@string/batch_mash_volume_units_pref_summary"
+						android:persistent="true"
+						android:key="batch.mash_volume_unit" 
+						android:defaultValue="@string/batch_mash_volume_units_pref_default"
+						android:entries="@array/volumeUnitsList" 
+						android:entryValues="@array/volumeUnitsIdList" />
+
 		<ListPreference android:title="@string/grain_mass_units_pref"
 						android:summary="@string/grain_mass_units_pref_summary"
 						android:persistent="true"

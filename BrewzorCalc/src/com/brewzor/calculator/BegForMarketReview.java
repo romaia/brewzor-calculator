@@ -77,7 +77,7 @@ class BegForMarketReview {
     	if (!preferences.getBoolean(Preferences.GLOBAL_BEG_FOR_REVIEW, false)) {
             final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
             builder.setTitle(R.string.beg_for_review_title);
-            builder.setCancelable(true);
+            builder.setCancelable(false);
             builder.setPositiveButton(R.string.beg_for_review_ok, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                     accept(preferences);
@@ -94,7 +94,7 @@ class BegForMarketReview {
     }
 
     private static void accept(SharedPreferences preferences) {
-        //preferences.edit().putBoolean(Preferences.GLOBAL_BEG_FOR_REVIEW, true).commit();
+        preferences.edit().putBoolean(Preferences.GLOBAL_BEG_FOR_REVIEW, true).commit();
     }
 
     private static CharSequence readEula(Activity activity) {

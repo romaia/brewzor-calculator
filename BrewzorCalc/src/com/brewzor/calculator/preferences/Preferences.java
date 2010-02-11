@@ -36,6 +36,7 @@ public class Preferences {
 	public static final String GLOBAL_BEG_FOR_REVIEW = "global.beg_for_review";
 	
 	public static final String BATCH_VOLUME_UNIT = "batch.volume_unit";
+	public static final String BATCH_MASH_VOLUME_UNIT = "batch.mash_volume_unit";
 	public static final String BATCH_FINAL_VOLUME = "batch.final_volume";
 	public static final String BATCH_GRAIN_MASS_UNIT = "batch.grain_mass_unit";
 	public static final String BATCH_WATER_TO_GRAIN_RATIO = "batch.water_to_grain_ratio";
@@ -55,6 +56,7 @@ public class Preferences {
 	public static final String VERSION_1_1_0 = "version.1.1.0";
 	public static final String VERSION_1_2_0 = "version.1.2.0";
 	public static final String VERSION_1_3_0 = "version.1.3.0";
+	public static final String VERSION_1_3_1 = "version.1.3.1";
 	
 	public static final void init(SharedPreferences prefs) {
         Editor editor = prefs.edit();
@@ -96,6 +98,11 @@ public class Preferences {
         if (prefs.getBoolean(Preferences.VERSION_1_3_0, false)) {
         	editor.putBoolean(Preferences.VERSION_1_3_0, true);
 	        editor.putString(Preferences.GLOBAL_REFRACTOMETER_CORRECTION_FACTOR, "1.04");
+        }
+
+        if (prefs.getBoolean(Preferences.VERSION_1_3_1, false)) {
+        	editor.putBoolean(Preferences.VERSION_1_3_1, true);
+	        editor.putString(Preferences.BATCH_MASH_VOLUME_UNIT, prefs.getString(Preferences.BATCH_VOLUME_UNIT, "GALLON"));
         }
 
         editor.commit();	
