@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- Dimensions -->
+	
+	<dimen name="largeText">20sp</dimen>
+</resources>
