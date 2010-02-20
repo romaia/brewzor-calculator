@@ -1,0 +1,348 @@
+<!-- 
+
+	This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+	TRANSLATIONS
+
+	To those nice enough to provide translations:
+	
+	In general, things in all caps like "FAHRENHEIT" or references to 
+	other strings like "@string/double_default" should not be translated.
+	Only translate the words between the tags <string name=""></string>. 
+	There are also format strings like "%s%s (Usually 60 or 68�F)" and in 
+	that case, you would only translate the English words "Usually" and 
+	"or".  If a word doesn't translate into your language, just leave it 
+	as is.  Sometimes it can be hard to determine the context in which a 
+	string is used.  If you have any questions, feel free to send an email 
+	asking for clarification to market@brewzor.com.
+	
+	Thanks for helping make this a better application for everyone!
+
+-->
+<resources>
+<!-- Preferences -->
+<string name="set_preferences">Sæt standarder</string>
+<string name="preference_screen_title">Brewzor standarder</string>
+<string name="general_settings">Indstillinger</string>
+<string name="global_unit_change_pref">Overordnet ændring af enheder</string>
+
+<string name="global_unit_change_pref_summary">Brug dette til at ændre alle enheder til US eller metrisk på en gang.</string>
+<string name="temperature_units_pref">Temperatur</string>
+<string name="temperature_units_pref_summary">Celsius, Fahrenheit</string>
+<string name="gravity_units_pref">Vægtfylde</string>
+<string name="gravity_units_pref_summary">SG, Plato, GU, Brix</string>
+<string name="use_refractometer_correction_pref">Refraktometer korrektionsfaktor</string>
+
+<string name="use_refractometer_correction_pref_summaryoff">Refraktometer korrektionsfaktoren vil ikke blive brugt</string>
+<string name="use_refractometer_correction_pref_summaryon">Refraktometer korrektionsfaktoren vil blive brugt</string>
+<string name="refractometer_correction_factor_pref">Refraktometer korrektionsfaktor</string>
+
+<string name="refractometer_correction_factor_pref_format">%s (Redegør for komponenter i urten, der ikke er sukker)</string>
+<string name="pressure_units_pref">Tryk</string>
+<string name="pressure_units_pref_summary">PSI, kPa, Bar, Atmosfære</string>
+<string name="hydrometer_calibration_temperature_pref">Hydrometer kalibreringstemperatur</string>
+<string name="hydrometer_calibration_temperature_pref_summary_format">%s%s (Normalt 60 eller 68°F/15 eller 20°C)</string>
+<string name="extract_mass_units_pref">Vægt af tørret/flydende maltekstrakt</string>
+<string name="extract_mass_units_pref_summary">Grams, Kilograms, Ounces, Pounds</string>
+<string name="batch_settings">Batch indstillinger</string>
+<string name="batch_volume_units_pref">Batch male enhed</string>
+<string name="batch_volume_units_pref_summary">Quarts, Gallons, Liters, osv.</string>
+<string name="final_volume_pref">Slut volumen</string>
+<string name="final_volume_pref_summary">Quarts, Gallons, Liters, osv.</string>
+<string name="grain_mass_units_pref">Malt måle enhed</string>
+<string name="grain_mass_units_pref_summary">Grams, Kilograms, Ounces, Pounds</string>
+<string name="water_to_grain_ratio_pref">Vand /malt forhold</string>
+
+<string name="water_to_grain_ratio_pref_summary_format">%s %s per %s (Normalt 2,5 – 3 liter pr. kg.)</string>
+<string name="grain_absorption_ratio_pref">Malt absorptions forhold</string>
+
+<string name="grain_absorption_ratio_pref_summary_format">%s %s per %s (Normalt 2,5 – 3 liter pr. kg.)</string>
+<string name="grain_volume_ratio_pref">Vand/malt forhold</string>
+
+<string name="grain_volume_ratio_pref_summary_format">%s %s per %s (Normalt 2,5 – 3 liter pr. kg.)</string>
+<string name="boil_minutes_pref">Kogetid</string>
+<string name="boil_minutes_pref_summary">Normalt 60-90 minutter</string>
+<string name="mash_infusion_water_temperature_pref">Temperatur på infusionsvand</string>
+<string name="mash_infusion_water_temperature_pref_summary">Normalt mellem 77 og 100°C</string>
+
+<string name="equipment_settings">Indstillinger for udstyr</string>
+<string name="diameter_height_units_pref">Grydediameter</string>
+<string name="diameter_height_units_pref_summary">Centimeters, Inches</string>
+<string name="kettle_diameter_pref">Grydediameter</string>
+<string name="kettle_diameter_pref_summary">Bruges til volumenudregninger</string>
+<string name="false_bottom_height_pref">Højde af falsk bund</string>
+<string name="false_bottom_height_pref_summary">Bruges til volumenudregninger</string>
+<string name="equipment_loss_pref">Totalt væsketab</string>
+
+<string name="equipment_loss_pref_summary_format">%s %s (Tilbageholdt væske under falsk bund, humlerester osv.)</string>
+<string name="evaporation_rate_pref">Fordampning pr. time</string>
+<string name="evaporation_rate_pref_summary">Normalt mellem 5 og 15%</string>
+<string name="correct_for_expansion_pref">Korrektion for varmeudvidelse</string>
+
+<string name="correct_for_expansion_pref_summary">Brug værdien fra køletabet til at kompensere det beregnede volume for varmeudvidelsen.</string>
+<string name="cooling_loss_percentage_pref">Køletab</string>
+
+<string name="cooling_loss_percentage_pref_summary">Normalt 4% ved kogning og 3% ved mæskning</string>
+
+<string name="gravity_correction">Vægtfylde korrektion</string>
+<string name="current_gravity">Nuværende</string>
+<string name="desired_gravity">Ønsket</string>
+<string name="wort_volume">Mængde urt</string>
+<string name="add_water_format">Tilsæt %02.2f%s vand.</string>
+<string name="add_extract_format">Tilsæt %02.2f %s tørret maltekstrakt ELLER \nTilsæt %02.2f %s flydende maltekstrakt</string>
+<string name="add_nothing_format">Alt er i orden!</string>
+
+<!-- Cylinder Volume --> 
+<string name="cylinder_volume">Gryde volumen fra højde</string>
+<string name="kettle_diameter">Diamter</string>
+<string name="measured_height">Højde</string>
+<string name="false_bottom_height">Falsk bund</string>
+<string name="kettle_diameter_summary">Diameteren af din gryde</string>
+
+<string name="false_bottom_height_summary">Brug 0 hvis du ikke har en falsk bund, ellers brug højden.</string>
+<string name="correct_for_expansion_format">%01.0f%% varme udvidelse</string>
+<string name="correct_for_loss_format">%01.0f%% køletab</string>
+<string name="no_expansion">Ingen udvidelse</string>
+
+<!-- Cylinder Height -->
+<string name="cylinder_height">Grydehøjde fra volumen</string>
+<string name="desired_volume">Volumen</string>
+
+<!-- Strike Temperature -->
+<string name="strike_temperature">Strike temperatur</string>
+<string name="grain_weight">Malt mængde</string>
+<string name="grain_temperature">Malt temperatur</string>
+<string name="strike_water_volume">Mæske vand</string>
+<string name="target_mash_temperature">Mæske temperatur</string>
+
+<!-- Mash Infusion -->
+<string name="mash_infusion">Infusionsmæskning</string>
+<string name="mash_infusion_current_mash_temperature">Nuværende temperatur</string>
+<string name="mash_infusion_grain_weight">Maltmængde</string>
+<string name="mash_infusion_water_in_mash_volume">Vand I mæsken</string>
+<string name="mash_infusion_target_mash_temperature">Måltemperatur</string>
+<string name="mash_infusion_infusion_temperature">Infusionstemperatur</string>
+
+<!-- Decoction -->
+<string name="decoction_volume">Dekoktions volumen</string>
+
+<!-- Batch Sparge -->
+<string name="batch_sparge">Batch Sparge</string>
+<string name="batch_sparge_grain_weight">Malt mængde</string>
+<string name="batch_sparge_strike_volume">Indmæsknings vand</string>
+<string name="batch_sparge_boil_volume">Koge volumen</string>
+<string name="batch_sparge_water_to_grain_ratio">Vand/malt forhold</string>
+<string name="batch_sparge_grain_absorption_volume">Malten absorberer</string>
+<string name="batch_sparge_first_sparge_volume">Udmæsknings volumen</string>
+<string name="batch_sparge_second_sparge_volume">Sparge volumen</string>
+<string name="batch_sparge_total_mash_volume">Total mæske volumen</string>
+<string name="batch_sparge_water_to_grain_ratio_format">%s/%s</string> 
+
+<!-- Boil Off -->
+<string name="boil_off">Kogt væk</string>
+<string name="starting_volume">Start volumen</string>
+<string name="ending_volume">Slut volumen</string>
+<string name="evaporation_rate">Fordampningsgrad</string>
+<string name="boil_time">Kogetid (min.)</string>
+<string name="volume_boiled_off">Kogt væk</string>
+<string name="cooling_loss_percentage">Køletab</string>
+<string name="cooling_loss_volume">Køletab volumen</string>
+
+<!-- Carbonation -->
+<string name="carbonation">Karbonering</string>
+<string name="volumes_co2_desired">Volumen CO2</string>
+<string name="beer_temperature">Øl temperatur</string>
+<string name="beer_volume">Øl mængde</string>
+<string name="co2_pressure">CO2 tryk</string>
+<string name="corn_sugar">Glukose</string>
+<string name="table_sugar">Hvidt sukker</string>
+<string name="dme">Tørret maltekstrakt (75% AA)</string>
+
+<!-- Alcohol / Attenuation -->
+<string name="alcohol_attenuation">Forgæring</string>
+<string name="alcohol_attenuation_units">Vægtfylde enhed</string>
+<string name="alcohol_attenuation_current_gravity">Nuværende vægtfylde</string>
+<string name="alcohol_attenuation_original_gravity">Oprindelig vægtfylde</string>
+<string name="alcohol_attenuation_abv">Alkohol (%vol)</string>
+<string name="alcohol_attenuation_abw">Alkohol (%vægt)</string>
+<string name="alcohol_attenuation_apparent_attenuation">Tilsyneladende forgæring</string>
+<string name="alcohol_attenuation_real_attenuation">Virkelig forgæring</string>
+<string name="alcohol_attenuation_calories">Kalorier pr. 12 fl oz</string>
+
+<!-- Refractometer -->
+<string name="refractometer">Refraktometer</string>
+<string name="refractometer_unfermented_wort">Ugæret urt</string>
+<string name="refractometer_fermenting_wort">Urt i gæring</string>
+<string name="refractometer_finished_beer">Færdig øl</string>
+<string name="refractometer_calibrate">Kalibrering</string>
+<string name="refractometer_hydrometer_reading">Hydrometer aflæsning</string>
+<string name="refractometer_refractometer_reading">Refraktometer aflæsning</string>
+<string name="refractometer_original_gravity">Oprindelig vægtfylde</string>
+<string name="refractometer_corrected_gravity">Korrigeret vægtfylde</string>
+<string name="refractometer_percent_abv">%vol</string>
+<string name="refractometer_percent_abw">%vægt</string>
+<string name="refractometer_apparent_attenuation">Tilsyneladende forgæring</string>
+<string name="refractometer_real_attenuation">Virkelig forgæring</string>
+<string name="refractometer_correction_factor">Korrektionsfaktor</string>
+<string name="refractometer_save_to_prefences">Gem korrektionsfaktor til standarder</string>
+
+<!-- Hydrometer Correction -->
+<string name="hydrometer_correction">Hydrometer korrektion</string>
+<string name="temperature">Temperatur</string>
+<string name="corrected_sg">Korrigeret SG</string>
+<string name="calibration_text_format">Kalibrerings temperatur: %01.0f%s</string>
+
+<!-- Starter Wort -->
+<string name="starter_wort">Starterurt</string>
+<string name="volume_desired">Ønsket volumen</string>
+
+<!-- Unit Conversion -->
+<string name="unit_conversion">Enhedskonverting</string>
+<string name="unit_converter_format">%02.4f</string>
+<string name="unit_type_prompt">Enhedskonverting</string>
+<string name="unit_distance_length">Længde</string>
+<string name="unit_mass_weight">Vægt</string>
+<string name="unit_gravity">Vægtfylde</string>
+<string name="unit_temperature">Temperatur</string>
+<string name="unit_volume">Volumen</string>
+<string name="unit_pressure">Tryk</string>
+<string name="no_list_items">Intet fundet</string>
+<string name="measurement_system_us">US</string>
+<string name="measurement_system_metric">Metrisk</string>
+
+<!-- Gravity Conversion -->
+<string name="gravity_conversions">Vægtfylde konvertering</string>
+<string name="unit_entry_hint">Indtast vægtfylde</string>
+<string name="plato">Plato</string>
+<string name="plato_abbr">°P</string>
+<string name="plato_plural">Plato</string>
+<string name="sg">Specifik vægtfylde</string>
+<string name="sg_plural">SG</string>
+<string name="sg_abbr">SG</string>
+<string name="gu">Vægtfyldeenheder</string>
+<string name="gu_plural">GU</string>
+<string name="gu_abbr">GU</string>
+<string name="gu_default">0</string>
+<string name="brix">Brix</string>
+<string name="brix_plural">Brix</string>
+<string name="brix_abbr">°Bx</string>
+
+<!-- Temperature Conversion -->
+<string name="temperature_conversions">Temperatur konvertering</string>
+<string name="fahrenheit">Fahrenheit</string>
+<string name="fahrenheit_abbr">°F</string>
+<string name="fahrenheit_plural">Fahrenheit</string>
+<string name="celsius">Celsius</string>
+<string name="celsius_abbr">°C</string>
+<string name="celsius_plural">Celsius</string>
+
+<!-- Mass Conversion -->
+<string name="mass_conversions">Vægt konvertering</string>
+<string name="gram">Gram</string>
+<string name="gram_abbr">g</string>
+<string name="gram_plural">Grams</string>
+<string name="kilogram">Kilo</string> 
+<string name="kilogram_abbr">kg</string>
+<string name="kilogram_plural">Kilo</string>
+<string name="ounce">Ounce</string>
+<string name="ounce_abbr">oz</string>
+<string name="ounce_plural">Ounces</string>
+<string name="pound">Pound</string>
+<string name="pound_abbr">lb</string>
+<string name="pound_plural">Pounds</string>
+<!-- Volume Conversion -->
+<string name="volume_conversions">Volume konvertering</string>
+<string name="milliliter">Milliliter</string>
+<string name="milliliter_abbr">mL</string>
+<string name="milliliter_plural">Milliliters</string>
+<string name="liter">Liter</string>
+<string name="liter_abbr">L</string>
+<string name="liter_plural">Liters</string>
+<string name="teaspoon">Teske</string>
+<string name="teaspoon_abbr">tsk</string>
+<string name="teaspoon_plural">Spiseskeer</string>
+<string name="tablespoon">Spiseske</string>
+<string name="tablespoon_abbr">spsk</string>
+<string name="tablespoon_plural">Spiseskkeer</string>
+<string name="fluid_ounce">Fluid Ounce</string>
+<string name="fluid_ounce_abbr">fl oz</string>
+<string name="fluid_ounce_plural">Fluid Ounces</string>
+<string name="cubic_inch">Cubic Inch</string>
+<string name="cubic_inch_abbr">cu in</string>
+<string name="cubic_inch_plural">Cubic Inches</string>
+<string name="cup">Cup</string>
+<string name="cup_abbr">c</string>
+<string name="cup_plural">Cups</string>
+<string name="bottle_12_oz">Flaske (12 fl oz)</string>
+<string name="bottle_12_oz_abbr">Flaske (12 fl oz)</string>
+<string name="bottle_12_oz_plural">Flaske (12 fl oz)</string>
+<string name="us_pint">Pint</string>
+<string name="us_pint_abbr">pt</string>
+<string name="us_pint_plural">Pints</string>
+<string name="imperial_pint">Imperial Pint</string>
+<string name="imperial_pint_abbr">ipt</string>
+<string name="imperial_pint_plural">Imperial Pints</string>
+<string name="bottle_22_oz">Flaske (22 fl oz)</string>
+<string name="bottle_22_oz_abbr">Flaske (22 fl oz)</string>
+<string name="bottle_22_oz_plural">Flaske (22 fl oz)</string>
+<string name="bottle_750_ml">Flaske (750 mL)</string>
+<string name="bottle_750_ml_abbr">Flaske (750 mL)</string>
+<string name="bottle_750_ml_plural">Flaske (750 mL)</string>
+<string name="quart">Quart</string>
+<string name="quart_abbr">qt</string>
+<string name="quart_plural">Quarts</string>
+<string name="gallon">Gallon</string>
+<string name="gallon_abbr">gal</string>
+<string name="gallon_plural">Gallons</string>
+<string name="barrel">Barrel</string>
+<string name="barrel_abbr">bbl</string>
+<string name="barrel_plural">Barrels</string>
+<!-- Distance Conversion -->
+<string name="inch">Inch</string>
+<string name="inch_abbr">in</string>
+<string name="inch_plural">Inches</string>
+<string name="centimeter">Centimeter</string>
+<string name="centimeter_abbr">cm</string>
+<string name="centimeter_plural">Centimeters</string>
+
+<!-- Pressure Conversion -->
+<string name="psi">Pounds per Square Inch</string> 
+<string name="psi_abbr">psi</string>
+<string name="psi_plural">Pounds per Square Inch</string>
+<string name="kpa">Kilopascal</string>
+<string name="kpa_abbr">kPa</string>
+<string name="kpa_plural">Kilopascals</string>
+<string name="bar">Bar</string>
+<string name="bar_abbr">bar</string>
+<string name="bar_plural">Bars</string>
+<string name="atmosphere">Atsmosfære</string>
+<string name="atmosphere_abbr">atm</string>
+<string name="atmosphere_plural">Atsmæsfære</string>
+<!-- GUI parameters -->
+<!-- Generic Messages -->
+<string name="crash_report_dialog_title">Send fejllog?</string>
+
+<string name="crash_report_dialog_text">En tidligere fejl blev fundet. Vil du sende fejlloggen til udvikleren, så fremtidige fejl kan rettes?</string>
+<string name="crash_report_dialog_ok">Ja, jeg vil gerne hjælpe!</string>
+<string name="crash_report_dialog_cancel">Nej</string>
+<string name="eula_title">EULA</string>
+<string name="eula_accept">Accepterer</string>
+<string name="eula_refuse">Nej tak</string>
+<string name="beg_for_review_title">Skriv venligst en kommentar</string>
+<string name="beg_for_review_ok">Lad os så brygge!</string>
+</resources>
