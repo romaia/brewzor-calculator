@@ -47,6 +47,7 @@ import java.io.InputStreamReader;
 import java.io.Closeable;
 
 import com.brewzor.calculator.preferences.Preferences;
+import com.brewzor.calculator.R;
 
 /**
  * Displays a dialog begging for a review in the market.

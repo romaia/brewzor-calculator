@@ -20,6 +20,7 @@
 package com.brewzor.converters;
 
 import com.brewzor.calculator.R;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 

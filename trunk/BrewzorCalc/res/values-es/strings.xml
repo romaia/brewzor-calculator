@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+	TRANSLATIONS
+
+	To those nice enough to provide translations:
+	
+	In general, things in all caps like "FAHRENHEIT" or references to 
+	other strings like "@string/double_default" should not be translated.
+	Only translate the words between the tags <string name=""></string>. 
+	There are also format strings like "%s%s (Usually 60 or 68°F)" and in 
+	that case, you would only translate the English words "Usually" and 
+	"or".  If a word doesn't translate into your language, just leave it 
+	as is.  Sometimes it can be hard to determine the context in which a 
+	string is used.  If you have any questions, feel free to send an email 
+	asking for clarification to market@brewzor.com.
+	
+	Thanks for helping make this a better application for everyone!
+
+-->
+<resources>
+
+	<!-- Strings -->
+
+    <string name="app_name_long">Brewzor: calculadora para elaboración de cerveza</string>
+
+	<!-- Preferences -->	
+	
+	<string name="set_preferences">fija preferencias</string>
+	<string name="preference_screen_title">preferencias de Brewzor</string>
+
+	<string name="general_settings">configuración general</string>
+
+	<string name="global_unit_change_pref">cambio de unidades global</string>
+	<string name="global_unit_change_pref_summary">utiliza esto para cambiar todas las unidades (métricos / EU) a la vez</string>
+
+	<string name="temperature_units_pref">temperatura</string>
+	<string name="temperature_units_pref_summary">centígrado, Fahrenheit</string>
+
+	<string name="gravity_units_pref">Gravedad</string>
+	<string name="gravity_units_pref_summary">SG, Plato, GU, Brix</string>
+
+	<string name="use_refractometer_correction_pref">usa factor de corrección de refractómetro</string>
+	<string name="use_refractometer_correction_pref_summaryoff">factor de corrección de refractómetro no se aplicará</string>
+	<string name="use_refractometer_correction_pref_summaryon">factor de corrección de refractómetro si se aplicará</string>
+
+	<string name="refractometer_correction_factor_pref">factor de refractómetro de corrección</string>
+	<string name="refractometer_correction_factor_pref_format">%s (cuenta por todo los componentes que no constituyen azucar en la mosto)</string>
+	
+	<string name="pressure_units_pref">presión</string>
+	<string name="pressure_units_pref_summary">PSI, kPa, Bar, atmósfera</string>
+
+	<string name="hydrometer_calibration_temperature_pref">temperatura de calibración de hidrómetro</string>
+	<string name="hydrometer_calibration_temperature_pref_summary_format">%s%s (normalmente 60 y 68°F / 15 y 20°C)</string>
+
+	<string name="extract_mass_units_pref">DME / LME peso</string>
+	<string name="extract_mass_units_pref_summary">gramos, kilogramos, onzas, libras</string>
+	
+	<string name="batch_settings">configuración de lote</string>
+	
+	<string name="batch_volume_units_pref">lote volumen unidades</string>
+	<string name="batch_volume_units_pref_summary">quartos, galónes, litros, etc.</string>
+	<string name="batch_volume_units_pref_default">galón</string>
+
+	<string name="final_volume_pref">volumen de lote final</string>
+	<string name="final_volume_pref_summary">quartos, galónes, litros, etc.</string>
+
+	<string name="grain_mass_units_pref">unidades de peso del grano</string>
+	<string name="grain_mass_units_pref_summary">gramos, kilogramos, onzas, libras</string>
+
+	<string name="water_to_grain_ratio_pref">proporción de agua / grano</string>
+	<string name="water_to_grain_ratio_pref_summary_format">%s %s por %s (normalmente equivalente a 1-1.25 quartos por libra)</string>
+
+	<string name="grain_absorption_ratio_pref">proporción de absorción del grano</string>
+	<string name="grain_absorption_ratio_pref_summary_format">%s %s por %s (normalmente equivalente a 1-1.25 quartos por libra)</string>
+
+	<string name="grain_volume_ratio_pref">agua To grano proporción</string>
+	<string name="grain_volume_ratio_pref_summary_format">%s %s por %s (normalmente equivalente a 1-1.25 quartos por libra)</string>
+
+	<string name="boil_minutos_pref">minutos de hervor</string>
+	<string name="boil_minutos_pref_summary">normalmente 60-90 minutos</string>
+
+	<string name="mash_infusion_water_temperature_pref">temperatura de agua de maceración de malta</string>
+	<string name="mash_infusion_water_temperature_pref_summary">normalmente entre 170°F y 212°F</string>
+
+	<string name="equipment_settings">configuración de equipo</string>
+
+	<string name="diameter_height_units_pref">diámetro de olla de cocción / unidades de altura</string>
+	<string name="diameter_height_units_pref_summary">centimetros, pulgadas</string>
+
+	<string name="kettle_diameter_pref">diámetro de olla de cocción</string>
+	<string name="kettle_diameter_pref_summary">usado para cálculos de volumen</string>
+
+	<string name="false_bottom_height_pref">altura de doble fondo</string>
+	<string name="false_bottom_height_pref_summary">usado para cálculos de volumen</string>
+
+	<string name="equipment_loss_pref">total pérdido de equipo</string>
+	<string name="equipment_loss_pref_summary_format">%s %s (cálculado sumando volumen del tonel de malta vacante y afrecho pérdido, etc.)</string>
+
+	<string name="evaporation_rate_pref">rato de evaporación % por hora</string>
+	<string name="evaporation_rate_pref_summary">Normalmente entre 5 y 15%</string>
+
+	<string name="correct_for_expansion_pref">ajusta para la expansión del calor</string>
+	<string name="correct_for_expansion_pref_summary">utiliza la cantidad pérdido a enfriamiento para compensar volumenes calculados para la expansión del calor</string>
+
+	<string name="cooling_loss_percentage_pref">preferido porcentaje pérdido a enfriamiento</string>
+	<string name="cooling_loss_percentage_pref_summary">normalmente 4% para hervor y 3% para temperatura de maceración</string>
+	
+	<!-- gravedad corrección de -->
+	
+	<string name="gravity_correction">corrección de gravedad</string>
+	<string name="current_gravity">gravedad actual</string>
+	<string name="desired_gravity">gravedad deseado</string>
+	<string name="wort_volume">volumen de mosto</string>
+	<string name="add_water_format">añade %02.2f %s de agua.</string>
+	<string name="add_extract_format">"añade %02.2f %s DME\n o \nañade %02.2f %s LME"</string>
+	<string name="add_nothing_format">Todo bien.</string>
+	
+	<!-- Cylinder volumen -->
+	
+	<string name="cylinder_volume">volumen de olla de cocción</string>
+	<string name="kettle_diameter">diámetro</string>
+	<string name="measured_height">altura</string>
+	<string name="false_bottom_height">doble fondo</string>
+	<string name="kettle_diameter_summary">El diámetro de su olla de cocción</string>
+	<string name="false_bottom_height_summary">utiliza 0 (zero) si no cuenta con doble fondo, o utiliza la alura.</string>
+	<string name="correct_for_expansion_format">%01.0f%% expansión del calor</string>
+	<string name="correct_for_loss_format">%01.0f%% pérdido en enfríamiento</string>
+	<string name="no_expansion">expansión ausente</string>
+
+	<!-- Cylinder altura -->
+	
+	<string name="cylinder_height">altura de olla de cocción por volumen</string>
+	<string name="desired_volume">volumen</string>
+
+	<!-- malteado temperatura -->
+
+	<string name="strike_temperature">temperatura de malteado</string>
+	<string name="grain_weight">peso de grano</string>
+	<string name="grain_temperature">temperatura de grano</string>
+	<string name="strike_water_volume">volumen de agua en malteado</string>
+	<string name="target_mash_temperature">temperatura de macerado deseada</string>
+	<string name="calculated_strike_water_temperature_format">%02.1f%s</string>
+
+	<!-- macerado maceración -->
+
+	<string name="mash_infusion">infusión de macerado</string>
+	<string name="mash_infusion_current_mash_temperature">temperatura actual</string>
+	<string name="mash_infusion_grain_weight">peso de grano</string>
+	<string name="mash_infusion_water_in_mash_volume">agua in macerado</string>
+	<string name="mash_infusion_target_mash_temperature">temperatura deseada</string>
+	<string name="mash_infusion_infusion_temperature">temperatura de infusión</string>
+
+	<!-- decocción -->
+
+	<string name="decoction_volume">volumen de decocción</string>
+
+	<!-- lote aspersión -->
+
+	<string name="batch_sparge">aspersión de lote</string>
+	<string name="batch_sparge_grain_weight">peso de grano</string>
+	<string name="batch_sparge_strike_volume">volumen de malteado</string>
+	<string name="batch_sparge_boil_volume">volumen de hervor</string>
+	<string name="batch_sparge_water_to_grain_ratio">proporción de agua / grano</string>
+	<string name="batch_sparge_grain_absorption_volume">volumen de absorción de grano</string>
+	<string name="batch_sparge_first_sparge_volume">volumen de primer aspersión</string>
+	<string name="batch_sparge_second_sparge_volume">volumen de segundo aspersión</string>
+	<string name="batch_sparge_total_mash_volume">volumen total de macerado</string>
+	<string name="batch_sparge_water_to_grain_ratio_format">%s/%s</string>
+
+	<!-- hervir Off -->
+	
+	<string name="boil_off">hervor</string>
+	<string name="starting_volume">volumen a partir</string>
+	<string name="ending_volume">volumen terminado</string>
+	<string name="evaporation_rate">rato de evaporación</string>
+	<string name="boil_time">minutos de hervor</string>
+	<string name="volume_boiled_off">volumen evaporado</string>
+	<string name="cooling_loss_percentage">porcentaje perdido en enfriamiento</string>
+	<string name="cooling_loss_volume">volumen perdido en enfriamiento</string>
+	
+	<!-- carbonatación -->
+	
+	<string name="carbonation">carbonatación</string>
+	<string name="volumes_co2_desired">volumenes de CO2 deseado</string>
+	<string name="beer_temperature">temperatura de cerveza</string>
+	<string name="beer_volume">volumen de cerveza</string>
+	<string name="co2_pressure">presión de CO2</string>
+	<string name="corn_sugar">azúcar de maíz</string>
+	<string name="table_sugar">azúcar de mesa</string>
+	<string name="dme">DME (75% AA)</string>
+
+	<!-- alcohol / atenuación -->
+
+	<string name="alcohol_attenuation">alcohol / atenuación</string>
+	<string name="alcohol_attenuation_units">unidades de atenuación</string>
+	<string name="alcohol_attenuation_current_gravity">gravedad actual</string>
+	<string name="alcohol_attenuation_original_gravity">gravedad original</string>
+	<string name="alcohol_attenuation_abv">alcohol por volumen</string>
+	<string name="alcohol_attenuation_abw">alcohol por peso</string>
+	<string name="alcohol_attenuation_apparent_attenuation">atenuación aparente</string>
+	<string name="alcohol_attenuation_real_attenuation">atenuación verdadero</string>
+	<string name="alcohol_attenuation_result_format">%01.2f %%</string>
+	<string name="alcohol_attenuation_calories">calorías por 12 oz fl</string>
+
+	<!-- refractómetro -->
+
+	<string name="refractometer">refractómetro</string>
+	<string name="refractometer_unfermented_wort">mosto sin fermentar</string>
+	<string name="refractometer_fermenting_wort">mosto de fermentación</string>
+	<string name="refractometer_finished_beer">cerveza terminada</string>
+	<string name="refractometer_calibrate">calibrar</string>
+	<string name="refractometer_hydrometer_reading">medida de hidrómetro</string>
+	<string name="refractometer_refractometer_reading">medida de refractómetro</string>
+	<string name="refractometer_original_gravity">gravedad original</string>
+	<string name="refractometer_corrected_gravity">gravedad rectificado</string>
+	<string name="refractometer_percent_abv">porcentaje ABV</string>
+	<string name="refractometer_percent_abw">porcentaje ABW</string>
+	<string name="refractometer_apparent_attenuation">atenuación aparente</string>
+	<string name="refractometer_real_attenuation">atenuación real</string>
+	<string name="refractometer_correction_factor">factor de corrección</string>
+	<string name="refractometer_correction_factor_format">%01.4f</string>
+	<string name="refractometer_percent_sign">%</string>
+	<string name="refractometer_save_to_prefences">guardar factor de corrección a mis preferencias</string>
+
+	<!-- hidrómetro corrección de -->
+
+	<string name="hydrometer_correction">corrección de hidrómetro</string>
+	<string name="temperature">temperatura</string>
+	<string name="corrected_sg">GE rectificacado</string>
+	<string name="calibration_text_format">temperatura de calibración: %01.0f%s</string>
+	
+	<!-- entrante mosto -->
+	
+	<string name="starter_wort">mosto entrante</string>
+	<string name="volume_desired">volumen deseado</string>
+
+	<!-- unidad conversion -->
+	
+	<string name="unit_conversion">conversiones de unidad</string>
+	<string name="unit_converter_format">%02.4f</string>
+	<string name="unit_type_prompt">conversiones de unidad</string>
+	<string name="unit_distance_length">distancia / longitud</string>
+	<string name="unit_mass_weight">masa / peso</string>
+	<string name="unit_gravity">gravedad</string>
+	<string name="unit_temperature">temperatura</string>
+	<string name="unit_volume">volumen</string>
+	<string name="unit_pressure">presión</string>
+	<string name="no_list_items">nada se encuentra</string>
+	<string name="measurement_system_us">EU</string>
+	<string name="measurement_system_metric">Metric</string>
+
+	<!-- gravedad conversion -->
+	
+	<string name="gravity_conversions">conversiones de gravedad</string>
+	<string name="unit_entry_hint">ingresa gravedad</string>
+
+	<string name="plato">Plato</string>
+	<string name="plato_abbr">°P</string>
+	<string name="plato_plural">Plato</string>
+
+	<string name="sg">Gravedad Específica</string>
+	<string name="sg_plural">SG</string>
+	<string name="sg_abbr">SG</string>
+
+	<string name="gu">Unidad de medida de la Gravedad / puntos</string>
+	<string name="gu_plural">GU</string>
+	<string name="gu_abbr">GU</string>
+	
+	<string name="brix">Brix</string>
+	<string name="brix_plural">Brix</string>
+	<string name="brix_abbr">°Bx</string>
+	
+	<!-- temperatura conversion -->
+	
+	<string name="temperature_conversions">conversiones de temperatura</string>
+	
+	<string name="fahrenheit">fahrenheit</string>
+	<string name="fahrenheit_abbr">°F</string>
+	<string name="fahrenheit_plural">fahrenheit</string>
+	
+	<string name="celsius">centígrados</string>
+	<string name="celsius_abbr">°C</string>
+	<string name="celsius_plural">centígrados</string>
+	
+	<!-- masa conversion -->
+
+	<string name="mass_conversions">conversiones de masa</string>
+	
+	<string name="gram">gramo</string>
+	<string name="gram_abbr">g</string>
+	<string name="gram_plural">gramo</string>
+
+	<string name="kilogram">kilogramo</string>
+	<string name="kilogram_abbr">kg</string>
+	<string name="kilogram_plural">kilogramo</string>
+
+	<string name="ounce">onza</string>
+	<string name="ounce_abbr">oz</string>
+	<string name="ounce_plural">onzas</string>
+
+	<string name="pound">libra</string>	
+	<string name="pound_abbr">lb</string>
+	<string name="pound_plural">libras</string>	
+	
+	<!-- volumen conversion -->
+	
+	<string name="volume_conversions">conversiones de volumen</string>
+
+	<string name="milliliter">mililitro</string>
+	<string name="milliliter_abbr">mL</string>
+	<string name="milliliter_plural">mililitros</string>
+
+	<string name="liter">litro</string>
+	<string name="liter_abbr">L</string>
+	<string name="liter_plural">litros</string>
+	
+	<string name="teaspoon">cucharadita</string>
+	<string name="teaspoon_abbr">t</string>
+	<string name="teaspoon_plural">cucharaditas</string>
+	
+	<string name="tablespoon">cucharada</string>
+	<string name="tablespoon_abbr">T</string>
+	<string name="tablespoon_plural">cucharadas</string>
+	
+	<string name="fluid_ounce">onza liquido</string>
+	<string name="fluid_ounce_abbr">fl oz</string>
+	<string name="fluid_ounce_plural">onzas liquidos</string>
+
+	<string name="cubic_inch">pulgadas cúbicos</string>
+	<string name="cubic_inch_abbr">cu in</string>
+	<string name="cubic_inch_plural">pulgadas cúbicos</string>
+
+	<string name="cup">copa</string>
+	<string name="cup_abbr">c</string>
+	<string name="cup_plural">copas</string>
+
+	<string name="bottle_12_oz">botella (12 fl oz)</string>
+	<string name="bottle_12_oz_abbr">botella (12 fl oz)</string>
+	<string name="bottle_12_oz_plural">botellas (12 fl oz)</string>
+
+	<string name="us_pint">pinta</string>
+	<string name="us_pint_abbr">pt</string>
+	<string name="us_pint_plural">pintas</string>
+
+	<string name="imperial_pint">pinta EU</string>
+	<string name="imperial_pint_abbr">ipt</string>
+	<string name="imperial_pint_plural">pintas EU</string>
+
+	<string name="bottle_22_oz">botella (22 fl oz)</string>
+	<string name="bottle_22_oz_abbr">botella (22 fl oz)</string>
+	<string name="bottle_22_oz_plural">botellas (22 fl oz)</string>
+
+	<string name="bottle_750_ml">botella (750 mL)</string>
+	<string name="bottle_750_ml_abbr">botella (750 mL)</string>
+	<string name="bottle_750_ml_plural">botellas (750 mL)</string>
+
+	<string name="bottle_330_ml">botella (330 mL)</string>
+	<string name="bottle_330_ml_abbr">botella (330 mL)</string>
+	<string name="bottle_330_ml_plural">botellas (330 mL)</string>
+
+	<string name="bottle_500_ml">botella (500 mL)</string>
+	<string name="bottle_500_ml_abbr">botella (500 mL)</string>
+	<string name="bottle_500_ml_plural">botellas (500 mL)</string>
+
+	<string name="quart">quarto</string>
+	<string name="quart_abbr">qt</string>
+	<string name="quart_plural">quartos</string>
+	
+	<string name="gallon">galón</string>
+	<string name="gallon_abbr">gal</string>
+	<string name="gallon_plural">galones</string>
+	
+	<string name="barrel">barril</string>
+	<string name="barrel_abbr">bbl</string>
+	<string name="barrel_plural">barriles</string>
+
+	<!-- distancia conversion -->
+
+	<string name="inch">pulgada</string>
+	<string name="inch_abbr">in</string>
+	<string name="inch_plural">pulgadas</string>
+
+	<string name="centimeter">centimetro</string>
+	<string name="centimeter_abbr">cm</string>
+	<string name="centimeter_plural">centimetros</string>
+	
+	<!-- presión conversion -->
+	<string name="psi">libras por pulgadas cuadradas</string>
+	<string name="psi_abbr">psi</string>
+	<string name="psi_plural">libras por pulgadas cuadradas</string>
+
+	<string name="kpa">Kilopascal</string>	
+	<string name="kpa_abbr">kPa</string>	
+	<string name="kpa_plural">kilopascals</string>	
+
+	<string name="bar">Bar</string>
+	<string name="bar_abbr">bar</string>
+	<string name="bar_plural">Bars</string>
+
+	<string name="atmosphere">atmósfera</string>
+	<string name="atmosphere_abbr">atm</string>
+	<string name="atmosphere_plural">atmósferas</string>
+
+	<!-- GUI parameters -->
+
+	<!-- Generic Messages -->
+
+	<string name="crash_report_mail_subject">reporte de quiebras de Brewzor </string>
+	<string name="crash_report_mail_body">detalles de quiebra: \n</string>
+	<string name="crash_report_dialog_title">enviar registro de errores?</string>
+	<string name="crash_report_dialog_text">Hemos detectado una quiebra previa. ¿Desea enviar el registro de errores a el desarrollador en el futuro para ayudar el desarrollo de esta programa?</string>
+	<string name="crash_report_dialog_ok">Si, te ayudará!</string>
+	<string name="crash_report_dialog_cancel">No</string>
+
+	<string name="eula_title">EULA</string>
+	<string name="eula_accept">acepto</string>
+	<string name="eula_refuse">No gracias</string>
+
+	<string name="beg_for_review_title">Considera escribieno una crítica!</string>
+	<string name="beg_for_review_ok">Ahora, haceremos cerveza!</string>
+		
+</resources>

@@ -21,11 +21,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 	<item android:id="@+id/options_menu_settings"
 		  android:icon="@android:drawable/ic_menu_preferences"
-          android:title="Settings" />
+          android:title="@string/options_menu_settings" />
     <item android:id="@+id/options_menu_help"
 		  android:icon="@android:drawable/ic_menu_help"
-          android:title="Help" />
+          android:title="@string/options_menu_help" />
     <item android:id="@+id/options_menu_about"
 		  android:icon="@android:drawable/ic_menu_info_details"
-          android:title="About" />
+          android:title="@string/options_menu_about" />
 </menu>

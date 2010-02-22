@@ -20,68 +20,81 @@
 
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
- 	          android:orientation="vertical"
-			  android:layout_width="fill_parent" 
-			  android:layout_height="fill_parent"
-			  android:gravity="center_horizontal">
+ 	          style="@style/portrait_layout"
+ 	          >
 	
-	    <TextView android:id="@+id/calculatorName"
-	              android:text="@string/refractometer"
-	              android:layout_width="fill_parent"
-	              android:layout_height="wrap_content"
-				  style="@style/calculatorNameStyle" />
-
-		<Spinner 	android:id="@+id/modeSpinner"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:entries="@array/refractometerModeList"
-					android:entryValues="@array/refractometerModeIdList"
-					android:drawSelectorOnTop="true" />
+	<Spinner 	android:id="@+id/modeSpinner"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:entries="@array/refractometerModeList"
+				android:entryValues="@array/refractometerModeIdList"
+				android:drawSelectorOnTop="true" 
+				/>
 				  
-		<TableLayout android:layout_width="wrap_content"
-		android:layout_height="wrap_content">
+	<TableLayout 	style="@style/entry_table"
+					>
 
 			<TableRow>
 	
-				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/refractometer_refractometer_reading" />
+				<TextView 	style="@style/label_text"
+							android:text="@string/refractometer_refractometer_reading" 
+							/>
 	
-				<EditText android:id="@+id/currentEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText 	android:id="@+id/currentEntry" 
+							style="@style/decimal_entry" 
+							/>
 	
-				<TextView android:text="@string/brix_abbr" style="@style/converterSmallTextStyle" />
+				<TextView 	android:text="@string/brix_abbr" 
+							style="@style/label_text" 
+							/>
 	
 			</TableRow>
 
 			<TableRow android:id="@+id/originalReadingEntryRow">
 	
-				<TextView 	style="@style/converterSmallTextStyle"
-							android:text="@string/refractometer_original_gravity" />
+				<TextView 	style="@style/label_text"
+							android:text="@string/refractometer_original_gravity" 
+							/>
 	
-				<EditText android:id="@+id/originalEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText 	android:id="@+id/originalEntry" 
+							style="@style/decimal_entry" 
+							/>
 	
-				<TextView android:text="@string/sg_abbr" style="@style/converterSmallTextStyle" />
+				<TextView 	android:text="@string/sg_abbr" 
+							style="@style/label_text" 
+							/>
 	
 			</TableRow>
 
 			<TableRow android:id="@+id/hydrometerReadingEntryRow">
 	
-				<TextView 	style="@style/converterSmallTextStyle"
-							android:text="@string/refractometer_hydrometer_reading" />
+				<TextView 	style="@style/label_text"
+							android:text="@string/refractometer_hydrometer_reading" 
+							/>
 	
-				<EditText android:id="@+id/hydrometerEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText 	android:id="@+id/hydrometerEntry" 
+							style="@style/decimal_entry" 
+							/>
 	
-				<TextView android:text="@string/sg_abbr" style="@style/converterSmallTextStyle" />
+				<TextView	android:text="@string/sg_abbr" 
+							style="@style/label_text" 
+							/>
 	
 			</TableRow>
 
 			<TableRow android:id="@+id/conversionFactorRow" >
 	
-				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/refractometer_correction_factor"/>
+				<TextView 	style="@style/label_text"
+							android:text="@string/refractometer_correction_factor"
+							/>
 	
-				<TextView android:id="@+id/correctionFactorValue" style="@style/doubleUnitEntryStyle" />
+				<TextView 	android:id="@+id/correctionFactorValue" 
+							style="@style/decimal_entry" 
+							/>
 	
-				<TextView android:id="@+id/correctionFactorLabel" style="@style/converterSmallTextStyle" />
+				<TextView 	android:id="@+id/correctionFactorLabel" 
+							style="@style/label_text" 
+							/>
 	
 			</TableRow>
 
@@ -90,20 +103,20 @@
 		<LinearLayout android:orientation="vertical"
 					  android:layout_width="fill_parent" 
 					  android:layout_height="fill_parent"
-					  android:gravity="center">
+					  android:gravity="center"
+					  >
 
-				<TextView style="@style/hydrometerCorrectionResultStyle"
-					android:id="@+id/calculatedValue"/>
+				<TextView 	style="@style/large_result"
+							android:id="@+id/calculatedValue"/>
 
-				<TextView style="@style/hydrometerCorrectionDescriptionStyle"
-					android:id="@+id/calculatedValueDescription"/>
+				<TextView 	style="@style/small_result"
+							android:id="@+id/calculatedValueDescription"/>
 
-<Button
-        android:id="@+id/saveToPrefs"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/refractometer_save_to_prefences"
-		android:gravity="center" />
+				<Button	android:id="@+id/saveToPrefs"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content"
+				        android:text="@string/refractometer_save_to_prefences"
+						android:gravity="center" />
 
 		</LinearLayout>			
 

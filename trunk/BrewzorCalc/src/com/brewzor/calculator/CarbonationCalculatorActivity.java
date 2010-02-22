@@ -19,8 +19,8 @@
 */
 package com.brewzor.calculator;
 
-import com.brewzor.calculator.R;
 import com.brewzor.calculator.preferences.Preferences;
+import com.brewzor.calculator.R;
 import com.brewzor.converters.Mass;
 import com.brewzor.converters.Pressure;
 import com.brewzor.converters.Temperature;
@@ -31,7 +31,6 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -76,7 +75,8 @@ public class CarbonationCalculatorActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
         
 		super.onCreate(savedInstanceState);
-        setContentView(R.layout.calculator_carbonation);
+        setTitle(getString(R.string.window_title_format, getString(R.string.app_name), getString(R.string.carbonation)));
+		setContentView(R.layout.calculator_carbonation);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         
@@ -116,7 +116,7 @@ public class CarbonationCalculatorActivity extends Activity {
 
 		pressureType = pressure.typeFromPref(Preferences.GLOBAL_PRESSURE_UNIT, Pressure.Unit.PSI);
 		pressure.setType(pressureType);
-		Log.v("carb", pressure.getLabel());
+		//Log.v("carb", pressure.getLabel());
 		calculatedCO2PressureUnitType.setText(pressure.getLabelAbbr());
 		
 		temperatureType = temperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.FAHRENHEIT);		

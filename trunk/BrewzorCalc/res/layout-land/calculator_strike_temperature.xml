@@ -19,71 +19,86 @@
     along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:gravity="center_horizontal">
+<LinearLayout 	xmlns:android="http://schemas.android.com/apk/res/android"
+				style="@style/landscape_layout"
+				>
 
-	<TextView android:id="@+id/calculatorName" android:text="@string/strike_temperature"
-		style="@style/calculatorNameStyle" />
-
-	<LinearLayout android:orientation="horizontal"
-		android:layout_width="fill_parent" android:layout_height="fill_parent"
-		android:gravity="top">
-
-		<TableLayout android:layout_width="wrap_content"
-			android:layout_height="wrap_content">
+		<TableLayout 	style="@style/entry_table"
+						android:layout_width="0px"
+						android:layout_weight="1"
+						>
 
 			<TableRow>
 
-				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/grain_weight" />
+				<TextView	style="@style/label_text"
+							android:text="@string/grain_weight" 
+							/>
 
-				<EditText android:id="@+id/grainWeightEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText 	android:id="@+id/grainWeightEntry" 
+							style="@style/decimal_entry" 
+							/>
 
-				<TextView android:id="@+id/grainWeightUnitType" style="@style/converterSmallTextStyle" />
+				<TextView 	android:id="@+id/grainWeightUnitType" 
+							style="@style/label_text" 
+							/>
 
 			</TableRow>
 
 			<TableRow>
 
-				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/grain_temperature" />
+				<TextView 	style="@style/label_text"
+							android:text="@string/grain_temperature" 
+							/>
 
-				<EditText android:id="@+id/grainTemperatureEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText 	android:id="@+id/grainTemperatureEntry" 
+							style="@style/decimal_entry" 
+							/>
 
-				<TextView android:id="@+id/grainTemperatureUnitType" style="@style/converterSmallTextStyle" />
-
-			</TableRow>
-
-			<TableRow>
-
-				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/target_mash_temperature" />
-
-				<EditText android:id="@+id/targetMashTemperatureEntry"
-					style="@style/doubleUnitEntryStyle" />
-
-				<TextView android:id="@+id/targetMashTemperatureUnitType"
-					style="@style/converterSmallTextStyle" />
+				<TextView 	android:id="@+id/grainTemperatureUnitType" 
+							style="@style/label_text" 
+							/>
 
 			</TableRow>
 
 			<TableRow>
 
-				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/strike_water_volume" />
+				<TextView 	style="@style/label_text"
+							android:text="@string/target_mash_temperature" 
+							/>
 
-				<EditText android:id="@+id/strikeWaterVolumeEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText 	android:id="@+id/targetMashTemperatureEntry"
+							style="@style/decimal_entry" 
+							/>
 
-				<TextView android:id="@+id/strikeWaterVolumeUnitType"
-					style="@style/converterSmallTextStyle" />
+				<TextView 	android:id="@+id/targetMashTemperatureUnitType"
+							style="@style/label_text" 
+							/>
+
+			</TableRow>
+
+			<TableRow>
+
+				<TextView 	style="@style/label_text"
+							android:text="@string/strike_water_volume" 
+							/>
+
+				<EditText 	android:id="@+id/strikeWaterVolumeEntry" 
+							style="@style/decimal_entry" 
+							/>
+
+				<TextView 	android:id="@+id/strikeWaterVolumeUnitType"
+							style="@style/label_text" 
+							/>
 
 			</TableRow>
 
 		</TableLayout>
 
-		<TextView android:id="@+id/calculatedStrikeWaterTemperature"
-			android:text="@string/calculated_strike_water_temperature_default"
-			style="@style/srikeWaterDescriptionSmallStyle" />
-	</LinearLayout>
+		<TextView 	android:id="@+id/calculatedStrikeWaterTemperature"
+					android:text="@string/calculated_strike_water_temperature_default"
+					android:layout_weight="1"
+					android:layout_width="0px"
+					style="@style/large_result" 
+					/>
+
 </LinearLayout>

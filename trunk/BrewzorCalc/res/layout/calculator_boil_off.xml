@@ -19,104 +19,135 @@
     along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:gravity="center_horizontal">
+<LinearLayout	xmlns:android="http://schemas.android.com/apk/res/android"
+				style="@style/portrait_layout"
+				>
 
-	<TextView android:id="@+id/calculatorName" android:text="@string/boil_off"
-		style="@style/calculatorNameStyle" />
-
-	<TableLayout android:layout_width="wrap_content"
-		android:layout_height="wrap_content">
+	<TableLayout	style="@style/entry_table"
+					>
 
 		<TableRow>
 
-				 <Button
-        android:id="@+id/startEndToggle"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-		android:gravity="center" />
+			 <Button	android:id="@+id/startEndToggle"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_gravity="center_vertical"
+						android:gravity="center" 
+						/>
  
+			<EditText	android:id="@+id/startingVolumeEntry" 
+						style="@style/decimal_entry" 
+						/>
 
-			<EditText android:id="@+id/startingVolumeEntry" style="@style/doubleUnitEntryStyle" />
-
-			<TextView android:id="@+id/startingVolumeUnitType" style="@style/converterLargeTextStyle" />
-
-		</TableRow>
-
-		<TableRow>
-
-			<TextView style="@style/converterLargeTextStyle"
-				android:text="@string/evaporation_rate" />
-
-			<EditText android:id="@+id/evaporationRateEntry" style="@style/integerUnitEntryStyle" />
-
-			<TextView android:text="%" style="@style/converterLargeTextStyle" />
+			<TextView 	android:id="@+id/startingVolumeUnitType" 
+						style="@style/label_text" 
+						/>
 
 		</TableRow>
 
 		<TableRow>
 
-			<TextView style="@style/converterLargeTextStyle"
-				android:text="@string/boil_time" />
+			<TextView 	style="@style/label_text"
+						android:text="@string/evaporation_rate" 
+						/>
 
-			<EditText android:id="@+id/boilTimeEntry" style="@style/integerUnitEntryStyle" />
+			<EditText 	android:id="@+id/evaporationRateEntry" 
+						style="@style/integer_entry" 
+						/>
+
+			<TextView 	android:text="@string/percent_sign" 
+						style="@style/label_text" 
+						/>
 
 		</TableRow>
 
 		<TableRow>
 
-			<TextView style="@style/converterLargeTextStyle"
-				android:text="@string/cooling_loss_percentage" />
+			<TextView 	style="@style/label_text"
+						android:text="@string/boil_time" 
+						/>
 
-			<EditText android:id="@+id/coolingLossPercentageEntry"
-				style="@style/integerUnitEntryStyle" />
-
-			<TextView android:text="%" style="@style/converterLargeTextStyle" />
+			<EditText 	android:id="@+id/boilTimeEntry"
+						style="@style/integer_entry" 
+						/>
 
 		</TableRow>
+
+		<TableRow>
+
+			<TextView 	style="@style/label_text"
+						android:text="@string/cooling_loss_percentage" 
+						/>
+
+			<EditText 	android:id="@+id/coolingLossPercentageEntry"
+						style="@style/integer_entry" 
+						/>
+
+			<TextView 	android:text="@string/percent_sign" 
+						style="@style/label_text" 
+						/>
+
+		</TableRow>
+
 	</TableLayout>
 
-	<TableLayout android:layout_width="wrap_content"
-		android:layout_height="fill_parent" android:gravity="center">
+	<TableLayout	android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1"
+				    android:layout_gravity="center"
+					style="@style/entry_table"
+				    >
 
 		<TableRow>
 
-			<TextView style="@style/converterLargeTextStyle"
-				android:text="@string/volume_boiled_off" />
+			<TextView 	style="@style/label_text"
+						android:text="@string/volume_boiled_off" 
+						/>
 
-			<TextView android:id="@+id/calculatedVolumeBoiledOff" style="@style/converterNumberTextStyle"
-				android:text="0.00" />
+			<TextView 	android:id="@+id/calculatedVolumeBoiledOff" 
+						style="@style/small_result"
+						android:text="@string/double_default" 
+						/>
 
-			<TextView android:id="@+id/calculatedVolumeBoiledOffUnitType"
-				style="@style/converterLargeTextStyle" />
+			<TextView 	android:id="@+id/calculatedVolumeBoiledOffUnitType"
+						style="@style/label_text" 
+						/>
 
 		</TableRow>
 
 		<TableRow>
 
-			<TextView style="@style/converterLargeTextStyle"
-				android:text="@string/cooling_loss_volume" />
+			<TextView 	style="@style/label_text"
+						android:text="@string/cooling_loss_volume" 
+						/>
+	
+			<TextView 	android:id="@+id/calculatedCoolingLossVolume"
+						style="@style/small_result" 
+						android:text="@string/double_default" 
+						/>
 
-			<TextView android:id="@+id/calculatedCoolingLossVolume"
-				style="@style/converterNumberTextStyle" android:text="0.00" />
-
-			<TextView android:id="@+id/calculatedCoolingLossVolumeUnitType"
-				style="@style/converterLargeTextStyle" />
+			<TextView 	android:id="@+id/calculatedCoolingLossVolumeUnitType"
+						style="@style/label_text" 
+						/>
 
 		</TableRow>
 
 		<TableRow>
 
-			<TextView style="@style/converterLargeTextStyle"
-			android:id="@+id/resultDescription"
-				android:text="@string/ending_volume" />
+			<TextView 	style="@style/label_text"
+						android:id="@+id/resultDescription"
+						android:text="@string/ending_volume" 
+						/>
 
-			<TextView android:id="@+id/calculatedFinalVolume" style="@style/converterNumberTextStyle"
-				android:text="0.00" />
+			<TextView 	android:id="@+id/calculatedFinalVolume" 
+						style="@style/small_result"
+        				android:layout_gravity="center_vertical"
+						android:text="@string/double_default" 
+						/>
 
-			<TextView android:id="@+id/calculatedFinalVolumeUnitType"
-				style="@style/converterLargeTextStyle" />
+			<TextView 	android:id="@+id/calculatedFinalVolumeUnitType"
+						style="@style/label_text" 
+						/>
 
 		</TableRow>
 

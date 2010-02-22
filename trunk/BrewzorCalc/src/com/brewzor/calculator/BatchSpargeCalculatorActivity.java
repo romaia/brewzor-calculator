@@ -1,6 +1,7 @@
 package com.brewzor.calculator;
 
 import com.brewzor.calculator.preferences.Preferences;
+import com.brewzor.calculator.R;
 import com.brewzor.converters.Mass;
 import com.brewzor.converters.Temperature;
 import com.brewzor.converters.Volume;
@@ -61,6 +62,7 @@ public class BatchSpargeCalculatorActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getString(R.string.window_title_format, getString(R.string.app_name), getString(R.string.batch_sparge)));
         setContentView(R.layout.calculator_batch_sparge);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());

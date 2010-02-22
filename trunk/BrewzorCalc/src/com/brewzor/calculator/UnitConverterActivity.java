@@ -20,6 +20,7 @@
 package com.brewzor.calculator;
 
 import com.brewzor.calculator.preferences.Preferences;
+import com.brewzor.calculator.R;
 import com.brewzor.converters.Distance;
 import com.brewzor.converters.Gravity;
 import com.brewzor.converters.Mass;
@@ -75,6 +76,7 @@ public class UnitConverterActivity extends ListActivity {
     	// http://www.softwarepassion.com/android-series-custom-listview-items-and-adapters/
     	
     	super.onCreate(savedInstanceState);
+        setTitle(getString(R.string.window_title_format, getString(R.string.app_name), getString(R.string.unit_conversion)));
         setContentView(R.layout.unit_converter);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());

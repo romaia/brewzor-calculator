@@ -2,5 +2,5 @@
 <resources>
 	<!-- Dimensions -->
 	
-	<dimen name="largeText">20sp</dimen>
+	<dimen name="label_size">14dip</dimen>
 </resources>

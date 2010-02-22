@@ -19,141 +19,157 @@
     along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            	android:orientation="vertical"
-				  android:layout_width="fill_parent" 
-				  android:layout_height="fill_parent"
-				  android:gravity="center_horizontal">
+<LinearLayout	xmlns:android="http://schemas.android.com/apk/res/android"
+				style="@style/landscape_layout"
+				>
 	
-	    <TextView android:id="@+id/calculatorName"
-	              android:text="@string/batch_sparge"
-	              android:layout_width="fill_parent"
-	              android:layout_height="wrap_content"
-				  style="@style/calculatorNameStyle" />
-	
-	<LinearLayout android:orientation="horizontal"
-		android:layout_width="fill_parent" android:layout_height="fill_parent">
-
-		<TableLayout android:layout_width="wrap_content"
-				     android:layout_height="wrap_content">
+	<TableLayout 	android:layout_width="0px"
+					android:layout_weight="1"
+					style="@style/entry_table"
+					>
 		    
 		    <TableRow>
 		    
-			    <TextView style="@style/converterSmallTextStyle"
-			              android:text="@string/batch_sparge_grain_weight" />	
+			    <TextView style="@style/label_text"
+			              android:text="@string/batch_sparge_grain_weight" 
+			              />	
 				
 				<EditText android:id="@+id/grainWeightEntry" 
-			              style="@style/doubleUnitEntryStyle" /> 
+			              style="@style/decimal_entry" 
+			              /> 
 			    
 			    <TextView android:id="@+id/grainWeightUnitType"
-			    		  style="@style/converterSmallTextStyle" />	
+			    		  style="@style/label_text" 
+			    		  />	
 				
 		    </TableRow>
 
 		    <TableRow>
 		    
-			    <TextView style="@style/converterSmallTextStyle"
-			              android:text="@string/batch_sparge_strike_volume"/>
+			    <TextView style="@style/label_text"
+			              android:text="@string/batch_sparge_strike_volume"
+			              />
 				
 				<EditText android:id="@+id/strikeVolumeEntry" 
-			              style="@style/doubleUnitEntryStyle" /> 
+			              style="@style/decimal_entry" 
+			              /> 
 			    
 			    <TextView android:id="@+id/strikeVolumeUnitType"
-			    		  style="@style/converterSmallTextStyle" />	
+			    		  style="@style/label_text" 
+			    		  />	
 				
 		    </TableRow>
 
 		    <TableRow>
 		    
-			    <TextView style="@style/converterSmallTextStyle"
-			              android:text="@string/batch_sparge_boil_volume"/>
+			    <TextView style="@style/label_text"
+			              android:text="@string/batch_sparge_boil_volume"
+			              />
 				
 				<EditText android:id="@+id/boilVolumeEntry" 
-			              style="@style/doubleUnitEntryStyle" /> 
+			              style="@style/decimal_entry" 
+			              /> 
 			    
 			    <TextView android:id="@+id/boilVolumeUnitType"
-			    		  style="@style/converterSmallTextStyle" />	
+			    		  style="@style/label_text" 
+			    		  />	
 				
 		    </TableRow>
 
 		</TableLayout>
 
-		<TableLayout android:layout_width="wrap_content"
-				     android:layout_height="wrap_content">
+		<TableLayout	android:layout_width="0px"
+						android:layout_weight="1"
+				     	android:layout_gravity="center_vertical|right"
+						style="@style/entry_table"
+						>
 		    
 		    <TableRow>
 		    
-			    <TextView style="@style/converterSmallTextStyle"
-			              android:text="@string/batch_sparge_water_to_grain_ratio" />	
+			    <TextView style="@style/label_text"
+			              android:text="@string/batch_sparge_water_to_grain_ratio" 
+			              />	
 		
-			    <TextView style="@style/converterSmallTextStyle"
-					      android:gravity="center_horizontal|right"
-			              android:id="@+id/calculatedWaterToGrainRatio" />	
+			    <TextView style="@style/small_result"
+					      android:gravity="center_vertical|right"
+			              android:id="@+id/calculatedWaterToGrainRatio" 
+			              />	
 			
-			    <TextView style="@style/converterSmallTextStyle"
-			              android:id="@+id/calculatedWaterToGrainRatioUnitType" />	
+			    <TextView style="@style/label_text"
+			              android:id="@+id/calculatedWaterToGrainRatioUnitType" 
+			              />	
 
 			</TableRow>
 
 		    <TableRow>
 		    
-			    <TextView style="@style/converterSmallTextStyle"
-			              android:text="@string/batch_sparge_grain_absorption_volume" />	
+			    <TextView style="@style/label_text"
+			              android:text="@string/batch_sparge_grain_absorption_volume" 
+			              />	
 		
-			    <TextView style="@style/converterSmallTextStyle"
-					      android:gravity="center_horizontal|right"
-			              android:id="@+id/calculatedGrainAbsorptionVolume" />	
+			    <TextView style="@style/small_result"
+					      android:gravity="center_vertical|right"
+			              android:id="@+id/calculatedGrainAbsorptionVolume" 
+			              />	
 			
-			    <TextView style="@style/converterSmallTextStyle"
-			              android:id="@+id/calculatedGrainAbsorptionVolumeUnitType" />	
+			    <TextView style="@style/label_text"
+			              android:id="@+id/calculatedGrainAbsorptionVolumeUnitType" 
+			              />	
 
 			</TableRow>
 
 		    <TableRow>
 		    
-			    <TextView style="@style/converterSmallTextStyle"
-			              android:text="@string/batch_sparge_first_sparge_volume" />	
+			    <TextView style="@style/label_text"
+			              android:text="@string/batch_sparge_first_sparge_volume" 
+			              />	
 		
-			    <TextView style="@style/converterSmallTextStyle"
-					      android:gravity="center_horizontal|right"
-			              android:id="@+id/calculatedFirstSpargeVolume" />	
+			    <TextView style="@style/small_result"
+					      android:gravity="center_vertical|right"
+			              android:id="@+id/calculatedFirstSpargeVolume" 
+			              />	
 			
-			    <TextView style="@style/converterSmallTextStyle"
-			              android:id="@+id/calculatedFirstSpargeVolumeUnitType" />	
+			    <TextView style="@style/label_text"
+			              android:id="@+id/calculatedFirstSpargeVolumeUnitType" 
+			              />	
 
 			</TableRow>
 
 		    <TableRow>
 		    
-			    <TextView style="@style/converterSmallTextStyle"
-			              android:text="@string/batch_sparge_second_sparge_volume" />	
+			    <TextView style="@style/label_text"
+			              android:text="@string/batch_sparge_second_sparge_volume" 
+			              />	
 		
-			    <TextView style="@style/converterSmallTextStyle"
-					      android:gravity="center_horizontal|right"
-			              android:id="@+id/calculatedSecondSpargeVolume" />	
+			    <TextView style="@style/small_result"
+					      android:gravity="center_vertical|right"
+			              android:id="@+id/calculatedSecondSpargeVolume" 
+			              />	
 			
-			    <TextView style="@style/converterSmallTextStyle"
-			              android:id="@+id/calculatedSecondSpargeVolumeUnitType" />	
+			    <TextView style="@style/label_text"
+			              android:id="@+id/calculatedSecondSpargeVolumeUnitType" 
+			              />	
 
 			</TableRow>
 
 		    <TableRow>
 		    
-			    <TextView style="@style/converterSmallTextStyle"
-			              android:text="@string/batch_sparge_total_mash_volume" />	
+			    <TextView style="@style/label_text"
+			              android:text="@string/batch_sparge_total_mash_volume" 
+			              />	
 		
-			    <TextView style="@style/converterSmallTextStyle"
-					      android:gravity="center_horizontal|right"
-			              android:id="@+id/calculatedTotalMashVolume" />	
+			    <TextView style="@style/small_result"
+					      android:gravity="center_vertical|right"
+			              android:id="@+id/calculatedTotalMashVolume" 
+			              />	
 			
-			    <TextView style="@style/converterSmallTextStyle"
-			              android:id="@+id/calculatedTotalMashVolumeUnitType" />	
+			    <TextView style="@style/label_text"
+			              android:id="@+id/calculatedTotalMashVolumeUnitType" 
+			              />	
 
 			</TableRow>
 
 	</TableLayout>
 	
-	</LinearLayout>
-
 </LinearLayout>
 	

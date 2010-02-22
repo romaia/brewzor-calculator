@@ -19,51 +19,59 @@
     along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:gravity="center_horizontal">
-
-	<LinearLayout android:orientation="vertical"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:gravity="center_horizontal">
-
-		<TextView android:id="@+id/calculatorName" android:text="@string/hydrometer_correction"
-			style="@style/calculatorNameStyle" />
-
-		<TableLayout android:layout_width="wrap_content" android:layout_height="fill_parent">
+<LinearLayout 	xmlns:android="http://schemas.android.com/apk/res/android"
+				style="@style/portrait_layout"
+				>
+	<TableLayout	style="@style/entry_table"
+					>
 
 			<TableRow>
 
-				<EditText android:id="@+id/SGEntry" style="@style/sgUnitEntryStyle" />
+				<EditText	android:id="@+id/SGEntry" 
+							style="@style/sg_entry" 
+							/>
 
-				<TextView android:text="@string/sg_abbr" style="@style/converterLargeTextStyle" />
+				<TextView	android:text="@string/sg_abbr" 
+							style="@style/label_text" 
+							/>
 
 			</TableRow>
 
 			<TableRow>
 
-				<EditText android:id="@+id/temperatureEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText	android:id="@+id/temperatureEntry"	
+							style="@style/decimal_entry" 
+							/>
 
-				<TextView android:id="@+id/temperatureUnitType" style="@style/converterLargeTextStyle" />
+				<TextView	android:id="@+id/temperatureUnitType"
+							style="@style/label_text" 
+							/>
 
 			</TableRow>
-
+			
 		</TableLayout>
 	
-			<TextView style="@style/hydrometerCorrectionDescriptionStyle"
-			android:id="@+id/calibrationText" />
-	
-	</LinearLayout>
-	
-	<LinearLayout android:orientation="vertical"
-		android:layout_width="fill_parent" android:layout_height="fill_parent"
-		android:layout_weight="1" android:gravity="center">
+		<TextView	style="@style/label_text"
+					android:id="@+id/calibrationText" 
+					android:gravity="center"
+					android:layout_gravity="center"
+					android:layout_width="fill_parent"
+					/>
+			
+	<LinearLayout	android:orientation="vertical"
+					android:layout_width="fill_parent" 
+					android:layout_height="fill_parent"
+					android:gravity="center"
+					>
 
-		<TextView style="@style/hydrometerCorrectionDescriptionStyle"
-			android:text="@string/corrected_sg" />
+		<TextView	style="@style/small_result"
+					android:text="@string/corrected_sg" 
+					/>
 
-		<TextView android:id="@+id/calculatedCorrectedSG" style="@style/hydrometerCorrectionResultStyle"
-			android:text="@string/sg_default" />
+		<TextView	android:id="@+id/calculatedCorrectedSG" 
+					style="@style/large_result"
+					android:text="@string/sg_default" 
+					/>
 
 	</LinearLayout>
 

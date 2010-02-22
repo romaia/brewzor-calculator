@@ -19,76 +19,92 @@
     along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:gravity="center_horizontal">
+<LinearLayout 	xmlns:android="http://schemas.android.com/apk/res/android"
+				style="@style/landscape_layout"
+				>
 
-	<TextView android:id="@+id/calculatorName" android:text="@string/cylinder_height"
-		style="@style/calculatorNameStyle" />
+	<TableLayout 	style="@style/entry_table"
+					android:layout_width="0px"
+					android:layout_weight="1"
+					>
 
-	<LinearLayout android:orientation="horizontal"
-		android:layout_width="fill_parent" android:layout_height="fill_parent"
-		android:gravity="top">
+		<TableRow>
 
-		<LinearLayout android:orientation="vertical"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:layout_gravity="center_horizontal">
+			<TextView 	style="@style/label_text"
+						android:text="@string/desired_volume" 
+						/>
 
-			<TableLayout android:layout_width="wrap_content"
-				android:layout_height="wrap_content">
+			<EditText 	android:id="@+id/volumeEntry" 
+						style="@style/decimal_entry" 
+						/>
 
-				<TableRow>
+			<TextView 	android:id="@+id/volumeUnitType" 
+						style="@style/label_text" 
+						/>
 
-					<TextView style="@style/converterSmallTextStyle"
-						android:text="@string/desired_volume" />
+		</TableRow>
 
-					<EditText android:id="@+id/volumeEntry" style="@style/doubleUnitEntryStyle" />
+		<TableRow>
 
-					<TextView android:id="@+id/volumeUnitType" style="@style/converterSmallTextStyle" />
+			<TextView 	style="@style/label_text"
+						android:text="@string/kettle_diameter" 
+						/>
 
-				</TableRow>
+			<EditText 	android:id="@+id/diameterEntry" 
+						style="@style/decimal_entry" 
+						/>
 
-				<TableRow>
+			<TextView 	android:id="@+id/diameterUnitType" 
+						style="@style/label_text" 
+						/>
 
-					<TextView style="@style/converterSmallTextStyle"
-						android:text="@string/kettle_diameter" />
+		</TableRow>
 
-					<EditText android:id="@+id/diameterEntry" style="@style/doubleUnitEntryStyle" />
+		<TableRow>
 
-					<TextView android:id="@+id/diameterUnitType" style="@style/converterSmallTextStyle" />
+			<TextView 	style="@style/label_text"
+						android:text="@string/false_bottom_height" 
+						/>
 
-				</TableRow>
+			<EditText 	android:id="@+id/falseBottomHeightEntry" 
+						style="@style/decimal_entry" 
+						/>
 
-				<TableRow>
+			<TextView 	android:id="@+id/falseBottomHeightUnitType"
+						style="@style/label_text" 
+						/>
+	
+		</TableRow>
 
-					<TextView style="@style/converterSmallTextStyle"
-						android:text="@string/false_bottom_height" />
+		<TableRow>
+				
+			 <Button    android:id="@+id/correctForExpansion"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content"
+						android:gravity="center" 
+						android:layout_span="3"
+						/>
+				
+		</TableRow>
 
-					<EditText android:id="@+id/falseBottomHeightEntry" style="@style/doubleUnitEntryStyle" />
+	</TableLayout>
 
-					<TextView android:id="@+id/falseBottomHeightUnitType"
-						style="@style/converterSmallTextStyle" />
+	<LinearLayout 	android:orientation="vertical"
+					android:layout_width="0px"
+					android:layout_weight="1" 
+					android:layout_height="fill_parent" 
+					android:gravity="center"
+					>
 
-				</TableRow>
+		<TextView 	android:id="@+id/calculatedCylinderHeight"
+					android:text="@string/calculated_cylinder_height_default" 
+					style="@style/large_result" 
+					/>
 
-			</TableLayout>
+		<TextView 	android:id="@+id/calculatedCylinderHeightUnitType"
+					style="@style/small_result" 
+					/>
 
-	 <Button
-        android:id="@+id/correctForExpansion"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-		android:gravity="center" />
-        
-		</LinearLayout>
-		<LinearLayout android:orientation="vertical"
-			android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:gravity="center">
-
-
-			<TextView android:id="@+id/calculatedCylinderHeight"
-				android:text="@string/calculated_cylinder_height_default" style="@style/cylinderEntryStyle" />
-
-			<TextView android:id="@+id/calculatedCylinderHeightUnitType"
-				android:text="gallons" style="@style/cylinderEntryStyle" />
-
-		</LinearLayout>
 	</LinearLayout>
+
 </LinearLayout>

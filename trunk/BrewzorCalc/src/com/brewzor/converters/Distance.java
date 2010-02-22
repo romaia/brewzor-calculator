@@ -21,6 +21,7 @@ package com.brewzor.converters;
 
 //import android.R;
 import com.brewzor.calculator.R;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 

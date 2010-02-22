@@ -19,8 +19,8 @@
 */
 package com.brewzor.calculator;
 
-import com.brewzor.calculator.R;
 import com.brewzor.calculator.preferences.Preferences;
+import com.brewzor.calculator.R;
 import com.brewzor.converters.Temperature;
 import com.brewzor.converters.Gravity;
 
@@ -54,6 +54,7 @@ public class HydrometerCorrectionCalculatorActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getString(R.string.window_title_format, getString(R.string.app_name), getString(R.string.hydrometer_correction)));
         setContentView(R.layout.calculator_hydrometer_correction);
         
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());

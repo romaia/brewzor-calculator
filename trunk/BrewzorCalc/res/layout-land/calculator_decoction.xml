@@ -19,79 +19,112 @@
     along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:gravity="center_horizontal">
+<LinearLayout 	xmlns:android="http://schemas.android.com/apk/res/android"
+				style="@style/landscape_layout"
+				>
 	
-	<TextView android:id="@+id/calculatorName" android:text="@string/decoction_volume"
-		style="@style/calculatorNameStyle" />
-
-	<LinearLayout android:orientation="horizontal"
-		android:layout_width="fill_parent" android:layout_height="fill_parent"
-		android:gravity="top">
-
-		<TableLayout android:layout_width="wrap_content"
-			android:layout_height="wrap_content">
+		<TableLayout 	style="@style/entry_table"
+						android:layout_width="0px"
+						android:layout_weight="1"
+						android:layout_gravity="center_vertical"
+						>
 
 			<TableRow>
 
-				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/mash_infusion_current_mash_temperature" />
+				<TextView	style="@style/label_text"
+							android:layout_gravity="center_vertical"
+							android:text="@string/mash_infusion_current_mash_temperature" 
+							/>
 
-				<EditText android:id="@+id/currentMashTemperatureEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText 	android:id="@+id/currentMashTemperatureEntry" 
+							android:layout_gravity="center_vertical"
+							style="@style/decimal_entry" 
+							/>
 
-				<TextView android:id="@+id/currentMashTemperatureUnitType" style="@style/converterSmallTextStyle" />
+				<TextView 	android:id="@+id/currentMashTemperatureUnitType"
+							android:layout_gravity="center_vertical"
+							style="@style/label_text" 
+							/>
 
 			</TableRow>
 
 			<TableRow>
 
-				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/mash_infusion_grain_weight" />
+				<TextView	style="@style/label_text"
+							android:layout_gravity="center_vertical"
+							android:text="@string/mash_infusion_grain_weight"
+							 />
 
-				<EditText android:id="@+id/grainWeightEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText	android:id="@+id/grainWeightEntry" 
+							android:layout_gravity="center_vertical"
+							style="@style/decimal_entry" 
+							/>
 
-				<TextView android:id="@+id/grainWeightUnitType" style="@style/converterSmallTextStyle" />
-
-			</TableRow>
-
-			<TableRow>
-
-				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/mash_infusion_water_in_mash_volume" />
-
-				<EditText android:id="@+id/waterInMashVolumeEntry" style="@style/doubleUnitEntryStyle" />
-
-				<TextView android:id="@+id/waterInMashVolumeUnitType" style="@style/converterSmallTextStyle" />
+				<TextView	android:id="@+id/grainWeightUnitType"
+							android:layout_gravity="center_vertical"
+							style="@style/label_text" 
+							/>
 
 			</TableRow>
 
 			<TableRow>
 
-				<TextView style="@style/converterSmallTextStyle"
-					android:text="@string/mash_infusion_target_mash_temperature" />
+				<TextView	style="@style/label_text"
+							android:layout_gravity="center_vertical"
+							android:text="@string/mash_infusion_water_in_mash_volume" 
+							/>
 
-				<EditText android:id="@+id/targetMashTemperatureEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText 	android:id="@+id/waterInMashVolumeEntry" 
+							android:layout_gravity="center_vertical"
+							style="@style/decimal_entry" 
+							/>
 
-				<TextView android:id="@+id/targetMashTemperatureUnitType" style="@style/converterSmallTextStyle" />
+				<TextView 	android:id="@+id/waterInMashVolumeUnitType" 
+							android:layout_gravity="center_vertical"
+							style="@style/label_text" 
+							/>
+
+			</TableRow>
+
+			<TableRow>
+
+				<TextView 	style="@style/label_text"
+							android:layout_gravity="center_vertical"
+							android:text="@string/mash_infusion_target_mash_temperature" 
+							/>
+
+				<EditText 	android:id="@+id/targetMashTemperatureEntry" 
+							android:layout_gravity="center_vertical"
+							style="@style/decimal_entry" 
+							/>
+
+				<TextView 	android:id="@+id/targetMashTemperatureUnitType"
+							android:layout_gravity="center_vertical"
+							style="@style/label_text" 
+							/>
 
 			</TableRow>
 
 		</TableLayout>
 
-	<LinearLayout android:orientation="vertical" android:id="@+id/tester"
-		android:layout_width="fill_parent" android:layout_height="fill_parent"
-		android:layout_weight="1" android:gravity="center">
+	<LinearLayout 	android:orientation="vertical" 
+					android:id="@+id/tester"
+					android:layout_width="0px" 
+					android:layout_height="fill_parent"
+					android:layout_weight="1" 
+					android:gravity="center"
+					>
 
 
-		<TextView android:id="@+id/calculatedInfusionVolume"
-			android:text="@string/mash_infusion_calculated_infusion_temperature_default" style="@style/cylinderEntryStyle" />
+		<TextView 	android:id="@+id/calculatedInfusionVolume"
+					android:text="@string/mash_infusion_calculated_infusion_temperature_default" 
+					style="@style/large_result" 
+					/>
 
-		<TextView android:id="@+id/calculatedInfusionVolumeUnitType"
-			android:text="gallons" style="@style/cylinderEntryStyle" />
+		<TextView 	android:id="@+id/calculatedInfusionVolumeUnitType"
+					style="@style/small_result" 
+					/>
 
-
-	</LinearLayout>
 	</LinearLayout>
 	
 </LinearLayout>

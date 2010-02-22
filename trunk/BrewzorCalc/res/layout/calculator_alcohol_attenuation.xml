@@ -19,98 +19,107 @@
     along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
- 	          android:orientation="vertical"
-			  android:layout_width="fill_parent" 
-			  android:layout_height="fill_parent"
-			  android:gravity="center_horizontal">
+<LinearLayout	xmlns:android="http://schemas.android.com/apk/res/android"
+ 	         	style="@style/portrait_layout"
+ 	         	>
 	
-	    <TextView android:id="@+id/calculatorName"
-	              android:text="@string/alcohol_attenuation"
-	              android:layout_width="fill_parent"
-	              android:layout_height="wrap_content"
-				  style="@style/calculatorNameStyle" />
+	<Spinner 	android:id="@+id/unitTypeSpinner"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:entries="@array/gravityUnitsList"
+				android:entryValues="@array/gravityUnitsIdList"
+				android:drawSelectorOnTop="true" 
+				/>
 
-		<LinearLayout android:orientation="horizontal"
-					  android:layout_width="fill_parent" 
-					  android:layout_height="wrap_content"			  
-					  android:gravity="center_horizontal" >
+	<TableLayout	style="@style/entry_table">
 
-				<TextView style="@style/converterSmallTextStyle" 
-				android:text="@string/alcohol_attenuation_units" />
-
-				<Spinner 	android:id="@+id/unitTypeSpinner"
-							android:layout_width="fill_parent"
-							android:layout_height="wrap_content"
-							android:entries="@array/gravityUnitsList"
-							android:entryValues="@array/gravityUnitsIdList"
-							android:drawSelectorOnTop="true" />				  
-			
-		</LinearLayout>
-
-		<TableLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
-
-			<TableRow>
+		<TableRow>
 	
-				<TextView style="@style/converterSmallTextStyle" android:text="@string/alcohol_attenuation_original_gravity" />
+				<TextView	style="@style/label_text" 
+							android:text="@string/alcohol_attenuation_original_gravity" 
+							/>
 	
-				<EditText android:id="@+id/originalEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText	android:id="@+id/originalEntry" 
+							style="@style/decimal_entry" 
+							/>
 	
-				<TextView android:id="@+id/originalUnitType" style="@style/converterSmallTextStyle" />
+				<TextView	android:id="@+id/originalUnitType" 
+							style="@style/label_text" 
+							/>
 	
 			</TableRow>
 
 			<TableRow>
 	
-				<TextView style="@style/converterSmallTextStyle" android:text="@string/alcohol_attenuation_current_gravity" />
+				<TextView	style="@style/label_text" 
+							android:text="@string/alcohol_attenuation_current_gravity" 
+							/>
 	
-				<EditText android:id="@+id/currentEntry" style="@style/doubleUnitEntryStyle" />
+				<EditText	android:id="@+id/currentEntry" 
+							style="@style/decimal_entry" />
 	
-				<TextView android:id="@+id/currentUnitType" style="@style/converterSmallTextStyle" />
+				<TextView	android:id="@+id/currentUnitType" 
+							style="@style/label_text" />
 	
 			</TableRow>
 
 		</TableLayout>			  
 
-		<TableLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:gravity="center">
+		<TableLayout	style="@style/entry_table"
+						android:layout_height="fill_parent"
+						android:layout_width="wrap_content"
+						android:layout_weight="1"
+						>
 
 			<TableRow>
 	
-				<TextView style="@style/converterSmallTextStyle" android:text="@string/alcohol_attenuation_abv" />
+				<TextView	style="@style/label_text" 
+							android:text="@string/alcohol_attenuation_abv" />
 	
-				<TextView android:id="@+id/abv" android:gravity="right" style="@style/converterSmallTextStyle" />
+				<TextView	android:id="@+id/abv"
+							android:gravity="right" 
+							style="@style/small_result" />
 		
 			</TableRow>
 
 			<TableRow>
 	
-				<TextView style="@style/converterSmallTextStyle" android:text="@string/alcohol_attenuation_abw" />
+				<TextView	style="@style/label_text" 
+							android:text="@string/alcohol_attenuation_abw" />
 	
-				<TextView android:id="@+id/abw" android:gravity="right" style="@style/converterSmallTextStyle" />
+				<TextView	android:id="@+id/abw" 
+							android:gravity="right" 
+							style="@style/small_result" />
 		
 			</TableRow>
 
 			<TableRow>
 	
-				<TextView style="@style/converterSmallTextStyle" android:text="@string/alcohol_attenuation_apparent_attenuation" />
+				<TextView	style="@style/label_text" 
+							android:text="@string/alcohol_attenuation_apparent_attenuation" />
 	
-				<TextView android:id="@+id/aa" android:gravity="right" style="@style/converterSmallTextStyle" />
+				<TextView	android:id="@+id/aa" 
+							android:gravity="right" 
+							style="@style/small_result" />
 		
 			</TableRow>
 
 			<TableRow>
 	
-				<TextView style="@style/converterSmallTextStyle" android:text="@string/alcohol_attenuation_real_attenuation" />
+				<TextView	style="@style/label_text" 
+							android:text="@string/alcohol_attenuation_real_attenuation" />
 	
-				<TextView android:id="@+id/ra" android:gravity="right" style="@style/converterSmallTextStyle" />
+				<TextView	android:id="@+id/ra" 
+							android:gravity="right" 
+							style="@style/small_result" />
 		
 			</TableRow>
 <!-- 
 			<TableRow>
 	
-				<TextView style="@style/converterSmallTextStyle" android:text="@string/alcohol_attenuation_calories" />
+				<TextView style="@style/label_text" android:text="@string/alcohol_attenuation_calories" />
 	
-				<TextView android:id="@+id/calories" android:gravity="right" style="@style/converterSmallTextStyle" />
+				<TextView android:id="@+id/calories" android:gravity="right" style="@style/label_text" />
 		
 			</TableRow>
  -->

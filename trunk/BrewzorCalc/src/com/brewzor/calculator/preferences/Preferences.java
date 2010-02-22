@@ -41,6 +41,7 @@ public class Preferences {
 	public static final String BATCH_GRAIN_MASS_UNIT = "batch.grain_mass_unit";
 	public static final String BATCH_WATER_TO_GRAIN_RATIO = "batch.water_to_grain_ratio";
 	public static final String BATCH_BOIL_MINUTES = "batch.boil_minutes";
+	public static final String BATCH_MASH_MINUTES = "batch.mash_minutes";
 	public static final String BATCH_GRAIN_ABSORPTION_RATIO = "batch.grain_absorption_ratio";
 	public static final String BATCH_GRAIN_VOLUME_RATIO = "batch.grain_volume_ratio";
 	public static final String BATCH_INFUSION_WATER_TEMPERATURE = "batch.infusion_water_temperature";
@@ -57,6 +58,7 @@ public class Preferences {
 	public static final String VERSION_1_2_0 = "version.1.2.0";
 	public static final String VERSION_1_3_0 = "version.1.3.0";
 	public static final String VERSION_1_3_1 = "version.1.3.1";
+	public static final String VERSION_1_4_0 = "version.1.4.0";
 	
 	public static final void init(SharedPreferences prefs) {
         Editor editor = prefs.edit();
@@ -78,7 +80,6 @@ public class Preferences {
 	        editor.putString(Preferences.KETTLE_EVAPORATION_RATE, "10");
 	        editor.putString(Preferences.KETTLE_COOLING_LOSS, "4");
 	        editor.putBoolean(Preferences.KETTLE_CORRECT_FOR_EXPANSION, false);
-	
         }
         
         if (prefs.getBoolean(Preferences.VERSION_1_1_0, false)) {
@@ -105,6 +106,11 @@ public class Preferences {
 	        editor.putString(Preferences.BATCH_MASH_VOLUME_UNIT, prefs.getString(Preferences.BATCH_VOLUME_UNIT, "GALLON"));
         }
 
+        if (prefs.getBoolean(Preferences.VERSION_1_4_0, false)) {
+        	editor.putBoolean(Preferences.VERSION_1_4_0, true);
+        	editor.putString(Preferences.BATCH_MASH_MINUTES, "60");
+        }
+        
         editor.commit();	
 
 	}

@@ -19,8 +19,8 @@
 */
 package com.brewzor.calculator;
 
-import com.brewzor.calculator.R;
 import com.brewzor.calculator.preferences.Preferences;
+import com.brewzor.calculator.R;
 import com.brewzor.converters.Distance;
 import com.brewzor.converters.Gravity;
 import com.brewzor.converters.Mass;
@@ -103,6 +103,9 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		pref = findPreference(Preferences.BATCH_WATER_TO_GRAIN_RATIO);
 		pref.setOnPreferenceChangeListener(mPrefListener);
 				
+		pref = findPreference(Preferences.BATCH_MASH_MINUTES);
+		pref.setOnPreferenceChangeListener(mPrefListener);
+
 		pref = findPreference(Preferences.BATCH_BOIL_MINUTES);
 		pref.setOnPreferenceChangeListener(mPrefListener);
 
@@ -187,6 +190,9 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		volume.setType(volume.typeFromPref(Preferences.BATCH_MASH_VOLUME_UNIT, Volume.Unit.GALLON));
 		pref.setSummary(getString(R.string.water_to_grain_ratio_pref_summary_format, sPref.getString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, ".31"), volume.getLabelPlural(), mass.getLabel()));
 		
+		pref = findPreference(Preferences.BATCH_MASH_MINUTES);
+		pref.setSummary(sPref.getString(Preferences.BATCH_MASH_MINUTES, "60"));
+	
 		pref = findPreference(Preferences.BATCH_BOIL_MINUTES);
 		pref.setSummary(sPref.getString(Preferences.BATCH_BOIL_MINUTES, "60"));
 	

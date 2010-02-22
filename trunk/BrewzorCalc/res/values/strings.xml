@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- 
 
     This file is part of Brewzor.
@@ -25,7 +25,7 @@
 	In general, things in all caps like "FAHRENHEIT" or references to 
 	other strings like "@string/double_default" should not be translated.
 	Only translate the words between the tags <string name=""></string>. 
-	There are also format strings like "%s%s (Usually 60 or 68째F)" and in 
+	There are also format strings like "%s%s (Usually 60 or 68캟)" and in 
 	that case, you would only translate the English words "Usually" and 
 	"or".  If a word doesn't translate into your language, just leave it 
 	as is.  Sometimes it can be hard to determine the context in which a 
@@ -41,9 +41,66 @@
 
     <string name="app_name">Brewzor</string>
     <string name="app_name_long">Brewzor Brewing Calculator</string>
+	<string name="window_title_format">%s: %s</string>
 
-	<!-- Timer -->
+	<string name="options_menu_settings">Settings</string>
+	<string name="options_menu_help">Help</string>
+	<string name="options_menu_about">About</string>
 
+	<!-- Create Brew Schedule -->
+	
+	<string name="mash_step_infusion">Infusion</string>
+	<string name="mash_step_decoction">Decoction</string>
+	<string name="mash_step_temperature">Temperature</string>
+	
+	<string name="recipe">Recipe</string>
+	
+	<string name="recipe_fermentables_title">Fermentables:</string>
+	<string name="recipe_extract">Extract</string>
+	<string name="recipe_partial_mash">Partial Mash</string>
+	<string name="recipe_all_grain">All Grain</string>
+	<string name="recipe_og">OG:</string>
+	<string name="recipe_grain_weight">Grain Weight:</string>
+	
+	<string name="recipe_new_recipe">New Recipe</string>
+	<string name="recipe_name">Recipe Name:</string>
+	<string name="recipe_name_hint">My Recipe</string>
+	<string name="recipe_cancel">Cancel</string>
+	<string name="recipe_save_schedule">Save</string>
+
+	<string name="recipe_mash_title">Mash Steps:</string>
+	<string name="recipe_add_mash_event_title">Add Mash Step</string>
+	<string name="recipe_add_step">Add Step</string>
+	<string name="recipe_mash_list_item_format">%01.1f%s for %01d minutes - %s</string>
+
+	<string name="recipe_boil_title">Boil Additions:</string>
+	<string name="recipe_add_boil_event_title">Add Boil Alarm</string>
+	<string name="recipe_add_alarm">Add</string>
+	<string name="recipe_boil_list_item_format">%01d minutes - %s</string>
+
+	<string name="recipe_cancel_schedule">@string/recipe_cancel</string>
+	
+	<string name="recipe_mash_duration">Mash Time:</string>
+	<string name="recipe_boil_duration">Boil Time:</string>
+	<string name="recipe_error_name">Enter a name for this brew schedule</string>
+	<string name="recipe_error_mash_name">Enter a name for the step</string>
+	<string name="recipe_error_mash_duration">Enter a mash time in minutes</string>
+	<string name="recipe_error_mash_temperature">Enter a mash temperature</string>
+	<string name="recipe_error_mash_ratio">Water / grain ratio should be greater than zero</string>
+	<string name="recipe_error_mash_step_exists">This mash step already exists</string>
+	<string name="recipe_error_mash_too_hot">Temperature can't be above boiling</string>
+
+	<string name="recipe_error_boil_time">Enter a time greater than or equal to zero</string>
+	<string name="recipe_error_boil_event_exists">An alarm already exists for that time</string>
+	<string name="recipe_error_boil_time_over">Time can't be greater than the boil time</string>
+
+	<string name="recipe_error_database">Database error</string>
+	
+	<string name="recipe_error_boil_duration">Enter a boil time in minutes</string>
+
+	<!-- Boil Timer -->
+
+	<string name="boil_timer">Boil Timer</string>
 	<string name="timer_notification_text">Notification text!</string>
 
 	<!-- Preferences -->	
@@ -79,7 +136,7 @@
 
 	<string name="hydrometer_calibration_temperature_pref">Hydrometer Calibration Temperature</string>
 	<string name="hydrometer_calibration_temperature_pref_default">60</string>
-	<string name="hydrometer_calibration_temperature_pref_summary_format">%s%s (Usually 60 or 68째F / 15 or 20째C)</string>
+	<string name="hydrometer_calibration_temperature_pref_summary_format">%s%s (Usually 60 or 68캟 / 15 or 20캜)</string>
 
 	<string name="extract_mass_units_pref">DME / LME Weight</string>
 	<string name="extract_mass_units_pref_summary">Grams, Kilograms, Ounces, Pounds</string>
@@ -115,12 +172,16 @@
 	<string name="grain_volume_ratio_pref_default">0</string>
 	<string name="grain_volume_ratio_pref_summary_format">%s %s per %s (Usually equivalent to 1-1.25 quarts per pound)</string>
 
+	<string name="mash_minutes_pref">Mash Minutes</string>
+	<string name="mash_minutes_pref_summary">Usually 60-90 minutes</string>
+	<string name="mash_minutes_pref_default">60</string>
+
 	<string name="boil_minutes_pref">Boil Minutes</string>
 	<string name="boil_minutes_pref_summary">Usually 60-90 minutes</string>
 	<string name="boil_minutes_pref_default">60</string>
 
 	<string name="mash_infusion_water_temperature_pref">Mash Infusion Water Temperature</string>
-	<string name="mash_infusion_water_temperature_pref_summary">Usually between 170째F and 212째F</string>
+	<string name="mash_infusion_water_temperature_pref_summary">Usually between 170캟 and 212캟</string>
 	<string name="mash_infusion_water_temperature_pref_default">212</string>
 
 	<string name="equipment_settings">Equipment Settings</string>
@@ -314,7 +375,7 @@
 	<string name="unit_entry_hint">Enter gravity</string>
 
 	<string name="plato">Plato</string>
-	<string name="plato_abbr">째P</string>
+	<string name="plato_abbr">캰</string>
 	<string name="plato_plural">Plato</string>
 
 	<string name="sg">Specific Gravity</string>
@@ -329,7 +390,7 @@
 	
 	<string name="brix">Brix</string>
 	<string name="brix_plural">Brix</string>
-	<string name="brix_abbr">째Bx</string>
+	<string name="brix_abbr">캛x</string>
 	<string name="brix_default">0</string>
 	
 	<!-- Temperature Conversion -->
@@ -337,11 +398,11 @@
 	<string name="temperature_conversions">Temperature Conversions</string>
 	
 	<string name="fahrenheit">Fahrenheit</string>
-	<string name="fahrenheit_abbr">째F</string>
+	<string name="fahrenheit_abbr">캟</string>
 	<string name="fahrenheit_plural">Fahrenheit</string>
 	
 	<string name="celsius">Celsius</string>
-	<string name="celsius_abbr">째C</string>
+	<string name="celsius_abbr">캜</string>
 	<string name="celsius_plural">Celsius</string>
 	
 	<!-- Mass Conversion -->
@@ -416,6 +477,14 @@
 	<string name="bottle_750_ml_abbr">Bottle (750 mL)</string>
 	<string name="bottle_750_ml_plural">Bottles (750 mL)</string>
 
+	<string name="bottle_330_ml">Bottle (330 mL)</string>
+	<string name="bottle_330_ml_abbr">Bottle (330 mL)</string>
+	<string name="bottle_330_ml_plural">Bottles (330 mL)</string>
+
+	<string name="bottle_500_ml">Bottle (500 mL)</string>
+	<string name="bottle_500_ml_abbr">Bottle (500 mL)</string>
+	<string name="bottle_500_ml_plural">Bottles (500 mL)</string>
+
 	<string name="quart">Quart</string>
 	<string name="quart_abbr">qt</string>
 	<string name="quart_plural">Quarts</string>
@@ -463,7 +532,7 @@
 	<string name="crash_report_mail_body">Crash Details: \n</string>
 	<string name="crash_report_dialog_title">Send Error Log?</string>
 	<string name="crash_report_dialog_text">A previous crash was detected. Would you like to send the developer the error log to fix this issue in the future?</string>
-	<string name="crash_report_dialog_ok">Yes, I'll help!</string>
+	<string name="crash_report_dialog_ok">Yes, I\'ll help!</string>
 	<string name="crash_report_dialog_cancel">No</string>
 
 	<string name="eula_title">EULA</string>
@@ -480,13 +549,6 @@
 	<string name="double_default">0.00</string>
 	<string name="double_format">%02.2f</string>
 	<string name="sg_format">%02.3f</string>
-	
-	<!-- Colors -->
-	
-	<color name="blue">#990000FF</color>
-	
-	<!-- Dimensions -->
-	
-	<dimen name="largeText">20sp</dimen>
+	<string name="percent_sign">%</string>
 
 </resources>

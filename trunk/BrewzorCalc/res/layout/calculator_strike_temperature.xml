@@ -19,77 +19,85 @@
     along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            	android:orientation="vertical"
-				  android:layout_width="fill_parent" 
-				  android:layout_height="fill_parent"
-				  android:gravity="center_horizontal">
+<LinearLayout	xmlns:android="http://schemas.android.com/apk/res/android"
+				style="@style/portrait_layout" 
+				>
 	
-	    <TextView android:id="@+id/calculatorName"
-	              android:text="@string/strike_temperature"
-	              android:layout_width="fill_parent"
-	              android:layout_height="wrap_content"
-				  style="@style/calculatorNameStyle" />
-	
-		<TableLayout android:layout_width="wrap_content"
-				     android:layout_height="wrap_content">
+		<TableLayout style="@style/entry_table"
+				     >
 		    
 		    <TableRow>
 		    
-			    <TextView style="@style/converterLargeTextStyle"
-			              android:text="@string/grain_weight" />	
-				
+			    <TextView 	style="@style/label_text"
+							android:text="@string/grain_weight" 
+							/>	
+
 				<EditText android:id="@+id/grainWeightEntry" 
-			              style="@style/doubleUnitEntryStyle" /> 
-			    
+			              style="@style/decimal_entry" 
+			              /> 
+
 			    <TextView android:id="@+id/grainWeightUnitType"
-			    		  style="@style/converterLargeTextStyle" />	
-				
+			    		  style="@style/label_text" 
+			    		  />	
+
 		    </TableRow>
 
 		    <TableRow>
 		              
-			    <TextView style="@style/converterLargeTextStyle"
-			              android:text="@string/grain_temperature" />
-			              	
+			    <TextView	style="@style/label_text"
+							android:text="@string/grain_temperature" 
+							/>
+
 				<EditText android:id="@+id/grainTemperatureEntry" 
-			              style="@style/doubleUnitEntryStyle" /> 
+			              style="@style/decimal_entry" 
+			              /> 
 
 			    <TextView android:id="@+id/grainTemperatureUnitType"
-			    		  style="@style/converterLargeTextStyle" />	
+			    		  style="@style/label_text" 
+			    		  />	
 				
 		    </TableRow>
 
 		    <TableRow>
 		    
-			    <TextView style="@style/converterLargeTextStyle"
-			              android:text="@string/target_mash_temperature"/>
+			    <TextView style="@style/label_text"
+			              android:text="@string/target_mash_temperature"
+			              />
 				
 				<EditText android:id="@+id/targetMashTemperatureEntry" 
-			              style="@style/doubleUnitEntryStyle" /> 
+			              style="@style/decimal_entry" 
+			              /> 
 		    
 			    <TextView android:id="@+id/targetMashTemperatureUnitType"
-			    		  style="@style/converterLargeTextStyle" />	
+			    		  style="@style/label_text" 
+			    		  />	
 				
 		    </TableRow>
 		
 		    <TableRow>
 		    
-			    <TextView style="@style/converterLargeTextStyle"
-			              android:text="@string/strike_water_volume"/>
+			    <TextView style="@style/label_text"
+			              android:text="@string/strike_water_volume"
+			              />
 				
 				<EditText android:id="@+id/strikeWaterVolumeEntry" 
-			              style="@style/doubleUnitEntryStyle" /> 
+			              style="@style/decimal_entry" 
+			              /> 
 			    
 			    <TextView android:id="@+id/strikeWaterVolumeUnitType"
-			    		  style="@style/converterLargeTextStyle" />	
+			    		  style="@style/label_text" 
+			    		  />
 				
 		    </TableRow>
 
 		</TableLayout>
 	
-	    <TextView android:id="@+id/calculatedStrikeWaterTemperature"
-	              android:text="@string/calculated_strike_water_temperature_default"
-	              style="@style/srikeWaterDescriptionStyle" />
+	    <TextView	android:id="@+id/calculatedStrikeWaterTemperature"
+					android:text="@string/calculated_strike_water_temperature_default"
+					style="@style/large_result" 
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:layout_gravity="center"
+					/>
 	
-	</LinearLayout>
+</LinearLayout>

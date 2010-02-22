@@ -34,8 +34,6 @@
  */
 package com.brewzor.calculator;
 
-
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -49,6 +47,7 @@ import java.io.InputStreamReader;
 import java.io.Closeable;
 
 import com.brewzor.calculator.preferences.Preferences;
+import com.brewzor.calculator.R;
 
 /**
  * Displays an EULA ("End User License Agreement") that the user has to accept before

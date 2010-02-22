@@ -20,6 +20,7 @@
 package com.brewzor.calculator;
 
 import com.brewzor.calculator.preferences.Preferences;
+import com.brewzor.calculator.R;
 import com.brewzor.converters.Gravity;
 import com.brewzor.utils.NumberFormat;
 
@@ -74,6 +75,7 @@ public class RefractometerCalculatorActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getString(R.string.window_title_format, getString(R.string.app_name), getString(R.string.refractometer)));
         setContentView(R.layout.calculator_refractometer);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
