@@ -20,6 +20,7 @@
 package com.brewzor.converters;
 
 import com.brewzor.calculator.R;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 
@@ -37,6 +38,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 		US_PINT,
 		IMPERIAL_PINT,
 		BOTTLE_22_OZ,
+		BOTTLE_330_ML,
+		BOTTLE_500_ML,
 		BOTTLE_750_ML,
 		QUART,
 		GALLON,
@@ -61,6 +64,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case US_PINT: 		return context.getString(R.string.us_pint);
 			case IMPERIAL_PINT:	return context.getString(R.string.imperial_pint);
 			case BOTTLE_22_OZ:	return context.getString(R.string.bottle_22_oz);
+			case BOTTLE_330_ML:	return context.getString(R.string.bottle_330_ml);
+			case BOTTLE_500_ML:	return context.getString(R.string.bottle_500_ml);
 			case BOTTLE_750_ML:	return context.getString(R.string.bottle_750_ml);
 			case QUART: 		return context.getString(R.string.quart);
 			case GALLON:		return context.getString(R.string.gallon);
@@ -79,11 +84,13 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUBIC_INCH: 	return context.getString(R.string.cubic_inch_plural);
 			case FLUID_OUNCE: 	return context.getString(R.string.fluid_ounce_plural);
 			case CUP: 			return context.getString(R.string.cup_plural);
-			case BOTTLE_12_OZ:	return context.getString(R.string.bottle_12_oz);
+			case BOTTLE_12_OZ:	return context.getString(R.string.bottle_12_oz_plural);
 			case US_PINT: 		return context.getString(R.string.us_pint_plural);
 			case IMPERIAL_PINT:	return context.getString(R.string.imperial_pint_plural);
-			case BOTTLE_22_OZ:	return context.getString(R.string.bottle_22_oz);
-			case BOTTLE_750_ML:	return context.getString(R.string.bottle_750_ml);
+			case BOTTLE_22_OZ:	return context.getString(R.string.bottle_22_oz_plural);
+			case BOTTLE_330_ML:	return context.getString(R.string.bottle_330_ml_plural);
+			case BOTTLE_500_ML:	return context.getString(R.string.bottle_500_ml_plural);
+			case BOTTLE_750_ML:	return context.getString(R.string.bottle_750_ml_plural);
 			case QUART: 		return context.getString(R.string.quart_plural);
 			case GALLON:		return context.getString(R.string.gallon_plural);
 			case BARREL:		return context.getString(R.string.barrel_plural);
@@ -101,11 +108,13 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUBIC_INCH: 	return context.getString(R.string.cubic_inch_abbr);
 			case FLUID_OUNCE: 	return context.getString(R.string.fluid_ounce_abbr);
 			case CUP: 			return context.getString(R.string.cup_abbr);
-			case BOTTLE_12_OZ:	return context.getString(R.string.bottle_12_oz);
+			case BOTTLE_12_OZ:	return context.getString(R.string.bottle_12_oz_abbr);
 			case US_PINT: 		return context.getString(R.string.us_pint_abbr);
 			case IMPERIAL_PINT:	return context.getString(R.string.imperial_pint_abbr);
-			case BOTTLE_22_OZ:	return context.getString(R.string.bottle_22_oz);
-			case BOTTLE_750_ML:	return context.getString(R.string.bottle_750_ml);
+			case BOTTLE_22_OZ:	return context.getString(R.string.bottle_22_oz_abbr);
+			case BOTTLE_330_ML:	return context.getString(R.string.bottle_330_ml_abbr);
+			case BOTTLE_500_ML:	return context.getString(R.string.bottle_500_ml_abbr);
+			case BOTTLE_750_ML:	return context.getString(R.string.bottle_750_ml_abbr);
 			case QUART: 		return context.getString(R.string.quart_abbr);
 			case GALLON:		return context.getString(R.string.gallon_abbr);
 			case BARREL:		return context.getString(R.string.barrel_abbr);
@@ -125,6 +134,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP: 			return getValue() * CupToUnit(toType);
 			case BOTTLE_12_OZ: 	return getValue() * Bottle12OzToUnit(toType);
 			case BOTTLE_22_OZ: 	return getValue() * Bottle22OzToUnit(toType);
+			case BOTTLE_330_ML: return getValue() * Bottle330MlToUnit(toType);
+			case BOTTLE_500_ML: return getValue() * Bottle500MlToUnit(toType);
 			case BOTTLE_750_ML: return getValue() * Bottle750MlToUnit(toType);
 			case US_PINT: 		return getValue() * USPintToUnit(toType);
 			case IMPERIAL_PINT:	return getValue() * ImperialPintToUnit(toType);
@@ -170,6 +181,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 0.00422675284;
 			case BOTTLE_12_OZ:	return 0.00281783523;
 			case BOTTLE_22_OZ:	return 0.00153700103;
+			case BOTTLE_330_ML:	return 0.00303030303;
+			case BOTTLE_500_ML:	return 0.002;
 			case BOTTLE_750_ML:	return 0.00133333333;
 			case US_PINT:		return 0.00211337642;
 			case IMPERIAL_PINT:	return 0.00175975326;
@@ -191,6 +204,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 4.22675284;
 			case BOTTLE_12_OZ:	return 2.817835225;
 			case BOTTLE_22_OZ:	return 1.537001032;
+			case BOTTLE_330_ML:	return 3.030303030;
+			case BOTTLE_500_ML:	return 2.0;
 			case BOTTLE_750_ML:	return 1.333333333;
 			case US_PINT:		return 2.11337642;
 			case IMPERIAL_PINT:	return 1.75975326;
@@ -212,6 +227,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 0.0208333333;
 			case BOTTLE_12_OZ:	return 0.0138888889;
 			case BOTTLE_22_OZ:	return 0.0075757576;
+			case BOTTLE_330_ML:	return 0.01493612603;
+			case BOTTLE_500_ML:	return 0.00985784318;
 			case BOTTLE_750_ML:	return 0.00657189545;
 			case US_PINT:		return 0.0104166667;
 			case IMPERIAL_PINT:	return 0.00867368584;
@@ -233,6 +250,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 0.0625;
 			case BOTTLE_12_OZ:	return 0.041666666667;
 			case BOTTLE_22_OZ:	return 0.022727272727;
+			case BOTTLE_330_ML:	return 0.0448083781818;
+			case BOTTLE_500_ML:	return 0.0295735296;
 			case BOTTLE_750_ML:	return 0.0197156864;
 			case US_PINT:		return 0.03125;
 			case IMPERIAL_PINT:	return 0.0260210575;
@@ -254,6 +273,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 0.0692640693;
 			case BOTTLE_12_OZ:	return 0.046176046167;
 			case BOTTLE_22_OZ:	return 0.025186934273;
+			case BOTTLE_330_ML:	return 0.04965776969697;
+			case BOTTLE_500_ML:	return 0.032774128;
 			case BOTTLE_750_ML:	return 0.021849418667;
 			case US_PINT:		return 0.0346320346;
 			case IMPERIAL_PINT:	return 0.0288371893;
@@ -275,6 +296,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 0.125;
 			case BOTTLE_12_OZ:	return 0.083333333333;
 			case BOTTLE_22_OZ:	return 0.045454545455;
+			case BOTTLE_330_ML:	return 0.08961675636364;
+			case BOTTLE_500_ML:	return 0.0591470592;
 			case BOTTLE_750_ML:	return 0.0394313728;
 			case US_PINT:		return 0.0625;
 			case IMPERIAL_PINT:	return 0.052042115 ;
@@ -296,6 +319,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 1.0;
 			case BOTTLE_12_OZ:	return 0.66666666667;
 			case BOTTLE_22_OZ:	return 0.36363636364;
+			case BOTTLE_330_ML:	return 0.716934051515;
+			case BOTTLE_500_ML:	return 0.473176474;
 			case BOTTLE_750_ML:	return 0.31545098267;
 			case US_PINT:		return 0.5;
 			case IMPERIAL_PINT:	return 0.41633692;
@@ -317,6 +342,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 1.5;
 			case BOTTLE_12_OZ:	return 1.0;
 			case BOTTLE_22_OZ:	return 0.5454545455;
+			case BOTTLE_330_ML:	return 1.075401076364;
+			case BOTTLE_500_ML:	return 0.7097647104;
 			case BOTTLE_750_ML:	return 0.4731764736;
 			case US_PINT:		return 0.75;
 			case IMPERIAL_PINT:	return 0.62450538;
@@ -338,6 +365,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 2.75;
 			case BOTTLE_12_OZ:	return 1.833333333326;
 			case BOTTLE_22_OZ:	return 1.0;
+			case BOTTLE_330_ML:	return 1.97156864;
+			case BOTTLE_500_ML:	return 1.3012353024;
 			case BOTTLE_750_ML:	return 0.8674902016;
 			case US_PINT:		return 1.375;
 			case IMPERIAL_PINT:	return 1.14492653;
@@ -348,6 +377,50 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 		}
 	}
 
+	static public final double Bottle330MlToUnit(Volume.Unit toType) {
+		switch (toType) {
+			case MILLILITER:	return 330.0;
+			case LITER:			return 0.33;
+			case TEASPOON:		return 66.9517649;
+			case TABLESPOON:	return 22.317255;
+			case FLUID_OUNCE:	return 11.1586275;
+			case CUP:			return 1.39482844;
+			case BOTTLE_12_OZ:	return 0.929885625;
+			case BOTTLE_22_OZ:	return 0.5072103409;
+			case BOTTLE_330_ML:	return 1.0;
+			case BOTTLE_500_ML:	return 0.66;
+			case BOTTLE_750_ML:	return 0.44;
+			case US_PINT:		return 0.697414218;
+			case IMPERIAL_PINT:	return 0.580718575;
+			case QUART:			return 0.348707109;
+			case GALLON:		return 0.0871767773;
+			case BARREL:		return 0.00281215411;
+			default: 			return 1.0;
+		}
+	}
+	
+	static public final double Bottle500MlToUnit(Volume.Unit toType) {
+		switch (toType) {
+			case MILLILITER:	return 500.0;
+			case LITER:			return 0.5;
+			case TEASPOON:		return 101.442068;
+			case TABLESPOON:	return 33.8140227;
+			case FLUID_OUNCE:	return 16.9070114;
+			case CUP:			return 2.11337642;
+			case BOTTLE_12_OZ:	return 1.408917616667;
+			case BOTTLE_22_OZ:	return 0.76850051818;
+			case BOTTLE_330_ML:	return 1.51515151515;
+			case BOTTLE_500_ML:	return 1.0;
+			case BOTTLE_750_ML:	return 0.666666666667;
+			case US_PINT:		return 1.05668821;
+			case IMPERIAL_PINT:	return 0.87987663;
+			case QUART:			return 0.528344105;
+			case GALLON:		return 0.132086026;
+			case BARREL:		return 0.00426083955;
+			default: 			return 1.0;
+		}
+	}
+	
 	static public final double Bottle750MlToUnit(Volume.Unit toType) {
 		switch (toType) {
 			case MILLILITER:	return 750.0;
@@ -358,6 +431,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 3.17006463;
 			case BOTTLE_12_OZ:	return 2.1133764225;
 			case BOTTLE_22_OZ:	return 1.1527507725;
+			case BOTTLE_330_ML:	return 2.27272727273;
+			case BOTTLE_500_ML:	return 1.5;
 			case BOTTLE_750_ML:	return 1.0;
 			case US_PINT:		return 1.585032315;
 			case IMPERIAL_PINT:	return 1.319814945;
@@ -379,6 +454,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 2.0;
 			case BOTTLE_12_OZ:	return 1.33333333333;
 			case BOTTLE_22_OZ:	return 0.72727272727;
+			case BOTTLE_330_ML:	return 1.4338681;
+			case BOTTLE_500_ML:	return 0.946352946;
 			case BOTTLE_750_ML:	return 0.630901964;
 			case US_PINT:		return 1.0;
 			case IMPERIAL_PINT:	return 0.83267384;
@@ -400,6 +477,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 2.40190084;
 			case BOTTLE_12_OZ:	return 1.60126723;
 			case BOTTLE_22_OZ:	return 0.873418491;
+			case BOTTLE_330_ML:	return 1.7220045;
+			case BOTTLE_500_ML:	return 1.13652297;
 			case BOTTLE_750_ML:	return 0.75768198;
 			case US_PINT:		return 1.20095042;
 			case IMPERIAL_PINT:	return 1.0;
@@ -422,6 +501,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 4.0;
 			case BOTTLE_12_OZ:	return 2.66666666667;
 			case BOTTLE_22_OZ:	return 1.45454545455;
+			case BOTTLE_330_ML:	return 2.8677362;
+			case BOTTLE_500_ML:	return 1.892705892;
 			case BOTTLE_750_ML:	return 1.261803928;
 			case US_PINT:		return 2.0;
 			case IMPERIAL_PINT:	return 1.66534768;
@@ -443,6 +524,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 16.0;
 			case BOTTLE_12_OZ:	return 10.6666666667;
 			case BOTTLE_22_OZ:	return 5.81818181818;
+			case BOTTLE_330_ML:	return 11.47094478788;
+			case BOTTLE_500_ML:	return 7.57082356;
 			case BOTTLE_750_ML:	return 5.04721570667;
 			case US_PINT:		return 8.0;
 			case IMPERIAL_PINT:	return 6.66139072;
@@ -464,6 +547,8 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case CUP:			return 496.0;
 			case BOTTLE_12_OZ:	return 330.6666666667;
 			case BOTTLE_22_OZ:	return 180.3636363636;
+			case BOTTLE_330_ML:	return 355.59928787879;
+			case BOTTLE_500_ML:	return 234.69553;
 			case BOTTLE_750_ML:	return 156.4636866667;
 			case US_PINT:		return 248.0;
 			case IMPERIAL_PINT:	return 206.503112;

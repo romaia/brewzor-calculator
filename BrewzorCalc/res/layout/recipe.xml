@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ 	          android:orientation="vertical"
+			  android:layout_width="fill_parent" 
+			  android:layout_height="fill_parent"
+			  android:gravity="center_horizontal">
+	
+	<!--  
+    <TextView android:id="@+id/calculatorName"
+              android:text="@string/recipe"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+			  style="@style/calculatorNameStyle" />
+	-->
+	<ScrollView android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				>
+			
+		<LinearLayout android:orientation="vertical"
+					  android:layout_width="fill_parent" 
+					  android:layout_height="fill_parent">
+		
+			<LinearLayout	android:orientation="horizontal"
+							android:layout_width="fill_parent" 
+							android:layout_height="wrap_content"
+							android:gravity="bottom"
+							>
+		
+				<LinearLayout android:orientation="vertical"
+							  android:layout_width="wrap_content" 
+							  android:layout_height="wrap_content"
+							  android:layout_weight="1"
+							  >
+				
+				    <TextView android:text="@string/recipe_name"
+				              android:layout_width="fill_parent"
+				              android:layout_height="wrap_content"
+				              android:textStyle="bold"
+							  style="@style/timer_base" />
+					
+					<EditText	android:id="@+id/nameEntry" 
+								android:hint="@string/recipe_name_hint"
+								android:layout_width="fill_parent"
+								android:layout_height="wrap_content"
+								style="@style/timer_name_entry" />		
+				
+				</LinearLayout>
+		
+				<LinearLayout	android:orientation="vertical"
+								android:layout_width="0px" 
+								android:layout_height="wrap_content"
+								android:layout_weight="1"
+								>
+				
+				    <TextView android:text="@string/recipe_boil_duration"
+				              android:layout_width="wrap_content"
+				              android:layout_height="wrap_content"
+				              android:textStyle="bold"
+							  style="@style/timer_base" />
+					
+					<EditText	android:id="@+id/boilDurationEntry" 
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								style="@style/timer_duration_entry" />		
+				
+				</LinearLayout>
+		
+			</LinearLayout>
+	
+			<LinearLayout android:orientation="horizontal"
+						  android:layout_width="fill_parent" 
+						  android:layout_height="wrap_content"
+							android:layout_gravity="bottom"
+						  >
+
+				<LinearLayout	android:orientation="vertical"
+								android:layout_width="0px" 
+								android:layout_height="wrap_content"
+								android:layout_weight="1"
+								>
+				
+				    <TextView android:text="@string/recipe_og"
+				              android:layout_width="wrap_content"
+				              android:layout_height="wrap_content"
+				              android:textStyle="bold"
+							  style="@style/timer_base" />
+					
+					<LinearLayout	android:orientation="horizontal"
+									android:layout_width="fill_parent" 
+									android:layout_height="wrap_content"
+									android:layout_gravity="bottom"
+									>
+
+						<EditText	android:id="@+id/OGEntry" 
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:layout_weight="1"
+									style="@style/timer_decimal_entry" />		
+			
+					    <TextView android:id="@+id/ogLabel"
+					    		  android:layout_width="wrap_content"
+					              android:layout_height="wrap_content"
+					              android:textStyle="bold"
+					              android:text="SG"
+								  style="@style/timer_base" />
+
+					</LinearLayout>
+					
+				</LinearLayout>
+		
+				<LinearLayout	android:orientation="vertical"
+								android:layout_width="0px" 
+								android:layout_height="wrap_content"
+								android:layout_weight="1"
+								>
+				
+				    <TextView android:text="@string/recipe_grain_weight"
+				              android:layout_width="wrap_content"
+				              android:layout_height="wrap_content"
+				              android:textStyle="bold"
+							  style="@style/timer_base" />
+					
+					<LinearLayout	android:orientation="horizontal"
+									android:layout_width="fill_parent" 
+									android:layout_height="wrap_content"
+									android:layout_gravity="bottom"
+									>
+
+						<EditText	android:id="@+id/grainWeightEntry" 
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:layout_weight="1"
+									style="@style/timer_decimal_entry" />		
+					
+					    <TextView android:id="@+id/grainWeightLabel"
+					    		  android:layout_width="wrap_content"
+					              android:layout_height="wrap_content"
+					              android:textStyle="bold"
+					              android:text="lb"
+								  style="@style/timer_base" />
+
+					</LinearLayout>
+					
+				</LinearLayout>
+
+			</LinearLayout>
+
+			<ImageView	android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:src="@android:drawable/divider_horizontal_dark" />
+
+			<LinearLayout android:orientation="horizontal"
+						  android:layout_width="fill_parent" 
+						  android:layout_height="wrap_content"
+						  android:layout_gravity="top"
+						  android:gravity="center_vertical"
+						  >
+					
+			    <TextView android:text="@string/recipe_fermentables_title"
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_gravity="left|center_vertical"
+						  android:layout_weight="1"
+			              android:textStyle="bold"
+						  style="@style/timer_base" />
+					
+				<ImageView 	android:id="@+id/add_fermentable_button"
+							android:src="@android:drawable/ic_input_add" 
+			              	android:layout_width="wrap_content"
+			              	android:layout_height="wrap_content"
+			              	android:layout_gravity="left|center_vertical"
+							android:clickable="true"
+							/>
+	
+			</LinearLayout>
+
+			<LinearLayout	android:id="@+id/boilList"
+							android:orientation="vertical"
+						    android:layout_width="fill_parent"
+						    android:layout_height="wrap_content"
+						    android:gravity="top|center_horizontal"
+						    android:layout_weight="1"
+						    />
+			
+			<ImageView	android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:src="@android:drawable/divider_horizontal_dark" />
+
+			<LinearLayout android:orientation="horizontal"
+						  android:layout_width="fill_parent" 
+						  android:layout_height="wrap_content"
+						  android:layout_gravity="top"
+						  android:gravity="center_vertical"
+						  >
+		
+			    <TextView android:text="@string/recipe_mash_title"
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_gravity="left|center_vertical"
+					      android:layout_weight="1"
+				          android:textStyle="bold"
+						  style="@style/timer_base" />
+				
+				<ImageView 	android:id="@+id/add_mash_event_button"
+							android:src="@android:drawable/ic_input_add" 
+			              	android:layout_width="wrap_content"
+			              	android:layout_height="wrap_content"
+			              	android:layout_gravity="left|center_vertical"
+							android:clickable="true"
+							/>
+			
+			</LinearLayout>
+
+			<LinearLayout	android:id="@+id/mashList"
+							android:orientation="vertical"
+						    android:layout_width="fill_parent"
+						    android:layout_height="wrap_content"
+						    android:gravity="top|center_horizontal"
+						    />
+				
+			<ImageView	android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:src="@android:drawable/divider_horizontal_dark" />
+
+			<LinearLayout android:orientation="horizontal"
+						  android:layout_width="fill_parent" 
+						  android:layout_height="wrap_content"
+						  android:layout_gravity="top"
+						  android:gravity="center_vertical"
+						  >
+					
+			    <TextView android:text="@string/recipe_boil_title"
+			              android:layout_width="wrap_content"
+			              android:layout_height="wrap_content"
+			              android:layout_gravity="left|center_vertical"
+						  android:layout_weight="1"
+			              android:textStyle="bold"
+						  style="@style/timer_base" />
+					
+				<ImageView 	android:id="@+id/add_boil_event_button"
+							android:src="@android:drawable/ic_input_add" 
+			              	android:layout_width="wrap_content"
+			              	android:layout_height="wrap_content"
+			              	android:layout_gravity="left|center_vertical"
+							android:clickable="true"
+							/>
+	
+			</LinearLayout>
+
+			<LinearLayout	android:id="@+id/boilList"
+							android:orientation="vertical"
+						    android:layout_width="fill_parent"
+						    android:layout_height="wrap_content"
+						    android:gravity="top|center_horizontal"
+						    android:layout_weight="1"
+						    />
+			
+			<ImageView	android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:src="@android:drawable/divider_horizontal_dark" />
+
+		</LinearLayout>
+
+	</ScrollView>
+
+</LinearLayout>

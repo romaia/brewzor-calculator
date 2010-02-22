@@ -1,4 +1,4 @@
-package com.brewzor.calculator;
+package com.brewzor.recipemanager;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -1,6 +1,7 @@
 package com.brewzor.calculator;
 
 import com.brewzor.calculator.preferences.Preferences;
+import com.brewzor.calculator.R;
 import com.brewzor.converters.Mass;
 import com.brewzor.converters.Temperature;
 import com.brewzor.converters.Volume;
@@ -49,6 +50,7 @@ public class MashInfusionCalculatorActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        setTitle(getString(R.string.window_title_format, getString(R.string.app_name), getString(R.string.mash_infusion)));
 		setContentView(R.layout.calculator_mash_infusion);		
 
 		prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());

@@ -76,7 +76,7 @@
 							
 		<EditTextPreference android:title="@string/cooling_loss_percentage_pref"
 							android:summary="@string/cooling_loss_percentage_pref_summary"
-						android:persistent="true"
+							android:persistent="true"
 							android:defaultValue="@string/cooling_loss_percentage_pref_default" 
 							android:numeric="integer"
 							android:inputType="number"
@@ -98,7 +98,7 @@
 
 		<EditTextPreference android:title="@string/final_volume_pref"
 							android:summary="@string/final_volume_pref_summary"
-						android:persistent="true"
+							android:persistent="true"
 							android:defaultValue="@string/final_volume_pref_default" 
 							android:inputType="number|numberDecimal"
 							android:key="batch.final_volume" />
@@ -120,15 +120,23 @@
 						android:entryValues="@array/massUnitsIdList" />
 	
 		<EditTextPreference android:title="@string/water_to_grain_ratio_pref"
-						android:persistent="true"
+							android:persistent="true"
 							android:defaultValue="@string/water_to_grain_ratio_pref_default" 
 							android:numeric="decimal"
 							android:inputType="number|numberDecimal"
 							android:key="batch.water_to_grain_ratio" />
 
+		<EditTextPreference android:title="@string/mash_minutes_pref"
+							android:summary="@string/mash_minutes_pref_summary"
+							android:persistent="true"
+							android:defaultValue="@string/mash_minutes_pref_default" 
+							android:numeric="integer"
+							android:inputType="number"
+							android:key="batch.mash_minutes" />
+
 		<EditTextPreference android:title="@string/boil_minutes_pref"
 							android:summary="@string/boil_minutes_pref_summary"
-						android:persistent="true"
+							android:persistent="true"
 							android:defaultValue="@string/boil_minutes_pref_default" 
 							android:numeric="integer"
 							android:inputType="number"
@@ -136,7 +144,7 @@
 
 		<EditTextPreference android:title="@string/mash_infusion_water_temperature_pref"
 							android:summary="@string/mash_infusion_water_temperature_pref_summary"
-						android:persistent="true"
+							android:persistent="true"
 							android:defaultValue="@string/mash_infusion_water_temperature_pref_default" 
 							android:numeric="decimal"
 							android:inputType="number|numberDecimal"

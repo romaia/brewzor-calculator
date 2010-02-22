@@ -19,8 +19,8 @@
 */
 package com.brewzor.calculator;
 
-import com.brewzor.calculator.R;
 import com.brewzor.calculator.preferences.Preferences;
+import com.brewzor.calculator.R;
 import com.brewzor.converters.Distance;
 import com.brewzor.converters.Volume;
 import com.brewzor.utils.NumberFormat;
@@ -76,6 +76,7 @@ public class CylinderHeightCalculatorActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getString(R.string.window_title_format, getString(R.string.app_name), getString(R.string.cylinder_height)));
         setContentView(R.layout.calculator_cylinder_height);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());

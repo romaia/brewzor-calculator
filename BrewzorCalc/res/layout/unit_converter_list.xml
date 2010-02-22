@@ -19,19 +19,52 @@
     along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-   android:orientation="vertical"
-   android:layout_width="fill_parent"
-   android:layout_height="fill_parent"
-   >
-<ListView
-    android:id="@+id/android:list"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    />
-<TextView
-    android:id="@+id/android:empty"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:text="@string/no_list_items"/>
+<LinearLayout 	xmlns:android="http://schemas.android.com/apk/res/android"
+				android:orientation="vertical"
+				android:layout_width="fill_parent"
+ 				android:layout_height="fill_parent"
+				android:gravity="center_horizontal"
+				>
+        
+ 	<LinearLayout 	android:orientation="horizontal"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical"
+					>
+               
+		<Spinner	android:id="@+id/unit_type_spinner"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:entries="@array/unitTypesList"
+					android:entryValues="@array/unitTypesIdList"
+					android:drawSelectorOnTop="true" 
+					/>
+
+		<EditText 	android:id="@+id/unit_entry" 
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					style="@style/doubleUnitEntryWideStyle" 
+					/>
+
+		<Spinner	android:id="@+id/unit_spinner"
+					android:layout_width="fill_parent"
+					android:layout_weight="1"
+					android:layout_height="wrap_content"
+					android:drawSelectorOnTop="true" 
+					android:entries="@array/unitTypesList"
+					/>
+	</LinearLayout>
+                                                        
+	<ListView	android:id="@+id/android:list"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+			/>
+			
+	<TextView	android:id="@+id/android:empty"
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:text="@string/no_list_items"/>                                      
+
 </LinearLayout>

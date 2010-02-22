@@ -37,8 +37,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.brewzor.calculator.R;
 import com.brewzor.calculator.preferences.Preferences;
+import com.brewzor.calculator.R;
 import com.brewzor.utils.ErrorReporter;
 
 // http://androidblogger.blogspot.com/2009/12/how-to-improve-your-application-crash.html
@@ -111,11 +111,13 @@ public class BrewzorActivity extends ListActivity {
 	protected void launchCalculator(int calculatorId) {
 		Intent i;
 		switch (calculatorId) {
+			//case 0: i = new Intent(this, CreateRecipeActivity.class); break;
+			//case 1: i = new Intent(this, BrewzorTimer.class); break;
 			case 0: i = new Intent(this, StrikeTemperatureCalculatorActivity.class); break;
 			case 1: i = new Intent(this, GravityCorrectionCalculatorActivity.class); break;
 			case 2: i = new Intent(this, MashInfusionCalculatorActivity.class); break;
 			case 3: i = new Intent(this, DecoctionCalculatorActivity.class); break;
-			case 4: i = new Intent(this, BatchSpargeCalculatorActivity.class); break;
+			case 4: i = new Intent(this, BatchSpargeCalculatorActivity.class); break;			
 			case 5: i = new Intent(this, BoilOffCalculatorActivity.class); break;
 			case 6: i = new Intent(this, CylinderVolumeCalculatorActivity.class); break;
 			case 7: i = new Intent(this, CylinderHeightCalculatorActivity.class); break;

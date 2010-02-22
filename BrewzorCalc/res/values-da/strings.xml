@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- 
 
 	This file is part of Brewzor.
@@ -35,6 +36,11 @@
 
 -->
 <resources>
+
+<string name="options_menu_settings">Indstillinger</string>
+<string name="options_menu_help">Hjælp</string>
+<string name="options_menu_about">Om</string>
+
 <!-- Preferences -->
 <string name="set_preferences">Sæt standarder</string>
 <string name="preference_screen_title">Brewzor standarder</string>
@@ -58,14 +64,14 @@
 <string name="hydrometer_calibration_temperature_pref">Hydrometer kalibreringstemperatur</string>
 <string name="hydrometer_calibration_temperature_pref_summary_format">%s%s (Normalt 60 eller 68°F/15 eller 20°C)</string>
 <string name="extract_mass_units_pref">Vægt af tørret/flydende maltekstrakt</string>
-<string name="extract_mass_units_pref_summary">Grams, Kilograms, Ounces, Pounds</string>
+<string name="extract_mass_units_pref_summary">Gram, Kilogram, Ounces, Pounds</string>
 <string name="batch_settings">Batch indstillinger</string>
-<string name="batch_volume_units_pref">Batch male enhed</string>
-<string name="batch_volume_units_pref_summary">Quarts, Gallons, Liters, osv.</string>
+<string name="batch_volume_units_pref">Batch måle enhed</string>
+<string name="batch_volume_units_pref_summary">Quarts, Gallons, Liter, osv.</string>
 <string name="final_volume_pref">Slut volumen</string>
-<string name="final_volume_pref_summary">Quarts, Gallons, Liters, osv.</string>
-<string name="grain_mass_units_pref">Malt måle enhed</string>
-<string name="grain_mass_units_pref_summary">Grams, Kilograms, Ounces, Pounds</string>
+<string name="final_volume_pref_summary">Quarts, Gallons, Liter, osv.</string>
+<string name="grain_mass_units_pref">Malt måleenhed</string>
+<string name="grain_mass_units_pref_summary">Gram, Kilogram, Ounces, Pounds</string>
 <string name="water_to_grain_ratio_pref">Vand /malt forhold</string>
 
 <string name="water_to_grain_ratio_pref_summary_format">%s %s per %s (Normalt 2,5 – 3 liter pr. kg.)</string>
@@ -82,7 +88,7 @@
 
 <string name="equipment_settings">Indstillinger for udstyr</string>
 <string name="diameter_height_units_pref">Grydediameter</string>
-<string name="diameter_height_units_pref_summary">Centimeters, Inches</string>
+<string name="diameter_height_units_pref_summary">Centimeter, Inches</string>
 <string name="kettle_diameter_pref">Grydediameter</string>
 <string name="kettle_diameter_pref_summary">Bruges til volumenudregninger</string>
 <string name="false_bottom_height_pref">Højde af falsk bund</string>
@@ -94,7 +100,7 @@
 <string name="evaporation_rate_pref_summary">Normalt mellem 5 og 15%</string>
 <string name="correct_for_expansion_pref">Korrektion for varmeudvidelse</string>
 
-<string name="correct_for_expansion_pref_summary">Brug værdien fra køletabet til at kompensere det beregnede volume for varmeudvidelsen.</string>
+<string name="correct_for_expansion_pref_summary">Brug værdien fra køletabet til at kompensere det beregnede volumen for varmeudvidelsen.</string>
 <string name="cooling_loss_percentage_pref">Køletab</string>
 
 <string name="cooling_loss_percentage_pref_summary">Normalt 4% ved kogning og 3% ved mæskning</string>
@@ -154,14 +160,14 @@
 <string name="batch_sparge_water_to_grain_ratio_format">%s/%s</string> 
 
 <!-- Boil Off -->
-<string name="boil_off">Kogt væk</string>
+<string name="boil_off">Væsketab</string>
 <string name="starting_volume">Start volumen</string>
 <string name="ending_volume">Slut volumen</string>
 <string name="evaporation_rate">Fordampningsgrad</string>
 <string name="boil_time">Kogetid (min.)</string>
 <string name="volume_boiled_off">Kogt væk</string>
 <string name="cooling_loss_percentage">Køletab</string>
-<string name="cooling_loss_volume">Køletab volumen</string>
+<string name="cooling_loss_volume">Køletab</string>
 
 <!-- Carbonation -->
 <string name="carbonation">Karbonering</string>
@@ -176,8 +182,8 @@
 <!-- Alcohol / Attenuation -->
 <string name="alcohol_attenuation">Forgæring</string>
 <string name="alcohol_attenuation_units">Vægtfylde enhed</string>
-<string name="alcohol_attenuation_current_gravity">Nuværende vægtfylde</string>
-<string name="alcohol_attenuation_original_gravity">Oprindelig vægtfylde</string>
+<string name="alcohol_attenuation_current_gravity">Slut  vægtfylde (FG)</string>
+<string name="alcohol_attenuation_original_gravity">Start vægtfylde (FG)</string>
 <string name="alcohol_attenuation_abv">Alkohol (%vol)</string>
 <string name="alcohol_attenuation_abw">Alkohol (%vægt)</string>
 <string name="alcohol_attenuation_apparent_attenuation">Tilsyneladende forgæring</string>
@@ -192,7 +198,7 @@
 <string name="refractometer_calibrate">Kalibrering</string>
 <string name="refractometer_hydrometer_reading">Hydrometer aflæsning</string>
 <string name="refractometer_refractometer_reading">Refraktometer aflæsning</string>
-<string name="refractometer_original_gravity">Oprindelig vægtfylde</string>
+<string name="refractometer_original_gravity">Start vægtfylde (FG)</string>
 <string name="refractometer_corrected_gravity">Korrigeret vægtfylde</string>
 <string name="refractometer_percent_abv">%vol</string>
 <string name="refractometer_percent_abw">%vægt</string>
@@ -212,9 +218,9 @@
 <string name="volume_desired">Ønsket volumen</string>
 
 <!-- Unit Conversion -->
-<string name="unit_conversion">Enhedskonverting</string>
+<string name="unit_conversion">Enhedskonvertering</string>
 <string name="unit_converter_format">%02.4f</string>
-<string name="unit_type_prompt">Enhedskonverting</string>
+<string name="unit_type_prompt">Enhedskonvertering</string>
 <string name="unit_distance_length">Længde</string>
 <string name="unit_mass_weight">Vægt</string>
 <string name="unit_gravity">Vægtfylde</string>
@@ -255,7 +261,7 @@
 <string name="mass_conversions">Vægt konvertering</string>
 <string name="gram">Gram</string>
 <string name="gram_abbr">g</string>
-<string name="gram_plural">Grams</string>
+<string name="gram_plural">Gram</string>
 <string name="kilogram">Kilo</string> 
 <string name="kilogram_abbr">kg</string>
 <string name="kilogram_plural">Kilo</string>
@@ -269,16 +275,16 @@
 <string name="volume_conversions">Volume konvertering</string>
 <string name="milliliter">Milliliter</string>
 <string name="milliliter_abbr">mL</string>
-<string name="milliliter_plural">Milliliters</string>
+<string name="milliliter_plural">Milliliter</string>
 <string name="liter">Liter</string>
 <string name="liter_abbr">L</string>
-<string name="liter_plural">Liters</string>
+<string name="liter_plural">Liter</string>
 <string name="teaspoon">Teske</string>
 <string name="teaspoon_abbr">tsk</string>
-<string name="teaspoon_plural">Spiseskeer</string>
+<string name="teaspoon_plural">Teskeer</string>
 <string name="tablespoon">Spiseske</string>
 <string name="tablespoon_abbr">spsk</string>
-<string name="tablespoon_plural">Spiseskkeer</string>
+<string name="tablespoon_plural">Spiseskeer</string>
 <string name="fluid_ounce">Fluid Ounce</string>
 <string name="fluid_ounce_abbr">fl oz</string>
 <string name="fluid_ounce_plural">Fluid Ounces</string>
@@ -303,6 +309,12 @@
 <string name="bottle_750_ml">Flaske (750 mL)</string>
 <string name="bottle_750_ml_abbr">Flaske (750 mL)</string>
 <string name="bottle_750_ml_plural">Flaske (750 mL)</string>
+<string name="bottle_330_ml">Flaske (330 mL)</string>
+<string name="bottle_330_ml_abbr">Flaske (330 mL)</string>
+<string name="bottle_330_ml_plural">Flaske (330 mL)</string>
+<string name="bottle_500_ml">Flaske (500 mL)</string>
+<string name="bottle_500_ml_abbr">Flaske (500 mL)</string>
+<string name="bottle_500_ml_plural">Flaske (500 mL)</string>
 <string name="quart">Quart</string>
 <string name="quart_abbr">qt</string>
 <string name="quart_plural">Quarts</string>
@@ -318,7 +330,7 @@
 <string name="inch_plural">Inches</string>
 <string name="centimeter">Centimeter</string>
 <string name="centimeter_abbr">cm</string>
-<string name="centimeter_plural">Centimeters</string>
+<string name="centimeter_plural">Centimeter</string>
 
 <!-- Pressure Conversion -->
 <string name="psi">Pounds per Square Inch</string> 
@@ -341,7 +353,7 @@
 <string name="crash_report_dialog_ok">Ja, jeg vil gerne hjælpe!</string>
 <string name="crash_report_dialog_cancel">Nej</string>
 <string name="eula_title">EULA</string>
-<string name="eula_accept">Accepterer</string>
+<string name="eula_accept">Accepter</string>
 <string name="eula_refuse">Nej tak</string>
 <string name="beg_for_review_title">Skriv venligst en kommentar</string>
 <string name="beg_for_review_ok">Lad os så brygge!</string>

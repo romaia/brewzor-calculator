@@ -19,52 +19,43 @@
     along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-					android:orientation="vertical"
-				  android:layout_width="fill_parent"
-				  android:layout_height="fill_parent"
-				  android:gravity="center_horizontal">
+<LinearLayout	xmlns:android="http://schemas.android.com/apk/res/android"
+				style="@style/portrait_layout"
+				>
 	
-	    <TextView android:id="@+id/calculatorName"
-	              android:text="@string/unit_conversion"
-	              style="@style/calculatorNameStyle" />
-
-		<Spinner 	android:id="@+id/unit_type_spinner"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:entries="@array/unitTypesList"
-					android:entryValues="@array/unitTypesIdList"
-					android:drawSelectorOnTop="true" />
+	<Spinner 	android:id="@+id/unit_type_spinner"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:entries="@array/unitTypesList"
+				android:entryValues="@array/unitTypesIdList"
+				android:drawSelectorOnTop="true" 
+				/>
 						
 	<LinearLayout android:orientation="horizontal"
 				  android:layout_width="fill_parent"
 				  android:layout_height="wrap_content"
-				  android:gravity="center_vertical">
+				  android:gravity="center_vertical"
+				  >
 						
-
-		<EditText android:id="@+id/unit_entry" 
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					style="@style/doubleUnitEntryWideStyle" />
+		<EditText 	android:id="@+id/unit_entry" 
+					style="@style/decimal_entry" 
+					android:layout_width="0px"
+					android:layout_weight=".25"
+					/>
 					
 		<Spinner 	android:id="@+id/unit_spinner"
-					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
+					android:layout_width="0px"
+					android:layout_weight=".75"
 					android:drawSelectorOnTop="true" 
-					android:entries="@array/unitTypesList"/>
+					android:entries="@array/unitTypesList"
+					/>
+	
 	</LinearLayout>
 						
-							
-	<ListView
-    android:id="@+id/android:list"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_weight="1"
-    />
-<TextView
-    android:id="@+id/android:empty"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:text="@string/no_list_items"/>					
+	<ListView	android:id="@+id/android:list"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				/>
 
-	</LinearLayout>
+</LinearLayout>

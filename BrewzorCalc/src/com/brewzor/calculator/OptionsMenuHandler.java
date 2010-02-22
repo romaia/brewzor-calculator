@@ -20,6 +20,7 @@
 package com.brewzor.calculator;
 
 import com.brewzor.calculator.R;
+import com.brewzor.recipemanager.CreateRecipeActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -31,6 +32,9 @@ public class OptionsMenuHandler {
 	/* Handles item selections */
 	static public boolean showMenu(Activity activity, MenuItem item) {
 	    switch (item.getItemId()) {
+	    case R.id.options_menu_add:
+	    	activity.startActivity(new Intent(activity.getBaseContext(), CreateRecipeActivity.class));
+	        return true;
 	    case R.id.options_menu_settings:
 	    	activity.startActivity(new Intent(activity.getBaseContext(), BrewzorPreferencesActivity.class));
 	        return true;
@@ -49,4 +53,11 @@ public class OptionsMenuHandler {
 	    inflater.inflate(R.menu.options_menu, menu);
 	    return true;
 	}
+
+	static public boolean createTimerMenu(Activity activity, Menu menu) {
+	    MenuInflater inflater = activity.getMenuInflater();
+	    inflater.inflate(R.menu.timer_menu, menu);
+	    return true;
+	}
+
 }

@@ -19,52 +19,68 @@
     along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:gravity="center_horizontal">
+<LinearLayout 	xmlns:android="http://schemas.android.com/apk/res/android"
+				style="@style/portrait_layout"
+				>
 
-	<TextView android:id="@+id/calculatorName" android:text="@string/gravity_correction"
-		style="@style/calculatorNameStyle" />
-
-	<TableLayout android:layout_width="wrap_content"
-		android:layout_height="wrap_content">
+	<TableLayout 	style="@style/entry_table"
+					>
 
 		<TableRow>
 
-			<TextView style="@style/converterLargeTextStyle"
-				android:text="@string/current_gravity" />
+			<TextView 	style="@style/label_text"
+						android:text="@string/current_gravity" 
+						/>
 
-			<EditText android:id="@+id/currentGravityEntry" style="@style/doubleUnitEntryStyle" />
+			<EditText 	android:id="@+id/currentGravityEntry" 
+						style="@style/decimal_entry" 
+						/>
 
-			<TextView android:id="@+id/currentGravityUnitType" style="@style/converterLargeTextStyle" />
+			<TextView 	android:id="@+id/currentGravityUnitType" 
+						style="@style/label_text" 
+						/>
 
 		</TableRow>
 
 		<TableRow>
 
-			<TextView style="@style/converterLargeTextStyle"
-				android:text="@string/desired_gravity" />
+			<TextView 	style="@style/label_text"
+						android:text="@string/desired_gravity" 
+						/>
 
-			<EditText android:id="@+id/desiredGravityEntry" style="@style/doubleUnitEntryStyle" />
+			<EditText 	android:id="@+id/desiredGravityEntry" 
+						style="@style/decimal_entry" 
+						/>
 
-			<TextView android:id="@+id/desiredGravityUnitType" style="@style/converterLargeTextStyle" />
+			<TextView 	android:id="@+id/desiredGravityUnitType" 
+						style="@style/label_text" 
+						/>
 
 		</TableRow>
 
 		<TableRow>
 
-			<TextView style="@style/converterLargeTextStyle"
-				android:text="@string/wort_volume" />
+			<TextView 	style="@style/label_text"
+						android:text="@string/wort_volume" 
+						/>
 
-			<EditText android:id="@+id/currentVolumeEntry" style="@style/doubleUnitEntryStyle" />
+			<EditText 	android:id="@+id/currentVolumeEntry" 
+						style="@style/decimal_entry" 
+						/>
 
-			<TextView android:id="@+id/currentVolumeUnitType" style="@style/converterLargeTextStyle" />
+			<TextView 	android:id="@+id/currentVolumeUnitType" 
+						style="@style/label_text" 
+						/>
 
 		</TableRow>
 
 	</TableLayout>
 
-	<TextView android:id="@+id/gravityCorrectionDescription"
-		style="@style/gravityCorrectionDescriptionStyle" />
+	<TextView	android:id="@+id/gravityCorrectionDescription"
+				android:layout_height="fill_parent"
+				android:layout_width="fill_parent"
+				android:gravity="center"
+				style="@style/small_result" 
+				/>
 
 </LinearLayout>

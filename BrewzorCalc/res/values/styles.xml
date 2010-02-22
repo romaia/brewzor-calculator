@@ -22,19 +22,30 @@
 <resources>
 	
 	<!-- Styles -->
-
-	<style name="calculatorNameStyle">
-		<item name="android:textSize">24sp</item>
-		<item name="android:textStyle">bold</item>
-		<item name="android:background">@color/blue</item>
-		<item name="android:padding">5dp</item>
-		<item name="android:gravity">center</item>
-		<item name="android:layout_marginBottom">10dp</item>
-		<item name="android:layout_width">fill_parent</item>
-		<item name="android:layout_height">wrap_content</item>
-	</style>
 	
-	<style name="numberUnitEntryStyle">
+	<style name="label_text">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:padding">5dp</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:maxLines">2</item>
+	</style>
+
+	<style name="small_result" parent="@style/label_text">
+		<item name="android:textSize">20sp</item>
+		<item name="android:gravity">center</item>		
+		<item name="android:layout_gravity">center</item>
+		<item name="android:maxLines">6</item>
+	</style>
+
+	<style name="large_result" parent="@style/label_text">
+		<item name="android:textSize">60sp</item>
+		<item name="android:gravity">center</item>		
+		<item name="android:layout_gravity">center</item>
+	</style>
+
+	<style name="number_entry">
 		<item name="android:minWidth">70dp</item> 
 		<item name="android:maxWidth">70dp</item> 
 		<item name="android:padding">5dp</item>
@@ -42,120 +53,111 @@
 		<item name="android:inputType">number</item>
 		<item name="android:lines">1</item>
  		<item name="android:gravity">center_vertical|right</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
 	</style>
-
-	<style name="doubleUnitEntryStyle" parent="@style/numberUnitEntryStyle">
+	
+	<style name="decimal_entry" parent="@style/number_entry">
 		<item name="android:inputType">number|numberDecimal</item>
 		<item name="android:numeric">decimal</item>
 		<item name="android:hint">@string/double_default</item>
 		<item name="android:text">@string/double_default</item>
 	</style>
 	
-	<style name="doubleUnitEntryWideStyle" parent="@style/numberUnitEntryStyle">
-		<item name="android:minWidth">100dp</item> 
-		<item name="android:maxWidth">100dp</item> 
-		<item name="android:inputType">number|numberDecimal</item>
-		<item name="android:numeric">decimal</item>
-		<item name="android:hint">@string/double_default</item>
-		<item name="android:text">@string/double_default</item>
-	</style>
-	
-	<style name="sgUnitEntryStyle" parent="@style/numberUnitEntryStyle">
-		<item name="android:inputType">number|numberDecimal</item>
-		<item name="android:numeric">decimal</item> 		
-		<item name="android:hint">@string/sg_default</item>
-		<item name="android:text">@string/sg_default</item>
-	</style>
-	
-	<style name="integerUnitEntryStyle" parent="@style/numberUnitEntryStyle">
+	<style name="integer_entry" parent="@style/number_entry">
 		<item name="android:inputType">number</item>
 		<item name="android:numeric">integer</item> 		
 		<item name="android:hint">@string/integer_default</item>
 		<item name="android:text">@string/integer_default</item>
 	</style>
 
-	<style name="viewStyle">
-		<item name="android:padding">10dp</item>	
+	<style name="sg_entry" parent="@style/number_entry">
+		<item name="android:inputType">number|numberDecimal</item>
+		<item name="android:numeric">decimal</item> 		
+		<item name="android:hint">@string/sg_default</item>
+		<item name="android:text">@string/sg_default</item>
+	</style>
+	
+	<style name="portrait_layout">
+		<item name="android:orientation">vertical</item>
+		<item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:gravity">center_horizontal</item>
+		<item name="android:padding">5dip</item>
+	</style>
+
+	<style name="landscape_layout">
+		<item name="android:orientation">horizontal</item>
+		<item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:padding">5dip</item>
+	</style>
+
+	<style name="entry_table">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:shrinkColumns">0</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+		
+	<!-- Styles -->
+
+	<style name="timer_base">
+		<item name="android:textSize">12dp</item>
+		<item name="android:padding">3dp</item>	
 		<item name="android:layout_width">wrap_content</item>
 		<item name="android:layout_height">wrap_content</item>
 	</style>
 
-	<style name="converterSmallTextStyle" parent="@style/viewStyle">
-		<item name="android:textSize">14sp</item>
-		<item name="android:padding">5dp</item>
+	<style name="timer_duration_label" parent="@style/timer_base">
+		<item name="android:textStyle">bold</item>
 	</style>
 
-	<style name="converterLargeTextStyle" parent="@style/viewStyle">
-		<item name="android:textSize">20sp</item>
-		<item name="android:padding">5dp</item>
+	<style name="timer_list_item" parent="@style/timer_base">
 	</style>
 
-	<style name="converterNumberTextStyle" parent="@style/viewStyle">
-		<item name="android:textSize">20sp</item>
-		<item name="android:padding">5dp</item>
-		<item name="android:gravity">center_vertical|right</item>
-		<item name="android:text">@string/double_default</item>
+	<style name="timer_header_label" parent="@style/timer_base">
+		<item name="android:padding">0dp</item>	
 	</style>
 
-	<style name="hydrometerCorrectionResultStyle" parent="@style/viewStyle">
-		<item name="android:textSize">75sp</item>
-		<item name="android:padding">5dp</item>
+	<style name="timer_decimal_entry">
+		<item name="android:paddingLeft">5dp</item>
+		<item name="android:minWidth">70dp</item> 
+		<item name="android:maxWidth">70dp</item> 
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:inputType">number|numberDecimal</item>
+		<item name="android:numeric">decimal</item>
+		<item name="android:lines">1</item>
+ 		<item name="android:gravity">center_vertical</item>
+
+	</style>
+	
+	<style name="timer_duration_entry">
+		<item name="android:paddingLeft">5dp</item>
+		<item name="android:minWidth">70dp</item> 
+		<item name="android:maxWidth">70dp</item> 
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:inputType">number</item>
+		<item name="android:lines">1</item>
+ 		<item name="android:gravity">center_vertical</item>
+
+	</style>
+	
+	<style name="timer_name_entry">
+		<item name="android:paddingLeft">5dp</item>
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:lines">1</item>
+ 		<item name="android:gravity">center_vertical</item>
+	</style>
+	
+	<style name="timer_main" parent="@style/timer_base">
+		<item name="android:textSize">60sp</item>
 		<item name="android:gravity">center</item>		
-	</style>
-	
-	<style name="hydrometerCorrectionDescriptionStyle" parent="@style/viewStyle">
-		<item name="android:textSize">20sp</item>
-		<item name="android:gravity">center</item>
-		<item name="android:padding">5dp</item>
-	</style>
-
-	<style name="cylinderResultStyle" parent="@style/viewStyle">
-		<item name="android:textSize">75sp</item>
-		<item name="android:padding">5dp</item>
-		<item name="android:gravity">center</item>		
-	</style>
-	
-	<style name="cylinderEntryStyle" parent="@style/viewStyle">
-		<item name="android:textSize">30sp</item>
-		<item name="android:gravity">center</item>
-		<item name="android:padding">5dp</item>
-	</style>
-	
-	<style name="gravityCorrectionDescriptionStyle" parent="@style/viewStyle">
-		<item name="android:textSize">30sp</item>
+		<item name="android:layout_gravity">center</item>		
 		<item name="android:layout_width">fill_parent</item>
 		<item name="android:layout_height">fill_parent</item>
-		<item name="android:gravity">center</item>
-	</style>
-	
-	<style name="gravityCorrectionDescriptionSmallStyle" parent="@style/gravityCorrectionDescriptionStyle">
-		<item name="android:textSize">20dp</item>
-	</style>
-	
-	<style name="srikeWaterDescriptionStyle" parent="@style/viewStyle">
-		<item name="android:textSize">75sp</item>
-		<item name="android:gravity">center</item>
-		<item name="android:layout_width">fill_parent</item>
-		<item name="android:layout_height">fill_parent</item>
-	</style>
-	
-	<style name="srikeWaterDescriptionSmallStyle" parent="@style/srikeWaterDescriptionStyle">
-		<item name="android:textSize">40dp</item>
-	</style>
-	
-	<style name="calculatorEntryTableStyle">
-		<item name="android:paddingTop">25dp</item>
-		<item name="android:paddingLeft">5dp</item>
-		<item name="android:paddingRight">5dp</item>
-		<item name="android:paddingBottom">5dp</item>
-	</style>
-	
-	<style name="calculatorDisplayTableStyle">
-		<item name="android:paddingTop">25dp</item>
-		<item name="android:paddingLeft">5dp</item>
-		<item name="android:paddingRight">5dp</item>
-		<item name="android:paddingBottom">5dp</item>
-		<item name="android:gravity">center</item>
 	</style>
 
 </resources>

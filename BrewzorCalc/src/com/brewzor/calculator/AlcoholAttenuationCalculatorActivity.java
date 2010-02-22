@@ -1,5 +1,6 @@
 package com.brewzor.calculator;
 
+import com.brewzor.calculator.R;
 import com.brewzor.converters.Gravity;
 
 import android.app.Activity;
@@ -41,6 +42,7 @@ public class AlcoholAttenuationCalculatorActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getString(R.string.window_title_format, getString(R.string.app_name), getString(R.string.alcohol_attenuation)));
         setContentView(R.layout.calculator_alcohol_attenuation);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());

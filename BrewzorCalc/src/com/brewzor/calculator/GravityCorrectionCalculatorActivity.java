@@ -19,8 +19,8 @@
 */
 package com.brewzor.calculator;
 
-import com.brewzor.calculator.R;
 import com.brewzor.calculator.preferences.Preferences;
+import com.brewzor.calculator.R;
 import com.brewzor.converters.Gravity;
 import com.brewzor.converters.Mass;
 import com.brewzor.converters.Volume;
@@ -63,6 +63,7 @@ public class GravityCorrectionCalculatorActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getString(R.string.window_title_format, getString(R.string.app_name), getString(R.string.gravity_correction)));
         setContentView(R.layout.calculator_gravity_correction);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());

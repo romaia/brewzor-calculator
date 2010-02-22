@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ 	          android:orientation="vertical"
+			  android:layout_width="fill_parent" 
+			  android:layout_height="fill_parent"
+			  android:gravity="center_horizontal">
+	
+    <TextView android:id="@+id/calculatorName"
+              android:text="@string/boil_timer"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+			  style="@style/calculatorNameStyle" />
+	
+	<LinearLayout android:orientation="horizontal"
+				  android:layout_width="fill_parent" 
+				  android:layout_height="wrap_content">	
+			
+		<LinearLayout android:orientation="vertical"
+					  android:layout_height="wrap_content"
+					  android:layout_width="fill_parent" 
+					  android:layout_weight="1"
+					  android:layout_gravity="left">
+
+		    <TextView style="@style/timer_header_label" 
+					  android:text="Start Time"		
+					  android:textStyle="bold"				  
+					  android:gravity="left"/>
+		
+		    <TextView android:id="@+id/start_time"
+		              android:layout_width="wrap_content"
+		              android:layout_height="wrap_content"
+					  style="@style/timer_header_label" 
+					  android:text="00:00"
+					  android:gravity="left"/>
+		
+		</LinearLayout>		
+
+		<LinearLayout android:orientation="vertical"
+					  android:layout_height="wrap_content"
+					  android:layout_width="fill_parent" 
+					  android:layout_weight="1"
+					  android:layout_gravity="center"
+					  android:gravity="center">
+
+		    <TextView style="@style/timer_header_label" 
+					  android:text="Next Alarm"		
+					  android:textStyle="bold"				  
+					  android:gravity="center"/>
+		
+		    <TextView android:id="@+id/next_alarm_time"
+		              android:layout_width="wrap_content"
+		              android:layout_height="wrap_content"
+					  style="@style/timer_header_label" 
+					  android:text="00:00"
+					  android:gravity="center"/>
+		
+		</LinearLayout>		
+
+		<LinearLayout android:orientation="vertical"
+					  android:layout_height="wrap_content"
+					  android:layout_width="fill_parent" 
+					  android:layout_weight="1"
+					  android:layout_gravity="right">
+
+		    <TextView style="@style/timer_header_label" 
+					  android:layout_width="fill_parent"
+					  android:textStyle="bold"				  
+					  android:text="Total Time"
+					  android:gravity="right"/>
+	
+		    <TextView android:id="@+id/total_time"
+		              android:layout_height="wrap_content"
+					  android:layout_width="fill_parent"
+					  style="@style/timer_header_label" 
+					  android:text="00:00"
+					  android:gravity="right"/>
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<LinearLayout android:orientation="horizontal"
+				  android:layout_height="wrap_content"
+				  android:layout_width="fill_parent"
+				  android:gravity="center" 
+				  android:layout_marginTop="10dip">
+
+	    <TextView android:id="@+id/timer"
+	              android_layout_gravity="center"
+				  android:layout_weight="1"
+				  style="@style/timer_main" 
+				  android:gravity="center"/>
+			  
+		<LinearLayout android:orientation="vertical"
+					  android:layout_height="wrap_content"
+					  android:layout_width="wrap_content" 
+					  android:layout_weight="1"
+					  android:layout_gravity="right"
+					  android:visibility="gone" >
+	
+			<Button android:id="@+id/startPauseButton"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:width="175dip"
+					android:text="Start" />
+	 
+			<Button android:id="@+id/resetButton"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:width="175dip"
+					android:text="Reset" />
+		</LinearLayout>
+		
+	</LinearLayout>
+
+	<ListView	android:id="@+id/android:list"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+
+	<TextView	android:id="@+id/android:empty"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:text="@string/no_list_items" />
+		
+</LinearLayout>

@@ -19,8 +19,8 @@
 */
 package com.brewzor.converters;
 
-import com.brewzor.calculator.R;
 import com.brewzor.calculator.preferences.Preferences;
+import com.brewzor.calculator.R;
 import com.brewzor.utils.NumberFormat;
 
 import android.content.Context;
