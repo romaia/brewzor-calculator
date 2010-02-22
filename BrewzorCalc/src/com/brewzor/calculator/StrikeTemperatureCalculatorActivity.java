@@ -168,8 +168,14 @@ public class StrikeTemperatureCalculatorActivity extends Activity {
 	private void getPrefs() {
 
         waterToGrainRatio = NumberFormat.parseDouble(prefs.getString(Preferences.BATCH_WATER_TO_GRAIN_RATIO, "0"), 0);
-        if (waterToGrainRatio > 0) strikeWaterVolumeEntry.setEnabled(false);
-        else strikeWaterVolumeEntry.setEnabled(true);
+        if (waterToGrainRatio > 0) {
+        	strikeWaterVolumeEntry.setEnabled(false);
+        	strikeWaterVolumeEntry.setFocusable(false);
+        }
+        else {
+        	strikeWaterVolumeEntry.setEnabled(true);
+        	strikeWaterVolumeEntry.setFocusable(true);
+        }
         
         temperatureType = grainTemperature.typeFromPref(Preferences.GLOBAL_TEMPERATURE_UNIT, Temperature.Unit.FAHRENHEIT);        
 
