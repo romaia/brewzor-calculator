@@ -39,6 +39,10 @@ import java.util.Arrays;
 
 import com.brewzor.calculator.preferences.Preferences;
 import com.brewzor.calculator.R;
+import com.brewzor.recipemanager.BoilAdditionsActivity;
+import com.brewzor.recipemanager.CreateRecipeActivity;
+import com.brewzor.recipemanager.FermentablesActivity;
+import com.brewzor.recipemanager.MashProfilesActivity;
 import com.brewzor.utils.ErrorReporter;
 
 // http://androidblogger.blogspot.com/2009/12/how-to-improve-your-application-crash.html
@@ -111,21 +115,27 @@ public class BrewzorActivity extends ListActivity {
 	protected void launchCalculator(int calculatorId) {
 		Intent i;
 		switch (calculatorId) {
-			//case 0: i = new Intent(this, CreateRecipeActivity.class); break;
-			//case 1: i = new Intent(this, BrewzorTimer.class); break;
-			case 0: i = new Intent(this, StrikeTemperatureCalculatorActivity.class); break;
-			case 1: i = new Intent(this, GravityCorrectionCalculatorActivity.class); break;
-			case 2: i = new Intent(this, MashInfusionCalculatorActivity.class); break;
-			case 3: i = new Intent(this, DecoctionCalculatorActivity.class); break;
-			case 4: i = new Intent(this, BatchSpargeCalculatorActivity.class); break;			
-			case 5: i = new Intent(this, BoilOffCalculatorActivity.class); break;
-			case 6: i = new Intent(this, CylinderVolumeCalculatorActivity.class); break;
-			case 7: i = new Intent(this, CylinderHeightCalculatorActivity.class); break;
-			case 8: i = new Intent(this, CarbonationCalculatorActivity.class); break;
-			case 9: i = new Intent(this, HydrometerCorrectionCalculatorActivity.class); break;
-			case 10: i = new Intent(this, AlcoholAttenuationCalculatorActivity.class); break;
-			case 11: i = new Intent(this, RefractometerCalculatorActivity.class); break;
-			case 12: i = new Intent(this, UnitConverterActivity.class); break;
+			case 0: i = new Intent(this, CreateRecipeActivity.class); break;
+
+			case 1: i = new Intent(this, FermentablesActivity.class); break;
+			case 2: i = new Intent(this, MashProfilesActivity.class); break;
+			case 3: i = new Intent(this, BoilAdditionsActivity.class); break;
+			
+			//case 1: i = new Intent(this, BrewActivity.class); break;
+			
+			case 4: i = new Intent(this, StrikeTemperatureCalculatorActivity.class); break;
+			case 5: i = new Intent(this, GravityCorrectionCalculatorActivity.class); break;
+			case 6: i = new Intent(this, MashInfusionCalculatorActivity.class); break;
+			case 7: i = new Intent(this, DecoctionCalculatorActivity.class); break;
+			case 8: i = new Intent(this, BatchSpargeCalculatorActivity.class); break;			
+			case 9: i = new Intent(this, BoilOffCalculatorActivity.class); break;
+			case 10: i = new Intent(this, CylinderVolumeCalculatorActivity.class); break;
+			case 11: i = new Intent(this, CylinderHeightCalculatorActivity.class); break;
+			case 12: i = new Intent(this, CarbonationCalculatorActivity.class); break;
+			case 13: i = new Intent(this, HydrometerCorrectionCalculatorActivity.class); break;
+			case 14: i = new Intent(this, AlcoholAttenuationCalculatorActivity.class); break;
+			case 15: i = new Intent(this, RefractometerCalculatorActivity.class); break;
+			case 16: i = new Intent(this, UnitConverterActivity.class); break;
 			default: i = new Intent(this, BrewzorPreferencesActivity.class);
 		}
 		startActivity(i);

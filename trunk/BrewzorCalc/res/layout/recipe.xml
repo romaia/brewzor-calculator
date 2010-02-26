@@ -19,19 +19,10 @@
     along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
- 	          android:orientation="vertical"
-			  android:layout_width="fill_parent" 
-			  android:layout_height="fill_parent"
-			  android:gravity="center_horizontal">
+<LinearLayout	xmlns:android="http://schemas.android.com/apk/res/android"
+ 				style="@style/portrait_layout"
+				>
 	
-	<!--  
-    <TextView android:id="@+id/calculatorName"
-              android:text="@string/recipe"
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-			  style="@style/calculatorNameStyle" />
-	-->
 	<ScrollView android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
@@ -39,7 +30,8 @@
 			
 		<LinearLayout android:orientation="vertical"
 					  android:layout_width="fill_parent" 
-					  android:layout_height="fill_parent">
+					  android:layout_height="fill_parent"
+					  >
 		
 			<LinearLayout	android:orientation="horizontal"
 							android:layout_width="fill_parent" 
@@ -48,7 +40,7 @@
 							>
 		
 				<LinearLayout android:orientation="vertical"
-							  android:layout_width="wrap_content" 
+							  android:layout_width="0px" 
 							  android:layout_height="wrap_content"
 							  android:layout_weight="1"
 							  >
@@ -68,9 +60,8 @@
 				</LinearLayout>
 		
 				<LinearLayout	android:orientation="vertical"
-								android:layout_width="0px" 
+								android:layout_width="wrap_content" 
 								android:layout_height="wrap_content"
-								android:layout_weight="1"
 								>
 				
 				    <TextView android:text="@string/recipe_boil_duration"

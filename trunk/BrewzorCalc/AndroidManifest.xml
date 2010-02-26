@@ -41,6 +41,15 @@
  		<activity android:name="com.brewzor.recipemanager.CreateRecipeActivity" 
 			android:windowSoftInputMode="adjustPan"></activity>
 
+ 		<activity android:name="com.brewzor.recipemanager.FermentablesActivity" 
+			android:windowSoftInputMode="adjustPan"></activity>
+
+ 		<activity android:name="com.brewzor.recipemanager.MashProfilesActivity" 
+			android:windowSoftInputMode="adjustPan"></activity>
+
+ 		<activity android:name="com.brewzor.recipemanager.BoilAdditionsActivity" 
+			android:windowSoftInputMode="adjustPan"></activity>
+
  		<activity android:name="com.brewzor.recipemanager.BrewzorTimer" 
 			android:windowSoftInputMode="adjustPan"></activity>
 

@@ -68,12 +68,13 @@ public class CreateRecipeActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getString(R.string.window_title_format, getString(R.string.app_name), getString(R.string.recipe_new_recipe)));
         setContentView(R.layout.recipe);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
         db = new DBAdapter(this);
-        db.open();
+        db.openDataBase();
         
         temperatureBoiling = new Temperature(100.0, Temperature.Unit.CELSIUS, getBaseContext(), prefs);
         temperatureBoiling.convert(temperatureUnit);

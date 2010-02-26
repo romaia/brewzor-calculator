@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<RelativeLayout	xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="2dp"
+				>
+				
+		<TextView 	android:id="@+id/color"
+					android:layout_width="35dp"
+					android:layout_height="35dp"
+					android:layout_alignParentTop="true"
+        			android:layout_alignParentBottom="true"
+        			android:layout_alignParentRight="true"
+					android:layout_centerVertical="true"
+        			android:layout_marginLeft="6dp"
+        			android:layout_marginTop="2dp"
+        			android:layout_marginBottom="2dp"
+        			android:layout_marginRight="0dp"
+					/>
+
+
+		<TextView	android:id="@+id/name"
+					style="@style/label_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/color"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:gravity="center_vertical"
+        android:padding="0px"
+					/>
+
+		<TextView	android:id="@+id/manufacturer"
+					style="@style/small_text"
+        android:layout_height="wrap_content" 
+					android:layout_toLeftOf="@id/color"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+					android:singleLine="true" 
+        android:ellipsize="marquee"
+        android:layout_below="@id/name"
+					/>
+<!-- 
+ 		<TextView	android:id="@+id/manufacturer"
+					style="@style/small_text"
+					android:layout_below="@id/name"
+					android:paddingLeft="5dp"
+					android:paddingRight="5dp"
+					android:singleLine="true" 
+					android:padding="2dp"
+					/>
+		<TextView	android:id="@+id/potential"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_toRightOf="@id/manufacturer"
+					android:layout_below="@id/name"
+					android:layout_alignParentBottom="true"
+					android:layout_centerHorizontal="true"
+					android:paddingRight="5dp"
+					style="@style/small_text"
+					android:singleLine="true" 
+					android:padding="2dp"
+					/>
+
+		<TextView	android:id="@+id/color"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/name"
+					android:layout_toRightOf="@id/potential"
+					android:layout_alignParentBottom="true"
+					android:layout_gravity="right|bottom"
+					android:paddingRight="5dp"
+					style="@style/small_text"
+					android:padding="2dp"
+					android:singleLine="true" 
+					/>
+
+-->
+</RelativeLayout>
