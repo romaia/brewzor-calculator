@@ -47,6 +47,17 @@
 	<string name="options_menu_help">Help</string>
 	<string name="options_menu_about">About</string>
 
+
+	<string name="fermentables">Fermentables</string>
+	
+	<string name="fermentables_edit">Edit</string>
+	<string name="fermentables_delete">Delete</string>
+	<string name="fermentables_item_deleted">Item deleted</string>
+	<string name="fermentables_error_item_deleted">Database delete error</string>
+	
+	<string name="mash_profiles">Mash Profiles</string>
+	<string name="boil_additions">Boil Additions</string>
+
 	<!-- Create Brew Schedule -->
 	
 	<string name="mash_step_infusion">Infusion</string>
@@ -405,6 +416,16 @@
 	<string name="celsius_abbr">°C</string>
 	<string name="celsius_plural">Celsius</string>
 	
+	<!-- Color Conversion -->
+
+	<string name="srm">SRM</string>
+	<string name="srm_abbr">SRM</string>
+	<string name="srm_plural">SRM</string>
+	
+	<string name="ebc">EBC</string>
+	<string name="ebc_abbr">EBC</string>
+	<string name="ebc_plural">EBC</string>
+	
 	<!-- Mass Conversion -->
 
 	<string name="mass_conversions">Mass Conversions</string>
@@ -523,6 +544,16 @@
 	<string name="atmosphere">Atmosphere</string>
 	<string name="atmosphere_abbr">atm</string>
 	<string name="atmosphere_plural">Atmospheres</string>
+
+	<!-- Diastatic Power Units -->
+
+	<string name="lintner">Lintner</string>
+	<string name="lintner_abbr">°L</string>
+	<string name="lintner_plural">Lintner</string>
+
+	<string name="windisch_kolbach">Windisch-Kolbach</string>
+	<string name="windisch_kolbach_abbr">°WK</string>
+	<string name="windisch_kolbach_plural">Windisch-Kolbach</string>
 
 	<!-- GUI parameters -->
 

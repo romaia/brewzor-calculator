@@ -22,24 +22,37 @@
 <resources>
 	
 	<!-- Styles -->
-	
-	<style name="label_text">
+
+	<style name="plain_text">
 		<item name="android:layout_width">wrap_content</item>
 		<item name="android:layout_height">wrap_content</item>
-		<item name="android:textSize">14sp</item>
+		<item name="android:textSize">16sp</item>
 		<item name="android:padding">5dp</item>
 		<item name="android:layout_gravity">center_vertical</item>
 		<item name="android:maxLines">2</item>
 	</style>
 
-	<style name="small_result" parent="@style/label_text">
-		<item name="android:textSize">20sp</item>
+	<style name="small_text">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textSize">12sp</item>
+		<item name="android:padding">0dp</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:maxLines">1</item>
+	</style>
+	
+	<style name="label_text" parent="@style/plain_text">
+		<item name="android:textStyle">bold</item>
+	</style>
+
+	<style name="small_result" parent="@style/plain_text">
+		<item name="android:textSize">22sp</item>
 		<item name="android:gravity">center</item>		
 		<item name="android:layout_gravity">center</item>
 		<item name="android:maxLines">6</item>
 	</style>
 
-	<style name="large_result" parent="@style/label_text">
+	<style name="large_result" parent="@style/plain_text">
 		<item name="android:textSize">60sp</item>
 		<item name="android:gravity">center</item>		
 		<item name="android:layout_gravity">center</item>

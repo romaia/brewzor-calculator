@@ -1,10 +1,16 @@
 package com.brewzor.recipemanager;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
@@ -13,7 +19,7 @@ public class DBAdapter {
     
     private static final String DATABASE_NAME = "brewzor";
 
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 4;
     
     private static final String TABLE_RECIPES = "recipes";
     private static final String TABLE_MASH_EVENTS = "mash_events";
@@ -33,59 +39,19 @@ public class DBAdapter {
     public static final String FIELD_PAUSE = "pause";
     
     private static final String TABLE_FERMENTABLES = "fermentables";
+    private static final String FIELD_TYPE = "type";
+    private static final String FIELD_POTENTIAL = "potential";
+    private static final String FIELD_YIELD = "yield";
+    private static final String FIELD_COARSE_FINE = "coarse_fine";
+    private static final String FIELD_MOISTURE = "moisture";
+    private static final String FIELD_COLOR = "color";
+    private static final String FIELD_DIASTATIC_POWER = "diastatic_power";
+    private static final String FIELD_PROTEIN = "protein";
+    private static final String FIELD_MAX_IN_BATCH = "max_in_batch";    
+    private static final String FIELD_ADD_AFTER_BOIL = "add_after_boil";
+    private static final String FIELD_MUST_MASH = "must_mash";
+    private static String DATABASE_PATH = "/data/data/com.brewzor.calculator/databases/";
     
-    private static final String DATABASE_FERMENTABLES_CREATE = 
-    	"create table if not exists fermentables ("
-    	+ "_id integer primary key autoincrement, "
-    	+ "name text not null, "
-    	+ "type text not null, "
-    	+ "potential float not null, "
-    	+ "yield float float not null,"
-    	+ "coarse_fine float not null, "
-    	+ "moisture float not null, "
-    	+ "color float not null, "
-    	+ "diastatic_power float not null, "
-    	+ "protein float not null, "
-    	+ "max_in_batch float not null, "
-    	+ "add_after_boil integer not null, "
-    	+ "must_mash integer not null "
-    	+ ");";
-    
-    private static final String DATABASE_RECIPES_CREATE =
-        "create table if not exists recipes ("
-    	+ "_id integer primary key autoincrement, "
-        + "name text not null, "
-        + "boil_time integer not null, "
-        + "start_time integer, "
-        + "paused_time integer, "
-        + "running integer "
-        + ");";
-
-//    private static final String DATABASE_FERMENTABLE_ADDITIONS = 
-    
-    private static final String DATABASE_MASH_EVENTS_CREATE =
-        "create table if not exists mash_events ("
-    	+ "_id integer primary key autoincrement, "
-        + "schedule_id integer not null, "
-        + "step_type text not null, "
-        + "water_to_grain_ratio float not null, "
-        + "duration integer not null, "
-        + "temperature integer not null, "
-        + "temperature_unit text not null, "
-        + "volume_unit text not null, "
-        + "mass_unit text not null, "
-        + "description text"
-        + ");";
-    
-    private static final String DATABASE_BOIL_EVENTS_CREATE =
-        "create table if not exists boil_events ("
-    	+ "_id integer primary key autoincrement, "
-        + "schedule_id integer not null, "
-        + "alarm_time integer not null, "
-        + "pause boolean not null, "
-        + "description text"
-        + ");";        
-        
     private final Context context; 
     
     private DatabaseHelper DBHelper;
@@ -99,32 +65,106 @@ public class DBAdapter {
         
     private static class DatabaseHelper extends SQLiteOpenHelper 
     {
+    	private Context ctx;
+    	
         DatabaseHelper(Context context) 
         {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
+            this.ctx = context;
         }
 
         @Override
         public void onCreate(SQLiteDatabase db) 
         {
-        	Log.v("DBAdapter", "onCreate()");
-            db.execSQL(DATABASE_RECIPES_CREATE);
-        	db.execSQL(DATABASE_MASH_EVENTS_CREATE);
-        	db.execSQL(DATABASE_BOIL_EVENTS_CREATE);
+        	Log.v(TAG, "onCreate()");
+        	boolean dbExist = checkDataBase();
+            
+        	if(dbExist){
+        		//do nothing - database already exists
+        	}else{
+     
+        		//By calling this method and empty database will be created into the default system path
+                //of your application so we are gonna be able to overwrite that database with our database.
+            	this.getReadableDatabase();
+     
+            	try {
+     
+        			copyDataBase();
+     
+        		} catch (IOException e) {
+     
+            		throw new Error("Error copying database");
+     
+            	}
+        	}
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, 
         int newVersion) 
         {
-           	Log.v("DBAdapter", "onUpgrade()");
-        	db.execSQL("DROP TABLE IF EXISTS " + TABLE_RECIPES);
-        	db.execSQL("DROP TABLE IF EXISTS " + TABLE_MASH_EVENTS);
-        	db.execSQL("DROP TABLE IF EXISTS " + TABLE_BOIL_EVENTS);
-            onCreate(db);
+           	Log.v(TAG, "onUpgrade()");
         }
+     
+        /**
+         * Check if the database already exist to avoid re-copying the file each time you open the application.
+         * @return true if it exists, false if it doesn't
+         */
+        private boolean checkDataBase(){
+     
+        	SQLiteDatabase checkDB = null;
+     
+        	try{
+        		String myPath = DATABASE_PATH + DATABASE_NAME;
+        		checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+     
+        	}catch(SQLiteException e){
+     
+        		//database does't exist yet.
+     
+        	}
+     
+        	if(checkDB != null){
+     
+        		checkDB.close();
+     
+        	}
+     
+        	return checkDB != null ? true : false;
+        }
+     
+        /**
+         * Copies your database from your local assets-folder to the just created empty database in the
+         * system folder, from where it can be accessed and handled.
+         * This is done by transferring byte stream.
+         * */
+        private void copyDataBase() throws IOException{
+        	Log.v(TAG, "copyDataBase()");
+        	//Open your local db as the input stream
+        	InputStream myInput = ctx.getAssets().open(DATABASE_NAME);
+     
+        	// Path to the just created empty db
+        	String outFileName = DATABASE_PATH + DATABASE_NAME;
+     
+        	//Open the empty db as the output stream
+        	OutputStream myOutput = new FileOutputStream(outFileName);
+     
+        	//transfer bytes from the inputfile to the outputfile
+        	byte[] buffer = new byte[1024];
+        	int length;
+        	while ((length = myInput.read(buffer))>0){
+        		myOutput.write(buffer, 0, length);
+        	}
+     
+        	//Close the streams
+        	myOutput.flush();
+        	myOutput.close();
+        	myInput.close();
+     
+        }
+     
     }    
-    
+/*    
     public DBAdapter open() throws SQLException 
     {
         db = DBHelper.getWritableDatabase();
@@ -135,7 +175,22 @@ public class DBAdapter {
     {
         DBHelper.close();
     }
-
+*/
+    public void openDataBase() throws SQLException{
+        
+    	//Open the database
+        String myPath = DATABASE_PATH + DATABASE_NAME;
+    	db = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+ 
+    }
+ 
+	public void close() {
+ 
+    	    if(db != null)
+    		    db.close();
+  
+	}
+    
     
     /*
      * Brew Session Table
@@ -237,7 +292,7 @@ public class DBAdapter {
         return db.insert(TABLE_BOIL_EVENTS, null, event);
     }
     
-    public boolean deletebOILMashEvent(long rowId) {
+    public boolean deleteBoilMashEvent(long rowId) {
         return db.delete(TABLE_BOIL_EVENTS, FIELD_ROWID + "=" + rowId, null) > 0;
     }
     

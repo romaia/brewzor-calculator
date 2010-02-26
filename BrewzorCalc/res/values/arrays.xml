@@ -22,7 +22,10 @@
 <resources>
 
 	<string-array name="calculatorList">
-<!-- 		<item>@string/recipe_new_recipe</item>  -->
+ 		<item>@string/recipe_new_recipe</item>
+ 		<item>@string/fermentables</item>
+ 		<item>@string/mash_profiles</item>
+ 		<item>@string/boil_additions</item>
 		<item>@string/strike_temperature</item>
 		<item>@string/gravity_correction</item>
 		<item>@string/mash_infusion</item>
@@ -36,6 +39,16 @@
 		<item>@string/alcohol_attenuation</item>
 		<item>@string/refractometer</item>
 		<item>@string/unit_conversion</item>
+	</string-array>
+
+	<string-array name="fermentableModifyList">
+		<item>@string/fermentables_edit</item>
+		<item>@string/fermentables_delete</item>
+	</string-array>
+
+	<string-array name="fermentableModifyIdList">
+		<item>EDIT</item>
+		<item>DELETE</item>
 	</string-array>
 
 	<string-array name="mashStepTypesList">
