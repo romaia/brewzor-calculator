@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
 	<!-- Colors -->
-	
+	<color name="white">#FFFFFF</color>
+	<color name="black">#000000</color>
 	<color name="blue">#990000FF</color>
+	<color name="srm_0">#FFFFFF</color>
 	<color name="srm_1">#FFE699</color>
 	<color name="srm_2">#FFD878</color>
 	<color name="srm_3">#FFCA5A</color>
@@ -44,14 +46,5 @@
 	<color name="srm_39">#3A070B</color>
 	<color name="srm_40">#36080A</color>
 	<color name="srm_41">#000000</color>
-
-
-
-
-
-
-
-
-
 
 </resources>

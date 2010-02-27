@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<LinearLayout	xmlns:android="http://schemas.android.com/apk/res/android"
+				style="@style/portrait_layout"
+				>
+				
+	<TextView	style="@style/label_text"
+				android:text="@string/fermentables_name"
+				/>
+
+	<EditText	android:id="@+id/name"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:text="@string/fermentables_type"
+				/>
+
+	<Spinner	android:id="@+id/type"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:entries="@array/fermentableTypesList"
+				android:entryValues="@array/fermentableTypesIdList"
+				android:drawSelectorOnTop="true" 
+				/>
+
+	<TextView	style="@style/label_text"
+				android:text="@string/fermentables_manufacturer"
+				/>
+
+	<EditText	android:id="@+id/manufacturer"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				/>
+
+	<LinearLayout 	android:orientation="horizontal"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					>
+
+		<LinearLayout 	android:orientation="vertical"
+						android:layout_width="0px"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						>
+
+			<TextView	style="@style/label_text"
+						android:text="@string/fermentables_potential"
+						/>
+
+			<LinearLayout 	android:orientation="horizontal"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							>
+
+				<EditText	android:id="@+id/potential"
+							style="@style/decimal_entry"
+							/>
+	
+				<TextView	android:id="@+id/potential_type"
+							style="@style/label_text"
+							/>
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout 	android:orientation="vertical"
+						android:layout_width="0px"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						>
+			<TextView	style="@style/label_text"
+						android:text="@string/fermentables_yield"
+						/>
+
+			<EditText	android:id="@+id/yield"
+						style="@style/decimal_entry"
+						/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<LinearLayout 	android:orientation="horizontal"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					>
+
+		<LinearLayout 	android:orientation="vertical"
+						android:layout_width="0px"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						>
+			<TextView	style="@style/label_text"
+						android:text="@string/fermentables_color"
+						/>
+	
+			<LinearLayout 	android:orientation="horizontal"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							>
+				<EditText	android:id="@+id/color"
+							style="@style/decimal_entry"
+							/>
+	
+				<TextView	android:id="@+id/color_type"
+							style="@style/label_text"
+							/>
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>

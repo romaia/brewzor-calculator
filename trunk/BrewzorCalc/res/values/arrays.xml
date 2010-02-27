@@ -41,6 +41,24 @@
 		<item>@string/unit_conversion</item>
 	</string-array>
 
+	<string-array name="fermentableTypesList">
+		<item>@string/fermentables_grain</item>
+		<item>@string/fermentables_extract</item>
+		<item>@string/fermentables_sugar</item>
+		<item>@string/fermentables_adjunct</item>
+		<item>@string/fermentables_dry_extract</item>
+		<item>@string/fermentables_other</item>
+	</string-array>
+
+	<string-array name="fermentableTypesIdList">
+		<item>GRAIN</item>
+		<item>EXTRACT</item>
+		<item>SUGAR</item>
+		<item>ADJUNCT</item>
+		<item>DRY_EXTRACT</item>
+		<item>OTHER</item>
+	</string-array>
+
 	<string-array name="fermentableModifyList">
 		<item>@string/fermentables_edit</item>
 		<item>@string/fermentables_delete</item>
@@ -91,6 +109,16 @@
 		<item>TEMPERATURE</item>
 		<item>DISTANCE</item>
 		<item>PRESSURE</item>
+	</string-array>
+
+	<string-array name="beerColorUnitsList">
+		<item>@string/srm</item>
+		<item>@string/ebc</item>
+	</string-array>
+
+	<string-array name="beerColorUnitsIdList">
+		<item>SRM</item>
+		<item>EBC</item>
 	</string-array>
 
 	<string-array name="gravityUnitsList">

@@ -168,7 +168,7 @@ public class RefractometerCalculatorActivity extends Activity {
 				gravity.setValue(currentEntry, 0); 
 				gravity.setType(Gravity.Unit.BRIX);
 				gravity.convert(gravityType);
-				gravity.setFormat(getString(R.string.sg_format));
+				gravity.setPrecision(3);
 				calculatedValue.setText(gravity.toString());
 				break;
 			case FERMENTING:
@@ -182,7 +182,7 @@ public class RefractometerCalculatorActivity extends Activity {
 				                      + 0.00574*gravity.getValue() + 0.00003344*java.lang.Math.pow(gravity.getValue(), 2) + 0.000000086*java.lang.Math.pow(gravitySG.getValue(), 3);
 				// = 1.001843 - 0.002318474*C4 - 0.000007775*C4^2 - 0.000000034*C4^3 + 0.00574*B4 + 0.00003344*B4^2 + 0.000000086*C4^3
 				Gravity estCG = new Gravity(est_cg_plato, Gravity.Unit.SG, getBaseContext(), prefs);
-				estCG.setFormat(getString(R.string.sg_format));
+				gravitySG.setPrecision(3);
 				
 				if (estCG.getValue() > 0) calculatedValue.setText(estCG.toString());
 				else calculatedValue.setText(getString(R.string.sg_default));
@@ -206,7 +206,7 @@ public class RefractometerCalculatorActivity extends Activity {
 				//Log.v("unit", getString(R.string.double_format, est_og_plato));		
 				Gravity estOG = new Gravity(est_og_plato, Gravity.Unit.PLATO, getBaseContext(), prefs);
 				estOG.convert(Gravity.Unit.SG);
-				estOG.setFormat(getString(R.string.sg_format));
+				estOG.setPrecision(3);
 				calculatedValue.setText(estOG.toString());
 				
 				if (estOG.getValue() > 0) calculatedValue.setText(estOG.toString());

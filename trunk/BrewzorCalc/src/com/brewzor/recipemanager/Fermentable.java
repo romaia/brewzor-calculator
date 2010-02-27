@@ -1,5 +1,6 @@
 package com.brewzor.recipemanager;
 
+import com.brewzor.calculator.R;
 import com.brewzor.converters.Gravity;
 import com.brewzor.converters.Mass;
 
@@ -34,236 +35,68 @@ public class Fermentable extends Object {
 	    public static final String ADD_AFTER_BOIL = "add_after_boil";
 	    public static final String MUST_MASH = "must_mash";
 	    public static final String NOTES = "notes";
-	    public static final String USER_CREATED= "user_created";
+	    public static final String USER_CREATED = "user_created";
+	    public static final String SORT_INDEX = "sort_index";
     }
-	
-	private String name = new String("");
-	private Fermentable.Type type = Type.OTHER;
-	private String manufacturer = new String();
-	private Boolean organic = new Boolean(false);
-	private String url = new String();
-	private Gravity potential;
-	private Double yield = new Double(0);
-	private Double coarseFine = new Double(0);
-	private Double moisture = new Double(0);
-	private Double color = new Double(0);
-	private Double diastaticPower = new Double(0);
-	private Double protein = new Double(0);
-	private Double maxInBatch = new Double(0);
-	private Integer addAfterBoil = new Integer(0);
-	private Integer mustMash = new Integer(0);
-	private String notes = new String();
-	
-	private Mass amount;
-	
-	/**
-	 * @return the name
-	 */
-	public final String getName() {
-		return name;
-	}
 
-	/**
-	 * @param name the name to set
-	 */
-	public final void setName(String name) {
-		this.name = name;
-	}
+    public static final String[] aFields = {
+    	FIELDS.NAME,
+    	FIELDS.TYPE,
+    	FIELDS.MANUFACTURER,
+//    	FIELDS.ORGANIC,
+//    	FIELDS.URL,
+    	FIELDS.POTENTIAL,
+    	FIELDS.YIELD,
+//    	FIELDS.COARSE_FINE,
+//    	FIELDS.MOISTURE,
+    	FIELDS.COLOR
+//    	FIELDS.DIASTATIC_POWER,
+//    	FIELDS.PROTEIN,
+//    	FIELDS.MAX_IN_BATCH,
+//    	FIELDS.NOTES,
+//    	FIELDS.USER_CREATED,
+//    	FIELDS.SORT_INDEX
+    };
+    
+    public static final int[] aViews = {
+    	R.id.name,
+    	R.id.type,
+    	R.id.manufacturer,
+//    	R.id.organic,
+//    	R.id.url,
+    	R.id.potential,
+    	R.id.yield,
+//    	R.id.coarse_fine,
+//    	R.id.moisture,
+    	R.id.color
+//    	R.id.diastatic_power,
+//    	R.id.protein,
+//    	R.id.max_in_batch,
+//    	R.id.notes,
+//    	R.id.user_created,
+//    	R.id.sort_index
+    };
 
-	/**
-	 * @return the type
-	 */
-	public final Fermentable.Type getType() {
-		return type;
-	}
-
-	/**
-	 * @param type the type to set
-	 */
-	public final void setType(Fermentable.Type type) {
-		this.type = type;
-	}
-
-	/**
-	 * @return the potential
-	 */
-	public final Gravity getPotential() {
-		return potential;
-	}
-
-	/**
-	 * @param potential the potential to set
-	 */
-	public final void setPotential(Gravity potential) {
-		this.potential = potential;
-	}
-
-	/**
-	 * @return the yield
-	 */
-	public final Double getYield() {
-		return yield;
-	}
-
-	/**
-	 * @param yield the yield to set
-	 */
-	public final void setYield(Double yield) {
-		this.yield = yield;
-	}
-
-	/**
-	 * @return the coarseFine
-	 */
-	public final Double getCoarseFine() {
-		return coarseFine;
-	}
-
-	/**
-	 * @param coarseFine the coarseFine to set
-	 */
-	public final void setCoarseFine(Double coarseFine) {
-		this.coarseFine = coarseFine;
-	}
-
-	/**
-	 * @return the moisture
-	 */
-	public final Double getMoisture() {
-		return moisture;
-	}
-
-	/**
-	 * @param moisture the moisture to set
-	 */
-	public final void setMoisture(Double moisture) {
-		this.moisture = moisture;
-	}
-
-	/**
-	 * @return the color
-	 */
-	public final Double getColor() {
-		return color;
-	}
-
-	/**
-	 * @param color the color to set
-	 */
-	public final void setColor(Double color) {
-		this.color = color;
-	}
-
-	/**
-	 * @return the diastaticPower
-	 */
-	public final Double getDiastaticPower() {
-		return diastaticPower;
-	}
-
-	/**
-	 * @param diastaticPower the diastaticPower to set
-	 */
-	public final void setDiastaticPower(Double diastaticPower) {
-		this.diastaticPower = diastaticPower;
-	}
-
-	/**
-	 * @return the protein
-	 */
-	public final Double getProtein() {
-		return protein;
-	}
-
-	/**
-	 * @param protein the protein to set
-	 */
-	public final void setProtein(Double protein) {
-		this.protein = protein;
-	}
-
-	/**
-	 * @return the maxInBatch
-	 */
-	public final Double getMaxInBatch() {
-		return maxInBatch;
-	}
-
-	/**
-	 * @param maxInBatch the maxInBatch to set
-	 */
-	public final void setMaxInBatch(Double maxInBatch) {
-		this.maxInBatch = maxInBatch;
-	}
-
-	/**
-	 * @return the addAfterBoil
-	 */
-	public final Integer getAddAfterBoil() {
-		return addAfterBoil;
-	}
-
-	/**
-	 * @param addAfterBoil the addAfterBoil to set
-	 */
-	public final void setAddAfterBoil(Integer addAfterBoil) {
-		this.addAfterBoil = addAfterBoil;
-	}
-
-	/**
-	 * @return the mustMash
-	 */
-	public final Integer getMustMash() {
-		return mustMash;
-	}
-
-	/**
-	 * @param mustMash the mustMash to set
-	 */
-	public final void setMustMash(Integer mustMash) {
-		this.mustMash = mustMash;
-	}
-
-	/**
-	 * @return the amount
-	 */
-	public final Mass getAmount() {
-		return amount;
-	}
-
-	/**
-	 * @param amount the amount to set
-	 */
-	public final void setAmount(Mass amount) {
-		this.amount = amount;
-	}
-
-	/**
-	 * @return the manufacturer
-	 */
-	public final String getManufacturer() {
-		return manufacturer;
-	}
-
-	/**
-	 * @param manufacturer the manufacturer to set
-	 */
-	public final void setManufacturer(String manufacturer) {
-		this.manufacturer = manufacturer;
-	}
-
-	/**
-	 * @return the url
-	 */
-	public final String getUrl() {
-		return url;
-	}
-
-	/**
-	 * @param url the url to set
-	 */
-	public final void setUrl(String url) {
-		this.url = url;
-	}
-	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,14 +4,12 @@ import com.brewzor.calculator.R;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
+import android.graphics.Color;
 
-public final class Color extends Unit<com.brewzor.converters.Color.Unit> {
+public final class BeerColor extends Unit<com.brewzor.converters.BeerColor.Unit> {
 
-	public Color(double value, Unit type, String format, Context context,
-			SharedPreferences prefs) {
-		super(value, type, format, context, prefs);
-		// TODO Auto-generated constructor stub
+	public BeerColor(double value, Unit type, Context context, SharedPreferences prefs) {
+		super(value, type, 0, context, prefs);
 	}
 
 	static public enum Unit {
@@ -23,10 +21,15 @@ public final class Color extends Unit<com.brewzor.converters.Color.Unit> {
 		return getColorResource(compare(Unit.SRM));
 	}
 	
+	static public final int getTextColorResource(double color) {
+		if ((int)color > 20) return Color.WHITE;
+		return Color.BLACK;
+	}
+	
 	static public final int getColorResource(double color) {
-		int int_color = (int)color;
-		if (int_color < 1) int_color = 1;
-		switch (int_color) {
+		if ((int)color < 0) color = 0;
+		switch ((int)color) {
+			case 0: return R.color.srm_0;
 			case 1: return R.color.srm_1;
 			case 2: return R.color.srm_2;
 			case 3: return R.color.srm_3;
@@ -74,16 +77,16 @@ public final class Color extends Unit<com.brewzor.converters.Color.Unit> {
 	}
 	
 	@Override
-	public double compare(Unit toType) {
+	public final double compare(Unit toType) {
 		switch (getType()) {
-			case SRM:	return SRMToUnits(getValue(), toType);
-			case EBC:	return EBCToUnits(getValue(), toType);
+			case SRM:	return SRMToUnits(getRawValue(), toType);
+			case EBC:	return EBCToUnits(getRawValue(), toType);
 			default:	return getValue();
 		}
 	}
 
 	@Override
-	public String getLabel() {
+	public final String getLabel() {
 		switch (getType()) {
 			case SRM:	return context.getString(R.string.srm);
 			case EBC:	return context.getString(R.string.ebc);
@@ -92,7 +95,7 @@ public final class Color extends Unit<com.brewzor.converters.Color.Unit> {
 	}
 
 	@Override
-	public String getLabelAbbr() {
+	public final String getLabelAbbr() {
 		switch (getType()) {
 			case SRM:	return context.getString(R.string.srm_abbr);
 			case EBC:	return context.getString(R.string.ebc_abbr);
@@ -101,7 +104,7 @@ public final class Color extends Unit<com.brewzor.converters.Color.Unit> {
 	}
 
 	@Override
-	public String getLabelPlural() {
+	public final String getLabelPlural() {
 		switch (getType()) {
 			case SRM:	return context.getString(R.string.srm_plural);
 			case EBC:	return context.getString(R.string.ebc_plural);
@@ -110,8 +113,8 @@ public final class Color extends Unit<com.brewzor.converters.Color.Unit> {
 	}
 
 	@Override
-	public void setType(String toType) {
-		for (Color.Unit unit : Color.Unit.values()) {
+	public final void setType(String toType) {
+		for (BeerColor.Unit unit : BeerColor.Unit.values()) {
 			//Log.v("ColorUnit", "name: " + unit.name() + " newType: " + newType);
 			if (unit.name().equals(toType)){
 				//Log.v("ColorUnit", "type=" + unit.name());
@@ -121,9 +124,9 @@ public final class Color extends Unit<com.brewzor.converters.Color.Unit> {
 	}
 
 	@Override
-	public Color.Unit typeFromPref(String toType, Unit defaultUnit) {
+	public final BeerColor.Unit typeFromPref(String toType, Unit defaultUnit) {
 		String newType = prefs.getString(toType, UNKNOWN);
-		for (Color.Unit unit : Color.Unit.values()) {
+		for (BeerColor.Unit unit : BeerColor.Unit.values()) {
 			//Log.v("ColorUnit", "name: " + unit.name() + " newType: " + newType);
 			if (unit.name().equals(newType)){
 				//Log.v("ColorUnit", "type=" + unit.name());
@@ -133,7 +136,7 @@ public final class Color extends Unit<com.brewzor.converters.Color.Unit> {
 		return defaultUnit;
 	}
 
-	static public final double SRMToUnits(double value, Color.Unit toType) {
+	static public final double SRMToUnits(double value, BeerColor.Unit toType) {
 		switch (toType) {
 			case SRM:	return value;
 			case EBC:	return 1.97 * value;
@@ -141,7 +144,7 @@ public final class Color extends Unit<com.brewzor.converters.Color.Unit> {
 		}
 	}
 	
-	static public final double EBCToUnits(double value, Color.Unit toType) {
+	static public final double EBCToUnits(double value, BeerColor.Unit toType) {
 		switch (toType) {
 			case SRM:	return value / 1.97;
 			case EBC:	return value;

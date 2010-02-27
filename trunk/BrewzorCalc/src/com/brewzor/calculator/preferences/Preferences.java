@@ -23,12 +23,16 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
 public class Preferences {
-		
+	
+	public static final int DOUBLE_PRECISION = 2;
+	public static final int SG_PRECISION = 3;
+	
 	public static final String GLOBAL_INIT = "global.init";
 	public static final String GLOBAL_EULA_ACCEPT = "global.eula_accept";
 	public static final String GLOBAL_UNIT_CHANGE = "global.unit_change";
 	public static final String GLOBAL_TEMPERATURE_UNIT = "global.temperature_unit";
 	public static final String GLOBAL_GRAVITY_UNIT = "global.gravity_unit";
+	public static final String GLOBAL_BEER_COLOR_UNIT = "global.beer_color_unit";
 	public static final String GLOBAL_EXTRACT_MASS_UNIT = "global.extract_mass_unit";
 	public static final String GLOBAL_HYDROMETER_CALIBRATION_TEMPERATURE = "global.hydrometer_calibration_temperature";
 	public static final String GLOBAL_PRESSURE_UNIT = "global.pressure_unit";
@@ -106,9 +110,10 @@ public class Preferences {
 	        editor.putString(Preferences.BATCH_MASH_VOLUME_UNIT, prefs.getString(Preferences.BATCH_VOLUME_UNIT, "GALLON"));
         }
 
+    	editor.putString(Preferences.GLOBAL_BEER_COLOR_UNIT, "SRM");
+    	editor.putString(Preferences.BATCH_MASH_MINUTES, "60");
         if (prefs.getBoolean(Preferences.VERSION_1_4_0, false)) {
         	editor.putBoolean(Preferences.VERSION_1_4_0, true);
-        	editor.putString(Preferences.BATCH_MASH_MINUTES, "60");
         }
         
         editor.commit();	

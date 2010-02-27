@@ -88,12 +88,12 @@ public class UnitConverterActivity extends ListActivity {
         distance = new Distance(0, Distance.Unit.CENTIMETER, getBaseContext(), prefs);
         pressure = new Pressure(0.0, Pressure.Unit.PSI, getBaseContext(), prefs);
         
-        volume.setFormat(getString(R.string.unit_converter_format));
-        mass.setFormat(getString(R.string.unit_converter_format));
-        gravity.setFormat(getString(R.string.unit_converter_format));
-        temperature.setFormat(getString(R.string.unit_converter_format));
-        distance.setFormat(getString(R.string.unit_converter_format));
-        pressure.setFormat(getString(R.string.unit_converter_format));
+        volume.setPrecision(3);
+        mass.setPrecision(3);
+        gravity.setPrecision(3);
+        temperature.setPrecision(3);
+        distance.setPrecision(3);
+        pressure.setPrecision(3);
         
         unitEntry = (EditText) findViewById(R.id.unit_entry);
         unitEntry.setOnKeyListener(mOnKeyListener);
@@ -184,7 +184,7 @@ public class UnitConverterActivity extends ListActivity {
 	    	}
 	    	
 	    	Distance converted = new Distance(0, Distance.Unit.CENTIMETER, getBaseContext(), prefs);
-	    	converted.setFormat(getString(R.string.unit_converter_format));
+	    	converted.setPrecision(3);
 	    	for (Distance.Unit unit : Distance.Unit.values()) {
 		    	converted.setValue(distance.getValue());
 		    	converted.setType(distance.getType());
@@ -200,7 +200,7 @@ public class UnitConverterActivity extends ListActivity {
 	    	}
 	    	
 	    	Mass converted = new Mass(0, Mass.Unit.GRAM, getBaseContext(), prefs);
-	    	converted.setFormat(getString(R.string.unit_converter_format));
+	    	converted.setPrecision(3);
 	    	for (Mass.Unit unit : Mass.Unit.values()) {
 		    	converted.setValue(mass.getValue());
 		    	converted.setType(mass.getType());
@@ -216,7 +216,7 @@ public class UnitConverterActivity extends ListActivity {
 	    	}
 	    	
 	    	Gravity converted = new Gravity(0, Gravity.Unit.SG, getBaseContext(), prefs);
-	    	converted.setFormat(getString(R.string.unit_converter_format));
+	    	converted.setPrecision(3);
 	    	for (Gravity.Unit unit : Gravity.Unit.values()) {
 		    	converted.setValue(gravity.getValue());
 		    	converted.setType(gravity.getType());
@@ -233,7 +233,7 @@ public class UnitConverterActivity extends ListActivity {
 	    	}
 	 
 	    	Temperature converted = new Temperature(0, Temperature.Unit.FAHRENHEIT, getBaseContext(), prefs);
-	    	converted.setFormat(getString(R.string.unit_converter_format));
+	    	converted.setPrecision(3);
 	    	for (Temperature.Unit unit : Temperature.Unit.values()) {
 		    	converted.setValue(temperature.getValue());
 		    	converted.setType(temperature.getType());
@@ -249,7 +249,7 @@ public class UnitConverterActivity extends ListActivity {
 	    	}
 
 	    	Volume converted = new Volume(0, Volume.Unit.MILLILITER, getBaseContext(), prefs);
-	    	converted.setFormat(getString(R.string.unit_converter_format));
+	    	converted.setPrecision(3);
 	    	for (Volume.Unit unit : Volume.Unit.values()) {
 		    	converted.setValue(volume.getValue());
 		    	converted.setType(volume.getType());
@@ -265,7 +265,7 @@ public class UnitConverterActivity extends ListActivity {
     		}
 
     		Pressure converted = new Pressure(0, Pressure.Unit.PSI, getBaseContext(), prefs);
-	    	converted.setFormat(getString(R.string.unit_converter_format));
+	    	converted.setPrecision(3);
 	    	for (Pressure.Unit unit : Pressure.Unit.values()) {
 		    	converted.setValue(pressure.getValue());
 		    	converted.setType(pressure.getType());

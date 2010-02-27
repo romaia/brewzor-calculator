@@ -41,8 +41,8 @@ import com.brewzor.calculator.preferences.Preferences;
 import com.brewzor.calculator.R;
 import com.brewzor.recipemanager.BoilAdditionsActivity;
 import com.brewzor.recipemanager.CreateRecipeActivity;
-import com.brewzor.recipemanager.FermentablesActivity;
-import com.brewzor.recipemanager.MashProfilesActivity;
+import com.brewzor.recipemanager.FermentablesListActivity;
+import com.brewzor.recipemanager.MashProfilesListActivity;
 import com.brewzor.utils.ErrorReporter;
 
 // http://androidblogger.blogspot.com/2009/12/how-to-improve-your-application-crash.html
@@ -117,8 +117,8 @@ public class BrewzorActivity extends ListActivity {
 		switch (calculatorId) {
 			case 0: i = new Intent(this, CreateRecipeActivity.class); break;
 
-			case 1: i = new Intent(this, FermentablesActivity.class); break;
-			case 2: i = new Intent(this, MashProfilesActivity.class); break;
+			case 1: i = new Intent(this, FermentablesListActivity.class); break;
+			case 2: i = new Intent(this, MashProfilesListActivity.class); break;
 			case 3: i = new Intent(this, BoilAdditionsActivity.class); break;
 			
 			//case 1: i = new Intent(this, BrewActivity.class); break;

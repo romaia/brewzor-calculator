@@ -25,32 +25,47 @@ import android.widget.EditText;
 
 public abstract class Unit<T> {
 
-	private double value;
-	private String format;
-	private T type;
-
 	protected SharedPreferences prefs;
-	protected Context context;
 	
 	static protected String UNKNOWN = "UNKNOWN";
+	private T type;
+	
+	protected Context context;
+	private double value;
+	private int precision = 2;
 	
 	/**
 	 * @param value
 	 * @param prefs
 	 */
-	public Unit(double value, T type, String format, Context context, SharedPreferences prefs) {
+	public Unit(double value, T type, int precision, Context c, SharedPreferences prefs) {				
+		this.context = c;
+		this.precision = precision;
 		setValue(value);
 		setType(type);
-		setContext(context);
 		setPrefs(prefs);
-		setFormat(format);
 	}
 
 	/**
 	 * @return the value
 	 */
-	public final double getValue() {
+	public final double getValue(final int p) {
+		return (((double)((int)((value * Math.pow(10, p))))) / Math.pow(10, p));
+	}
+	
+	/**
+	 * @return the value
+	 */
+	public final Double getValue() {
+		return getValue(precision);
+	}
+	
+	public final double getRawValue() {
 		return value;
+	}
+	
+	public final void setPrecision(int p) {
+		this.precision = p;
 	}
 	
 	/**
@@ -75,27 +90,13 @@ public abstract class Unit<T> {
 	public final void setValue(String doubleString, double defaultValue)  {
 		double fieldValue;
 		try {
-			fieldValue = new Double(doubleString);
+			fieldValue = Double.valueOf(doubleString);
 			setValue(fieldValue);
 		} catch (NumberFormatException e) {
 			setValue(defaultValue);
 		}
 	};
 	
-	/**
-	 * @return the format
-	 */
-	public final String getFormat() {
-		return format;
-	}
-	
-	/**
-	 * @param format the format to set
-	 */
-	public final void setFormat(String format) {
-		this.format = format;
-	}
-
 	/**
 	 * @return the prefs
 	 */
@@ -115,15 +116,16 @@ public abstract class Unit<T> {
 	 */
 	@Override
 	public final String toString() {
-		return String.format(format, value);
+		return toString(precision);
 	}
 
 	/**
-	 * @param format String to use for formatting insteaf of this.format 
+	 * @param format String to use for formatting instead of this.format 
 	 * @return the formatted value as a String
 	 */
-	public final String toString(String format) {
-		return String.format(format, value);
+	public final String toString(int p) {
+		if (p == 0) return Integer.toString((int)getValue(p));
+		return Double.toString(getValue(p));
 	}
 
 	/**
@@ -160,21 +162,6 @@ public abstract class Unit<T> {
 		setType(toType);
 	}
 	
-	/**
-	 * @return the context
-	 */
-	public final Context getContext() {
-		return context;
-	}
-
-	/**
-	 * @param context the context to set
-	 */
-	public final void setContext(Context context) {
-		this.context = context;
-	}
-
-
 	public abstract double compare(T toType);	
 	public abstract T typeFromPref(String toType, T defaultUnit);
 	public abstract String getLabel();

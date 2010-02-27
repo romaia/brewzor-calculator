@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+
+    This file is part of Brewzor.
+
+    Copyright (C) 2010 James Whiddon
+
+    Brewzor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Brewzor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Brewzor.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<LinearLayout	xmlns:android="http://schemas.android.com/apk/res/android"
+				style="@style/portrait_layout"
+				>
+				
+	<TextView	style="@style/label_text"
+				android:id="@+id/name"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/type"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/manufacturer"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/organic"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/url"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/potential"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/yield"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/coarse_fine"
+				/>
+
+ 	<TextView	style="@style/label_text"
+				android:id="@+id/moisture"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/color"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/diastatic_power"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/protein"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/max_in_batch"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/notes"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/user_created"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:id="@+id/sort_index"
+				/>
+
+</LinearLayout>
