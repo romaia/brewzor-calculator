@@ -77,9 +77,7 @@ public class HydrometerCorrectionCalculatorActivity extends Activity {
 		temperature = new Temperature(0.0, Temperature.Unit.FAHRENHEIT, getBaseContext(), prefs);
 		calibrationTemperature = new Temperature(0.0, Temperature.Unit.FAHRENHEIT, getBaseContext(), prefs);
 		startGravity = new Gravity(1.000, Gravity.Unit.SG, getBaseContext(), prefs);
-		startGravity.setFormat(getString(R.string.sg_format));
 		correctedGravity = new Gravity(1.000, Gravity.Unit.SG, getBaseContext(), prefs);
-		correctedGravity.setFormat(getString(R.string.sg_format));
 	}
 
 	@Override

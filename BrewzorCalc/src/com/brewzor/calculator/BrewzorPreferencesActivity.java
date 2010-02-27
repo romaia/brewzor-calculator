@@ -21,6 +21,7 @@ package com.brewzor.calculator;
 
 import com.brewzor.calculator.preferences.Preferences;
 import com.brewzor.calculator.R;
+import com.brewzor.converters.BeerColor;
 import com.brewzor.converters.Distance;
 import com.brewzor.converters.Gravity;
 import com.brewzor.converters.Mass;
@@ -49,6 +50,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 	private Temperature temperature;
 	private Distance distance;
 	private Pressure pressure;
+	private BeerColor color;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		temperature = new Temperature(0, Temperature.Unit.FAHRENHEIT, getBaseContext(), sPref);
 		distance = new Distance(0, Distance.Unit.INCH, getBaseContext(), sPref);
 		pressure = new Pressure(0, Pressure.Unit.PSI, getBaseContext(), sPref);
+		color = new BeerColor(0, BeerColor.Unit.SRM, getBaseContext(), sPref);
 		
 		pref = findPreference(Preferences.GLOBAL_UNIT_CHANGE);
 		pref.setOnPreferenceChangeListener(mUnitChangeListener);
@@ -72,6 +75,9 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		pref.setOnPreferenceChangeListener(mPrefListener);
 		
 		pref = findPreference(Preferences.GLOBAL_GRAVITY_UNIT);
+		pref.setOnPreferenceChangeListener(mPrefListener);
+		
+		pref = findPreference(Preferences.GLOBAL_BEER_COLOR_UNIT);
 		pref.setOnPreferenceChangeListener(mPrefListener);
 		
 		pref = findPreference(Preferences.GLOBAL_REFRACTOMETER_CORRECTION_FACTOR);
@@ -152,6 +158,10 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 		gravity.setType(gravity.typeFromPref(Preferences.GLOBAL_GRAVITY_UNIT, Gravity.Unit.SG));
 		pref.setSummary(gravity.getLabelPlural());
 
+		pref = findPreference(Preferences.GLOBAL_BEER_COLOR_UNIT);
+		color.setType(color.typeFromPref(Preferences.GLOBAL_BEER_COLOR_UNIT, BeerColor.Unit.SRM));
+		pref.setSummary(color.getLabelPlural());
+			
 		pref = findPreference(Preferences.GLOBAL_REFRACTOMETER_CORRECTION_FACTOR);
 		pref.setSummary(getString(R.string.refractometer_correction_factor_pref_format, sPref.getString(Preferences.GLOBAL_REFRACTOMETER_CORRECTION_FACTOR, "1.04"), volume.getLabelPlural()));
 
@@ -335,6 +345,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 
 				editor.putString(Preferences.GLOBAL_TEMPERATURE_UNIT, "FAHRENHEIT");
 				editor.putString(Preferences.GLOBAL_GRAVITY_UNIT, "SG");
+				editor.putString(Preferences.GLOBAL_BEER_COLOR_UNIT, "SRM");
 				editor.putString(Preferences.GLOBAL_EXTRACT_MASS_UNIT, "OUNCE");
 				editor.putString(Preferences.GLOBAL_PRESSURE_UNIT, "PSI");
 				editor.putString(Preferences.BATCH_VOLUME_UNIT, "GALLON");
@@ -385,6 +396,7 @@ public class BrewzorPreferencesActivity extends PreferenceActivity {
 
 				editor.putString(Preferences.GLOBAL_TEMPERATURE_UNIT, "CELSIUS");
 				editor.putString(Preferences.GLOBAL_GRAVITY_UNIT, "SG");
+				editor.putString(Preferences.GLOBAL_BEER_COLOR_UNIT, "EBC");
 				editor.putString(Preferences.GLOBAL_PRESSURE_UNIT, "KPA");
 				editor.putString(Preferences.BATCH_VOLUME_UNIT, "LITER");
 				editor.putString(Preferences.BATCH_MASH_VOLUME_UNIT, "LITER");

@@ -47,6 +47,14 @@
 						android:entries="@array/gravityUnitsList" 
 						android:entryValues="@array/gravityUnitsIdList" />
 
+		<ListPreference android:title="@string/beercolor_units_pref"
+						android:summary="@string/beercolor_units_pref_summary"
+						android:persistent="true"
+						android:key="global.beer_color_unit" 
+						android:defaultValue="@string/beercolor_units_pref_default"
+						android:entries="@array/beerColorUnitsList" 
+						android:entryValues="@array/beerColorUnitsIdList" />
+
 		<ListPreference android:title="@string/pressure_units_pref"
 						android:summary="@string/pressure_units_pref_summary"
 						android:persistent="true"

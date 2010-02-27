@@ -38,12 +38,12 @@ public final class Gravity extends Unit<com.brewzor.converters.Gravity.Unit> {
 	static private double brixCorrectionFactor = 1;
 	
 	public Gravity(double value, Unit type, Context context, SharedPreferences prefs) {
-		super(value, type, context.getString(R.string.double_format), context, prefs);
+		super(value, type, Preferences.DOUBLE_PRECISION, context, prefs);
 		Gravity.setBrixCorrectionFactor(NumberFormat.parseDouble(prefs.getString(Preferences.GLOBAL_REFRACTOMETER_CORRECTION_FACTOR, "1"), 1));
 	}
 
 	public Gravity(double value, Unit type, double bcf, Context context, SharedPreferences prefs) {
-		super(value, type, context.getString(R.string.double_format), context, prefs);
+		super(value, type, Preferences.DOUBLE_PRECISION, context, prefs);
 		Gravity.setBrixCorrectionFactor(bcf);
 	}
 

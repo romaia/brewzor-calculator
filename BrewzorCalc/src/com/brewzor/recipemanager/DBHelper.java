@@ -6,6 +6,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
+import com.brewzor.converters.BeerColor;
+import com.brewzor.converters.Gravity;
+
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -59,7 +63,7 @@ public class DBHelper extends SQLiteOpenHelper{
      * */
     public void createDataBase() throws IOException {
  
-    	Log.v("DBHelper", "createDataBase()");
+    	//Log.v("DBHelper", "createDataBase()");
     	
     	boolean dbExist = checkDataBase();
  
@@ -90,7 +94,7 @@ public class DBHelper extends SQLiteOpenHelper{
      */
     private boolean checkDataBase(){
  
-    	Log.v("DBHelper", "checkDataBase()");
+    	//Log.v("DBHelper", "checkDataBase()");
     	
     	SQLiteDatabase checkDB = null;
  
@@ -120,7 +124,7 @@ public class DBHelper extends SQLiteOpenHelper{
      * */
     private void copyDataBase() throws IOException{
  
-    	Log.v("DBHelper", "copyDataBase()");
+    	//Log.v("DBHelper", "copyDataBase()");
     	
     	//Open your local db as the input stream
     	InputStream myInput = myContext.getAssets().open(DATABASE_NAME);
@@ -147,7 +151,7 @@ public class DBHelper extends SQLiteOpenHelper{
  
     public void openDataBase() throws SQLException {
  
-    	Log.v("DBHelper", "openDataBase()");
+    	//Log.v("DBHelper", "openDataBase()");
     	//Open the database
         String myPath = DATABASE_PATH + DATABASE_NAME;
     	db = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
@@ -192,15 +196,91 @@ public class DBHelper extends SQLiteOpenHelper{
         return db.query(Fermentable.TABLE, 
         		new String[] {	Fermentable.FIELDS.ID, 
         						Fermentable.FIELDS.NAME, 
+        						Fermentable.FIELDS.TYPE, 
         						Fermentable.FIELDS.MANUFACTURER, 
         						Fermentable.FIELDS.POTENTIAL,
+        						Fermentable.FIELDS.YIELD,
         						Fermentable.FIELDS.COLOR }, 
-                null, null, null, null, null);
+                null, null, null, null, Fermentable.FIELDS.SORT_INDEX + " ASC");
     }
 	
-   public boolean deleteFermentable(long rowId) {
-       return db.delete(Fermentable.TABLE, Fermentable.FIELDS.ID + "=" + rowId, null) > 0;
+   public Cursor getFermentable(long rowId) throws SQLException {
+       Cursor mCursor =
+               db.query(true, Fermentable.TABLE, 
+               		new String[] {	Fermentable.FIELDS.ID, 
+            		   				Fermentable.FIELDS.NAME,
+            						Fermentable.FIELDS.TYPE, 
+            						Fermentable.FIELDS.MANUFACTURER, 
+            						Fermentable.FIELDS.POTENTIAL,
+            						Fermentable.FIELDS.YIELD,
+            						Fermentable.FIELDS.COLOR }, 
+               		Fermentable.FIELDS.ID + "=" + rowId, 
+               		null, null, null, Fermentable.FIELDS.SORT_INDEX + " ASC", null);
+       if (mCursor != null) {
+           mCursor.moveToFirst();
+       }
+       return mCursor;
    }
+
+	public boolean updateFermentable(long rowId, String name, String type, String manufacturer, Gravity potential, double yield, BeerColor color) {
+	   ContentValues args = new ContentValues();
+	   args.put(Fermentable.FIELDS.NAME, name);
+	   args.put(Fermentable.FIELDS.TYPE, type);
+	   args.put(Fermentable.FIELDS.MANUFACTURER, manufacturer);
+	   args.put(Fermentable.FIELDS.POTENTIAL, potential.compare(Gravity.Unit.SG));
+	   args.put(Fermentable.FIELDS.YIELD, yield);
+	   args.put(Fermentable.FIELDS.COLOR, color.compare(BeerColor.Unit.SRM));
+	   args.put(Fermentable.FIELDS.SORT_INDEX, (name + manufacturer).toUpperCase());
+	   return db.update(Fermentable.TABLE, args, Fermentable.FIELDS.ID + "=" + rowId, null) > 0;
+	}
+
+	public long insertFermentable(String name, String type, String manufacturer, Gravity potential, double yield, BeerColor color) {
+		ContentValues args = new ContentValues();
+		args.put(Fermentable.FIELDS.NAME, name);
+		args.put(Fermentable.FIELDS.TYPE, type);
+		args.put(Fermentable.FIELDS.MANUFACTURER, manufacturer);
+		args.put(Fermentable.FIELDS.POTENTIAL, potential.compare(Gravity.Unit.SG));
+		args.put(Fermentable.FIELDS.YIELD, yield);
+		args.put(Fermentable.FIELDS.COLOR, color.compare(BeerColor.Unit.SRM));
+		args.put(Fermentable.FIELDS.SORT_INDEX, (name + manufacturer).toUpperCase());
+		return db.insert(Fermentable.TABLE, null, args);
+	}
+   
+	public boolean deleteFermentable(long rowId) {
+		return db.delete(Fermentable.TABLE, Fermentable.FIELDS.ID + "=" + rowId, null) > 0;
+	}
    
 
+	   public Cursor getAllMashProfiles() {
+	        return db.query(MashProfile.TABLE, 
+	        		new String[] {	MashProfile.FIELDS.ID, 
+					        		MashProfile.FIELDS.NAME, 
+					        		MashProfile.FIELDS.INFUSION_TEMPERATURE, 
+					        		MashProfile.FIELDS.SPARGE_TEMPERATURE,
+					        		MashProfile.FIELDS.SPARGE_TYPE,
+					        		MashProfile.FIELDS.USER_CREATED,
+					        		MashProfile.FIELDS.SORT_INDEX
+					        		}, 
+	                null, null, null, null, MashProfile.FIELDS.SORT_INDEX + " ASC");
+	    }
+		
+	   public Cursor getMashProfile(long rowId) throws SQLException {
+	       Cursor mCursor =
+	               db.query(true, Fermentable.TABLE, 
+	               		new String[] {	Fermentable.FIELDS.ID, 
+	            		   				Fermentable.FIELDS.NAME,
+	            						Fermentable.FIELDS.MANUFACTURER, 
+	            						Fermentable.FIELDS.POTENTIAL,
+	            						Fermentable.FIELDS.YIELD,
+	            						Fermentable.FIELDS.COLOR }, 
+	               		Fermentable.FIELDS.ID + "=" + rowId, 
+	               		null, null, null, null, null);
+	       if (mCursor != null) {
+	           mCursor.moveToFirst();
+	       }
+	       return mCursor;
+	   }
+
+
+	
 }

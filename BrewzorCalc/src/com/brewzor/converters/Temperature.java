@@ -20,6 +20,7 @@
 package com.brewzor.converters;
 
 import com.brewzor.calculator.R;
+import com.brewzor.calculator.preferences.Preferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -32,7 +33,7 @@ public final class Temperature extends Unit<com.brewzor.converters.Temperature.U
 	}
 
 	public Temperature(double value, Temperature.Unit type, Context context, SharedPreferences prefs) {
-		super(value, type, context.getString(R.string.double_format), context, prefs);
+		super(value, type, Preferences.DOUBLE_PRECISION, context, prefs);
 	}
 
 	@Override

@@ -20,6 +20,7 @@
 package com.brewzor.converters;
 
 import com.brewzor.calculator.R;
+import com.brewzor.calculator.preferences.Preferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -34,7 +35,7 @@ public final class Pressure extends Unit<com.brewzor.converters.Pressure.Unit> {
 	}
 	
 	public Pressure(double value, Pressure.Unit type, Context context, SharedPreferences prefs) {
-		super(value, type, context.getString(R.string.double_format), context, prefs);
+		super(value, type, Preferences.DOUBLE_PRECISION, context, prefs);
 	}
 
 	@Override

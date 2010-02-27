@@ -21,6 +21,7 @@ package com.brewzor.calculator;
 
 import com.brewzor.calculator.R;
 import com.brewzor.recipemanager.CreateRecipeActivity;
+import com.brewzor.recipemanager.FermentableActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -32,6 +33,9 @@ public class OptionsMenuHandler {
 	/* Handles item selections */
 	static public boolean showMenu(Activity activity, MenuItem item) {
 	    switch (item.getItemId()) {
+	    case R.id.options_menu_add_fermentable:
+	    	activity.startActivity(new Intent(activity.getBaseContext(), FermentableActivity.class));
+	    	return false;
 	    case R.id.options_menu_add:
 	    	activity.startActivity(new Intent(activity.getBaseContext(), CreateRecipeActivity.class));
 	        return true;
@@ -46,6 +50,12 @@ public class OptionsMenuHandler {
 	    	return true;
 	    }
 	    return false;
+	}
+	
+	static public boolean createFermentableMenu(Activity activity, Menu menu) {
+	    MenuInflater inflater = activity.getMenuInflater();
+	    inflater.inflate(R.menu.fermentable_menu, menu);
+	    return true;
 	}
 	
 	static public boolean createMenu(Activity activity, Menu menu) {

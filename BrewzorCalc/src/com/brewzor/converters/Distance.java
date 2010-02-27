@@ -21,6 +21,7 @@ package com.brewzor.converters;
 
 //import android.R;
 import com.brewzor.calculator.R;
+import com.brewzor.calculator.preferences.Preferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -33,7 +34,7 @@ public final class Distance extends Unit<com.brewzor.converters.Distance.Unit> {
 	}
 
 	public Distance(double value, Unit type, Context context, SharedPreferences prefs) {
-		super(value, type, context.getString(R.string.double_format), context, prefs);
+		super(value, type, Preferences.DOUBLE_PRECISION, context, prefs);
 	}
 
 	@Override

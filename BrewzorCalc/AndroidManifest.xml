@@ -41,15 +41,24 @@
  		<activity android:name="com.brewzor.recipemanager.CreateRecipeActivity" 
 			android:windowSoftInputMode="adjustPan"></activity>
 
- 		<activity android:name="com.brewzor.recipemanager.FermentablesActivity" 
+ 		<activity android:name="com.brewzor.recipemanager.FermentablesListActivity" 
 			android:windowSoftInputMode="adjustPan"></activity>
 
- 		<activity android:name="com.brewzor.recipemanager.MashProfilesActivity" 
+ 		<activity android:name="com.brewzor.recipemanager.FermentableActivity" 
 			android:windowSoftInputMode="adjustPan"></activity>
 
- 		<activity android:name="com.brewzor.recipemanager.BoilAdditionsActivity" 
+ 		<activity android:name="com.brewzor.recipemanager.MashProfilesListActivity" 
+			android:windowSoftInputMode="adjustPan"></activity>
+<!-- 
+ 		<activity android:name="com.brewzor.recipemanager.MashProfileActivity" 
 			android:windowSoftInputMode="adjustPan"></activity>
 
+  		<activity android:name="com.brewzor.recipemanager.NonfermentablesListActivity" 
+			android:windowSoftInputMode="adjustPan"></activity>
+
+ 		<activity android:name="com.brewzor.recipemanager.NonfermentableActivity" 
+			android:windowSoftInputMode="adjustPan"></activity>
+-->
  		<activity android:name="com.brewzor.recipemanager.BrewzorTimer" 
 			android:windowSoftInputMode="adjustPan"></activity>
 
