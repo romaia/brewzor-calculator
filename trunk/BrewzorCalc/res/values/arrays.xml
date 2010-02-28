@@ -59,14 +59,26 @@
 		<item>OTHER</item>
 	</string-array>
 
-	<string-array name="fermentableModifyList">
+	<string-array name="editDeleteList">
 		<item>@string/fermentables_edit</item>
 		<item>@string/fermentables_delete</item>
 	</string-array>
 
-	<string-array name="fermentableModifyIdList">
+	<string-array name="editDeleteIdList">
 		<item>EDIT</item>
 		<item>DELETE</item>
+	</string-array>
+
+	<string-array name="spargeTypesList">
+		<item>@string/sparge_fly</item>
+		<item>@string/sparge_batch</item>
+		<item>@string/sparge_none</item>
+	</string-array>
+
+	<string-array name="spargeTypesIdList">
+		<item>FLY</item>
+		<item>BATCH</item>
+		<item>NONE</item>
 	</string-array>
 
 	<string-array name="mashStepTypesList">
