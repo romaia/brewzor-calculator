@@ -25,14 +25,13 @@ import android.widget.EditText;
 
 public abstract class Unit<T> {
 
-	protected SharedPreferences prefs;
-	
-	static protected String UNKNOWN = "UNKNOWN";
-	private T type;
+	final protected SharedPreferences prefs;
+	final static protected String UNKNOWN = "UNKNOWN";
+	protected T type;
 	
 	protected Context context;
-	private double value;
-	private int precision = 2;
+	protected double value;
+	protected int precision = 2;
 	
 	/**
 	 * @param value
@@ -41,16 +40,16 @@ public abstract class Unit<T> {
 	public Unit(double value, T type, int precision, Context c, SharedPreferences prefs) {				
 		this.context = c;
 		this.precision = precision;
-		setValue(value);
-		setType(type);
-		setPrefs(prefs);
+		this.value = value;
+		this.type = type;
+		this.prefs = prefs;
 	}
 
 	/**
 	 * @return the value
 	 */
 	public final double getValue(final int p) {
-		return (((double)((int)((value * Math.pow(10, p))))) / Math.pow(10, p));
+		return (((double)((int)((this.value * Math.pow(10, p))))) / Math.pow(10, p));
 	}
 	
 	/**
@@ -97,20 +96,6 @@ public abstract class Unit<T> {
 		}
 	};
 	
-	/**
-	 * @return the prefs
-	 */
-	public final SharedPreferences getPrefs() {
-		return prefs;
-	}
-
-	/**
-	 * @param prefs the prefs to set
-	 */
-	public final void setPrefs(SharedPreferences prefs) {
-		this.prefs = prefs;
-	}
-
 	/**
 	 * @return the formatted value as a String
 	 */

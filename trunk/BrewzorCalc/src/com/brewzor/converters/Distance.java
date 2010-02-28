@@ -39,7 +39,7 @@ public final class Distance extends Unit<com.brewzor.converters.Distance.Unit> {
 
 	@Override
 	public final String getLabel() {
-		switch (getType()) {
+		switch (this.type) {
 			case CENTIMETER:	return context.getString(R.string.centimeter);
 			case INCH:			return context.getString(R.string.inch);
 			default:			return UNKNOWN;
@@ -48,7 +48,7 @@ public final class Distance extends Unit<com.brewzor.converters.Distance.Unit> {
 
 	@Override
 	public final String getLabelPlural() {
-		switch (getType()) {
+		switch (this.type) {
 			case CENTIMETER:	return context.getString(R.string.centimeter_plural);
 			case INCH:			return context.getString(R.string.inch_plural);
 			default:			return UNKNOWN;
@@ -57,7 +57,7 @@ public final class Distance extends Unit<com.brewzor.converters.Distance.Unit> {
 
 	@Override
 	public final String getLabelAbbr() {
-		switch (getType()) {
+		switch (this.type) {
 			case CENTIMETER:	return context.getString(R.string.centimeter_abbr);
 			case INCH:			return context.getString(R.string.inch_abbr);
 			default:			return UNKNOWN;
@@ -66,10 +66,10 @@ public final class Distance extends Unit<com.brewzor.converters.Distance.Unit> {
 	
 	@Override
 	public final double compare(Unit toType) {
-		switch (getType()) {
-			case CENTIMETER:	return getValue() * CentimeterToUnits(toType);
-			case INCH:			return getValue() * InchToUnits(toType);
-			default:			return getValue();
+		switch (this.type) {
+			case CENTIMETER:	return this.value * CentimeterToUnits(toType);
+			case INCH:			return this.value * InchToUnits(toType);
+			default:			return this.value;
 		}
 	}
 
@@ -79,7 +79,7 @@ public final class Distance extends Unit<com.brewzor.converters.Distance.Unit> {
 			//Log.v("DistanceUnit", "name: " + unit.name() + " newType: " + newType);
 			if (unit.name().equals(toType)){
 				//Log.v("DistanceUnit", "type=" + unit.name());
-				setType(unit);
+				this.type = unit;
 			}
 		}
 	}

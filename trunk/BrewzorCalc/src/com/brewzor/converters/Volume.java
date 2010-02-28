@@ -178,6 +178,7 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case LITER:			return 0.001;
 			case TEASPOON:		return 0.202884136;
 			case TABLESPOON:	return 0.0676280454;
+			case CUBIC_INCH:	return 0.0610237441;
 			case FLUID_OUNCE:	return 0.0338140227;
 			case CUP:			return 0.00422675284;
 			case BOTTLE_12_OZ:	return 0.00281783523;
@@ -384,6 +385,7 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case LITER:			return 0.33;
 			case TEASPOON:		return 66.9517649;
 			case TABLESPOON:	return 22.317255;
+			case CUBIC_INCH:	return 20.1378356;
 			case FLUID_OUNCE:	return 11.1586275;
 			case CUP:			return 1.39482844;
 			case BOTTLE_12_OZ:	return 0.929885625;
@@ -406,6 +408,7 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case LITER:			return 0.5;
 			case TEASPOON:		return 101.442068;
 			case TABLESPOON:	return 33.8140227;
+			case CUBIC_INCH:	return 30.511872;
 			case FLUID_OUNCE:	return 16.9070114;
 			case CUP:			return 2.11337642;
 			case BOTTLE_12_OZ:	return 1.408917616667;
@@ -428,6 +431,7 @@ public final class Volume extends Unit<com.brewzor.converters.Volume.Unit> {
 			case LITER:			return 0.75;
 			case TEASPOON:		return 152.163102;
 			case TABLESPOON:	return 50.72103405;
+			case CUBIC_INCH:	return 45.7678081;
 			case FLUID_OUNCE:	return 25.360517025;
 			case CUP:			return 3.17006463;
 			case BOTTLE_12_OZ:	return 2.1133764225;

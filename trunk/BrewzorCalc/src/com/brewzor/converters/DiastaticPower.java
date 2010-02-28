@@ -23,7 +23,7 @@ public final class DiastaticPower extends Unit<com.brewzor.converters.DiastaticP
 		switch (getType()) {
 			case LINTNER:			return LintnerToUnits(getValue(), toType);
 			case WINDISCH_KOLBACH:	return WindischKolbachToUnits(getValue(), toType);
-			default:				return getValue();
+			default:				return getRawValue();
 		}
 	}
 
