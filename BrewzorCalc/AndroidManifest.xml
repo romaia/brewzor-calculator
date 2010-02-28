@@ -49,10 +49,10 @@
 
  		<activity android:name="com.brewzor.recipemanager.MashProfilesListActivity" 
 			android:windowSoftInputMode="adjustPan"></activity>
-<!-- 
+
  		<activity android:name="com.brewzor.recipemanager.MashProfileActivity" 
 			android:windowSoftInputMode="adjustPan"></activity>
-
+<!-- 
   		<activity android:name="com.brewzor.recipemanager.NonfermentablesListActivity" 
 			android:windowSoftInputMode="adjustPan"></activity>
 

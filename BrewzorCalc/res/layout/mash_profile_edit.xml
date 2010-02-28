@@ -22,10 +22,28 @@
 <LinearLayout	xmlns:android="http://schemas.android.com/apk/res/android"
 				style="@style/portrait_layout"
 				>
-
-	<ListView	android:id="@android:id/list" 
-				android:layout_width="fill_parent"
-				android:layout_height="fill_parent"
+				
+	<TextView	style="@style/label_text"
+				android:text="@string/mash_profiles_name"
 				/>
 
+	<EditText	android:id="@+id/name"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				/>
+
+	<TextView	style="@style/label_text"
+				android:text="@string/mash_profiles_sparge_type"
+				/>
+
+	<Spinner	android:id="@+id/type"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:entries="@array/spargeTypesList"
+				android:entryValues="@array/spargeTypesIdList"
+				android:drawSelectorOnTop="true" 
+				/>
+
+				
+				
 </LinearLayout>

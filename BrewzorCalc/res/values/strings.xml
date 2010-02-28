@@ -56,6 +56,7 @@
 	<string name="fermentables_delete">Delete</string>
 	<string name="fermentables_item_deleted">Item deleted</string>
 	<string name="fermentables_error_item_deleted">Database delete error</string>
+	<string name="fermentables_error_invalid_id">Invalid ID</string>
 	<string name="fermentables_color_format">%01.0f\n%s</string>
 	<string name="fermentables_name">Name:</string>
 	<string name="fermentables_type">Type:</string>
@@ -71,6 +72,18 @@
 	<string name="fermentables_other">Other</string>
 	
 	<string name="mash_profiles">Mash Profiles</string>
+	<string name="mash_profiles_edit_mash_profile">Edit Mash Profile</string>
+	<string name="mash_profiles_item_deleted">Item deleted</string>
+	<string name="mash_profiles_error_item_deleted">Database delete error</string>
+	<string name="mash_profiles_error_invalid_id">Invalid ID</string>
+	<string name="mash_profiles_name">Name:</string>
+	<string name="mash_profiles_sparge_temperature">Sparge Temperature:</string>
+	<string name="mash_profiles_sparge_type">Sparge Type:</string>
+
+	<string name="sparge_fly">Fly Sparge</string>
+	<string name="sparge_batch">Batch Sparge</string>
+	<string name="sparge_none">No Sparge</string>
+
 	<string name="boil_additions">Boil Additions</string>
 
 	<!-- Create Brew Schedule -->

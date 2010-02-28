@@ -44,7 +44,7 @@ public class FermentableActivity extends Activity {
 	TextView colorType;
 	Spinner typeSpinner;
 	
-	int id = -1;
+	long id = -1;
 	
 	BeerColor color;
 	BeerColor.Unit colorUnit = BeerColor.Unit.SRM;
@@ -62,7 +62,7 @@ public class FermentableActivity extends Activity {
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
         Intent i = getIntent();
-        id = i.getIntExtra("com.brewzor.recipemanager.FermentableActivity.id", -1);
+        id = i.getLongExtra("com.brewzor.recipemanager.FermentableActivity.id", -1);
 
         db = new DBHelper(this);
         db.open();
@@ -193,7 +193,7 @@ public class FermentableActivity extends Activity {
 		}
 	}
 
-	private void getCursor(int rowId) {
+	private void getCursor(long rowId) {
         try {
             cFermentable = db.getFermentable(rowId);
         } catch (SQLException e) {
@@ -201,7 +201,7 @@ public class FermentableActivity extends Activity {
         }
 
         if (cFermentable.getCount() == 0){
-    		Toast.makeText(getApplicationContext(), "Invalid ID", Toast.LENGTH_SHORT).show();
+    		Toast.makeText(getApplicationContext(), getString(R.string.fermentables_error_invalid_id), Toast.LENGTH_SHORT).show();
     		finish();
         }
 	}
