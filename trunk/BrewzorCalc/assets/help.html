@@ -1,3 +1,4 @@
+
 <html>
 <!-- 
 
@@ -24,47 +25,183 @@
 <title>Brewzor Brewing Calculator Help</title>
 <style type="text/css">
 body {
-    font-size:10pt;
+    font-size:12pt;
+	font-family: "Helvetica Neue",Helvetica,Arial,"Bitstream Vera Sans",sans-serif;
+	color: #777777;
 }  
+h1 {
+	font-size:24pt;
+	font-family: "Helvetica Neue",Helvetica,Arial,"Bitstream Vera Sans",sans-serif;
+	font-weight: bold;
+	color: #000000;
+	}
+h2 {
+	font-size:18pt;
+	font-family: "Helvetica Neue",Helvetica,Arial,"Bitstream Vera Sans",sans-serif;
+	font-weight: bold;
+	color: #000000;
+	}
+h3 {
+	font-size:14pt;
+	font-family: "Helvetica Neue",Helvetica,Arial,"Bitstream Vera Sans",sans-serif;
+	font-weight: bold;
+	color: #000000;
+	}
+
+.formula {
+	font-family: "Helvetica Neue",Helvetica,Arial,"Bitstream Vera Sans",sans-serif;
+	font-size: 12pt;
+	font-style: italic;
+	font-weight: bold;
+	line-height: 1.5em;
+	color: #000000;
+	}
+.warning {
+	font-family: "Helvetica Neue",Helvetica,Arial,"Bitstream Vera Sans",sans-serif;
+	font-size: 14pt;
+	font-weight: bold;
+	line-height: 1.5em;
+	color: #FF0000;
+	}
+small {
+    font-size:10pt;
+	font-family: "Helvetica Neue",Helvetica,Arial,"Bitstream Vera Sans",sans-serif;
+	font-style: italic;
+	color: #777777;
+	}
+
 </style>
 </head>
 <body>
 
-<h1>Brewzor Brewing Calculator Help</h1>
+<h1>Brewzor Help</h1>
 
 <p>For more information, visit our website: <a
-	href="http://brewzor.com">http://brewzor.com</a></p>
+   href="http://brewzor.com">http://brewzor.com</a></p>
 
 <h2>Table of Contents:</h2>
 
 <ul>
-	<li><a href="#calculators"><b>Calculators</b></a>
-	<ul>
-		<li><a href="#gravitycorrection">Gravity Correction Calculator</a></li>
-		<li><a href="#cylindervolumeheight">Cylinder Volume / Cylinder Height Calculator</a></li>
-		<li><a href="#striketemperature">Strike Temperature Calculator</a></li>
-		<li><a href="#mashinfusion">Mash Infusion Calculator</a></li>
-		<li><a href="#decoctionvolume">Decoction Volume Calculator</a></li>
-		<li><a href="#batchsparge">Batch Sparge Calculator</a></li>
-		<li><a href="#boiloff">Boil Off Calculator</a></li>
-		<li><a href="#carbonation">Carbonation Calculator</a></li>
-		<li><a href="#alcoholattenuation">Alcohol / Attenuation Calculator</a></li>
-		<li><a href="#refractometer">Refractometer Calculator</a></li>
-		<li><a href="#hydrometercorrection">Hydrometer Correction Calculator</a></li>
-		<li><a href="#unitconverter">Unit Converter</a></li>
-	</ul>
-	</li>
-	<li><a href="#settings"><b>Settings / Preferences</b></a>
-	<ul>
-		<li><a href="#prefsgeneral">General Settings</a></li>
-		<li><a href="#prefsbatch">Batch Settings</a></li>
-		<li><a href="#prefsequipment">Kettle Settings</a></li>
-	</ul>
-	</li>
+   <li><a href="#proversuscalculators"><b>Brewzor Pro versus Brewzor Calculator</b></a>
+   <li><a href="#mainmenu"><b>Main Menu</b></a>
+   <ul>
+      <li><a href="#newrecipe"><b>New Recipe</b></a></li>
+      <li><a href="#recipemanager"><b>Recipe Manager</b></a></li>
+         <ul>
+            <li><a href="#recipedetail">Recipe Detail</a></li>
+         </ul>
+      <li><a href="#calculators"><b>Brewing Calculators</b></a>
+         <ul>
+            <li><a href="#striketemperature">Strike Temperature Calculator</a></li>
+            <li><a href="#mashinfusion">Mash Infusion Calculator</a></li>
+            <li><a href="#decoctionvolume">Decoction Volume Calculator</a></li>
+            <li><a href="#batchsparge">Batch Sparge Calculator</a></li>
+            <li><a href="#gravitycorrection">Gravity Correction Calculator</a></li>
+            <li><a href="#boiloff">Boil Off Calculator</a></li>
+            <li><a href="#hopbitterness">Hop Bitterness Calculator</a></li>
+            <li><a href="#hopalphacorrection">Hop Alpha Correction Calculator</a></li>
+            <li><a href="#kettlevolume">Kettle Volume Calculator</a></li>
+            <li><a href="#yeastpitchingrate">Yeast Pitching Rate Calculator</a></li>
+            <li><a href="#carbonation">Carbonation Calculator</a></li>
+            <li><a href="#hydrometercorrection">Hydrometer Correction Calculator</a></li>
+            <li><a href="#alcoholattenuation">Alcohol / Attenuation Calculator</a></li>
+            <li><a href="#refractometer">Refractometer Calculator</a></li>
+            <li><a href="#styles">Styles Calculator</a></li>
+            <li><a href="#unitconverter">Unit Converter</a></li>
+         </ul>
+      <li><a href="#database"><b>Database</b></a></li>
+      <ul>
+         <li><a href="#databaseequipment">Equipment</a></li>
+         <li><a href="#databasefermentables">Fermentables</a></li>
+         <li><a href="#databasehops">Hops</a></li>
+         <li><a href="#databasemashprofiles">Mash Profiles</a></li>
+         <li><a href="#databasemiscs">Miscs</a></li>
+         <li><a href="#databasestyles">Styles</a></li>
+         <li><a href="#databasewater">Water</a></li>
+         <li><a href="#databaseyeast">Yeast</a></li>
+      </ul>
+      <li><a href="#settings"><b>Settings / Preferences</b></a></li>
+      <ul>
+         <li><a href="#prefschangemeasurementsystem">Change Measurement System</a></li>
+         <li><a href="#prefsgeneral">General</a></li>
+         <li><a href="#prefsbatch">Batch</a></li>
+         <li><a href="#prefsequipment">Equipment</a></li>
+         <li><a href="#prefsother">Other</a></li>
+      </ul>
+      <li><a href="#featurerequestsbugs"><b>Feature Requests / Bugs</b></a></li>
+   </ul>
+   </li>
+   </li>
 
 </ul>
+<a name="proversuscalculators"></a>
+<h2>Brewzor Pro versus Brewzor Calculator:</h2>
+
+<p>Brewzor Calculator is a subset of the features found in Brewzor Pro.  Both applications are free, but some users don't need a fully functional recipe and brew manager.  For those people, Brewzor Calculator provides the same brewing calculators in Brewzor Pro, but in a smaller installed file size.</p>
+
+<a name="mainmenu"></a>
+<h2>Main Menu</h2>
+
+<p>Long tapping the Recipe Manager menu item displays a dialog for exporting or deleting all recipes in the database.</p>
+
+<a name="newrecipe"></a>
+<h3>New Recipe:</h3>
+
+<p>Click this menu option to create a new recipe.  Saves are handled automatically once you have entered a recipe name.</p>
+
+<a name="recipemanager"></a>
+<h3>Recipe Manager:</h3>
+
+<p>This is a list of all the recipes in the recipe database.  You may import additional recipes by clicking Menu and then clicking Import.</p>
+
+<p>If there are no recipes in the database, you will be presented with a button allowing you to import the default recipes via the internet or from BeerXML files stored on your phone.</p>
+
+<p><img src="images/recipe_list.png" /></p>
+
+<p>After importing records, you might see a lock icon next to your recipe name.  This indicates that Brewzor is using the values from your imported data instead of computing them itself.  When you see a lock icon, you are only allowed to change certain aspects of a recipe - basically things that don't affect the IBU, SRM, gravity, etc.  To make these items editable, change the Preference: Recipe Calculations to "Calculate gravity, color, and IBU"</p>
+
+<p>When available, Brewzor will try and display the recipe name, SRC/EBC (colored bar on the left), OG, IBU, and style.</p>
+
+<p>Clicking on a recipe from the list will take you to the recipe detail screen for that particular recipe.  Long tapping on a recipe in the list will present a menu for editing, exporting or deleting the recipe.</p>
+
+<a name="recipedetail"></a>
+<h3>Recipe Detail:</h3>
+
+<p>The recipe detail screen lets you edit a recipe.  A recipe name, efficiency, boil time, and equipment are all required before OG, color and IBU calculations can be performed.</p>
+
+<p>If the Preference: Recipe Calculations is set to "Use imported values for gravity, color and IBU calculations", a lock icon will appear next to all uneditable items.</p>
+
 <a name="calculators"></a>
-<h2>Calculators Included in Brewzor Brewing Calculator:</h2>
+<h2>Calculators Included in Brewzor:</h2>
+
+<a name="hopbitterness"></a>
+<h3>Hop Bitterness Calculator:</h3>
+
+<p>The hop bitterness calculator lets you create a hop schedule for determining an estimate of IBUs.</p>
+
+<p>Before IBUs can be calculated, several things about the brew need to be defined.  Enter a boil volume, batch volume (the volume that goes into the fermenter) and the wort gravity.  You may optionally change the bitterness formula.  Now click the plus icon to add a hop charge.  You will be presented with the hop addition dialog.  Enter the information about your hop charge and click Add.</p>
+
+<p>Based on formulas found <a href="http://www.realbeer.com/hops/FAQ.html">here</a> and <a href="http://www.amazon.com/Designing-Great-Beers-Ultimate-Brewing/dp/0937381500">here</a>.</p>
+
+<a name="hopalphacorrection"></a>
+<h3>Hop Alpha Correction Calculator:</h3>
+
+<p>You've formulated your recipe and now that you're at the homebrew store, you see that their hops are a different alpha acid percent than your recipe calls for.  This calculator helps you figure out how much of the new hop you need to maintain the same bitterness in your final beer.</p>
+
+<p>Based on formulas found <a href="http://www.realbeer.com/hops/FAQ.html">here</a>.</p>
+
+<a name="yeastpitchingrate"></a>
+<h3>Yeast Pitching Rate Calculator:</h3>
+
+<p>One of the best ways to improve your beer is through pitching the proper amount of yeast.  Most calculators only provide a single step for propagating yeast.  Unfortunately, not all of us have the ability to make large starters.  That's where stepping up starters comes in.  You can create more yeast but repeating your starter step more than once.</p>
+
+<p>To use the calculator, first select the type of beer you're making (Ale or Lager).  Then select your yeast format (Liquid or Dry).  Enter the Original Gravity and Wort Volume.  Your yeast should have a date of manufacture stamped on it - enter that value in production date.  Enter the number of vials/packs you want to start with.  And finally select Basic Starter (no agitation) or Stir Plate (agitation).</p>
+
+<p>Once the above information has been entered, it is time to create a starter.  Click the Add Starter button.  A new starter will appear.  Move the slider until the Total Cells Grown amoutn turns green.  If you can't grow enough cells in one step (or the starter size is greater than your flask), click Step Up to create another starter step.  You can now adjust both sliders until your Total Cells Grown matches Cells Needed.</p>
+
+<p>Based on formulas found <a href="http://www.maltosefalcons.com/tech/yeast-propagation-and-maintenance-principles-and-practices">here</a> and <a href="http://sites.google.com/site/republicbrewpub/">here</a>.</p>
+
+<p>Although Brewzor is not affiliated with the site, I have found <a href="http://www.brewershardware.com/home.php">Brewer's Hardware</a> provides an affordable home stir plate solution.</p>
 
 <a name="gravitycorrection"></a>
 <h3>Gravity Correction:</h3>
@@ -72,8 +209,8 @@ body {
 <p>What do you do when you miss your pre-boil gravity? Not
 correcting gravity before adding your hops can affect the hop
 utilization and perceived bitterness of your beer. If your gravity is
-too low, the calculator will tell you how much dried malt extract (DME)
-or liquid malt extract (LME) to add to your kettle to raise the gravity
+too low, the calculator will tell you how much dried malt extract <acronym title="Dried Malt Extract">(DME)</acronym>
+or liquid malt extract <acronym title="Liquid Malt Extract">(LME)</acronym> to add to your kettle to raise the gravity
 to your pre-boil level. If the gravity is too high, the calculator will
 tell you how much water to add to dilute your wort to the desired
 pre-boil level.</p>
@@ -85,17 +222,17 @@ below the entry fields.</p>
 
 <p>The formulas used to calculate the gravity corrections were based on information found <a href="http://www.brewboard.com/index.php?showtopic=31009">here</a>.</p>
 
-<p>
-<b>Extract PG for LME = 44</b><br />
-<b>Extract PG for DME = 36</b><br />
+<p class="formula">
+Extract PG for LME = 44<br />
+Extract PG for DME = 36<br />
 <br />
-<b>Amount of DME = (GU<sub>target</sub> - GU<sub>mash</sub>) / 36</b><br />
-<b>Amount of LME = (GU<sub>target</sub> - GU<sub>mash</sub>) / 44</b><br />
-<b>Water for dilution = (GU<sub>mash</sub> / GU<sub>target</sub>) - Volume<sub>pre-dilution</sub></b><br />
+Amount of DME = (GU<sub>target</sub> - GU<sub>mash</sub>) / 36<br />
+Amount of LME = (GU<sub>target</sub> - GU<sub>mash</sub>) / 44<br />
+Water for dilution = (GU<sub>mash</sub> / GU<sub>target</sub>) - Volume<sub>pre-dilution</sub><br />
 </p>
 
-<a name="cylindervolumeheight"></a>
-<h3>Cylinder Volume / Cylinder Height Calculators:</h3>
+<a name="kettlevolume"></a>
+<h3>Kettle Volume Calculators:</h3>
 
 <p>Accurately measuring volume during a brew session can be
 difficult. Since most kettles have a flat bottom and are round (a
@@ -103,33 +240,19 @@ cylinder), you can use a calibrated stick (like a yard stick or a marked
 wooden dowel) to measure the liquid height and the diameter of my
 kettle, making it easy to calculate the volume in the kettle.</p>
 
-<p>The formula used for volume is: <b> Volume = Pi * (Diameter /
-2) <sup>2</sup> * Height </b></p>
+<p>The formula used for volume is:<br />
+<span class="formula"> Volume = Pi * (Diameter /
+2) <sup>2</sup> * Height </span></p>
 
-<p>The formula used for height is: <b> Height = Volume / Pi *
-(Diameter / 2) <sup>2</sup> </b></p>
+<p>The formula used for height is: <br />
+<span class="formula"> Height = Volume / Pi *
+(Diameter / 2) <sup>2</sup> </span></p>
 
-<p>Use the Cylinder Volume Calculator if you know the wort height
-and would like to know the wort volume. Enter the measured height,
-kettle diameter and your false bottom height. If you do not have a false
-bottom, enter a zero. The calculated volume will display below the entry
-fields once all data has been entered.</p>
-
-<p>Use the Cylinder Height Calculator if you know the wort volume
-and would like to know the wort height. Enter the desired volume, kettle
-diameter and your false bottom height. If you do not have a false
-bottom, enter a zero. The calculated height will display below the entry
-fields once all data has been entered.</p>
-
-<p><b>Additional Settings</b> :</p>
-<ul>
-	<li>The values for kettle diameter and false bottom height can be
-	defined via the Settings screen.</li>
-	<li>If "Correct for heat expansion" is selected in preferences, a
-	button will be displayed above the result. Clicking the button will
-	either no nothing or add /subtract the value defined in Cooling Loss
-	Percentage preference (usually 4%).</li>
-</ul>
+<p>Enter the measured height or desired volume,
+the kettle diameter and false bottom height. If you do not have a false
+bottom, enter a zero. Values for heat expansion / cooling loss may also be entered.
+The calculated volume or height will display below the entry
+fields once all required data has been entered.</p>
 
 <a name="striketemperature"></a>
 <h3>Strike Temperature:</h3>
@@ -139,53 +262,41 @@ water for a given amount of grain and a given amount of strike water.
 The sparge water temperature will appear below the entry fields once all
 data has been entered.</p>
 
+<p>There are three modes for determining the amount of liquid to add to the mash.  Selecting Strike Water Volume lets you enter a fixed amount of water to the mash and the Infusion Temperature and water/grain ratio are calculated to match that value.  Selecting Infusion Temperature lets you pick the temperature of your strike water and the amount of water needed and water/grain ratio are calculated to match your temperature.  Selecting Water/Grain ratio lets you enter a ratio like 1.25 quarts water / 1 pound of grain or .3125 gallons of water / 1 pound of grain.
+</p>
+
 <p>The formulas used to determine strike temperature were based on information found <a href="http://www.homebrewtalk.com/wiki/index.php/Infusion_mashing">here</a> and <a href="http://brewingtechniques.com/library/backissues/issue5.4/palmer_sb.html">here</a>.</p>
-<p>
 
-<b>T<sub>strike</sub></b> = strike water temperature in &deg;F<br />
-<b>T<sub>target</sub></b> = target mash temperature in &deg;F<br />
-<b>T<sub>grain</sub></b> = dry grain temperature in &deg;F<br />
+<p class="formula">
+<b>T<sub>s</sub></b> = strike water temperature in &deg;F<br />
+<b>T<sub>t</sub></b> = target mash temperature in &deg;F<br />
+<b>T<sub>g</sub></b> = dry grain temperature in &deg;F<br />
 <b>R</b> = Water to grain ration in quarts per pound (usually around 1 - 1.25)<br />
-<br />
-<b>T<sub>strike</sub> = (0.2 ÷ R) X (T<sub>target</sub> - T<sub>grain</sub>) + T<sub>target</sub></b></p>
 
-<p><b>Additional Settings</b> :</p>
-<ul>
-	<li>The setting Water to Grain Ratio will automatically calculate
-	the sparge water volume. This is usually between 1-2 quarts / pound or
-	its equivalent of you choose other units. When this value is greater
-	than zero, the Sparge Water entry field in the calculator is disabled
-	since the volume is calculated automatically.</li>
-</ul>
+<p class="formula">
+T<sub>s</sub> = (0.2 / R) X (T<sub>t</sub> - T<sub>g</sub>) + T<sub>t</sub></p>
+</p>
 
 <a name="mashinfusion"></a>
 <h3>Mash Infusion:</h3>
 
 <p>Calculates the amount of water needed to raise the temperature of the mash a given number of degrees.  This currently does not account for heat loss to the mash tun.  This means, you might need to adjust the result based on your system.</p>
 
+<p>There are three modes for determining the amount of liquid to add to the mash.  Selecting Strike Water Volume lets you enter a fixed amount of water to the mash and the Infusion Temperature and water/grain ratio are calculated to match that value.  Selecting Infusion Temperature lets you pick the temperature of your strike water and the amount of water needed and water/grain ratio are calculated to match your temperature.  Selecting Water/Grain ratio lets you enter a ratio like 1.25 quarts water / 1 pound of grain or .3125 gallons of water / 1 pound of grain.</p>
+
 <p>Formulas used were based on information found <a href="http://brewingtechniques.com/library/backissues/issue5.4/palmer_sb.html">here</a>.</p>
 
-<p>
-
-<b>TargetMashTemperature = Target temperature of the mash</b><br />
-<b>InitialMashTemperature = Initial temperature of the mash</b><br />
-<b>GrainWeight = Weight of the grain</b><br />
-<b>WaterInMash = Total volume of water in the mash before the infusion</b><br />
-<b>InfusionVolume = Volume of the water to add to the mash to achieve the target mash temperature</b><br />
-<b>InfusionWaterTemperature = Temperature of the infusion water. Defaults to boiling (212&deg;F/100&deg;C)</b><br />
-</p>
-<p>
-
-<b><sub>Infusion</sub> = (TargetMashTemperature - InitialMashTemperature) X (0.2 * GrainWeight + WaterInMash) ÷ (InfusionWaterTemperature - TargetMashTemperature)</b>
+<p class="formula">
+<acronym title="Infusion Volume"> I<sub>v</sub></acronym> = Volume of the water to add to the mash to achieve the target mash temperature<br />
+<acronym title="Target Mash Temperature"> T<sub>mt</sub></acronym> = Target temperature of the mash<br />
+<acronym title="Initial Mash Temperature"> I<sub>mt</sub></acronym> = Initial temperature of the mash<br />
+<acronym title="Grain Weight"> G<sub>w</sub></acronym> = Weight of the grain<br />
+<acronym title="Water In Mash"> W<sub>im</sub></acronym> = Total volume of water in the mash before the infusion<br />
+<acronym title="Infusion Water Temperature"> I<sub>wt</sub></acronym> = Temperature of the infusion water. Defaults to boiling (212&deg;F/100&deg;C)<br />
 </p>
 
-<p><b>Additional Settings: </b></p>
-
-<p>
-<ul>
-  <li>Mash Infusion Water Temperature can be anything warmer than the current mash temperature.  Defaults to boiling.</li>
-</ul>
-
+<p class="formula">
+Infusion<sub>v</sub> = (T<sub>mt</sub> - I<sub>mt</sub>) X (0.2 * G<sub>w</sub> + W<sub>im</sub>) / (I<sub>wt</sub> - T<sub>mt</sub>)
 </p>
 
 <a name="decoctionvolume"></a>
@@ -195,24 +306,25 @@ data has been entered.</p>
 
 <p>Formulas used were based on information found <a href="http://www.feathercraft.net/decoction/">here</a>.</p>
 
-<p>
-<b>TargetMashTemperature = Target temperature of the mash</b><br />
-<b>InitialMashTemperature = Initial temperature of the mash</b><br />
-<b>GrainWeight = Weight of the grain in pounds</b><br />
-<b>WaterInMash = Total volume of water in the mash before the infusion in quarts</b><br />
-<b>InfusionVolume = Volume of the water to add to the mash to achieve the target mash temperature</b><br />
-<b>InfusionWaterTemperature = Temperature of the infusion water. Defaults to boiling (212&deg;F/100&deg;C)</b><br />
-<b>DecoctionVolume = The volume you need to take from the mash to perform the decoction in quarts</b><br />
+<p class="formula">
+<acronym title="Decoction Volume"> D<sub>v</sub></acronym> = The volume you need to take from the mash to perform the decoction in quarts<br />
+<acronym title="Target Mash Temperature"> T<sub>mt</sub></acronym> = Target temperature of the mash<br />
+<acronym title="Initial Mash Temperature"> I<sub>mt</sub></acronym> = Initial temperature of the mash<br />
+<acronym title="Grain Weight"> G<sub>w</sub></acronym> = Weight of the grain<br />
+<acronym title="Water In Mash"> W<sub>im</sub></acronym> = Total volume of water in the mash before the infusion<br />
+<acronym title="Infusion Volume"> I<sub>v</sub></acronym> = Volume of the water to add to the mash to achieve the target mash temperature<br />
+<acronym title="Infusion Water Temperature"> I<sub>wt</sub></acronym> = Temperature of the infusion water. Defaults to boiling (212&deg;F/100&deg;C)
 </p>
 
-<p><b>DecoctionVolume = (TargetMashTemperature - InitialMashTemperature) * (GrainWeight * (0.3125 + (WaterInMash / GrainWeight))) / (InfusionWaterTemperature - InitialMashTemperature)</b></p>
+<p class="formula">
+DecoctionVolume = (T<sub>mt</sub> - I<sub>mt</sub>) * (G<sub>w</sub> * (0.3125 + (W<sub>im</sub> / G<sub>w</sub>))) / (I<sub>wt</sub> - I<sub>mt</sub>)</p>
 
 
 <p><b>Additional Settings: </b></p>
 
 <p>
 <ul>
-  <li>Mash Infusion Water Temperature can be anything warmer than the current mash temperature.  Defaults to boiling.</li>
+  <li>The temperature of the decoction is defined in Preferences :: Equipment :: Boiling Temperature.</li>
 </ul>
 
 </p>
@@ -229,27 +341,23 @@ quarts / pound of grain) and then add sparge water to the mash tun to
 bring it up to the suggested water to grain ratio accounting for water
 loss due to grain absorption</p>
 
+<p>The amount of water in the mash may be entered either as a ratio of water to grain or as volume.  You may use up to 3 separate batch sparges by selecting a new value for Number of Sparges.</p>
+
+<p>Once your sparge parameters have been entered, the volume for each sparge is displayed along with the total batch sparge water needed.</p>
+
 <p>The formulas are based on information found <a href="http://www.franklinbrew.org/brewinfo/nbsparge.html">here</a>.</p>
 
 <p>The formulas used to calculate batch sparge volumes are (volume units can be anything as long as they are the
 same throughout):</p>
 
-<p>
-<b>WaterToGrainRatio = .31 gallons/pound (or whatever you've set in preferences)</b><br />
-<b>GrainAbsorptionRatio = .13 (or whatever you've set in preferences)</b><br /> 
-<b>StrikeWaterVolume = WaterToGrainRatio * GrainWeight</b><br />
-<b>GrainAbsorptionVolume = GrainAbsorptionRatio * GrainWeight</b><br />
-<b>FirstSpargeVolume = (BoilVolume / 2) - (StrikeWaterVolume - GrainAbsorptionVolume)</b><br />
-<b>SecondSpargeVolume = BoilVolume / 2</b>
+<p class="formula">
+WaterToGrainRatio = User entered<br />
+GrainAbsorptionRatio = .13<br />
+StrikeWaterVolume = WaterToGrainRatio * GrainWeight<br />
+GrainAbsorptionVolume = GrainAbsorptionRatio * GrainWeight<br />
+FirstSpargeVolume = (BoilVolume / 2) - (StrikeWaterVolume - GrainAbsorptionVolume)<br />
+SecondSpargeVolume = BoilVolume / 2
 </p>
-
-<p><b>Preferences:</b></p>
-
-<p><b>Water To Grain Ratio:</b> Defines the thickness of your mash. Usually in the
-range of 1 - 1.25 quarts per pound (.25 - .31 gallons / pound). </p>
-
-<p><b>Grain Absorption Ratio</b> The amount of water lost due to absorption by the
-grain. Generally about 1 pint per pound of grain (.13 gallons / pound).</p>
 
 <a name="boiloff"></a>
 <h3>Boil Off:</h3>
@@ -258,14 +366,13 @@ grain. Generally about 1 pint per pound of grain (.13 gallons / pound).</p>
 the starting volume, evaporation rate, boil time in minutes and the
 cooling loss percentage.</p>
 
+<p>Water loss due to evaporation may be entered one of three ways.  Evaporation Percent per Hour calculates water loss by reducing the volume by a percentage based on the length of the boil.  Fixed Evaporation Volume is a fixed amount of loss.  Evaporation Volume Per Hour is used if you know that you lose a specific amount every hour.</p>
+
 <p><b>Additional Settings</b> :</p>
 <ul>
-	<li>Boil minutes is usually 60 - 90 minutes.</li>
-	<li>Evaporation Rate is usually 3% for mash temperatures and 4%
-	for boiling.</li>
-	<li>Cooling Loss the percent loss per hour for your kettle. This
-	is usually in the range of 5-15%. If you are in doubt, start with a
-	value of 10%.</li>
+   <li>Boil minutes is usually 60 - 90 minutes.</li>
+   <li>Cooling Loss is usually 3% for mash temperatures and 4%
+   for boiling.</li>
 </ul>
 
 <a name="alcoholattenuation"></a>
@@ -274,13 +381,15 @@ cooling loss percentage.</p>
 <p>This calculator is used to determine the amount of alcohol by
 weight and by volume in addition to the real and apparent attenuation.</p>
 
+<p>Enter the original gravity and the current gravity and the calculator will display the ABV, ABW, AA and RA.  If you have selected Specific Gravity as your unit, you may also enter the sample temperature.  When this is entered, it will save you from having to use the Hydrometer Correction Calculator if your sample isn't at your calibratino temperature.  The Original Gravity is not adjusted for temperature.</p>
+
 <p>The formulas used were based on information found <a href="http://www.pointbrewsupply.com/pdf/BeerAlcoholCalories.pdf">here</a>.</p>
 
-<p><b>Real Extract = 0.1808 * ºP(initial) + 0.8192 * ºP(final)</b></p>
-<p><b>Apparent Attenuation = 1 - [ºP(final) / ºP(initial)] </b></p>
-<p><b>Real Attenuation = 1 - [RealExtract / ºP(initial)] </b></p>
-<p><b>ABV% = (OG - FG) / 0.75 </b></p>
-<p><b>ABW% = (0.79 * ABV%) / FinalGravity</b></p>
+<p class="formula">Real Extract = 0.1808 * ÂºP(initial) + 0.8192 * ÂºP(final)</p>
+<p class="formula">Apparent Attenuation = 1 - [ÂºP(final) / ÂºP(initial)] </p>
+<p class="formula">Real Attenuation = 1 - [RealExtract / ÂºP(initial)] </p>
+<p class="formula">ABV% = (OG - FG) / 0.75 </p>
+<p class="formula">ABW% = (0.79 * ABV%) / FinalGravity</p>
 
 <a name="refractometer"></a>
 <h3>Refractometer:</h3>
@@ -314,26 +423,23 @@ This is used to determine the Specific Gravity of wort when measured by a refrac
 pressure (kegging) required to carbonate a given volume of beer to a number
 of volumes of CO2.</p>
 
-<p><b> WARNING!!! WARNING!!! WARNING!!! WARNING!!! <br />
-<br />
+<p class="warning"> WARNING!!! WARNING!!! WARNING!!! WARNING!!!</p>
 
-This calculator is meant as a guide only. Using the incorrect amount of
+<p class="warning">This calculator is meant as a guide only. Using the incorrect amount of
 priming sugar can cause bottles to explode and is extremely dangerous.
 If the amount recommended by the calculator seems wrong, it probably is.
 You should take all necessary steps to ensure you don't over-carbonate
-your beer as that can result in extreme bodily harm, death and
-definitely bad beer. <br />
-<br />
+your beer as that may result in extreme bodily harm, death and/or bad beer.</p>
 
-WARNING!!! WARNING!!! WARNING!!! WARNING!!! </b>
-</p>
+<p class="warning">WARNING!!! WARNING!!! WARNING!!! WARNING!!!</p>
+
 <p>The formula for setting the regulator to the correct pressure in
 pounds per square inch for the desired level of carbonation was taken
 from the BYO article found
 <a href="http://www.byo.com/stories/techniques/article/indices/39-kegging/165-balancing-your-draft-system-advanced-brewing">here</a>.
 </p>
-<p>
 
+<p class="formula">
 <b>P</b> = Pressure in PSI (pounds/inch<sup>2</sup>)<br />
 <b>T</b> = Temperature of beer in &deg;F<br />
 <b>V</b> = Volume of CO<sub>2</sub><br />
@@ -343,43 +449,76 @@ from the BYO article found
 
 <p>The formula for determining the residual CO<sub>2</sub> and calculating priming sugar were based on the pages found <a href="http://www.byo.com/stories/techniques/article/indices/21-carbonation/1276-priming-with-sugar">here</a>, <a href="http://www.byo.com/stories/techniques/article/indices/21-carbonation/1137-master-the-action-carbonation">here</a>, and <a href="http://www.myhomebrew.com/bp0.html">here</a>.</p>
 
-<p><b>ResidualCO<sub>2</sub> = 3.0378 - 5.0062e-2 * Temp<sub>&deg;F</sub> + 2.6555e-4 * Temp<sub>&deg;F</sub></b></p>
+<p class="formula">
+CornSugar = Weight of corn sugar in grams<br />
+TableSugar = Weight of table sugar in grams<br />
+DME = Weight of DME in grams<br />
+BeerVolume = Volume of beer in liters<br />
+BeerTemp = Temperature of beer in &deg;F
+</p>
 
-<p><b>CornSugar<sub>grams</sub> = 4.02 * Volume<sub>liters</sub> * (VolumesCO<sub>2</sub> - ResidualCO<sub>2</sub>)</b></p>
+<p class="formula">
+ResidualCO<sub>2</sub> = 3.0378 - 5.0062e-2 * BeerTemp + 2.6555e-4 * BeerTemp</p>
 
-<p><b>TableSugar<sub>grams</sub> = 3.82 * Volume<sub>liters</sub> * (VolumesCO<sub>2</sub> - ResidualCO<sub>2</sub>)</b></p>
+<p class="formula">
+CornSugar = 4.02 * BeerVolume * (VolumesCO<sub>2</sub> - ResidualCO<sub>2</sub>)</p>
 
-<p><b>DME<sub>grams</sub> = (510.0 / 75.0) * Volume<sub>liters</sub> * (VolumesCO<sub>2</sub> - ResidualCO<sub>2</sub>)</b></p>
+<p class="formula">
+TableSugar = 3.82 * BeerVolume * (VolumesCO<sub>2</sub> - ResidualCO<sub>2</sub>)</p>
+
+<p class="formula">
+DME = (510.0 / 75.0) * BeerVolume * (VolumesCO<sub>2</sub> - ResidualCO<sub>2</sub>)</p>
 
 <a name="hydrometercorrection"></a>
 <h3>Hydrometer Correction:</h3>
 
 <p>Don't feel like cooling your sample down to 60F to take a gravity
 measurement? This calculator determines the corrected gravity for a
-sample based on the temperature. This calculator works for hydrometers
-that are calibrated to 60F. Enter the reading from your hydrometer and
+sample based on the temperature. Enter the reading from your hydrometer and
 the temperature of your sample. The result will be displayed below the
 entry fields once the data has been entered.</p>
 
-<p>The formula used to determine temperature correction for hydrometer was based on information found <a href="http://www.homebrewtalk.com/f13/temp-correction-formula-hydrometer-10684/index2.html">here</a> and </a><a href="http://hbd.org/brewery/library/HydromCorr0992.html">here</a>.</p>
+<p>The value for the hydrometer calibration temperature is set in Preferences: Hydrometer Calibration Temperature.</p>
 
-<p><b>Correction(60&deg;F calibration) = 1.313454 - (0.132674 * T) + (2.057793e-3 * T<sup>2</sup>) - (2.627634e-6 * T<sup>3</sup>)</b></p>
+<p>The formula used to determine temperature correction for hydrometer was based on information found <a href="http://www.homebrewtalk.com/f13/temp-correction-formula-hydrometer-10684/index2.html">here</a> and <a href="http://hbd.org/brewery/library/HydromCorr0992.html">here</a>.</p>
+
+<p class="formula">
+Correction(60&deg;F calibration) = 1.313454 - (0.132674 * T) + (2.057793e-3 * T<sup>2</sup>) - (2.627634e-6 * T<sup>3</sup>)</p>
 
 <p>
 
 The correction formula used that accounts for different calibration temperatures:</p>
-<p>
 
-<b>SG<sub>measured</sub></b> = measured SG of the sample <br />
-<b>SG<sub>corrected</sub></b> = corrected SG of the sample <br />
-<b>T<sub>sample</sub></b> = Temperature in &deg;F of the sample<br />
-<b>T<sub>calibration</sub></b> = Calibration temperature of your hydrometer - usually 60&deg;F or 68&deg;F<br />
-<br />
-<b>SG<sub>corrected</sub> = SG<sub>measured</sub> * ( (1.00130346 -
-0.000134722124 * T<sub>measured</sub> + 0.00000204052596 * T<sub>measured</sub><sup>2</sup>
-- 0.00000000232820948 * T<sub>measured</sub><sup>3</sup>) / (1.00130346
-- 0.000134722124 * T<sub>calibration</sub> + 0.00000204052596 * T<sub>calibration</sub><sup>2</sup>
-- 0.00000000232820948 * T<sub>calibration</sub><sup>3</sup>)) </b></p>
+<p class="formula">
+<b>SG<sub>c</sub></b> = corrected SG of the sample <br />
+<b>SG<sub>m</sub></b> = measured SG of the sample <br />
+<b>T<sub>m</sub></b> = Temperature in &deg;F of the sample<br />
+<b>T<sub>c</sub></b> = Calibration temperature of your hydrometer - usually 60&deg;F or 68&deg;F<br />
+
+<p class="formula">
+SG<sub>c</sub> = SG<sub>m</sub> * ( 
+             (
+               1.00130346 - 
+               1.34722124e-4 * T<sub>m</sub> + 
+               2.04052596e-6 * T<sub>m</sub><sup>2</sup> - 
+               2.32820948e-9 * T<sub>m</sub><sup>3</sup>
+             ) 
+             / 
+             (
+               1.00130346 - 
+               1.34722124e-4 * T<sub>c</sub> + 
+               2.04052596e-6 * T<sub>c</sub><sup>2</sup> - 
+               2.32820948e-9 * T<sub>c</sub><sup>3</sup>
+             ) 
+            )
+</p>
+
+<a name="styles"></a>
+<h3>Styles:</h3>
+
+<p>The styles calculator shows information about styles imported via BeerXML.</p>
+
+<p>BJCP Style Guidelines are provided courtesy of the BJCP.  Copyright 2008, BJCP, Inc.  <a href="http://bjcp.org">More info</a>.</p>
 
 <a name="unitconverters"></a>
 <h3>Unit Converters:</h3>
@@ -388,26 +527,86 @@ The correction formula used that accounts for different calibration temperatures
 included. They aren't meant to include every measurement and are mostly
 included for convenience.</p>
 
-<p>The formulas used to convert between SG and Plato are based on information found <a href="http://www.realbeer.com/spencer/attenuation.html">here</a>.</p>
+<p>The formulas used to convert between <acronym title="Specific Gravity">SG</acronym> and Plato are based on information found <a href="http://www.realbeer.com/spencer/attenuation.html">here</a>.</p>
 
-<p>Formula used to convert Specific Gravity to Plato: <br />
-<b> P = (668.72 * SG) - 463.37 - (205.347 * SG <sup>2</sup> ) </b></p>
+<p>Formula used to convert Specific Gravity to Plato: </p>
+<p class="formula"> P = (668.72 * SG) - 463.37 - (205.347 * SG <sup>2</sup> )</p>
 
-<p>Formula used to convert Plato to Specific Gravity: <br />
-<b> SG = ((0.082636 + (3.8480 * P) + (0.014563 * P <sup>2</sup> ))) / 1000) + 1 </b></p>
+<p>Formula used to convert Plato to Specific Gravity: </p>
+<p class="formula"> SG = ((0.082636 + (3.8480 * P) + (0.014563 * P <sup>2</sup> ))) / 1000) + 1</p>
 
-<p>Formula used to convert Specific Gravity to Gravity Units: <br />
-<b>GU = (SG - 1) * 1000</b></p>
+<p>Formula used to convert Specific Gravity to Gravity Units: </p>
+<p class="formula">GU = (SG - 1) * 1000</p>
 
 <hr />
 
+<a name="database"></a>
+<h3>Database:</h3>
+
+<p>When creating or adding items to a recipe, items stored in the database are available to help make this process easier.  Brewzor provides default data that may be imported into the application, or you may <a href="#beerxmlimport">import your own.</a></p>
+
+<p>The Brewzor database is based on the <a href="http://beerxml.com/beerxml.htm">BeerXML format</a>.</p>
+
+<a name="databaseequipment"></a>
+<h3>Equipment:</h3>
+
+<p>Based on the <a href="http://beerxml.com/beerxml.htm">BeerXML format</a>.</p>
+
+<a name="databasefermentables"></a>
+<h3>Fermentables:</h3>
+
+<p>Based on the <a href="http://beerxml.com/beerxml.htm">BeerXML format</a>.</p>
+
+<a name="databasehops"></a>
+<h3>Hops</h3>
+
+<p>Based on the <a href="http://beerxml.com/beerxml.htm">BeerXML format</a>.</p>
+
+<a name="databasemashprofiles"></a>
+<h3>Mash Profiles:</h3>
+
+<p>Based on the <a href="http://beerxml.com/beerxml.htm">BeerXML format</a>.</p>
+
+<a name="databasemiscs"></a>
+<h3>Miscs:</h3>
+
+<p>Based on the <a href="http://beerxml.com/beerxml.htm">BeerXML format</a>.</p>
+
+<a name="databasestyles"></a>
+<h3>Styles:</h3>
+
+<p>Based on the <a href="http://beerxml.com/beerxml.htm">BeerXML format</a>.</p>
+
+<a name="databasewater"></a>
+<h3>Water:</h3>
+
+<p>Based on the <a href="http://beerxml.com/beerxml.htm">BeerXML format</a>.</p>
+
+<a name="databaseyeast"></a>
+<h3>Yeast:</h3>
+
+<p>Based on the <a href="http://beerxml.com/beerxml.htm">BeerXML format</a>.</p>
+
+<a name="beerxmlimport"></a>
+<h3>BeerXML Import:</h3>
+
+<p>Importing from BeerXML can be done by clicking Menu from a Recipe Screen and then selecting the Import icon.  When the database is empty, an import button is also displayed when viewing.  Once on the import screen, you first select the input source (File or URL).  For URLs, simply type the URL into the edit field and click the "Import BeerXML Data" button.  To import from a file, <a href="http://www.openintents.org/en/node/159">OI File Manager</a> is required.  Once installed, you may browse the file system and pick files to import.</p>
+
+<a name="beerxmlexport"></a>
+<h3>BeerXML Export:</h3>
+
+Exporting to files requires <a href="http://www.openintents.org/en/node/159">OI File Manager</a>.  To export items from the database, navigate to the Database screen.  Long click on any database category and then select Export.  Next, choose a filename and location for the export.  
+
 <a name="settings"></a>
-<h2>Settings:</h2>
+<h2>Settings / Preferences:</h2>
+
+<a name="prefschangemeasurementsystem"></a>
+<h3>Change Measurement System</h3>
+
+<p><b>Change Measurement System: </b>Makes it easy to toggle all preferences between US or metric units.</p>
 
 <a name="prefsgeneral"></a>
-<h3>General Settings</h3>
-
-<p><b>Global Unit Change: </b>Makes it easy to toggle all preferences between US or metric units.</p>
+<h3>General</h3>
 
 <p><b>Temperature: </b>This is the unit used globally for
 temperature. Possibilities include Fahrenheit (F) and Celsius (C).</p>
@@ -416,86 +615,77 @@ temperature. Possibilities include Fahrenheit (F) and Celsius (C).</p>
 Possibilities include Specific Gravity (SG), Gravity Units or Points
 (GU), and Plato (P)</p>
 
+<p><b>Beer Color: </b>This is the unit used globall for beer color.  Possibilities includ SRM and EBC.</p>
+
 <p><b>Pressure: </b>The unit of measurement used for pressure.  Possibilities include pounds per square inch (psi), kilopascals (kPa), bars (bar), and atmospheres (atm).</p>
 
 <p><b>DME / LME Weight: </b>The unit of measurement used for extract
 weight.</p>
 
-<p><b>Correct for Heat Expansion: </b>When checked, the volumes
-presented will be adjusted for heat expansion or cooling loss when
-appropriate. The calculator will also display the expansion / loss
-volume on the screen when it is being used.</p>
+<p><b>Starter Volume: </b>Volume unit used when displaying starters.</p>
 
-<p><b>Cooling Loss Percentage: </b>When at mash temperatures, wort
-will expand about 3%. When boiling, the expansion is about 4%.</p>
+<p><b>Hop Weight: </b>Mass unit used when displaying hops.</p>
 
 <a name="prefsbatch"></a>
 
 <h3>Batch Settings</h3>
 
-<p><b>Batch Volume Units: </b>This is the unit used for batch
+<p><b>Batch Volume: </b>This is the unit used for batch
 volume. Possibilities include Quart, Gallon, and Liter.</p>
 
-<p><b>Final Batch Volume: </b>This is the unit used for final
-volume, or the volume that goes into the fermenter. Possibilities
-include Quart, Gallon, and Liter.</p>
+<p><b>Mash Infusion Volume: </b>This is the unit used for mash infusion 
+volumes. Possibilities include Quart, Gallon, and Liter.</p>
 
-<p><b>Grain Weight Units: </b>This is the unit used for grain
+p><b>Grain Weight: </b>This is the unit used for grain
 weight. Possibilities include Gram, Kilogram, Ounces, and Pounds.</p>
 
-<p><b>Water to Grain Ratio: </b>This number represents the ratio of
-water to grain based on the batch units above. Normally, this is
-equivalent to .25-.31 gallons / pound OR 1-1.25 quarts / pound.</p>
-
-<p>This describes the thickness of your mash. If this value is set,
-the Strike Water calculator will use this value to calculate the amount
-of strike water you need based on your entered value for grain weight.
-The value is generally in the range of 1 - 2 quarts per pound. For
-example if your ratio is 1.25 quarts per pound, you would enter "1.25"
-into the entry field. Assuming a grain weight of 10 pounds, a total of
-12.5 quarts would be used. When this value is greater than zero, the
-entry field is disabled.</p>
-
-<p><b>Boil Minutes: </b>The duration of the boil in minutes.
-Normally, this is 60 - 90 minutes.</p>
-
-<p><b>Mash Infusion Water Temperature: </b>The temperature of the water or decoction that gets added to the mash.  Defaults to boiling.</p>
+<p><b>Hop Bitterness Formula: </b>This is the formula used when calculating hop bitterness. Possibilities include Rager and Tinseth.</p>
 
 <a name="prefsequipment"></a>
 <h3>Equipment Settings</h3>
 
-<p><b>Kettle Diameter / Height Units: </b>This is the unit used for
+<p><b>Kettle Height: </b>This is the unit used for
 distance / length. Possibilities include Inches and Centimeters.</p>
 
-<p><b>Kettle Diameter: </b>The diameter of the kettle. This is used
-in the cylinder volume / height calculators.</p>
-
-<p><b>False Bottom Height: </b>If you have a false bottom and are
-measuring wort height, the value of wort below the false bottom needs to
-be accounted for. Enter the height of your false bottom in Distance
-Units. If you don't have a false bottom, just enter a zero.</p>
-
-<p><b>Total Equipment Loss: </b>Total of the losses in your system (mash tun deadspace, trub, etc.).</p>
-
-<p><b>Evaporation Rate: </b>The amount of loss over a 60 minute
-period expressed as a percent of the kettle volume. This value is
-generally between 5% and 15%. If you do not know the evaporation rate
-for your kettle, start with 10%.</p>
-
-<p>To determine the evaporation rate for your kettle:</p>
-<ul>
-	<li>Once at a boil, measure the starting volume as accurately as
-	possible</li>
-	<li>Maintain a <b>consistent</b> boil for 60 minutes</li>
-	<li>While still boiling, measure the ending volume as accurately
-	as possible</li>
-	<li>Boil Loss % = (Ending Volume / 100) * Starting Volume</li>
-	<li>Do this over the course of several brews and adjust as
-	necessary. The key to generating accurate results is maintaining a
-	consistent boil each time.</li>
-</ul>
+<p><b>Boiling Temperature: </b>In case you live at altitude and your water doesn't boil it 100&deg;C</p>
 
 <p><b>Hydrometer Calibration: </b>  The temperature to which your hydrometer is calibrated.  Usually 60 or 68&deg;F (15 - 20 &deg;C).</p>
+
+<p><b>Refractometer Calibration: </b>I wasn't able to find a definitive
+definition of Brix. It seemed to boil down to one of two things. Either
+it is a refinement of the Balling system that uses a slightly different
+modulus than Plato and thus produces very similar results. Or, Brix is a
+"corrected" version of Plato used with refractometers. Generally there
+is a correction factor that is applied to the refractometer reading (in
+Brix) that will then give you a reading in Plato. I chose to do a
+combination of both. The Brix Gravity Unit applies the correction factor
+throughout the application when necessary. This means you can measure
+your mash gravity in Brix and it other results will be automatically
+adjusted.</b></p>
+
+<p><b>First Wort Hop Utilization:</b> The percent utilization for first wort hops as compared to pellet hops added to a normal boil.</p>
+
+<p><b>Mash Hop Utilization:</b> The percent utilization for mash hops as compared to pellet hops added to a normal boil.</p>
+
+<p><b>Leaf Hop Utilization:</b> The percent utilization for leaf hops as compared to pellet hops added to a normal boil.</p>
+
+<p><b>Plug Hop Utilization:</b> The percent utilization for plug hops as comparef to peller hops added to a normal boil.</p>
+
+<a name="prefsother"></a>
+<h3>Other</h3>
+
+<p><b>Recipe Calculations: </b> Differences in how things like hop bitterness are be calculated from application to another, prompted this preference.  When set to "Use imported values...", Brewzor will use all values imported via BeerXML instead of calculating them internally.  When set to "Calculate gravity, color and IBU", Brewzor will calculate these values when possible.</p>
+
+<p><b>Screen Dimming: </b> When set to "The screen will dim normally", your phone's screen might dim or turn off while you're using Brewzor.  If you would like to keep the screen on while using Brewzor, change this preference to "The screen will stay on."  When keeping the screen on, your phone's battery usage will increase.</p>
+
+<p><b>Database Info: </b> Shows a record count for all tables and allows you to empty the database.</p>
+
+<p><b>Restore Default Settings: </b>Returns all settings to their initial values.</p>
+
+<a name="featurerequestsbugs"></a>
+<h2>Feature Requests / Bugs</h2>
+
+<p>If there is a feature you would like added to Brewzor, or if you would like to make a bug report, use this.</p>
 
 </body>
 </html>
